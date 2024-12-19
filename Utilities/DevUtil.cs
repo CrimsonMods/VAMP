@@ -21,7 +21,7 @@ public static class DevUtil
     /// </example>
     public static void Dump(this Entity entity, string filePath)
     {
-        filePath = "FANGDump/" + filePath;
+        filePath = "VAMPDump/" + filePath;
         File.AppendAllText(filePath, $"--------------------------------------------------" + Environment.NewLine);
         File.AppendAllText(filePath, $"Dumping components of {entity}:" + Environment.NewLine);
         foreach (var componentType in Core.Server.EntityManager.GetComponentTypes(entity))
