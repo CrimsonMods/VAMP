@@ -16,7 +16,7 @@ internal class ChatUtil
         float maxDistance = 40f;
         float2 currentPoint = new float2(translation.x, translation.z);
 
-        var onlinePlayers = PlayerService.GetUsers(false);
+        var onlinePlayers = PlayerService.GetUsersOnline();
         foreach (var player in onlinePlayers)
         {
             if (player.Read<User>().Equals(user)) continue;
@@ -35,7 +35,7 @@ internal class ChatUtil
 
     public static void SystemSendTeam(User user, string message)
     {
-        List<Entity> players = PlayerService.GetUsers(true)
+        List<Entity> players = PlayerService.GetUsersOnline()
             .Where(x => x.Read<User>().ClanEntity._Entity.Has<ClanTeam>())
             .ToList();
 
