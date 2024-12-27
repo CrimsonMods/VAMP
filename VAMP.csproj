@@ -31,5 +31,6 @@
 
   <ItemGroup>
   <None Include="images/logo_256.png" Pack="true" PackagePath="images/" />
+  <None Include="README.md" Pack="true" PackagePath="/" />
   </ItemGroup>
 </Project>
