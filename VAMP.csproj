@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <AssemblyName>VAMP</AssemblyName>
+    <BepInExPluginGuid>VAMP</BepInExPluginGuid>
     <Description>Versatile API for Modding ProjectM</Description>
     <Version>1.0.0</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -10,10 +11,25 @@
     <RootNamespace>VAMP</RootNamespace>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <PackageId>VRising.VAMP</PackageId>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Authors>SkyTech6, CrimsonMods</Authors>
+    <Description>Versatile API for Modding ProjectM</Description>
+    <PackageIcon>images/logo_256.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageTags>VRising</PackageTags>
+    <PackageRepositoryUrl>https://github.com/CrimsonMods/VAMP</PackageRepositoryUrl>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="BepInEx.Unity.IL2CPP" Version="6.0.0-be.691" IncludeAssets="compile" PrivateAssets="all" />
     <PackageReference Include="BepInEx.Core" Version="6.0.0-be.691" IncludeAssets="compile" PrivateAssets="all" />
     <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
     <PackageReference Include="VRising.Unhollowed.Client" Version="1.0.*" />
+  </ItemGroup>
+
+  <ItemGroup>
+  <None Include="images/logo_256.png" Pack="true" PackagePath="images/" />
   </ItemGroup>
 </Project>
