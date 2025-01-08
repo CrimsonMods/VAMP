@@ -8,7 +8,7 @@ using VAMP.Utilities;
 
 namespace VAMP.Services;
 
-internal class PlayerService
+public class PlayerService
 {
     readonly Dictionary<FixedString64Bytes, PlayerData> namePlayerCache = new();
     readonly Dictionary<ulong, PlayerData> steamPlayerCache = new();
