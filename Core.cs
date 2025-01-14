@@ -22,8 +22,7 @@ public static class Core
     public static CastleHeartService CastleHeartService { get; private set; }
 
     public static bool hasInitialized = false;
-    public static Action OnCoreLoaded;
-
+    
     static MonoBehaviour monoBehaviour;
 
     public static void Initialize()
@@ -36,7 +35,7 @@ public static class Core
         CastleHeartService = new CastleHeartService();
 
         hasInitialized = true;
-        OnCoreLoaded?.Invoke();
+        Plugin.OnCoreLoaded?.Invoke();
     }
 
     static World GetServerWorld()

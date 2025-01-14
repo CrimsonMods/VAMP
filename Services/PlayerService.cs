@@ -10,18 +10,9 @@ namespace VAMP.Services;
 
 public class PlayerService
 {
-    readonly Dictionary<FixedString64Bytes, PlayerData> namePlayerCache = new();
-    readonly Dictionary<ulong, PlayerData> steamPlayerCache = new();
-    readonly Dictionary<NetworkId, PlayerData> idPlayerCache = new();
-    internal bool TryFindSteam(ulong steamId, out PlayerData playerData)
-    {
-        return steamPlayerCache.TryGetValue(steamId, out playerData);
-    }
-
-    internal bool TryFindName(FixedString64Bytes name, out PlayerData playerData)
-    {
-        return namePlayerCache.TryGetValue(name, out playerData);
-    }
+    private static readonly Dictionary<FixedString64Bytes, PlayerData> namePlayerCache = new();
+    private static readonly Dictionary<ulong, PlayerData> steamPlayerCache = new();
+    private static readonly Dictionary<NetworkId, PlayerData> idPlayerCache = new();
 
     internal PlayerService()
     {
@@ -54,17 +45,6 @@ public class PlayerService
         idPlayerCache[userEntity.Read<NetworkId>()] = playerData;
     }
 
-    public bool TryFindUserFromNetworkId(NetworkId networkId, out Entity userEntity)
-    {
-        if (idPlayerCache.TryGetValue(networkId, out var playerData))
-        {
-            userEntity = playerData.UserEntity;
-            return true;
-        }
-        userEntity = Entity.Null;
-        return false;
-    }
-
     public static IEnumerable<Entity> GetUsersOnline()
     {
 
@@ -84,5 +64,26 @@ public class PlayerService
             if (Core.EntityManager.Exists(entity) && entity.Read<User>().IsConnected)
                 yield return entity;
         }
+    }
+
+    public static bool TryFindBySteam(ulong steamId, out PlayerData playerData)
+    {
+        return steamPlayerCache.TryGetValue(steamId, out playerData);
+    }
+
+    public static bool TryFindByName(FixedString64Bytes name, out PlayerData playerData)
+    {
+        return namePlayerCache.TryGetValue(name, out playerData);
+    }
+
+    public bool TryFindByNetworkId(NetworkId networkId, out Entity userEntity)
+    {
+        if (idPlayerCache.TryGetValue(networkId, out var playerData))
+        {
+            userEntity = playerData.UserEntity;
+            return true;
+        }
+        userEntity = Entity.Null;
+        return false;
     }
 }

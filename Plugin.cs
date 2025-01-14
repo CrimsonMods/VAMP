@@ -1,4 +1,5 @@
-﻿using BepInEx;
+﻿using System;
+using BepInEx;
 using BepInEx.Logging;
 using BepInEx.Unity.IL2CPP;
 using HarmonyLib;
@@ -12,6 +13,8 @@ public class Plugin : BasePlugin
     public static Plugin Instance { get; private set; }
     public static Harmony Harmony => Instance._harmony;
     public static ManualLogSource LogInstance => Instance.Log;
+
+    public static Action OnCoreLoaded;
 
     public override void Load()
     {
