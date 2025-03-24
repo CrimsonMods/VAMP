@@ -7,6 +7,8 @@ using UnityEngine;
 using System.Collections;
 using BepInEx.Unity.IL2CPP.Utils.Collections;
 using ProjectM.Scripting;
+using ProjectM.Tiles;
+using VAMP.Utilities;
 
 namespace VAMP;
 
@@ -15,11 +17,14 @@ public static class Core
     public static World Server { get; } = GetServerWorld() ?? throw new Exception("There is no Server world (yet)...");
 
     public static EntityManager EntityManager => Server.EntityManager;
-    public static ServerScriptMapper ServerScriptMapper { get; private set; }
+    public static SystemService SystemService {get; } = new(Server);
+    public static ServerScriptMapper ServerScriptMapper => SystemService.ServerScriptMapper;
     public static ServerGameManager ServerGameManager => ServerScriptMapper.GetServerGameManager();
+    public static Entity TileModelSpatialLookupSystem { get; private set; }
 
     public static PlayerService PlayerService { get; private set; }
     public static CastleHeartService CastleHeartService { get; private set; }
+    public static CastleTerritoryService CastleTerritoryService { get; private set; }
 
     public static bool hasInitialized = false;
     
@@ -29,13 +34,17 @@ public static class Core
     {
         if (hasInitialized) return;
 
-        ServerScriptMapper = Server.GetExistingSystemManaged<ServerScriptMapper>();
-
         PlayerService = new PlayerService();
         CastleHeartService = new CastleHeartService();
+        CastleTerritoryService = new CastleTerritoryService();
+
+        TileModelSpatialLookupSystem = EntityUtil.GetEntitiesByComponentTypes<TileModelSpatialLookupSystem.Singleton>(EntityQueryOptions.IncludeSystems)[0];
 
         hasInitialized = true;
+
         Plugin.OnCoreLoaded?.Invoke();
+
+        StartCoroutine(EventScheduler.ScheduleLoop());
     }
 
     static World GetServerWorld()

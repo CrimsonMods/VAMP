@@ -1,15 +1,23 @@
 ﻿using Il2CppInterop.Runtime;
 using ProjectM;
+using ProjectM.CastleBuilding;
 using ProjectM.Shared;
+using ProjectM.Tiles;
+using Stunlock.Core;
 using System;
 using System.Runtime.InteropServices;
 using Unity.Collections;
 using Unity.Entities;
+using Unity.Mathematics;
+using Unity.Transforms;
+using VAMP.Data;
+using VAMP.Services;
 
 namespace VAMP.Utilities;
 //#pragma warning disable CS8500
 public static class EntityUtil
 {
+    #region ECS Extensions
     /// <summary>
     /// Writes component data to an entity using raw memory operations.
     /// </summary>
@@ -194,6 +202,8 @@ public static class EntityUtil
         return false;
     }
 
+    #endregion
+    #region ECS Utility
     /// <summary>
     /// Destroys an entity with proper cleanup and logging.
     /// </summary>
@@ -212,6 +222,11 @@ public static class EntityUtil
         Core.EntityManager.AddComponent<Disabled>(entity);
         DestroyUtility.CreateDestroyEvent(Core.EntityManager, entity, DestroyReason.Default, DestroyDebugReason.ByScript);
         DestroyUtility.Destroy(Core.EntityManager, entity);
+    }
+
+    public static void KillOrDestroy(Entity entity)
+    { 
+        StatChangeUtility.KillOrDestroyEntity(Core.EntityManager, entity, entity, entity, 0, StatChangeReason.Any, true);
     }
 
     /// <summary>
@@ -246,6 +261,8 @@ public static class EntityUtil
         return entity.Has<Disabled>();
     }
 
+    #endregion
+    #region Entity Query
     public static NativeArray<Entity> GetEntitiesByComponentType<T1>(bool includeAll = false, bool includeDisabled = false, bool includeSpawn = false, bool includePrefab = false, bool includeDestroyed = false)
     {
         EntityQueryOptions options = EntityQueryOptions.Default;
@@ -287,5 +304,176 @@ public static class EntityUtil
         var entities = query.ToEntityArray(Allocator.Temp);
         return entities;
     }
+
+    public static NativeArray<Entity> GetEntitiesByComponentTypes<T1>(EntityQueryOptions queryOptions = default)
+    {
+        EntityQueryDesc queryDesc = new EntityQueryDesc
+        {
+            All = new ComponentType[] { new ComponentType(Il2CppType.Of<T1>(), ComponentType.AccessMode.ReadWrite) },
+            Options = queryOptions
+        };
+
+        var query = Core.Server.EntityManager.CreateEntityQuery(queryDesc);
+        var entities = query.ToEntityArray(Allocator.Temp);
+        query.Dispose();
+        return entities;
+    }
+
+    public unsafe static NativeArray<Entity> GetEntitiesInArea(BoundsMinMax area, TileType tileType)
+    {
+        var systemState = *Core.TileModelSpatialLookupSystem.Read<SystemInstance>().state;
+        var tileModelSpatialLookupSystemData = TileModelSpatialLookupSystemData.Create(ref systemState);
+        var spatialLookup = tileModelSpatialLookupSystemData.GetSpatialLookupAndComplete(ref systemState);
+        spatialLookup.GetEntities(ref area, tileType);
+        return spatialLookup.Results;
+    }
+
+    public static Entity EntityFromGUID(PrefabGUID guid)
+    {
+        return Core.ServerScriptMapper._PrefabCollectionSystem._PrefabGuidToEntityMap[guid];
+    }
+
+    public static bool TryGetEntityFromGUID(PrefabGUID guid, out Entity prefabEntity)
+    {
+        return Core.ServerScriptMapper._PrefabCollectionSystem._PrefabGuidToEntityMap.TryGetValue(guid, out prefabEntity);
+    }
+
+    public static PrefabGUID GetGUID(this Entity entity)
+    {
+        if (entity.Exists() && entity.Has<PrefabGUID>())
+        {
+            return entity.Read<PrefabGUID>();
+        }
+
+        return PrefabGUID.Empty;
+    }
+    #endregion
+    #region Entity Extras
+    public static NativeArray<Entity> SortEntitiesByDistance(NativeArray<Entity> entities, float3 position)
+    {
+        // Create a temporary array to hold entities and their distances
+        (Entity entity, float distance)[] tempArray = new (Entity, float)[entities.Length];
+
+        // Populate the temporary array
+        for (int i = 0; i < entities.Length; i++)
+        {
+            float distance = float.MaxValue;
+            if (entities[i].Has<LocalToWorld>())
+            {
+                LocalToWorld ltw = entities[i].Read<LocalToWorld>();
+                distance = math.distance(position, ltw.Position);
+            }
+
+            tempArray[i] = (entities[i], distance);
+        }
+
+        // Sort the temporary array based on distance
+        System.Array.Sort(tempArray, (a, b) => a.distance.CompareTo(b.distance));
+
+        // Extract the sorted entities back into the NativeArray
+        for (int i = 0; i < entities.Length; i++)
+        {
+            entities[i] = tempArray[i].entity;
+        }
+
+        return entities;
+    }
+
+    public static bool IsInBase(Entity entity, out Entity territory, out TerritoryAlignment territoryAlignment, bool requireRoom = false)
+    {
+        territoryAlignment = TerritoryAlignment.None;
+        if (Core.CastleTerritoryService.TryGetCastleTerritory(entity, out territory))
+        {
+            var heart = territory.Read<CastleTerritory>().CastleHeart;
+            if (heart.Exists())
+            {
+                if (Team.IsAllies(heart.Read<Team>(), entity.Read<Team>()))
+                {
+                    territoryAlignment = TerritoryAlignment.Friendly;
+                }
+                else
+                {
+                    territoryAlignment = TerritoryAlignment.Enemy;
+                }
+            }
+            else
+            {
+                territoryAlignment = TerritoryAlignment.Neutral;
+            }
+
+            if (!requireRoom)
+            {
+                return true;
+            }
+            else
+            {
+                if (TryGetFloorEntityBelowEntity(entity, out var floorEntity) && floorEntity.Has<CastleRoomConnection>())
+                {
+                    return floorEntity.Read<CastleRoomConnection>().RoomEntity._Entity.Read<CastleRoom>().IsEnclosedRoom;
+                }
+                return false;
+            }
+        }
+
+        return false;
+    }
+
+    public static bool TryGetFloorEntityBelowEntity(Entity entity, out Entity floorEntity)
+    {
+        floorEntity = default;
+        var entityTilePosition = entity.Read<TilePosition>();
+
+        var entitiesInArea = GetEntitiesInArea(entity.Read<TileBounds>().Value, TileType.Pathfinding);
+        foreach (var entityInArea in entitiesInArea)
+        {
+            var floorTilePosition = entityInArea.Read<TilePosition>();
+            if (floorTilePosition.HeightLevel != entityTilePosition.HeightLevel)
+            {
+                continue;
+            }
+            if (entityInArea.Has<CastleFloor>() && !entityInArea.Has<CastleStairs>()) //ignoring hearts and stairs
+            {
+                if (entityInArea.Read<TileBounds>().Value.Contains(entityTilePosition.Tile))
+                {
+                    floorEntity = entityInArea;
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public static Entity GetHoveredTileModel<T>(Entity User)
+    {
+        var input = User.Read<EntityInput>();
+        var position = input.AimPosition;
+        var aimTilePosition = CastleTerritoryService.ConvertPosToBlockCoord(position);
+        if (input.HoveredEntity.Exists() && input.HoveredEntity.Has<T>())
+        {
+            return input.HoveredEntity;
+        }
+        else
+        {
+            var area = new BoundsMinMax
+            {
+                Min = new int2((int)aimTilePosition.x - 1, (int)aimTilePosition.y - 1),
+                Max = new int2((int)aimTilePosition.x + 1, (int)aimTilePosition.y + 1)
+            };
+            var entities = GetEntitiesInArea(area, TileType.All);
+            if (entities.Length > 0)
+            {
+                SortEntitiesByDistance(entities, position);
+                foreach (var entity in entities)
+                {
+                    if (entity.Has<T>())
+                    {
+                        return entity;
+                    }
+                }
+            }
+        }
+        return Entity.Null;
+    }
+    #endregion
 }
 //#pragma warning restore CS8500

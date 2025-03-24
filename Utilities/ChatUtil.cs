@@ -9,7 +9,7 @@ using VAMP.Services;
 
 namespace VAMP.Utilities;
 
-internal class ChatUtil
+public static class ChatUtil
 {
     public static void SystemSendLocal(User user, float3 translation, string message)
     {

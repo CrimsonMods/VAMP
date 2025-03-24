@@ -15,6 +15,7 @@ public class Plugin : BasePlugin
     public static ManualLogSource LogInstance => Instance.Log;
 
     public static Action OnCoreLoaded;
+    public static bool SpawnDebug = false;
 
     public override void Load()
     {

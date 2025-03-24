@@ -23,7 +23,7 @@ public static class OnUserConnectedPatch
             if (!userData.CharacterName.IsEmpty)
             {
                 var playerName = userData.CharacterName.ToString();
-                Core.PlayerService.UpdatePlayerCache(userEntity, playerName, playerName);
+                Services.PlayerService.UpdatePlayerCache(userEntity, playerName, playerName);
             }
         }
         catch (Exception ex)
@@ -49,7 +49,7 @@ public static class OnUserDisconnectedPatch
             if (!isNewVampire)
             {
                 var playerName = userData.CharacterName.ToString();
-                Core.PlayerService.UpdatePlayerCache(serverClient.UserEntity, playerName, playerName, true);
+                Services.PlayerService.UpdatePlayerCache(serverClient.UserEntity, playerName, playerName, true);
             }
         }
         catch { };

@@ -10,7 +10,7 @@ namespace VAMP.Services;
 
 public class PlayerService
 {
-    private static readonly Dictionary<FixedString64Bytes, PlayerData> namePlayerCache = new();
+    private static readonly Dictionary<string, PlayerData> namePlayerCache = new();
     private static readonly Dictionary<ulong, PlayerData> steamPlayerCache = new();
     private static readonly Dictionary<NetworkId, PlayerData> idPlayerCache = new();
 
@@ -22,25 +22,28 @@ public class PlayerService
         var userEntities = EntityUtil.GetEntitiesByComponentType<User>(includeDisabled: true);
         foreach (var entity in userEntities)
         {
-            var userData = Core.EntityManager.GetComponentData<User>(entity);
+            var userData = entity.Read<User>();
             var playerData = new PlayerData(userData.CharacterName, userData.PlatformId, userData.IsConnected, entity, userData.LocalCharacter._Entity);
 
-            namePlayerCache.TryAdd(userData.CharacterName.ToString().ToLower(), playerData);
+            namePlayerCache.TryAdd(userData.CharacterName.ToString(), playerData);
             steamPlayerCache.TryAdd(userData.PlatformId, playerData);
         }
 
         var onlinePlayers = namePlayerCache.Values.Where(p => p.IsOnline).Select(p => $"\t{p.CharacterName}");
+
+        Plugin.LogInstance.LogWarning($"Player Cache Created with {namePlayerCache.Count} entries total, listing {onlinePlayers.Count()} online:");
+        Plugin.LogInstance.LogWarning(string.Join("\n", onlinePlayers));
     }
 
-    internal void UpdatePlayerCache(Entity userEntity, string oldName, string newName, bool forceOffline = false)
+    internal static void UpdatePlayerCache(Entity userEntity, string oldName, string newName, bool forceOffline = false)
     {
-        var userData = Core.EntityManager.GetComponentData<User>(userEntity);
-        namePlayerCache.Remove(oldName.ToLower());
+        var userData = userEntity.Read<User>();
+        namePlayerCache.Remove(oldName);
 
         if (forceOffline) userData.IsConnected = false;
         var playerData = new PlayerData(newName, userData.PlatformId, userData.IsConnected, userEntity, userData.LocalCharacter._Entity);
 
-        namePlayerCache[newName.ToLower()] = playerData;
+        namePlayerCache[newName] = playerData;
         steamPlayerCache[userData.PlatformId] = playerData;
         idPlayerCache[userEntity.Read<NetworkId>()] = playerData;
     }
@@ -56,7 +59,7 @@ public class PlayerService
         }
     }
 
-    public IEnumerable<Entity> GetCachedUsersOnline()
+    public static IEnumerable<Entity> GetCachedUsersOnline()
     {
         foreach (var pd in namePlayerCache.Values.ToArray())
         {
@@ -71,12 +74,17 @@ public class PlayerService
         return steamPlayerCache.TryGetValue(steamId, out playerData);
     }
 
-    public static bool TryFindByName(FixedString64Bytes name, out PlayerData playerData)
+    public static bool TryFindByName(string name, out PlayerData playerData)
     {
         return namePlayerCache.TryGetValue(name, out playerData);
     }
 
-    public bool TryFindByNetworkId(NetworkId networkId, out Entity userEntity)
+    public static bool TryFindByName(FixedString64Bytes name, out PlayerData playerData)
+    {
+        return namePlayerCache.TryGetValue(name.ToString(), out playerData);
+    }
+
+    public static bool TryFindByNetworkId(NetworkId networkId, out Entity userEntity)
     {
         if (idPlayerCache.TryGetValue(networkId, out var playerData))
         {

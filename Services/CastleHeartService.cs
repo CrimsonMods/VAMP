@@ -46,9 +46,12 @@ public class CastleHeartService
         
         foreach(var castleEntity in castleEntities)
         {
+            if(!castleEntity.Exists()) continue;
             if(castleEntity.Has<UserOwner>())
             {
                 var userOwner = castleEntity.Read<UserOwner>();
+                if(!userOwner.Owner._Entity.Exists()) continue;
+                
                 var tUser = userOwner.Owner._Entity.Read<User>();
 
                 if(tUser.Equals(user))
