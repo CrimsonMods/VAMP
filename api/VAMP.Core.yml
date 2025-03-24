@@ -1,0 +1,929 @@
+### YamlMime:ManagedReference
+items:
+- uid: VAMP.Core
+  commentId: T:VAMP.Core
+  id: Core
+  parent: VAMP
+  children:
+  - VAMP.Core.CastleHeartService
+  - VAMP.Core.CastleTerritoryService
+  - VAMP.Core.EntityManager
+  - VAMP.Core.Initialize
+  - VAMP.Core.PlayerService
+  - VAMP.Core.Server
+  - VAMP.Core.ServerGameManager
+  - VAMP.Core.ServerScriptMapper
+  - VAMP.Core.StartCoroutine(System.Collections.IEnumerator)
+  - VAMP.Core.StopCoroutine(UnityEngine.Coroutine)
+  - VAMP.Core.SystemService
+  - VAMP.Core.TileModelSpatialLookupSystem
+  - VAMP.Core.hasInitialized
+  langs:
+  - csharp
+  - vb
+  name: Core
+  nameWithType: Core
+  fullName: VAMP.Core
+  type: Class
+  source:
+    remote:
+      path: Core.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: Core
+    path: Core.cs
+    startLine: 14
+  assemblies:
+  - VAMP
+  namespace: VAMP
+  syntax:
+    content: public static class Core
+    content.vb: Public Module Core
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: VAMP.Core.Server
+  commentId: P:VAMP.Core.Server
+  id: Server
+  parent: VAMP.Core
+  langs:
+  - csharp
+  - vb
+  name: Server
+  nameWithType: Core.Server
+  fullName: VAMP.Core.Server
+  type: Property
+  source:
+    remote:
+      path: Core.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: Server
+    path: Core.cs
+    startLine: 16
+  assemblies:
+  - VAMP
+  namespace: VAMP
+  syntax:
+    content: public static World Server { get; }
+    parameters: []
+    return:
+      type: Unity.Entities.World
+    content.vb: Public Shared ReadOnly Property Server As World
+  overload: VAMP.Core.Server*
+- uid: VAMP.Core.EntityManager
+  commentId: P:VAMP.Core.EntityManager
+  id: EntityManager
+  parent: VAMP.Core
+  langs:
+  - csharp
+  - vb
+  name: EntityManager
+  nameWithType: Core.EntityManager
+  fullName: VAMP.Core.EntityManager
+  type: Property
+  source:
+    remote:
+      path: Core.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: EntityManager
+    path: Core.cs
+    startLine: 18
+  assemblies:
+  - VAMP
+  namespace: VAMP
+  syntax:
+    content: public static EntityManager EntityManager { get; }
+    parameters: []
+    return:
+      type: Unity.Entities.EntityManager
+    content.vb: Public Shared ReadOnly Property EntityManager As EntityManager
+  overload: VAMP.Core.EntityManager*
+- uid: VAMP.Core.SystemService
+  commentId: P:VAMP.Core.SystemService
+  id: SystemService
+  parent: VAMP.Core
+  langs:
+  - csharp
+  - vb
+  name: SystemService
+  nameWithType: Core.SystemService
+  fullName: VAMP.Core.SystemService
+  type: Property
+  source:
+    remote:
+      path: Core.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: SystemService
+    path: Core.cs
+    startLine: 19
+  assemblies:
+  - VAMP
+  namespace: VAMP
+  syntax:
+    content: public static SystemService SystemService { get; }
+    parameters: []
+    return:
+      type: VAMP.Services.SystemService
+    content.vb: Public Shared ReadOnly Property SystemService As SystemService
+  overload: VAMP.Core.SystemService*
+- uid: VAMP.Core.ServerScriptMapper
+  commentId: P:VAMP.Core.ServerScriptMapper
+  id: ServerScriptMapper
+  parent: VAMP.Core
+  langs:
+  - csharp
+  - vb
+  name: ServerScriptMapper
+  nameWithType: Core.ServerScriptMapper
+  fullName: VAMP.Core.ServerScriptMapper
+  type: Property
+  source:
+    remote:
+      path: Core.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: ServerScriptMapper
+    path: Core.cs
+    startLine: 20
+  assemblies:
+  - VAMP
+  namespace: VAMP
+  syntax:
+    content: public static ServerScriptMapper ServerScriptMapper { get; }
+    parameters: []
+    return:
+      type: ProjectM.Scripting.ServerScriptMapper
+    content.vb: Public Shared ReadOnly Property ServerScriptMapper As ServerScriptMapper
+  overload: VAMP.Core.ServerScriptMapper*
+- uid: VAMP.Core.ServerGameManager
+  commentId: P:VAMP.Core.ServerGameManager
+  id: ServerGameManager
+  parent: VAMP.Core
+  langs:
+  - csharp
+  - vb
+  name: ServerGameManager
+  nameWithType: Core.ServerGameManager
+  fullName: VAMP.Core.ServerGameManager
+  type: Property
+  source:
+    remote:
+      path: Core.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: ServerGameManager
+    path: Core.cs
+    startLine: 21
+  assemblies:
+  - VAMP
+  namespace: VAMP
+  syntax:
+    content: public static ServerGameManager ServerGameManager { get; }
+    parameters: []
+    return:
+      type: ProjectM.Scripting.ServerGameManager
+    content.vb: Public Shared ReadOnly Property ServerGameManager As ServerGameManager
+  overload: VAMP.Core.ServerGameManager*
+- uid: VAMP.Core.TileModelSpatialLookupSystem
+  commentId: P:VAMP.Core.TileModelSpatialLookupSystem
+  id: TileModelSpatialLookupSystem
+  parent: VAMP.Core
+  langs:
+  - csharp
+  - vb
+  name: TileModelSpatialLookupSystem
+  nameWithType: Core.TileModelSpatialLookupSystem
+  fullName: VAMP.Core.TileModelSpatialLookupSystem
+  type: Property
+  source:
+    remote:
+      path: Core.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: TileModelSpatialLookupSystem
+    path: Core.cs
+    startLine: 22
+  assemblies:
+  - VAMP
+  namespace: VAMP
+  syntax:
+    content: public static Entity TileModelSpatialLookupSystem { get; }
+    parameters: []
+    return:
+      type: Unity.Entities.Entity
+    content.vb: Public Shared Property TileModelSpatialLookupSystem As Entity
+  overload: VAMP.Core.TileModelSpatialLookupSystem*
+- uid: VAMP.Core.PlayerService
+  commentId: P:VAMP.Core.PlayerService
+  id: PlayerService
+  parent: VAMP.Core
+  langs:
+  - csharp
+  - vb
+  name: PlayerService
+  nameWithType: Core.PlayerService
+  fullName: VAMP.Core.PlayerService
+  type: Property
+  source:
+    remote:
+      path: Core.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: PlayerService
+    path: Core.cs
+    startLine: 24
+  assemblies:
+  - VAMP
+  namespace: VAMP
+  syntax:
+    content: public static PlayerService PlayerService { get; }
+    parameters: []
+    return:
+      type: VAMP.Services.PlayerService
+    content.vb: Public Shared Property PlayerService As PlayerService
+  overload: VAMP.Core.PlayerService*
+- uid: VAMP.Core.CastleHeartService
+  commentId: P:VAMP.Core.CastleHeartService
+  id: CastleHeartService
+  parent: VAMP.Core
+  langs:
+  - csharp
+  - vb
+  name: CastleHeartService
+  nameWithType: Core.CastleHeartService
+  fullName: VAMP.Core.CastleHeartService
+  type: Property
+  source:
+    remote:
+      path: Core.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: CastleHeartService
+    path: Core.cs
+    startLine: 25
+  assemblies:
+  - VAMP
+  namespace: VAMP
+  syntax:
+    content: public static CastleHeartService CastleHeartService { get; }
+    parameters: []
+    return:
+      type: VAMP.Services.CastleHeartService
+    content.vb: Public Shared Property CastleHeartService As CastleHeartService
+  overload: VAMP.Core.CastleHeartService*
+- uid: VAMP.Core.CastleTerritoryService
+  commentId: P:VAMP.Core.CastleTerritoryService
+  id: CastleTerritoryService
+  parent: VAMP.Core
+  langs:
+  - csharp
+  - vb
+  name: CastleTerritoryService
+  nameWithType: Core.CastleTerritoryService
+  fullName: VAMP.Core.CastleTerritoryService
+  type: Property
+  source:
+    remote:
+      path: Core.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: CastleTerritoryService
+    path: Core.cs
+    startLine: 26
+  assemblies:
+  - VAMP
+  namespace: VAMP
+  syntax:
+    content: public static CastleTerritoryService CastleTerritoryService { get; }
+    parameters: []
+    return:
+      type: VAMP.Services.CastleTerritoryService
+    content.vb: Public Shared Property CastleTerritoryService As CastleTerritoryService
+  overload: VAMP.Core.CastleTerritoryService*
+- uid: VAMP.Core.hasInitialized
+  commentId: F:VAMP.Core.hasInitialized
+  id: hasInitialized
+  parent: VAMP.Core
+  langs:
+  - csharp
+  - vb
+  name: hasInitialized
+  nameWithType: Core.hasInitialized
+  fullName: VAMP.Core.hasInitialized
+  type: Field
+  source:
+    remote:
+      path: Core.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: hasInitialized
+    path: Core.cs
+    startLine: 28
+  assemblies:
+  - VAMP
+  namespace: VAMP
+  syntax:
+    content: public static bool hasInitialized
+    return:
+      type: System.Boolean
+    content.vb: Public Shared hasInitialized As Boolean
+- uid: VAMP.Core.Initialize
+  commentId: M:VAMP.Core.Initialize
+  id: Initialize
+  parent: VAMP.Core
+  langs:
+  - csharp
+  - vb
+  name: Initialize()
+  nameWithType: Core.Initialize()
+  fullName: VAMP.Core.Initialize()
+  type: Method
+  source:
+    remote:
+      path: Core.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: Initialize
+    path: Core.cs
+    startLine: 32
+  assemblies:
+  - VAMP
+  namespace: VAMP
+  syntax:
+    content: public static void Initialize()
+    content.vb: Public Shared Sub Initialize()
+  overload: VAMP.Core.Initialize*
+- uid: VAMP.Core.StartCoroutine(System.Collections.IEnumerator)
+  commentId: M:VAMP.Core.StartCoroutine(System.Collections.IEnumerator)
+  id: StartCoroutine(System.Collections.IEnumerator)
+  parent: VAMP.Core
+  langs:
+  - csharp
+  - vb
+  name: StartCoroutine(IEnumerator)
+  nameWithType: Core.StartCoroutine(IEnumerator)
+  fullName: VAMP.Core.StartCoroutine(System.Collections.IEnumerator)
+  type: Method
+  source:
+    remote:
+      path: Core.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: StartCoroutine
+    path: Core.cs
+    startLine: 54
+  assemblies:
+  - VAMP
+  namespace: VAMP
+  syntax:
+    content: public static Coroutine StartCoroutine(IEnumerator routine)
+    parameters:
+    - id: routine
+      type: System.Collections.IEnumerator
+    return:
+      type: UnityEngine.Coroutine
+    content.vb: Public Shared Function StartCoroutine(routine As IEnumerator) As Coroutine
+  overload: VAMP.Core.StartCoroutine*
+- uid: VAMP.Core.StopCoroutine(UnityEngine.Coroutine)
+  commentId: M:VAMP.Core.StopCoroutine(UnityEngine.Coroutine)
+  id: StopCoroutine(UnityEngine.Coroutine)
+  parent: VAMP.Core
+  langs:
+  - csharp
+  - vb
+  name: StopCoroutine(Coroutine)
+  nameWithType: Core.StopCoroutine(Coroutine)
+  fullName: VAMP.Core.StopCoroutine(UnityEngine.Coroutine)
+  type: Method
+  source:
+    remote:
+      path: Core.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: StopCoroutine
+    path: Core.cs
+    startLine: 66
+  assemblies:
+  - VAMP
+  namespace: VAMP
+  syntax:
+    content: public static void StopCoroutine(Coroutine coroutine)
+    parameters:
+    - id: coroutine
+      type: UnityEngine.Coroutine
+    content.vb: Public Shared Sub StopCoroutine(coroutine As Coroutine)
+  overload: VAMP.Core.StopCoroutine*
+references:
+- uid: VAMP
+  commentId: N:VAMP
+  href: VAMP.html
+  name: VAMP
+  nameWithType: VAMP
+  fullName: VAMP
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: VAMP.Core.Server*
+  commentId: Overload:VAMP.Core.Server
+  href: VAMP.Core.html#VAMP_Core_Server
+  name: Server
+  nameWithType: Core.Server
+  fullName: VAMP.Core.Server
+- uid: Unity.Entities.World
+  commentId: T:Unity.Entities.World
+  parent: Unity.Entities
+  isExternal: true
+  name: World
+  nameWithType: World
+  fullName: Unity.Entities.World
+- uid: Unity.Entities
+  commentId: N:Unity.Entities
+  isExternal: true
+  name: Unity.Entities
+  nameWithType: Unity.Entities
+  fullName: Unity.Entities
+  spec.csharp:
+  - uid: Unity
+    name: Unity
+    isExternal: true
+  - name: .
+  - uid: Unity.Entities
+    name: Entities
+    isExternal: true
+  spec.vb:
+  - uid: Unity
+    name: Unity
+    isExternal: true
+  - name: .
+  - uid: Unity.Entities
+    name: Entities
+    isExternal: true
+- uid: VAMP.Core.EntityManager*
+  commentId: Overload:VAMP.Core.EntityManager
+  href: VAMP.Core.html#VAMP_Core_EntityManager
+  name: EntityManager
+  nameWithType: Core.EntityManager
+  fullName: VAMP.Core.EntityManager
+- uid: Unity.Entities.EntityManager
+  commentId: T:Unity.Entities.EntityManager
+  parent: Unity.Entities
+  isExternal: true
+  name: EntityManager
+  nameWithType: EntityManager
+  fullName: Unity.Entities.EntityManager
+- uid: VAMP.Core.SystemService*
+  commentId: Overload:VAMP.Core.SystemService
+  href: VAMP.Core.html#VAMP_Core_SystemService
+  name: SystemService
+  nameWithType: Core.SystemService
+  fullName: VAMP.Core.SystemService
+- uid: VAMP.Services.SystemService
+  commentId: T:VAMP.Services.SystemService
+  parent: VAMP.Services
+  href: VAMP.Services.SystemService.html
+  name: SystemService
+  nameWithType: SystemService
+  fullName: VAMP.Services.SystemService
+- uid: VAMP.Services
+  commentId: N:VAMP.Services
+  href: VAMP.html
+  name: VAMP.Services
+  nameWithType: VAMP.Services
+  fullName: VAMP.Services
+  spec.csharp:
+  - uid: VAMP
+    name: VAMP
+    href: VAMP.html
+  - name: .
+  - uid: VAMP.Services
+    name: Services
+    href: VAMP.Services.html
+  spec.vb:
+  - uid: VAMP
+    name: VAMP
+    href: VAMP.html
+  - name: .
+  - uid: VAMP.Services
+    name: Services
+    href: VAMP.Services.html
+- uid: VAMP.Core.ServerScriptMapper*
+  commentId: Overload:VAMP.Core.ServerScriptMapper
+  href: VAMP.Core.html#VAMP_Core_ServerScriptMapper
+  name: ServerScriptMapper
+  nameWithType: Core.ServerScriptMapper
+  fullName: VAMP.Core.ServerScriptMapper
+- uid: ProjectM.Scripting.ServerScriptMapper
+  commentId: T:ProjectM.Scripting.ServerScriptMapper
+  parent: ProjectM.Scripting
+  isExternal: true
+  name: ServerScriptMapper
+  nameWithType: ServerScriptMapper
+  fullName: ProjectM.Scripting.ServerScriptMapper
+- uid: ProjectM.Scripting
+  commentId: N:ProjectM.Scripting
+  isExternal: true
+  name: ProjectM.Scripting
+  nameWithType: ProjectM.Scripting
+  fullName: ProjectM.Scripting
+  spec.csharp:
+  - uid: ProjectM
+    name: ProjectM
+    isExternal: true
+  - name: .
+  - uid: ProjectM.Scripting
+    name: Scripting
+    isExternal: true
+  spec.vb:
+  - uid: ProjectM
+    name: ProjectM
+    isExternal: true
+  - name: .
+  - uid: ProjectM.Scripting
+    name: Scripting
+    isExternal: true
+- uid: VAMP.Core.ServerGameManager*
+  commentId: Overload:VAMP.Core.ServerGameManager
+  href: VAMP.Core.html#VAMP_Core_ServerGameManager
+  name: ServerGameManager
+  nameWithType: Core.ServerGameManager
+  fullName: VAMP.Core.ServerGameManager
+- uid: ProjectM.Scripting.ServerGameManager
+  commentId: T:ProjectM.Scripting.ServerGameManager
+  parent: ProjectM.Scripting
+  isExternal: true
+  name: ServerGameManager
+  nameWithType: ServerGameManager
+  fullName: ProjectM.Scripting.ServerGameManager
+- uid: VAMP.Core.TileModelSpatialLookupSystem*
+  commentId: Overload:VAMP.Core.TileModelSpatialLookupSystem
+  href: VAMP.Core.html#VAMP_Core_TileModelSpatialLookupSystem
+  name: TileModelSpatialLookupSystem
+  nameWithType: Core.TileModelSpatialLookupSystem
+  fullName: VAMP.Core.TileModelSpatialLookupSystem
+- uid: Unity.Entities.Entity
+  commentId: T:Unity.Entities.Entity
+  parent: Unity.Entities
+  isExternal: true
+  name: Entity
+  nameWithType: Entity
+  fullName: Unity.Entities.Entity
+- uid: VAMP.Core.PlayerService*
+  commentId: Overload:VAMP.Core.PlayerService
+  href: VAMP.Core.html#VAMP_Core_PlayerService
+  name: PlayerService
+  nameWithType: Core.PlayerService
+  fullName: VAMP.Core.PlayerService
+- uid: VAMP.Services.PlayerService
+  commentId: T:VAMP.Services.PlayerService
+  parent: VAMP.Services
+  href: VAMP.Services.PlayerService.html
+  name: PlayerService
+  nameWithType: PlayerService
+  fullName: VAMP.Services.PlayerService
+- uid: VAMP.Core.CastleHeartService*
+  commentId: Overload:VAMP.Core.CastleHeartService
+  href: VAMP.Core.html#VAMP_Core_CastleHeartService
+  name: CastleHeartService
+  nameWithType: Core.CastleHeartService
+  fullName: VAMP.Core.CastleHeartService
+- uid: VAMP.Services.CastleHeartService
+  commentId: T:VAMP.Services.CastleHeartService
+  parent: VAMP.Services
+  href: VAMP.Services.CastleHeartService.html
+  name: CastleHeartService
+  nameWithType: CastleHeartService
+  fullName: VAMP.Services.CastleHeartService
+- uid: VAMP.Core.CastleTerritoryService*
+  commentId: Overload:VAMP.Core.CastleTerritoryService
+  href: VAMP.Core.html#VAMP_Core_CastleTerritoryService
+  name: CastleTerritoryService
+  nameWithType: Core.CastleTerritoryService
+  fullName: VAMP.Core.CastleTerritoryService
+- uid: VAMP.Services.CastleTerritoryService
+  commentId: T:VAMP.Services.CastleTerritoryService
+  parent: VAMP.Services
+  href: VAMP.Services.CastleTerritoryService.html
+  name: CastleTerritoryService
+  nameWithType: CastleTerritoryService
+  fullName: VAMP.Services.CastleTerritoryService
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: VAMP.Core.Initialize*
+  commentId: Overload:VAMP.Core.Initialize
+  href: VAMP.Core.html#VAMP_Core_Initialize
+  name: Initialize
+  nameWithType: Core.Initialize
+  fullName: VAMP.Core.Initialize
+- uid: VAMP.Core.StartCoroutine*
+  commentId: Overload:VAMP.Core.StartCoroutine
+  href: VAMP.Core.html#VAMP_Core_StartCoroutine_System_Collections_IEnumerator_
+  name: StartCoroutine
+  nameWithType: Core.StartCoroutine
+  fullName: VAMP.Core.StartCoroutine
+- uid: System.Collections.IEnumerator
+  commentId: T:System.Collections.IEnumerator
+  parent: System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerator
+  name: IEnumerator
+  nameWithType: IEnumerator
+  fullName: System.Collections.IEnumerator
+- uid: UnityEngine.Coroutine
+  commentId: T:UnityEngine.Coroutine
+  parent: UnityEngine
+  isExternal: true
+  name: Coroutine
+  nameWithType: Coroutine
+  fullName: UnityEngine.Coroutine
+- uid: System.Collections
+  commentId: N:System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections
+  nameWithType: System.Collections
+  fullName: System.Collections
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: VAMP.Core.StopCoroutine*
+  commentId: Overload:VAMP.Core.StopCoroutine
+  href: VAMP.Core.html#VAMP_Core_StopCoroutine_UnityEngine_Coroutine_
+  name: StopCoroutine
+  nameWithType: Core.StopCoroutine
+  fullName: VAMP.Core.StopCoroutine

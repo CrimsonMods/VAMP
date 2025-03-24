@@ -1,0 +1,473 @@
+### YamlMime:ManagedReference
+items:
+- uid: VAMP.Services.SpawnService
+  commentId: T:VAMP.Services.SpawnService
+  id: SpawnService
+  parent: VAMP.Services
+  children:
+  - VAMP.Services.SpawnService.SpawnUnitWithCallback(Stunlock.Core.PrefabGUID,Unity.Mathematics.float3,System.Single,System.Action{Unity.Entities.Entity})
+  langs:
+  - csharp
+  - vb
+  name: SpawnService
+  nameWithType: SpawnService
+  fullName: VAMP.Services.SpawnService
+  type: Class
+  source:
+    remote:
+      path: Services/SpawnService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: SpawnService
+    path: Services/SpawnService.cs
+    startLine: 9
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public static class SpawnService
+    content.vb: Public Module SpawnService
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: VAMP.Services.SpawnService.SpawnUnitWithCallback(Stunlock.Core.PrefabGUID,Unity.Mathematics.float3,System.Single,System.Action{Unity.Entities.Entity})
+  commentId: M:VAMP.Services.SpawnService.SpawnUnitWithCallback(Stunlock.Core.PrefabGUID,Unity.Mathematics.float3,System.Single,System.Action{Unity.Entities.Entity})
+  id: SpawnUnitWithCallback(Stunlock.Core.PrefabGUID,Unity.Mathematics.float3,System.Single,System.Action{Unity.Entities.Entity})
+  parent: VAMP.Services.SpawnService
+  langs:
+  - csharp
+  - vb
+  name: SpawnUnitWithCallback(PrefabGUID, float3, float, Action<Entity>)
+  nameWithType: SpawnService.SpawnUnitWithCallback(PrefabGUID, float3, float, Action<Entity>)
+  fullName: VAMP.Services.SpawnService.SpawnUnitWithCallback(Stunlock.Core.PrefabGUID, Unity.Mathematics.float3, float, System.Action<Unity.Entities.Entity>)
+  type: Method
+  source:
+    remote:
+      path: Services/SpawnService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: SpawnUnitWithCallback
+    path: Services/SpawnService.cs
+    startLine: 11
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public static void SpawnUnitWithCallback(PrefabGUID unit, float3 position, float duration, Action<Entity> postActions)
+    parameters:
+    - id: unit
+      type: Stunlock.Core.PrefabGUID
+    - id: position
+      type: Unity.Mathematics.float3
+    - id: duration
+      type: System.Single
+    - id: postActions
+      type: System.Action{Unity.Entities.Entity}
+    content.vb: Public Shared Sub SpawnUnitWithCallback(unit As PrefabGUID, position As float3, duration As Single, postActions As Action(Of Entity))
+  overload: VAMP.Services.SpawnService.SpawnUnitWithCallback*
+  nameWithType.vb: SpawnService.SpawnUnitWithCallback(PrefabGUID, float3, Single, Action(Of Entity))
+  fullName.vb: VAMP.Services.SpawnService.SpawnUnitWithCallback(Stunlock.Core.PrefabGUID, Unity.Mathematics.float3, Single, System.Action(Of Unity.Entities.Entity))
+  name.vb: SpawnUnitWithCallback(PrefabGUID, float3, Single, Action(Of Entity))
+references:
+- uid: VAMP.Services
+  commentId: N:VAMP.Services
+  href: VAMP.html
+  name: VAMP.Services
+  nameWithType: VAMP.Services
+  fullName: VAMP.Services
+  spec.csharp:
+  - uid: VAMP
+    name: VAMP
+    href: VAMP.html
+  - name: .
+  - uid: VAMP.Services
+    name: Services
+    href: VAMP.Services.html
+  spec.vb:
+  - uid: VAMP
+    name: VAMP
+    href: VAMP.html
+  - name: .
+  - uid: VAMP.Services
+    name: Services
+    href: VAMP.Services.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: VAMP.Services.SpawnService.SpawnUnitWithCallback*
+  commentId: Overload:VAMP.Services.SpawnService.SpawnUnitWithCallback
+  href: VAMP.Services.SpawnService.html#VAMP_Services_SpawnService_SpawnUnitWithCallback_Stunlock_Core_PrefabGUID_Unity_Mathematics_float3_System_Single_System_Action_Unity_Entities_Entity__
+  name: SpawnUnitWithCallback
+  nameWithType: SpawnService.SpawnUnitWithCallback
+  fullName: VAMP.Services.SpawnService.SpawnUnitWithCallback
+- uid: Stunlock.Core.PrefabGUID
+  commentId: T:Stunlock.Core.PrefabGUID
+  parent: Stunlock.Core
+  isExternal: true
+  name: PrefabGUID
+  nameWithType: PrefabGUID
+  fullName: Stunlock.Core.PrefabGUID
+- uid: Unity.Mathematics.float3
+  commentId: T:Unity.Mathematics.float3
+  parent: Unity.Mathematics
+  isExternal: true
+  name: float3
+  nameWithType: float3
+  fullName: Unity.Mathematics.float3
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: System.Action{Unity.Entities.Entity}
+  commentId: T:System.Action{Unity.Entities.Entity}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<Entity>
+  nameWithType: Action<Entity>
+  fullName: System.Action<Unity.Entities.Entity>
+  nameWithType.vb: Action(Of Entity)
+  fullName.vb: System.Action(Of Unity.Entities.Entity)
+  name.vb: Action(Of Entity)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: Unity.Entities.Entity
+    name: Entity
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Unity.Entities.Entity
+    name: Entity
+    isExternal: true
+  - name: )
+- uid: Stunlock.Core
+  commentId: N:Stunlock.Core
+  isExternal: true
+  name: Stunlock.Core
+  nameWithType: Stunlock.Core
+  fullName: Stunlock.Core
+  spec.csharp:
+  - uid: Stunlock
+    name: Stunlock
+    isExternal: true
+  - name: .
+  - uid: Stunlock.Core
+    name: Core
+    isExternal: true
+  spec.vb:
+  - uid: Stunlock
+    name: Stunlock
+    isExternal: true
+  - name: .
+  - uid: Stunlock.Core
+    name: Core
+    isExternal: true
+- uid: Unity.Mathematics
+  commentId: N:Unity.Mathematics
+  isExternal: true
+  name: Unity.Mathematics
+  nameWithType: Unity.Mathematics
+  fullName: Unity.Mathematics
+  spec.csharp:
+  - uid: Unity
+    name: Unity
+    isExternal: true
+  - name: .
+  - uid: Unity.Mathematics
+    name: Mathematics
+    isExternal: true
+  spec.vb:
+  - uid: Unity
+    name: Unity
+    isExternal: true
+  - name: .
+  - uid: Unity.Mathematics
+    name: Mathematics
+    isExternal: true
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )

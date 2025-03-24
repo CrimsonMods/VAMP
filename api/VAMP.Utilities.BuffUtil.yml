@@ -1,0 +1,599 @@
+### YamlMime:ManagedReference
+items:
+- uid: VAMP.Utilities.BuffUtil
+  commentId: T:VAMP.Utilities.BuffUtil
+  id: BuffUtil
+  parent: VAMP.Utilities
+  children:
+  - VAMP.Utilities.BuffUtil.ApplyCosmetic(Unity.Entities.Entity,Stunlock.Core.PrefabGUID)
+  - VAMP.Utilities.BuffUtil.BuffEntity(Unity.Entities.Entity,Stunlock.Core.PrefabGUID,Unity.Entities.Entity@,System.Single,System.Boolean)
+  - VAMP.Utilities.BuffUtil.HasBuff(Unity.Entities.Entity,Stunlock.Core.PrefabGUID)
+  - VAMP.Utilities.BuffUtil.ModifyBuff(Unity.Entities.Entity,ProjectM.BuffModificationTypes,System.Boolean)
+  - VAMP.Utilities.BuffUtil.RemoveBuff(Unity.Entities.Entity,Stunlock.Core.PrefabGUID)
+  langs:
+  - csharp
+  - vb
+  name: BuffUtil
+  nameWithType: BuffUtil
+  fullName: VAMP.Utilities.BuffUtil
+  type: Class
+  source:
+    remote:
+      path: Utilities/BuffUtil.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: BuffUtil
+    path: Utilities/BuffUtil.cs
+    startLine: 11
+  assemblies:
+  - VAMP
+  namespace: VAMP.Utilities
+  syntax:
+    content: public static class BuffUtil
+    content.vb: Public Module BuffUtil
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: VAMP.Utilities.BuffUtil.ModifyBuff(Unity.Entities.Entity,ProjectM.BuffModificationTypes,System.Boolean)
+  commentId: M:VAMP.Utilities.BuffUtil.ModifyBuff(Unity.Entities.Entity,ProjectM.BuffModificationTypes,System.Boolean)
+  id: ModifyBuff(Unity.Entities.Entity,ProjectM.BuffModificationTypes,System.Boolean)
+  parent: VAMP.Utilities.BuffUtil
+  langs:
+  - csharp
+  - vb
+  name: ModifyBuff(Entity, BuffModificationTypes, bool)
+  nameWithType: BuffUtil.ModifyBuff(Entity, BuffModificationTypes, bool)
+  fullName: VAMP.Utilities.BuffUtil.ModifyBuff(Unity.Entities.Entity, ProjectM.BuffModificationTypes, bool)
+  type: Method
+  source:
+    remote:
+      path: Utilities/BuffUtil.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: ModifyBuff
+    path: Utilities/BuffUtil.cs
+    startLine: 18
+  assemblies:
+  - VAMP
+  namespace: VAMP.Utilities
+  syntax:
+    content: public static void ModifyBuff(Entity buffEntity, BuffModificationTypes buffModificationTypes, bool overwrite = false)
+    parameters:
+    - id: buffEntity
+      type: Unity.Entities.Entity
+    - id: buffModificationTypes
+      type: ProjectM.BuffModificationTypes
+    - id: overwrite
+      type: System.Boolean
+    content.vb: Public Shared Sub ModifyBuff(buffEntity As Entity, buffModificationTypes As BuffModificationTypes, overwrite As Boolean = False)
+  overload: VAMP.Utilities.BuffUtil.ModifyBuff*
+  nameWithType.vb: BuffUtil.ModifyBuff(Entity, BuffModificationTypes, Boolean)
+  fullName.vb: VAMP.Utilities.BuffUtil.ModifyBuff(Unity.Entities.Entity, ProjectM.BuffModificationTypes, Boolean)
+  name.vb: ModifyBuff(Entity, BuffModificationTypes, Boolean)
+- uid: VAMP.Utilities.BuffUtil.BuffEntity(Unity.Entities.Entity,Stunlock.Core.PrefabGUID,Unity.Entities.Entity@,System.Single,System.Boolean)
+  commentId: M:VAMP.Utilities.BuffUtil.BuffEntity(Unity.Entities.Entity,Stunlock.Core.PrefabGUID,Unity.Entities.Entity@,System.Single,System.Boolean)
+  id: BuffEntity(Unity.Entities.Entity,Stunlock.Core.PrefabGUID,Unity.Entities.Entity@,System.Single,System.Boolean)
+  parent: VAMP.Utilities.BuffUtil
+  langs:
+  - csharp
+  - vb
+  name: BuffEntity(Entity, PrefabGUID, out Entity, float, bool)
+  nameWithType: BuffUtil.BuffEntity(Entity, PrefabGUID, out Entity, float, bool)
+  fullName: VAMP.Utilities.BuffUtil.BuffEntity(Unity.Entities.Entity, Stunlock.Core.PrefabGUID, out Unity.Entities.Entity, float, bool)
+  type: Method
+  source:
+    remote:
+      path: Utilities/BuffUtil.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: BuffEntity
+    path: Utilities/BuffUtil.cs
+    startLine: 30
+  assemblies:
+  - VAMP
+  namespace: VAMP.Utilities
+  syntax:
+    content: public static bool BuffEntity(Entity entity, PrefabGUID buff, out Entity buffEntity, float duration = 0, bool attemptToPersistThroughDeath = false)
+    parameters:
+    - id: entity
+      type: Unity.Entities.Entity
+    - id: buff
+      type: Stunlock.Core.PrefabGUID
+    - id: buffEntity
+      type: Unity.Entities.Entity
+    - id: duration
+      type: System.Single
+    - id: attemptToPersistThroughDeath
+      type: System.Boolean
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function BuffEntity(entity As Entity, buff As PrefabGUID, buffEntity As Entity, duration As Single = 0, attemptToPersistThroughDeath As Boolean = False) As Boolean
+  overload: VAMP.Utilities.BuffUtil.BuffEntity*
+  nameWithType.vb: BuffUtil.BuffEntity(Entity, PrefabGUID, Entity, Single, Boolean)
+  fullName.vb: VAMP.Utilities.BuffUtil.BuffEntity(Unity.Entities.Entity, Stunlock.Core.PrefabGUID, Unity.Entities.Entity, Single, Boolean)
+  name.vb: BuffEntity(Entity, PrefabGUID, Entity, Single, Boolean)
+- uid: VAMP.Utilities.BuffUtil.ApplyCosmetic(Unity.Entities.Entity,Stunlock.Core.PrefabGUID)
+  commentId: M:VAMP.Utilities.BuffUtil.ApplyCosmetic(Unity.Entities.Entity,Stunlock.Core.PrefabGUID)
+  id: ApplyCosmetic(Unity.Entities.Entity,Stunlock.Core.PrefabGUID)
+  parent: VAMP.Utilities.BuffUtil
+  langs:
+  - csharp
+  - vb
+  name: ApplyCosmetic(Entity, PrefabGUID)
+  nameWithType: BuffUtil.ApplyCosmetic(Entity, PrefabGUID)
+  fullName: VAMP.Utilities.BuffUtil.ApplyCosmetic(Unity.Entities.Entity, Stunlock.Core.PrefabGUID)
+  type: Method
+  source:
+    remote:
+      path: Utilities/BuffUtil.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: ApplyCosmetic
+    path: Utilities/BuffUtil.cs
+    startLine: 101
+  assemblies:
+  - VAMP
+  namespace: VAMP.Utilities
+  syntax:
+    content: public static void ApplyCosmetic(Entity entity, PrefabGUID visual)
+    parameters:
+    - id: entity
+      type: Unity.Entities.Entity
+    - id: visual
+      type: Stunlock.Core.PrefabGUID
+    content.vb: Public Shared Sub ApplyCosmetic(entity As Entity, visual As PrefabGUID)
+  overload: VAMP.Utilities.BuffUtil.ApplyCosmetic*
+- uid: VAMP.Utilities.BuffUtil.RemoveBuff(Unity.Entities.Entity,Stunlock.Core.PrefabGUID)
+  commentId: M:VAMP.Utilities.BuffUtil.RemoveBuff(Unity.Entities.Entity,Stunlock.Core.PrefabGUID)
+  id: RemoveBuff(Unity.Entities.Entity,Stunlock.Core.PrefabGUID)
+  parent: VAMP.Utilities.BuffUtil
+  langs:
+  - csharp
+  - vb
+  name: RemoveBuff(Entity, PrefabGUID)
+  nameWithType: BuffUtil.RemoveBuff(Entity, PrefabGUID)
+  fullName: VAMP.Utilities.BuffUtil.RemoveBuff(Unity.Entities.Entity, Stunlock.Core.PrefabGUID)
+  type: Method
+  source:
+    remote:
+      path: Utilities/BuffUtil.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: RemoveBuff
+    path: Utilities/BuffUtil.cs
+    startLine: 140
+  assemblies:
+  - VAMP
+  namespace: VAMP.Utilities
+  syntax:
+    content: public static void RemoveBuff(Entity entity, PrefabGUID guid)
+    parameters:
+    - id: entity
+      type: Unity.Entities.Entity
+    - id: guid
+      type: Stunlock.Core.PrefabGUID
+    content.vb: Public Shared Sub RemoveBuff(entity As Entity, guid As PrefabGUID)
+  overload: VAMP.Utilities.BuffUtil.RemoveBuff*
+- uid: VAMP.Utilities.BuffUtil.HasBuff(Unity.Entities.Entity,Stunlock.Core.PrefabGUID)
+  commentId: M:VAMP.Utilities.BuffUtil.HasBuff(Unity.Entities.Entity,Stunlock.Core.PrefabGUID)
+  id: HasBuff(Unity.Entities.Entity,Stunlock.Core.PrefabGUID)
+  parent: VAMP.Utilities.BuffUtil
+  langs:
+  - csharp
+  - vb
+  name: HasBuff(Entity, PrefabGUID)
+  nameWithType: BuffUtil.HasBuff(Entity, PrefabGUID)
+  fullName: VAMP.Utilities.BuffUtil.HasBuff(Unity.Entities.Entity, Stunlock.Core.PrefabGUID)
+  type: Method
+  source:
+    remote:
+      path: Utilities/BuffUtil.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: HasBuff
+    path: Utilities/BuffUtil.cs
+    startLine: 150
+  assemblies:
+  - VAMP
+  namespace: VAMP.Utilities
+  syntax:
+    content: public static bool HasBuff(Entity entity, PrefabGUID buff)
+    parameters:
+    - id: entity
+      type: Unity.Entities.Entity
+    - id: buff
+      type: Stunlock.Core.PrefabGUID
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function HasBuff(entity As Entity, buff As PrefabGUID) As Boolean
+  overload: VAMP.Utilities.BuffUtil.HasBuff*
+references:
+- uid: VAMP.Utilities
+  commentId: N:VAMP.Utilities
+  href: VAMP.html
+  name: VAMP.Utilities
+  nameWithType: VAMP.Utilities
+  fullName: VAMP.Utilities
+  spec.csharp:
+  - uid: VAMP
+    name: VAMP
+    href: VAMP.html
+  - name: .
+  - uid: VAMP.Utilities
+    name: Utilities
+    href: VAMP.Utilities.html
+  spec.vb:
+  - uid: VAMP
+    name: VAMP
+    href: VAMP.html
+  - name: .
+  - uid: VAMP.Utilities
+    name: Utilities
+    href: VAMP.Utilities.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: VAMP.Utilities.BuffUtil.ModifyBuff*
+  commentId: Overload:VAMP.Utilities.BuffUtil.ModifyBuff
+  href: VAMP.Utilities.BuffUtil.html#VAMP_Utilities_BuffUtil_ModifyBuff_Unity_Entities_Entity_ProjectM_BuffModificationTypes_System_Boolean_
+  name: ModifyBuff
+  nameWithType: BuffUtil.ModifyBuff
+  fullName: VAMP.Utilities.BuffUtil.ModifyBuff
+- uid: Unity.Entities.Entity
+  commentId: T:Unity.Entities.Entity
+  parent: Unity.Entities
+  isExternal: true
+  name: Entity
+  nameWithType: Entity
+  fullName: Unity.Entities.Entity
+- uid: ProjectM.BuffModificationTypes
+  commentId: T:ProjectM.BuffModificationTypes
+  parent: ProjectM
+  isExternal: true
+  name: BuffModificationTypes
+  nameWithType: BuffModificationTypes
+  fullName: ProjectM.BuffModificationTypes
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Unity.Entities
+  commentId: N:Unity.Entities
+  isExternal: true
+  name: Unity.Entities
+  nameWithType: Unity.Entities
+  fullName: Unity.Entities
+  spec.csharp:
+  - uid: Unity
+    name: Unity
+    isExternal: true
+  - name: .
+  - uid: Unity.Entities
+    name: Entities
+    isExternal: true
+  spec.vb:
+  - uid: Unity
+    name: Unity
+    isExternal: true
+  - name: .
+  - uid: Unity.Entities
+    name: Entities
+    isExternal: true
+- uid: ProjectM
+  commentId: N:ProjectM
+  isExternal: true
+  name: ProjectM
+  nameWithType: ProjectM
+  fullName: ProjectM
+- uid: VAMP.Utilities.BuffUtil.BuffEntity*
+  commentId: Overload:VAMP.Utilities.BuffUtil.BuffEntity
+  href: VAMP.Utilities.BuffUtil.html#VAMP_Utilities_BuffUtil_BuffEntity_Unity_Entities_Entity_Stunlock_Core_PrefabGUID_Unity_Entities_Entity__System_Single_System_Boolean_
+  name: BuffEntity
+  nameWithType: BuffUtil.BuffEntity
+  fullName: VAMP.Utilities.BuffUtil.BuffEntity
+- uid: Stunlock.Core.PrefabGUID
+  commentId: T:Stunlock.Core.PrefabGUID
+  parent: Stunlock.Core
+  isExternal: true
+  name: PrefabGUID
+  nameWithType: PrefabGUID
+  fullName: Stunlock.Core.PrefabGUID
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Stunlock.Core
+  commentId: N:Stunlock.Core
+  isExternal: true
+  name: Stunlock.Core
+  nameWithType: Stunlock.Core
+  fullName: Stunlock.Core
+  spec.csharp:
+  - uid: Stunlock
+    name: Stunlock
+    isExternal: true
+  - name: .
+  - uid: Stunlock.Core
+    name: Core
+    isExternal: true
+  spec.vb:
+  - uid: Stunlock
+    name: Stunlock
+    isExternal: true
+  - name: .
+  - uid: Stunlock.Core
+    name: Core
+    isExternal: true
+- uid: VAMP.Utilities.BuffUtil.ApplyCosmetic*
+  commentId: Overload:VAMP.Utilities.BuffUtil.ApplyCosmetic
+  href: VAMP.Utilities.BuffUtil.html#VAMP_Utilities_BuffUtil_ApplyCosmetic_Unity_Entities_Entity_Stunlock_Core_PrefabGUID_
+  name: ApplyCosmetic
+  nameWithType: BuffUtil.ApplyCosmetic
+  fullName: VAMP.Utilities.BuffUtil.ApplyCosmetic
+- uid: VAMP.Utilities.BuffUtil.RemoveBuff*
+  commentId: Overload:VAMP.Utilities.BuffUtil.RemoveBuff
+  href: VAMP.Utilities.BuffUtil.html#VAMP_Utilities_BuffUtil_RemoveBuff_Unity_Entities_Entity_Stunlock_Core_PrefabGUID_
+  name: RemoveBuff
+  nameWithType: BuffUtil.RemoveBuff
+  fullName: VAMP.Utilities.BuffUtil.RemoveBuff
+- uid: VAMP.Utilities.BuffUtil.HasBuff*
+  commentId: Overload:VAMP.Utilities.BuffUtil.HasBuff
+  href: VAMP.Utilities.BuffUtil.html#VAMP_Utilities_BuffUtil_HasBuff_Unity_Entities_Entity_Stunlock_Core_PrefabGUID_
+  name: HasBuff
+  nameWithType: BuffUtil.HasBuff
+  fullName: VAMP.Utilities.BuffUtil.HasBuff

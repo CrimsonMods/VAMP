@@ -1,0 +1,1894 @@
+### YamlMime:ManagedReference
+items:
+- uid: VAMP.Structs.Unit
+  commentId: T:VAMP.Structs.Unit
+  id: Unit
+  parent: VAMP.Structs
+  children:
+  - VAMP.Structs.Unit.#ctor(Stunlock.Core.PrefabGUID,System.Int32,System.Int32)
+  - VAMP.Structs.Unit.AbilityCastImpair
+  - VAMP.Structs.Unit.AggroRadius
+  - VAMP.Structs.Unit.AnnounceSpawn
+  - VAMP.Structs.Unit.Category
+  - VAMP.Structs.Unit.DrawsAggro
+  - VAMP.Structs.Unit.DynamicCollision
+  - VAMP.Structs.Unit.IsImmaterial
+  - VAMP.Structs.Unit.IsInvulnerable
+  - VAMP.Structs.Unit.IsRooted
+  - VAMP.Structs.Unit.IsTargetable
+  - VAMP.Structs.Unit.KnockbackResistance
+  - VAMP.Structs.Unit.Level
+  - VAMP.Structs.Unit.MapCollision
+  - VAMP.Structs.Unit.MaxDistanceFromPreCombatPosition
+  - VAMP.Structs.Unit.MaxHealth
+  - VAMP.Structs.Unit.Modify(Unity.Entities.Entity)
+  - VAMP.Structs.Unit.Modify(Unity.Entities.Entity,Unity.Entities.Entity)
+  - VAMP.Structs.Unit.Name
+  - VAMP.Structs.Unit.PrefabGuid
+  - VAMP.Structs.Unit.RespawnTime
+  - VAMP.Structs.Unit.SoftSpawn
+  - VAMP.Structs.Unit.SpawnDelay
+  - VAMP.Structs.Unit.Team
+  - VAMP.Structs.Unit.abilityCastImpair
+  - VAMP.Structs.Unit.aggroRadius
+  - VAMP.Structs.Unit.announceSpawn
+  - VAMP.Structs.Unit.drawsAggro
+  - VAMP.Structs.Unit.dynamicCollision
+  - VAMP.Structs.Unit.gameMode
+  - VAMP.Structs.Unit.isImmaterial
+  - VAMP.Structs.Unit.isInvisible
+  - VAMP.Structs.Unit.isInvulnerable
+  - VAMP.Structs.Unit.isRooted
+  - VAMP.Structs.Unit.isTargetable
+  - VAMP.Structs.Unit.knockbackResistance
+  - VAMP.Structs.Unit.level
+  - VAMP.Structs.Unit.mapCollision
+  - VAMP.Structs.Unit.maxDistanceFromPreCombatPosition
+  - VAMP.Structs.Unit.maxHealth
+  - VAMP.Structs.Unit.name
+  - VAMP.Structs.Unit.prefabGuid
+  - VAMP.Structs.Unit.respawnTime
+  - VAMP.Structs.Unit.softSpawn
+  - VAMP.Structs.Unit.spawnDelay
+  - VAMP.Structs.Unit.team
+  langs:
+  - csharp
+  - vb
+  name: Unit
+  nameWithType: Unit
+  fullName: VAMP.Structs.Unit
+  type: Class
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: Unit
+    path: Structs/UnitData.cs
+    startLine: 10
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: public class Unit
+    content.vb: Public Class Unit
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - VAMP.Structs.BaseTurret
+  - VAMP.Structs.Boss
+  - VAMP.Structs.DyeableStructure
+  - VAMP.Structs.HealingOrb
+  - VAMP.Structs.Horse
+  - VAMP.Structs.Turret
+  - VAMP.Structs.UltimateOrb
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: VAMP.Structs.Unit.prefabGuid
+  commentId: F:VAMP.Structs.Unit.prefabGuid
+  id: prefabGuid
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: prefabGuid
+  nameWithType: Unit.prefabGuid
+  fullName: VAMP.Structs.Unit.prefabGuid
+  type: Field
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: prefabGuid
+    path: Structs/UnitData.cs
+    startLine: 12
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: protected PrefabGUID prefabGuid
+    return:
+      type: Stunlock.Core.PrefabGUID
+    content.vb: Protected prefabGuid As PrefabGUID
+- uid: VAMP.Structs.Unit.team
+  commentId: F:VAMP.Structs.Unit.team
+  id: team
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: team
+  nameWithType: Unit.team
+  fullName: VAMP.Structs.Unit.team
+  type: Field
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: team
+    path: Structs/UnitData.cs
+    startLine: 13
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: protected int team
+    return:
+      type: System.Int32
+    content.vb: Protected team As Integer
+- uid: VAMP.Structs.Unit.level
+  commentId: F:VAMP.Structs.Unit.level
+  id: level
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: level
+  nameWithType: Unit.level
+  fullName: VAMP.Structs.Unit.level
+  type: Field
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: level
+    path: Structs/UnitData.cs
+    startLine: 14
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: protected int level
+    return:
+      type: System.Int32
+    content.vb: Protected level As Integer
+- uid: VAMP.Structs.Unit.isImmaterial
+  commentId: F:VAMP.Structs.Unit.isImmaterial
+  id: isImmaterial
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: isImmaterial
+  nameWithType: Unit.isImmaterial
+  fullName: VAMP.Structs.Unit.isImmaterial
+  type: Field
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: isImmaterial
+    path: Structs/UnitData.cs
+    startLine: 15
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: protected bool isImmaterial
+    return:
+      type: System.Boolean
+    content.vb: Protected isImmaterial As Boolean
+- uid: VAMP.Structs.Unit.maxHealth
+  commentId: F:VAMP.Structs.Unit.maxHealth
+  id: maxHealth
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: maxHealth
+  nameWithType: Unit.maxHealth
+  fullName: VAMP.Structs.Unit.maxHealth
+  type: Field
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: maxHealth
+    path: Structs/UnitData.cs
+    startLine: 16
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: protected float maxHealth
+    return:
+      type: System.Single
+    content.vb: Protected maxHealth As Single
+- uid: VAMP.Structs.Unit.aggroRadius
+  commentId: F:VAMP.Structs.Unit.aggroRadius
+  id: aggroRadius
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: aggroRadius
+  nameWithType: Unit.aggroRadius
+  fullName: VAMP.Structs.Unit.aggroRadius
+  type: Field
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: aggroRadius
+    path: Structs/UnitData.cs
+    startLine: 17
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: protected float aggroRadius
+    return:
+      type: System.Single
+    content.vb: Protected aggroRadius As Single
+- uid: VAMP.Structs.Unit.knockbackResistance
+  commentId: F:VAMP.Structs.Unit.knockbackResistance
+  id: knockbackResistance
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: knockbackResistance
+  nameWithType: Unit.knockbackResistance
+  fullName: VAMP.Structs.Unit.knockbackResistance
+  type: Field
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: knockbackResistance
+    path: Structs/UnitData.cs
+    startLine: 18
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: protected bool knockbackResistance
+    return:
+      type: System.Boolean
+    content.vb: Protected knockbackResistance As Boolean
+- uid: VAMP.Structs.Unit.isRooted
+  commentId: F:VAMP.Structs.Unit.isRooted
+  id: isRooted
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: isRooted
+  nameWithType: Unit.isRooted
+  fullName: VAMP.Structs.Unit.isRooted
+  type: Field
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: isRooted
+    path: Structs/UnitData.cs
+    startLine: 19
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: protected bool isRooted
+    return:
+      type: System.Boolean
+    content.vb: Protected isRooted As Boolean
+- uid: VAMP.Structs.Unit.respawnTime
+  commentId: F:VAMP.Structs.Unit.respawnTime
+  id: respawnTime
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: respawnTime
+  nameWithType: Unit.respawnTime
+  fullName: VAMP.Structs.Unit.respawnTime
+  type: Field
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: respawnTime
+    path: Structs/UnitData.cs
+    startLine: 20
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: protected float respawnTime
+    return:
+      type: System.Single
+    content.vb: Protected respawnTime As Single
+- uid: VAMP.Structs.Unit.drawsAggro
+  commentId: F:VAMP.Structs.Unit.drawsAggro
+  id: drawsAggro
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: drawsAggro
+  nameWithType: Unit.drawsAggro
+  fullName: VAMP.Structs.Unit.drawsAggro
+  type: Field
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: drawsAggro
+    path: Structs/UnitData.cs
+    startLine: 21
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: protected bool drawsAggro
+    return:
+      type: System.Boolean
+    content.vb: Protected drawsAggro As Boolean
+- uid: VAMP.Structs.Unit.isTargetable
+  commentId: F:VAMP.Structs.Unit.isTargetable
+  id: isTargetable
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: isTargetable
+  nameWithType: Unit.isTargetable
+  fullName: VAMP.Structs.Unit.isTargetable
+  type: Field
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: isTargetable
+    path: Structs/UnitData.cs
+    startLine: 22
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: protected bool isTargetable
+    return:
+      type: System.Boolean
+    content.vb: Protected isTargetable As Boolean
+- uid: VAMP.Structs.Unit.isInvisible
+  commentId: F:VAMP.Structs.Unit.isInvisible
+  id: isInvisible
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: isInvisible
+  nameWithType: Unit.isInvisible
+  fullName: VAMP.Structs.Unit.isInvisible
+  type: Field
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: isInvisible
+    path: Structs/UnitData.cs
+    startLine: 23
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: protected bool isInvisible
+    return:
+      type: System.Boolean
+    content.vb: Protected isInvisible As Boolean
+- uid: VAMP.Structs.Unit.isInvulnerable
+  commentId: F:VAMP.Structs.Unit.isInvulnerable
+  id: isInvulnerable
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: isInvulnerable
+  nameWithType: Unit.isInvulnerable
+  fullName: VAMP.Structs.Unit.isInvulnerable
+  type: Field
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: isInvulnerable
+    path: Structs/UnitData.cs
+    startLine: 24
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: protected bool isInvulnerable
+    return:
+      type: System.Boolean
+    content.vb: Protected isInvulnerable As Boolean
+- uid: VAMP.Structs.Unit.abilityCastImpair
+  commentId: F:VAMP.Structs.Unit.abilityCastImpair
+  id: abilityCastImpair
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: abilityCastImpair
+  nameWithType: Unit.abilityCastImpair
+  fullName: VAMP.Structs.Unit.abilityCastImpair
+  type: Field
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: abilityCastImpair
+    path: Structs/UnitData.cs
+    startLine: 25
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: protected bool abilityCastImpair
+    return:
+      type: System.Boolean
+    content.vb: Protected abilityCastImpair As Boolean
+- uid: VAMP.Structs.Unit.dynamicCollision
+  commentId: F:VAMP.Structs.Unit.dynamicCollision
+  id: dynamicCollision
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: dynamicCollision
+  nameWithType: Unit.dynamicCollision
+  fullName: VAMP.Structs.Unit.dynamicCollision
+  type: Field
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: dynamicCollision
+    path: Structs/UnitData.cs
+    startLine: 26
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: protected bool dynamicCollision
+    return:
+      type: System.Boolean
+    content.vb: Protected dynamicCollision As Boolean
+- uid: VAMP.Structs.Unit.maxDistanceFromPreCombatPosition
+  commentId: F:VAMP.Structs.Unit.maxDistanceFromPreCombatPosition
+  id: maxDistanceFromPreCombatPosition
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: maxDistanceFromPreCombatPosition
+  nameWithType: Unit.maxDistanceFromPreCombatPosition
+  fullName: VAMP.Structs.Unit.maxDistanceFromPreCombatPosition
+  type: Field
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: maxDistanceFromPreCombatPosition
+    path: Structs/UnitData.cs
+    startLine: 27
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: protected float maxDistanceFromPreCombatPosition
+    return:
+      type: System.Single
+    content.vb: Protected maxDistanceFromPreCombatPosition As Single
+- uid: VAMP.Structs.Unit.mapCollision
+  commentId: F:VAMP.Structs.Unit.mapCollision
+  id: mapCollision
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: mapCollision
+  nameWithType: Unit.mapCollision
+  fullName: VAMP.Structs.Unit.mapCollision
+  type: Field
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: mapCollision
+    path: Structs/UnitData.cs
+    startLine: 28
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: protected bool mapCollision
+    return:
+      type: System.Boolean
+    content.vb: Protected mapCollision As Boolean
+- uid: VAMP.Structs.Unit.gameMode
+  commentId: F:VAMP.Structs.Unit.gameMode
+  id: gameMode
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: gameMode
+  nameWithType: Unit.gameMode
+  fullName: VAMP.Structs.Unit.gameMode
+  type: Field
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: gameMode
+    path: Structs/UnitData.cs
+    startLine: 29
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: protected string gameMode
+    return:
+      type: System.String
+    content.vb: Protected gameMode As String
+- uid: VAMP.Structs.Unit.spawnDelay
+  commentId: F:VAMP.Structs.Unit.spawnDelay
+  id: spawnDelay
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: spawnDelay
+  nameWithType: Unit.spawnDelay
+  fullName: VAMP.Structs.Unit.spawnDelay
+  type: Field
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: spawnDelay
+    path: Structs/UnitData.cs
+    startLine: 30
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: protected int spawnDelay
+    return:
+      type: System.Int32
+    content.vb: Protected spawnDelay As Integer
+- uid: VAMP.Structs.Unit.softSpawn
+  commentId: F:VAMP.Structs.Unit.softSpawn
+  id: softSpawn
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: softSpawn
+  nameWithType: Unit.softSpawn
+  fullName: VAMP.Structs.Unit.softSpawn
+  type: Field
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: softSpawn
+    path: Structs/UnitData.cs
+    startLine: 31
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: protected bool softSpawn
+    return:
+      type: System.Boolean
+    content.vb: Protected softSpawn As Boolean
+- uid: VAMP.Structs.Unit.announceSpawn
+  commentId: F:VAMP.Structs.Unit.announceSpawn
+  id: announceSpawn
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: announceSpawn
+  nameWithType: Unit.announceSpawn
+  fullName: VAMP.Structs.Unit.announceSpawn
+  type: Field
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: announceSpawn
+    path: Structs/UnitData.cs
+    startLine: 32
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: protected bool announceSpawn
+    return:
+      type: System.Boolean
+    content.vb: Protected announceSpawn As Boolean
+- uid: VAMP.Structs.Unit.name
+  commentId: F:VAMP.Structs.Unit.name
+  id: name
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: name
+  nameWithType: Unit.name
+  fullName: VAMP.Structs.Unit.name
+  type: Field
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: name
+    path: Structs/UnitData.cs
+    startLine: 33
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: protected string name
+    return:
+      type: System.String
+    content.vb: Protected name As String
+- uid: VAMP.Structs.Unit.PrefabGuid
+  commentId: P:VAMP.Structs.Unit.PrefabGuid
+  id: PrefabGuid
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: PrefabGuid
+  nameWithType: Unit.PrefabGuid
+  fullName: VAMP.Structs.Unit.PrefabGuid
+  type: Property
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: PrefabGuid
+    path: Structs/UnitData.cs
+    startLine: 35
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: public PrefabGUID PrefabGuid { get; set; }
+    parameters: []
+    return:
+      type: Stunlock.Core.PrefabGUID
+    content.vb: Public Property PrefabGuid As PrefabGUID
+  overload: VAMP.Structs.Unit.PrefabGuid*
+- uid: VAMP.Structs.Unit.Team
+  commentId: P:VAMP.Structs.Unit.Team
+  id: Team
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: Team
+  nameWithType: Unit.Team
+  fullName: VAMP.Structs.Unit.Team
+  type: Property
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: Team
+    path: Structs/UnitData.cs
+    startLine: 36
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: public int Team { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Team As Integer
+  overload: VAMP.Structs.Unit.Team*
+- uid: VAMP.Structs.Unit.Level
+  commentId: P:VAMP.Structs.Unit.Level
+  id: Level
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: Level
+  nameWithType: Unit.Level
+  fullName: VAMP.Structs.Unit.Level
+  type: Property
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: Level
+    path: Structs/UnitData.cs
+    startLine: 37
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: public int Level { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Level As Integer
+  overload: VAMP.Structs.Unit.Level*
+- uid: VAMP.Structs.Unit.IsImmaterial
+  commentId: P:VAMP.Structs.Unit.IsImmaterial
+  id: IsImmaterial
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: IsImmaterial
+  nameWithType: Unit.IsImmaterial
+  fullName: VAMP.Structs.Unit.IsImmaterial
+  type: Property
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: IsImmaterial
+    path: Structs/UnitData.cs
+    startLine: 38
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: public bool IsImmaterial { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsImmaterial As Boolean
+  overload: VAMP.Structs.Unit.IsImmaterial*
+- uid: VAMP.Structs.Unit.IsInvulnerable
+  commentId: P:VAMP.Structs.Unit.IsInvulnerable
+  id: IsInvulnerable
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: IsInvulnerable
+  nameWithType: Unit.IsInvulnerable
+  fullName: VAMP.Structs.Unit.IsInvulnerable
+  type: Property
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: IsInvulnerable
+    path: Structs/UnitData.cs
+    startLine: 39
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: public bool IsInvulnerable { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsInvulnerable As Boolean
+  overload: VAMP.Structs.Unit.IsInvulnerable*
+- uid: VAMP.Structs.Unit.AbilityCastImpair
+  commentId: P:VAMP.Structs.Unit.AbilityCastImpair
+  id: AbilityCastImpair
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: AbilityCastImpair
+  nameWithType: Unit.AbilityCastImpair
+  fullName: VAMP.Structs.Unit.AbilityCastImpair
+  type: Property
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: AbilityCastImpair
+    path: Structs/UnitData.cs
+    startLine: 40
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: public bool AbilityCastImpair { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property AbilityCastImpair As Boolean
+  overload: VAMP.Structs.Unit.AbilityCastImpair*
+- uid: VAMP.Structs.Unit.MaxHealth
+  commentId: P:VAMP.Structs.Unit.MaxHealth
+  id: MaxHealth
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: MaxHealth
+  nameWithType: Unit.MaxHealth
+  fullName: VAMP.Structs.Unit.MaxHealth
+  type: Property
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: MaxHealth
+    path: Structs/UnitData.cs
+    startLine: 41
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: public float MaxHealth { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property MaxHealth As Single
+  overload: VAMP.Structs.Unit.MaxHealth*
+- uid: VAMP.Structs.Unit.AggroRadius
+  commentId: P:VAMP.Structs.Unit.AggroRadius
+  id: AggroRadius
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: AggroRadius
+  nameWithType: Unit.AggroRadius
+  fullName: VAMP.Structs.Unit.AggroRadius
+  type: Property
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: AggroRadius
+    path: Structs/UnitData.cs
+    startLine: 42
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: public float AggroRadius { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property AggroRadius As Single
+  overload: VAMP.Structs.Unit.AggroRadius*
+- uid: VAMP.Structs.Unit.KnockbackResistance
+  commentId: P:VAMP.Structs.Unit.KnockbackResistance
+  id: KnockbackResistance
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: KnockbackResistance
+  nameWithType: Unit.KnockbackResistance
+  fullName: VAMP.Structs.Unit.KnockbackResistance
+  type: Property
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: KnockbackResistance
+    path: Structs/UnitData.cs
+    startLine: 43
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: public bool KnockbackResistance { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property KnockbackResistance As Boolean
+  overload: VAMP.Structs.Unit.KnockbackResistance*
+- uid: VAMP.Structs.Unit.IsRooted
+  commentId: P:VAMP.Structs.Unit.IsRooted
+  id: IsRooted
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: IsRooted
+  nameWithType: Unit.IsRooted
+  fullName: VAMP.Structs.Unit.IsRooted
+  type: Property
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: IsRooted
+    path: Structs/UnitData.cs
+    startLine: 44
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: public bool IsRooted { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsRooted As Boolean
+  overload: VAMP.Structs.Unit.IsRooted*
+- uid: VAMP.Structs.Unit.RespawnTime
+  commentId: P:VAMP.Structs.Unit.RespawnTime
+  id: RespawnTime
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: RespawnTime
+  nameWithType: Unit.RespawnTime
+  fullName: VAMP.Structs.Unit.RespawnTime
+  type: Property
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: RespawnTime
+    path: Structs/UnitData.cs
+    startLine: 45
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: public float RespawnTime { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property RespawnTime As Single
+  overload: VAMP.Structs.Unit.RespawnTime*
+- uid: VAMP.Structs.Unit.DrawsAggro
+  commentId: P:VAMP.Structs.Unit.DrawsAggro
+  id: DrawsAggro
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: DrawsAggro
+  nameWithType: Unit.DrawsAggro
+  fullName: VAMP.Structs.Unit.DrawsAggro
+  type: Property
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: DrawsAggro
+    path: Structs/UnitData.cs
+    startLine: 46
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: public bool DrawsAggro { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property DrawsAggro As Boolean
+  overload: VAMP.Structs.Unit.DrawsAggro*
+- uid: VAMP.Structs.Unit.DynamicCollision
+  commentId: P:VAMP.Structs.Unit.DynamicCollision
+  id: DynamicCollision
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: DynamicCollision
+  nameWithType: Unit.DynamicCollision
+  fullName: VAMP.Structs.Unit.DynamicCollision
+  type: Property
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: DynamicCollision
+    path: Structs/UnitData.cs
+    startLine: 47
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: public bool DynamicCollision { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property DynamicCollision As Boolean
+  overload: VAMP.Structs.Unit.DynamicCollision*
+- uid: VAMP.Structs.Unit.MaxDistanceFromPreCombatPosition
+  commentId: P:VAMP.Structs.Unit.MaxDistanceFromPreCombatPosition
+  id: MaxDistanceFromPreCombatPosition
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: MaxDistanceFromPreCombatPosition
+  nameWithType: Unit.MaxDistanceFromPreCombatPosition
+  fullName: VAMP.Structs.Unit.MaxDistanceFromPreCombatPosition
+  type: Property
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: MaxDistanceFromPreCombatPosition
+    path: Structs/UnitData.cs
+    startLine: 48
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: public float MaxDistanceFromPreCombatPosition { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property MaxDistanceFromPreCombatPosition As Single
+  overload: VAMP.Structs.Unit.MaxDistanceFromPreCombatPosition*
+- uid: VAMP.Structs.Unit.MapCollision
+  commentId: P:VAMP.Structs.Unit.MapCollision
+  id: MapCollision
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: MapCollision
+  nameWithType: Unit.MapCollision
+  fullName: VAMP.Structs.Unit.MapCollision
+  type: Property
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: MapCollision
+    path: Structs/UnitData.cs
+    startLine: 49
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: public bool MapCollision { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property MapCollision As Boolean
+  overload: VAMP.Structs.Unit.MapCollision*
+- uid: VAMP.Structs.Unit.IsTargetable
+  commentId: P:VAMP.Structs.Unit.IsTargetable
+  id: IsTargetable
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: IsTargetable
+  nameWithType: Unit.IsTargetable
+  fullName: VAMP.Structs.Unit.IsTargetable
+  type: Property
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: IsTargetable
+    path: Structs/UnitData.cs
+    startLine: 50
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: public bool IsTargetable { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsTargetable As Boolean
+  overload: VAMP.Structs.Unit.IsTargetable*
+- uid: VAMP.Structs.Unit.Category
+  commentId: P:VAMP.Structs.Unit.Category
+  id: Category
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: Category
+  nameWithType: Unit.Category
+  fullName: VAMP.Structs.Unit.Category
+  type: Property
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: Category
+    path: Structs/UnitData.cs
+    startLine: 51
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: public string Category { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Category As String
+  overload: VAMP.Structs.Unit.Category*
+- uid: VAMP.Structs.Unit.AnnounceSpawn
+  commentId: P:VAMP.Structs.Unit.AnnounceSpawn
+  id: AnnounceSpawn
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: AnnounceSpawn
+  nameWithType: Unit.AnnounceSpawn
+  fullName: VAMP.Structs.Unit.AnnounceSpawn
+  type: Property
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: AnnounceSpawn
+    path: Structs/UnitData.cs
+    startLine: 52
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: public bool AnnounceSpawn { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property AnnounceSpawn As Boolean
+  overload: VAMP.Structs.Unit.AnnounceSpawn*
+- uid: VAMP.Structs.Unit.SpawnDelay
+  commentId: P:VAMP.Structs.Unit.SpawnDelay
+  id: SpawnDelay
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: SpawnDelay
+  nameWithType: Unit.SpawnDelay
+  fullName: VAMP.Structs.Unit.SpawnDelay
+  type: Property
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: SpawnDelay
+    path: Structs/UnitData.cs
+    startLine: 53
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: public int SpawnDelay { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property SpawnDelay As Integer
+  overload: VAMP.Structs.Unit.SpawnDelay*
+- uid: VAMP.Structs.Unit.SoftSpawn
+  commentId: P:VAMP.Structs.Unit.SoftSpawn
+  id: SoftSpawn
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: SoftSpawn
+  nameWithType: Unit.SoftSpawn
+  fullName: VAMP.Structs.Unit.SoftSpawn
+  type: Property
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: SoftSpawn
+    path: Structs/UnitData.cs
+    startLine: 54
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: public bool SoftSpawn { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property SoftSpawn As Boolean
+  overload: VAMP.Structs.Unit.SoftSpawn*
+- uid: VAMP.Structs.Unit.Name
+  commentId: P:VAMP.Structs.Unit.Name
+  id: Name
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: Unit.Name
+  fullName: VAMP.Structs.Unit.Name
+  type: Property
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: Name
+    path: Structs/UnitData.cs
+    startLine: 55
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: VAMP.Structs.Unit.Name*
+- uid: VAMP.Structs.Unit.#ctor(Stunlock.Core.PrefabGUID,System.Int32,System.Int32)
+  commentId: M:VAMP.Structs.Unit.#ctor(Stunlock.Core.PrefabGUID,System.Int32,System.Int32)
+  id: '#ctor(Stunlock.Core.PrefabGUID,System.Int32,System.Int32)'
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: Unit(PrefabGUID, int, int)
+  nameWithType: Unit.Unit(PrefabGUID, int, int)
+  fullName: VAMP.Structs.Unit.Unit(Stunlock.Core.PrefabGUID, int, int)
+  type: Constructor
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: .ctor
+    path: Structs/UnitData.cs
+    startLine: 58
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: public Unit(PrefabGUID prefabGuid, int team = 10, int level = -1)
+    parameters:
+    - id: prefabGuid
+      type: Stunlock.Core.PrefabGUID
+    - id: team
+      type: System.Int32
+    - id: level
+      type: System.Int32
+    content.vb: Public Sub New(prefabGuid As PrefabGUID, team As Integer = 10, level As Integer = -1)
+  overload: VAMP.Structs.Unit.#ctor*
+  nameWithType.vb: Unit.New(PrefabGUID, Integer, Integer)
+  fullName.vb: VAMP.Structs.Unit.New(Stunlock.Core.PrefabGUID, Integer, Integer)
+  name.vb: New(PrefabGUID, Integer, Integer)
+- uid: VAMP.Structs.Unit.Modify(Unity.Entities.Entity,Unity.Entities.Entity)
+  commentId: M:VAMP.Structs.Unit.Modify(Unity.Entities.Entity,Unity.Entities.Entity)
+  id: Modify(Unity.Entities.Entity,Unity.Entities.Entity)
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: Modify(Entity, Entity)
+  nameWithType: Unit.Modify(Entity, Entity)
+  fullName: VAMP.Structs.Unit.Modify(Unity.Entities.Entity, Unity.Entities.Entity)
+  type: Method
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: Modify
+    path: Structs/UnitData.cs
+    startLine: 65
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: public virtual void Modify(Entity e, Entity buffEntity)
+    parameters:
+    - id: e
+      type: Unity.Entities.Entity
+    - id: buffEntity
+      type: Unity.Entities.Entity
+    content.vb: Public Overridable Sub Modify(e As Entity, buffEntity As Entity)
+  overload: VAMP.Structs.Unit.Modify*
+- uid: VAMP.Structs.Unit.Modify(Unity.Entities.Entity)
+  commentId: M:VAMP.Structs.Unit.Modify(Unity.Entities.Entity)
+  id: Modify(Unity.Entities.Entity)
+  parent: VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: Modify(Entity)
+  nameWithType: Unit.Modify(Entity)
+  fullName: VAMP.Structs.Unit.Modify(Unity.Entities.Entity)
+  type: Method
+  source:
+    remote:
+      path: Structs/UnitData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: Modify
+    path: Structs/UnitData.cs
+    startLine: 70
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: public virtual void Modify(Entity e)
+    parameters:
+    - id: e
+      type: Unity.Entities.Entity
+    content.vb: Public Overridable Sub Modify(e As Entity)
+  overload: VAMP.Structs.Unit.Modify*
+references:
+- uid: VAMP.Structs
+  commentId: N:VAMP.Structs
+  href: VAMP.html
+  name: VAMP.Structs
+  nameWithType: VAMP.Structs
+  fullName: VAMP.Structs
+  spec.csharp:
+  - uid: VAMP
+    name: VAMP
+    href: VAMP.html
+  - name: .
+  - uid: VAMP.Structs
+    name: Structs
+    href: VAMP.Structs.html
+  spec.vb:
+  - uid: VAMP
+    name: VAMP
+    href: VAMP.html
+  - name: .
+  - uid: VAMP.Structs
+    name: Structs
+    href: VAMP.Structs.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Stunlock.Core.PrefabGUID
+  commentId: T:Stunlock.Core.PrefabGUID
+  parent: Stunlock.Core
+  isExternal: true
+  name: PrefabGUID
+  nameWithType: PrefabGUID
+  fullName: Stunlock.Core.PrefabGUID
+- uid: Stunlock.Core
+  commentId: N:Stunlock.Core
+  isExternal: true
+  name: Stunlock.Core
+  nameWithType: Stunlock.Core
+  fullName: Stunlock.Core
+  spec.csharp:
+  - uid: Stunlock
+    name: Stunlock
+    isExternal: true
+  - name: .
+  - uid: Stunlock.Core
+    name: Core
+    isExternal: true
+  spec.vb:
+  - uid: Stunlock
+    name: Stunlock
+    isExternal: true
+  - name: .
+  - uid: Stunlock.Core
+    name: Core
+    isExternal: true
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: VAMP.Structs.Unit.PrefabGuid*
+  commentId: Overload:VAMP.Structs.Unit.PrefabGuid
+  href: VAMP.Structs.Unit.html#VAMP_Structs_Unit_PrefabGuid
+  name: PrefabGuid
+  nameWithType: Unit.PrefabGuid
+  fullName: VAMP.Structs.Unit.PrefabGuid
+- uid: VAMP.Structs.Unit.Team*
+  commentId: Overload:VAMP.Structs.Unit.Team
+  href: VAMP.Structs.Unit.html#VAMP_Structs_Unit_Team
+  name: Team
+  nameWithType: Unit.Team
+  fullName: VAMP.Structs.Unit.Team
+- uid: VAMP.Structs.Unit.Level*
+  commentId: Overload:VAMP.Structs.Unit.Level
+  href: VAMP.Structs.Unit.html#VAMP_Structs_Unit_Level
+  name: Level
+  nameWithType: Unit.Level
+  fullName: VAMP.Structs.Unit.Level
+- uid: VAMP.Structs.Unit.IsImmaterial*
+  commentId: Overload:VAMP.Structs.Unit.IsImmaterial
+  href: VAMP.Structs.Unit.html#VAMP_Structs_Unit_IsImmaterial
+  name: IsImmaterial
+  nameWithType: Unit.IsImmaterial
+  fullName: VAMP.Structs.Unit.IsImmaterial
+- uid: VAMP.Structs.Unit.IsInvulnerable*
+  commentId: Overload:VAMP.Structs.Unit.IsInvulnerable
+  href: VAMP.Structs.Unit.html#VAMP_Structs_Unit_IsInvulnerable
+  name: IsInvulnerable
+  nameWithType: Unit.IsInvulnerable
+  fullName: VAMP.Structs.Unit.IsInvulnerable
+- uid: VAMP.Structs.Unit.AbilityCastImpair*
+  commentId: Overload:VAMP.Structs.Unit.AbilityCastImpair
+  href: VAMP.Structs.Unit.html#VAMP_Structs_Unit_AbilityCastImpair
+  name: AbilityCastImpair
+  nameWithType: Unit.AbilityCastImpair
+  fullName: VAMP.Structs.Unit.AbilityCastImpair
+- uid: VAMP.Structs.Unit.MaxHealth*
+  commentId: Overload:VAMP.Structs.Unit.MaxHealth
+  href: VAMP.Structs.Unit.html#VAMP_Structs_Unit_MaxHealth
+  name: MaxHealth
+  nameWithType: Unit.MaxHealth
+  fullName: VAMP.Structs.Unit.MaxHealth
+- uid: VAMP.Structs.Unit.AggroRadius*
+  commentId: Overload:VAMP.Structs.Unit.AggroRadius
+  href: VAMP.Structs.Unit.html#VAMP_Structs_Unit_AggroRadius
+  name: AggroRadius
+  nameWithType: Unit.AggroRadius
+  fullName: VAMP.Structs.Unit.AggroRadius
+- uid: VAMP.Structs.Unit.KnockbackResistance*
+  commentId: Overload:VAMP.Structs.Unit.KnockbackResistance
+  href: VAMP.Structs.Unit.html#VAMP_Structs_Unit_KnockbackResistance
+  name: KnockbackResistance
+  nameWithType: Unit.KnockbackResistance
+  fullName: VAMP.Structs.Unit.KnockbackResistance
+- uid: VAMP.Structs.Unit.IsRooted*
+  commentId: Overload:VAMP.Structs.Unit.IsRooted
+  href: VAMP.Structs.Unit.html#VAMP_Structs_Unit_IsRooted
+  name: IsRooted
+  nameWithType: Unit.IsRooted
+  fullName: VAMP.Structs.Unit.IsRooted
+- uid: VAMP.Structs.Unit.RespawnTime*
+  commentId: Overload:VAMP.Structs.Unit.RespawnTime
+  href: VAMP.Structs.Unit.html#VAMP_Structs_Unit_RespawnTime
+  name: RespawnTime
+  nameWithType: Unit.RespawnTime
+  fullName: VAMP.Structs.Unit.RespawnTime
+- uid: VAMP.Structs.Unit.DrawsAggro*
+  commentId: Overload:VAMP.Structs.Unit.DrawsAggro
+  href: VAMP.Structs.Unit.html#VAMP_Structs_Unit_DrawsAggro
+  name: DrawsAggro
+  nameWithType: Unit.DrawsAggro
+  fullName: VAMP.Structs.Unit.DrawsAggro
+- uid: VAMP.Structs.Unit.DynamicCollision*
+  commentId: Overload:VAMP.Structs.Unit.DynamicCollision
+  href: VAMP.Structs.Unit.html#VAMP_Structs_Unit_DynamicCollision
+  name: DynamicCollision
+  nameWithType: Unit.DynamicCollision
+  fullName: VAMP.Structs.Unit.DynamicCollision
+- uid: VAMP.Structs.Unit.MaxDistanceFromPreCombatPosition*
+  commentId: Overload:VAMP.Structs.Unit.MaxDistanceFromPreCombatPosition
+  href: VAMP.Structs.Unit.html#VAMP_Structs_Unit_MaxDistanceFromPreCombatPosition
+  name: MaxDistanceFromPreCombatPosition
+  nameWithType: Unit.MaxDistanceFromPreCombatPosition
+  fullName: VAMP.Structs.Unit.MaxDistanceFromPreCombatPosition
+- uid: VAMP.Structs.Unit.MapCollision*
+  commentId: Overload:VAMP.Structs.Unit.MapCollision
+  href: VAMP.Structs.Unit.html#VAMP_Structs_Unit_MapCollision
+  name: MapCollision
+  nameWithType: Unit.MapCollision
+  fullName: VAMP.Structs.Unit.MapCollision
+- uid: VAMP.Structs.Unit.IsTargetable*
+  commentId: Overload:VAMP.Structs.Unit.IsTargetable
+  href: VAMP.Structs.Unit.html#VAMP_Structs_Unit_IsTargetable
+  name: IsTargetable
+  nameWithType: Unit.IsTargetable
+  fullName: VAMP.Structs.Unit.IsTargetable
+- uid: VAMP.Structs.Unit.Category*
+  commentId: Overload:VAMP.Structs.Unit.Category
+  href: VAMP.Structs.Unit.html#VAMP_Structs_Unit_Category
+  name: Category
+  nameWithType: Unit.Category
+  fullName: VAMP.Structs.Unit.Category
+- uid: VAMP.Structs.Unit.AnnounceSpawn*
+  commentId: Overload:VAMP.Structs.Unit.AnnounceSpawn
+  href: VAMP.Structs.Unit.html#VAMP_Structs_Unit_AnnounceSpawn
+  name: AnnounceSpawn
+  nameWithType: Unit.AnnounceSpawn
+  fullName: VAMP.Structs.Unit.AnnounceSpawn
+- uid: VAMP.Structs.Unit.SpawnDelay*
+  commentId: Overload:VAMP.Structs.Unit.SpawnDelay
+  href: VAMP.Structs.Unit.html#VAMP_Structs_Unit_SpawnDelay
+  name: SpawnDelay
+  nameWithType: Unit.SpawnDelay
+  fullName: VAMP.Structs.Unit.SpawnDelay
+- uid: VAMP.Structs.Unit.SoftSpawn*
+  commentId: Overload:VAMP.Structs.Unit.SoftSpawn
+  href: VAMP.Structs.Unit.html#VAMP_Structs_Unit_SoftSpawn
+  name: SoftSpawn
+  nameWithType: Unit.SoftSpawn
+  fullName: VAMP.Structs.Unit.SoftSpawn
+- uid: VAMP.Structs.Unit.Name*
+  commentId: Overload:VAMP.Structs.Unit.Name
+  href: VAMP.Structs.Unit.html#VAMP_Structs_Unit_Name
+  name: Name
+  nameWithType: Unit.Name
+  fullName: VAMP.Structs.Unit.Name
+- uid: VAMP.Structs.Unit.#ctor*
+  commentId: Overload:VAMP.Structs.Unit.#ctor
+  href: VAMP.Structs.Unit.html#VAMP_Structs_Unit__ctor_Stunlock_Core_PrefabGUID_System_Int32_System_Int32_
+  name: Unit
+  nameWithType: Unit.Unit
+  fullName: VAMP.Structs.Unit.Unit
+  nameWithType.vb: Unit.New
+  fullName.vb: VAMP.Structs.Unit.New
+  name.vb: New
+- uid: VAMP.Structs.Unit.Modify*
+  commentId: Overload:VAMP.Structs.Unit.Modify
+  href: VAMP.Structs.Unit.html#VAMP_Structs_Unit_Modify_Unity_Entities_Entity_Unity_Entities_Entity_
+  name: Modify
+  nameWithType: Unit.Modify
+  fullName: VAMP.Structs.Unit.Modify
+- uid: Unity.Entities.Entity
+  commentId: T:Unity.Entities.Entity
+  parent: Unity.Entities
+  isExternal: true
+  name: Entity
+  nameWithType: Entity
+  fullName: Unity.Entities.Entity
+- uid: Unity.Entities
+  commentId: N:Unity.Entities
+  isExternal: true
+  name: Unity.Entities
+  nameWithType: Unity.Entities
+  fullName: Unity.Entities
+  spec.csharp:
+  - uid: Unity
+    name: Unity
+    isExternal: true
+  - name: .
+  - uid: Unity.Entities
+    name: Entities
+    isExternal: true
+  spec.vb:
+  - uid: Unity
+    name: Unity
+    isExternal: true
+  - name: .
+  - uid: Unity.Entities
+    name: Entities
+    isExternal: true

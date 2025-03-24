@@ -1,0 +1,60 @@
+### YamlMime:ManagedReference
+items:
+- uid: VAMP.Data
+  commentId: N:VAMP.Data
+  id: VAMP.Data
+  children:
+  - VAMP.Data.Prefabs
+  - VAMP.Data.TerritoryAlignment
+  - VAMP.Data.WorldRegions
+  langs:
+  - csharp
+  - vb
+  name: VAMP.Data
+  nameWithType: VAMP.Data
+  fullName: VAMP.Data
+  type: Namespace
+  assemblies:
+  - VAMP
+references:
+- uid: VAMP.Data.Prefabs
+  commentId: T:VAMP.Data.Prefabs
+  href: VAMP.Data.Prefabs.html
+  name: Prefabs
+  nameWithType: Prefabs
+  fullName: VAMP.Data.Prefabs
+- uid: VAMP.Data.TerritoryAlignment
+  commentId: T:VAMP.Data.TerritoryAlignment
+  parent: VAMP.Data
+  href: VAMP.Data.TerritoryAlignment.html
+  name: TerritoryAlignment
+  nameWithType: TerritoryAlignment
+  fullName: VAMP.Data.TerritoryAlignment
+- uid: VAMP.Data.WorldRegions
+  commentId: T:VAMP.Data.WorldRegions
+  href: VAMP.Data.WorldRegions.html
+  name: WorldRegions
+  nameWithType: WorldRegions
+  fullName: VAMP.Data.WorldRegions
+- uid: VAMP.Data
+  commentId: N:VAMP.Data
+  href: VAMP.html
+  name: VAMP.Data
+  nameWithType: VAMP.Data
+  fullName: VAMP.Data
+  spec.csharp:
+  - uid: VAMP
+    name: VAMP
+    href: VAMP.html
+  - name: .
+  - uid: VAMP.Data
+    name: Data
+    href: VAMP.Data.html
+  spec.vb:
+  - uid: VAMP
+    name: VAMP
+    href: VAMP.html
+  - name: .
+  - uid: VAMP.Data
+    name: Data
+    href: VAMP.Data.html

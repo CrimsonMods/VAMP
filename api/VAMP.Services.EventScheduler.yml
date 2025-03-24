@@ -1,0 +1,836 @@
+### YamlMime:ManagedReference
+items:
+- uid: VAMP.Services.EventScheduler
+  commentId: T:VAMP.Services.EventScheduler
+  id: EventScheduler
+  parent: VAMP.Services
+  children:
+  - VAMP.Services.EventScheduler.AddVote(System.String)
+  - VAMP.Services.EventScheduler.Current
+  - VAMP.Services.EventScheduler.IsVoting
+  - VAMP.Services.EventScheduler.OnEventStarted
+  - VAMP.Services.EventScheduler.Past
+  - VAMP.Services.EventScheduler.Possible
+  - VAMP.Services.EventScheduler.Register(VAMP.Structs.Event)
+  - VAMP.Services.EventScheduler.ScheduleLoop
+  - VAMP.Services.EventScheduler.StartVote(VAMP.Structs.Event)
+  langs:
+  - csharp
+  - vb
+  name: EventScheduler
+  nameWithType: EventScheduler
+  fullName: VAMP.Services.EventScheduler
+  type: Class
+  source:
+    remote:
+      path: Services/EventScheduler.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: EventScheduler
+    path: Services/EventScheduler.cs
+    startLine: 11
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public static class EventScheduler
+    content.vb: Public Module EventScheduler
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: VAMP.Services.EventScheduler.OnEventStarted
+  commentId: F:VAMP.Services.EventScheduler.OnEventStarted
+  id: OnEventStarted
+  parent: VAMP.Services.EventScheduler
+  langs:
+  - csharp
+  - vb
+  name: OnEventStarted
+  nameWithType: EventScheduler.OnEventStarted
+  fullName: VAMP.Services.EventScheduler.OnEventStarted
+  type: Field
+  source:
+    remote:
+      path: Services/EventScheduler.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: OnEventStarted
+    path: Services/EventScheduler.cs
+    startLine: 13
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public static Action<Event> OnEventStarted
+    return:
+      type: System.Action{VAMP.Structs.Event}
+    content.vb: Public Shared OnEventStarted As Action(Of [Event])
+- uid: VAMP.Services.EventScheduler.Past
+  commentId: F:VAMP.Services.EventScheduler.Past
+  id: Past
+  parent: VAMP.Services.EventScheduler
+  langs:
+  - csharp
+  - vb
+  name: Past
+  nameWithType: EventScheduler.Past
+  fullName: VAMP.Services.EventScheduler.Past
+  type: Field
+  source:
+    remote:
+      path: Services/EventScheduler.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: Past
+    path: Services/EventScheduler.cs
+    startLine: 14
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public static List<Event> Past
+    return:
+      type: System.Collections.Generic.List{VAMP.Structs.Event}
+    content.vb: Public Shared Past As List(Of [Event])
+- uid: VAMP.Services.EventScheduler.Current
+  commentId: F:VAMP.Services.EventScheduler.Current
+  id: Current
+  parent: VAMP.Services.EventScheduler
+  langs:
+  - csharp
+  - vb
+  name: Current
+  nameWithType: EventScheduler.Current
+  fullName: VAMP.Services.EventScheduler.Current
+  type: Field
+  source:
+    remote:
+      path: Services/EventScheduler.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: Current
+    path: Services/EventScheduler.cs
+    startLine: 15
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public static List<Event> Current
+    return:
+      type: System.Collections.Generic.List{VAMP.Structs.Event}
+    content.vb: Public Shared Current As List(Of [Event])
+- uid: VAMP.Services.EventScheduler.Possible
+  commentId: F:VAMP.Services.EventScheduler.Possible
+  id: Possible
+  parent: VAMP.Services.EventScheduler
+  langs:
+  - csharp
+  - vb
+  name: Possible
+  nameWithType: EventScheduler.Possible
+  fullName: VAMP.Services.EventScheduler.Possible
+  type: Field
+  source:
+    remote:
+      path: Services/EventScheduler.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: Possible
+    path: Services/EventScheduler.cs
+    startLine: 16
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public static List<Event> Possible
+    return:
+      type: System.Collections.Generic.List{VAMP.Structs.Event}
+    content.vb: Public Shared Possible As List(Of [Event])
+- uid: VAMP.Services.EventScheduler.ScheduleLoop
+  commentId: M:VAMP.Services.EventScheduler.ScheduleLoop
+  id: ScheduleLoop
+  parent: VAMP.Services.EventScheduler
+  langs:
+  - csharp
+  - vb
+  name: ScheduleLoop()
+  nameWithType: EventScheduler.ScheduleLoop()
+  fullName: VAMP.Services.EventScheduler.ScheduleLoop()
+  type: Method
+  source:
+    remote:
+      path: Services/EventScheduler.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: ScheduleLoop
+    path: Services/EventScheduler.cs
+    startLine: 21
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public static IEnumerator ScheduleLoop()
+    return:
+      type: System.Collections.IEnumerator
+    content.vb: Public Shared Function ScheduleLoop() As IEnumerator
+  overload: VAMP.Services.EventScheduler.ScheduleLoop*
+- uid: VAMP.Services.EventScheduler.Register(VAMP.Structs.Event)
+  commentId: M:VAMP.Services.EventScheduler.Register(VAMP.Structs.Event)
+  id: Register(VAMP.Structs.Event)
+  parent: VAMP.Services.EventScheduler
+  langs:
+  - csharp
+  - vb
+  name: Register(Event)
+  nameWithType: EventScheduler.Register(Event)
+  fullName: VAMP.Services.EventScheduler.Register(VAMP.Structs.Event)
+  type: Method
+  source:
+    remote:
+      path: Services/EventScheduler.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: Register
+    path: Services/EventScheduler.cs
+    startLine: 38
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public static void Register(Event e)
+    parameters:
+    - id: e
+      type: VAMP.Structs.Event
+    content.vb: Public Shared Sub Register(e As [Event])
+  overload: VAMP.Services.EventScheduler.Register*
+- uid: VAMP.Services.EventScheduler.StartVote(VAMP.Structs.Event)
+  commentId: M:VAMP.Services.EventScheduler.StartVote(VAMP.Structs.Event)
+  id: StartVote(VAMP.Structs.Event)
+  parent: VAMP.Services.EventScheduler
+  langs:
+  - csharp
+  - vb
+  name: StartVote(Event)
+  nameWithType: EventScheduler.StartVote(Event)
+  fullName: VAMP.Services.EventScheduler.StartVote(VAMP.Structs.Event)
+  type: Method
+  source:
+    remote:
+      path: Services/EventScheduler.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: StartVote
+    path: Services/EventScheduler.cs
+    startLine: 77
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public static void StartVote(Event e)
+    parameters:
+    - id: e
+      type: VAMP.Structs.Event
+    content.vb: Public Shared Sub StartVote(e As [Event])
+  overload: VAMP.Services.EventScheduler.StartVote*
+- uid: VAMP.Services.EventScheduler.AddVote(System.String)
+  commentId: M:VAMP.Services.EventScheduler.AddVote(System.String)
+  id: AddVote(System.String)
+  parent: VAMP.Services.EventScheduler
+  langs:
+  - csharp
+  - vb
+  name: AddVote(string)
+  nameWithType: EventScheduler.AddVote(string)
+  fullName: VAMP.Services.EventScheduler.AddVote(string)
+  type: Method
+  source:
+    remote:
+      path: Services/EventScheduler.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: AddVote
+    path: Services/EventScheduler.cs
+    startLine: 83
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public static void AddVote(string characterName)
+    parameters:
+    - id: characterName
+      type: System.String
+    content.vb: Public Shared Sub AddVote(characterName As String)
+  overload: VAMP.Services.EventScheduler.AddVote*
+  nameWithType.vb: EventScheduler.AddVote(String)
+  fullName.vb: VAMP.Services.EventScheduler.AddVote(String)
+  name.vb: AddVote(String)
+- uid: VAMP.Services.EventScheduler.IsVoting
+  commentId: M:VAMP.Services.EventScheduler.IsVoting
+  id: IsVoting
+  parent: VAMP.Services.EventScheduler
+  langs:
+  - csharp
+  - vb
+  name: IsVoting()
+  nameWithType: EventScheduler.IsVoting()
+  fullName: VAMP.Services.EventScheduler.IsVoting()
+  type: Method
+  source:
+    remote:
+      path: Services/EventScheduler.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: IsVoting
+    path: Services/EventScheduler.cs
+    startLine: 97
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public static bool IsVoting()
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function IsVoting() As Boolean
+  overload: VAMP.Services.EventScheduler.IsVoting*
+references:
+- uid: VAMP.Services
+  commentId: N:VAMP.Services
+  href: VAMP.html
+  name: VAMP.Services
+  nameWithType: VAMP.Services
+  fullName: VAMP.Services
+  spec.csharp:
+  - uid: VAMP
+    name: VAMP
+    href: VAMP.html
+  - name: .
+  - uid: VAMP.Services
+    name: Services
+    href: VAMP.Services.html
+  spec.vb:
+  - uid: VAMP
+    name: VAMP
+    href: VAMP.html
+  - name: .
+  - uid: VAMP.Services
+    name: Services
+    href: VAMP.Services.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Action{VAMP.Structs.Event}
+  commentId: T:System.Action{VAMP.Structs.Event}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<Event>
+  nameWithType: Action<Event>
+  fullName: System.Action<VAMP.Structs.Event>
+  nameWithType.vb: Action(Of Event)
+  fullName.vb: System.Action(Of VAMP.Structs.Event)
+  name.vb: Action(Of Event)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: VAMP.Structs.Event
+    name: Event
+    href: VAMP.Structs.Event.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: VAMP.Structs.Event
+    name: Event
+    href: VAMP.Structs.Event.html
+  - name: )
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic.List{VAMP.Structs.Event}
+  commentId: T:System.Collections.Generic.List{VAMP.Structs.Event}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Event>
+  nameWithType: List<Event>
+  fullName: System.Collections.Generic.List<VAMP.Structs.Event>
+  nameWithType.vb: List(Of Event)
+  fullName.vb: System.Collections.Generic.List(Of VAMP.Structs.Event)
+  name.vb: List(Of Event)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: VAMP.Structs.Event
+    name: Event
+    href: VAMP.Structs.Event.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: VAMP.Structs.Event
+    name: Event
+    href: VAMP.Structs.Event.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: VAMP.Services.EventScheduler.ScheduleLoop*
+  commentId: Overload:VAMP.Services.EventScheduler.ScheduleLoop
+  href: VAMP.Services.EventScheduler.html#VAMP_Services_EventScheduler_ScheduleLoop
+  name: ScheduleLoop
+  nameWithType: EventScheduler.ScheduleLoop
+  fullName: VAMP.Services.EventScheduler.ScheduleLoop
+- uid: System.Collections.IEnumerator
+  commentId: T:System.Collections.IEnumerator
+  parent: System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerator
+  name: IEnumerator
+  nameWithType: IEnumerator
+  fullName: System.Collections.IEnumerator
+- uid: System.Collections
+  commentId: N:System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections
+  nameWithType: System.Collections
+  fullName: System.Collections
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+- uid: VAMP.Services.EventScheduler.Register*
+  commentId: Overload:VAMP.Services.EventScheduler.Register
+  href: VAMP.Services.EventScheduler.html#VAMP_Services_EventScheduler_Register_VAMP_Structs_Event_
+  name: Register
+  nameWithType: EventScheduler.Register
+  fullName: VAMP.Services.EventScheduler.Register
+- uid: VAMP.Structs.Event
+  commentId: T:VAMP.Structs.Event
+  parent: VAMP.Structs
+  href: VAMP.Structs.Event.html
+  name: Event
+  nameWithType: Event
+  fullName: VAMP.Structs.Event
+- uid: VAMP.Structs
+  commentId: N:VAMP.Structs
+  href: VAMP.html
+  name: VAMP.Structs
+  nameWithType: VAMP.Structs
+  fullName: VAMP.Structs
+  spec.csharp:
+  - uid: VAMP
+    name: VAMP
+    href: VAMP.html
+  - name: .
+  - uid: VAMP.Structs
+    name: Structs
+    href: VAMP.Structs.html
+  spec.vb:
+  - uid: VAMP
+    name: VAMP
+    href: VAMP.html
+  - name: .
+  - uid: VAMP.Structs
+    name: Structs
+    href: VAMP.Structs.html
+- uid: VAMP.Services.EventScheduler.StartVote*
+  commentId: Overload:VAMP.Services.EventScheduler.StartVote
+  href: VAMP.Services.EventScheduler.html#VAMP_Services_EventScheduler_StartVote_VAMP_Structs_Event_
+  name: StartVote
+  nameWithType: EventScheduler.StartVote
+  fullName: VAMP.Services.EventScheduler.StartVote
+- uid: VAMP.Services.EventScheduler.AddVote*
+  commentId: Overload:VAMP.Services.EventScheduler.AddVote
+  href: VAMP.Services.EventScheduler.html#VAMP_Services_EventScheduler_AddVote_System_String_
+  name: AddVote
+  nameWithType: EventScheduler.AddVote
+  fullName: VAMP.Services.EventScheduler.AddVote
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: VAMP.Services.EventScheduler.IsVoting*
+  commentId: Overload:VAMP.Services.EventScheduler.IsVoting
+  href: VAMP.Services.EventScheduler.html#VAMP_Services_EventScheduler_IsVoting
+  name: IsVoting
+  nameWithType: EventScheduler.IsVoting
+  fullName: VAMP.Services.EventScheduler.IsVoting
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean

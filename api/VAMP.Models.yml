@@ -1,0 +1,46 @@
+### YamlMime:ManagedReference
+items:
+- uid: VAMP.Models
+  commentId: N:VAMP.Models
+  id: VAMP.Models
+  children:
+  - VAMP.Models.Player
+  langs:
+  - csharp
+  - vb
+  name: VAMP.Models
+  nameWithType: VAMP.Models
+  fullName: VAMP.Models
+  type: Namespace
+  assemblies:
+  - VAMP
+references:
+- uid: VAMP.Models.Player
+  commentId: T:VAMP.Models.Player
+  parent: VAMP.Models
+  href: VAMP.Models.Player.html
+  name: Player
+  nameWithType: Player
+  fullName: VAMP.Models.Player
+- uid: VAMP.Models
+  commentId: N:VAMP.Models
+  href: VAMP.html
+  name: VAMP.Models
+  nameWithType: VAMP.Models
+  fullName: VAMP.Models
+  spec.csharp:
+  - uid: VAMP
+    name: VAMP
+    href: VAMP.html
+  - name: .
+  - uid: VAMP.Models
+    name: Models
+    href: VAMP.Models.html
+  spec.vb:
+  - uid: VAMP
+    name: VAMP
+    href: VAMP.html
+  - name: .
+  - uid: VAMP.Models
+    name: Models
+    href: VAMP.Models.html

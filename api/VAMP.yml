@@ -1,0 +1,51 @@
+### YamlMime:ManagedReference
+items:
+- uid: VAMP
+  commentId: N:VAMP
+  id: VAMP
+  children:
+  - VAMP.Core
+  - VAMP.Extensions
+  - VAMP.MyPluginInfo
+  - VAMP.Plugin
+  langs:
+  - csharp
+  - vb
+  name: VAMP
+  nameWithType: VAMP
+  fullName: VAMP
+  type: Namespace
+  assemblies:
+  - VAMP
+references:
+- uid: VAMP.Core
+  commentId: T:VAMP.Core
+  href: VAMP.Core.html
+  name: Core
+  nameWithType: Core
+  fullName: VAMP.Core
+- uid: VAMP.Extensions
+  commentId: T:VAMP.Extensions
+  href: VAMP.Extensions.html
+  name: Extensions
+  nameWithType: Extensions
+  fullName: VAMP.Extensions
+- uid: VAMP.Plugin
+  commentId: T:VAMP.Plugin
+  parent: VAMP
+  href: VAMP.Plugin.html
+  name: Plugin
+  nameWithType: Plugin
+  fullName: VAMP.Plugin
+- uid: VAMP.MyPluginInfo
+  commentId: T:VAMP.MyPluginInfo
+  href: VAMP.MyPluginInfo.html
+  name: MyPluginInfo
+  nameWithType: MyPluginInfo
+  fullName: VAMP.MyPluginInfo
+- uid: VAMP
+  commentId: N:VAMP
+  href: VAMP.html
+  name: VAMP
+  nameWithType: VAMP
+  fullName: VAMP

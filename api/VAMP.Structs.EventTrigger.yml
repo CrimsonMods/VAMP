@@ -1,0 +1,139 @@
+### YamlMime:ManagedReference
+items:
+- uid: VAMP.Structs.EventTrigger
+  commentId: T:VAMP.Structs.EventTrigger
+  id: EventTrigger
+  parent: VAMP.Structs
+  children:
+  - VAMP.Structs.EventTrigger.Daily
+  - VAMP.Structs.EventTrigger.Interval
+  - VAMP.Structs.EventTrigger.Preset
+  langs:
+  - csharp
+  - vb
+  name: EventTrigger
+  nameWithType: EventTrigger
+  fullName: VAMP.Structs.EventTrigger
+  type: Enum
+  source:
+    remote:
+      path: Structs/Event.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: EventTrigger
+    path: Structs/Event.cs
+    startLine: 18
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: public enum EventTrigger
+    content.vb: Public Enum EventTrigger
+- uid: VAMP.Structs.EventTrigger.Preset
+  commentId: F:VAMP.Structs.EventTrigger.Preset
+  id: Preset
+  parent: VAMP.Structs.EventTrigger
+  langs:
+  - csharp
+  - vb
+  name: Preset
+  nameWithType: EventTrigger.Preset
+  fullName: VAMP.Structs.EventTrigger.Preset
+  type: Field
+  source:
+    remote:
+      path: Structs/Event.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: Preset
+    path: Structs/Event.cs
+    startLine: 20
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: Preset = 0
+    return:
+      type: VAMP.Structs.EventTrigger
+- uid: VAMP.Structs.EventTrigger.Daily
+  commentId: F:VAMP.Structs.EventTrigger.Daily
+  id: Daily
+  parent: VAMP.Structs.EventTrigger
+  langs:
+  - csharp
+  - vb
+  name: Daily
+  nameWithType: EventTrigger.Daily
+  fullName: VAMP.Structs.EventTrigger.Daily
+  type: Field
+  source:
+    remote:
+      path: Structs/Event.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: Daily
+    path: Structs/Event.cs
+    startLine: 21
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: Daily = 1
+    return:
+      type: VAMP.Structs.EventTrigger
+- uid: VAMP.Structs.EventTrigger.Interval
+  commentId: F:VAMP.Structs.EventTrigger.Interval
+  id: Interval
+  parent: VAMP.Structs.EventTrigger
+  langs:
+  - csharp
+  - vb
+  name: Interval
+  nameWithType: EventTrigger.Interval
+  fullName: VAMP.Structs.EventTrigger.Interval
+  type: Field
+  source:
+    remote:
+      path: Structs/Event.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: Interval
+    path: Structs/Event.cs
+    startLine: 22
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: Interval = 2
+    return:
+      type: VAMP.Structs.EventTrigger
+references:
+- uid: VAMP.Structs
+  commentId: N:VAMP.Structs
+  href: VAMP.html
+  name: VAMP.Structs
+  nameWithType: VAMP.Structs
+  fullName: VAMP.Structs
+  spec.csharp:
+  - uid: VAMP
+    name: VAMP
+    href: VAMP.html
+  - name: .
+  - uid: VAMP.Structs
+    name: Structs
+    href: VAMP.Structs.html
+  spec.vb:
+  - uid: VAMP
+    name: VAMP
+    href: VAMP.html
+  - name: .
+  - uid: VAMP.Structs
+    name: Structs
+    href: VAMP.Structs.html
+- uid: VAMP.Structs.EventTrigger
+  commentId: T:VAMP.Structs.EventTrigger
+  parent: VAMP.Structs
+  href: VAMP.Structs.EventTrigger.html
+  name: EventTrigger
+  nameWithType: EventTrigger
+  fullName: VAMP.Structs.EventTrigger

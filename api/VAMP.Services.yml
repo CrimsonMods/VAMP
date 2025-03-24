@@ -1,0 +1,84 @@
+### YamlMime:ManagedReference
+items:
+- uid: VAMP.Services
+  commentId: N:VAMP.Services
+  id: VAMP.Services
+  children:
+  - VAMP.Services.CastleHeartService
+  - VAMP.Services.CastleTerritoryService
+  - VAMP.Services.EventScheduler
+  - VAMP.Services.PlayerService
+  - VAMP.Services.SpawnService
+  - VAMP.Services.SystemService
+  langs:
+  - csharp
+  - vb
+  name: VAMP.Services
+  nameWithType: VAMP.Services
+  fullName: VAMP.Services
+  type: Namespace
+  assemblies:
+  - VAMP
+references:
+- uid: VAMP.Services.CastleHeartService
+  commentId: T:VAMP.Services.CastleHeartService
+  parent: VAMP.Services
+  href: VAMP.Services.CastleHeartService.html
+  name: CastleHeartService
+  nameWithType: CastleHeartService
+  fullName: VAMP.Services.CastleHeartService
+- uid: VAMP.Services.CastleTerritoryService
+  commentId: T:VAMP.Services.CastleTerritoryService
+  parent: VAMP.Services
+  href: VAMP.Services.CastleTerritoryService.html
+  name: CastleTerritoryService
+  nameWithType: CastleTerritoryService
+  fullName: VAMP.Services.CastleTerritoryService
+- uid: VAMP.Services.EventScheduler
+  commentId: T:VAMP.Services.EventScheduler
+  href: VAMP.Services.EventScheduler.html
+  name: EventScheduler
+  nameWithType: EventScheduler
+  fullName: VAMP.Services.EventScheduler
+- uid: VAMP.Services.PlayerService
+  commentId: T:VAMP.Services.PlayerService
+  parent: VAMP.Services
+  href: VAMP.Services.PlayerService.html
+  name: PlayerService
+  nameWithType: PlayerService
+  fullName: VAMP.Services.PlayerService
+- uid: VAMP.Services.SpawnService
+  commentId: T:VAMP.Services.SpawnService
+  href: VAMP.Services.SpawnService.html
+  name: SpawnService
+  nameWithType: SpawnService
+  fullName: VAMP.Services.SpawnService
+- uid: VAMP.Services.SystemService
+  commentId: T:VAMP.Services.SystemService
+  parent: VAMP.Services
+  href: VAMP.Services.SystemService.html
+  name: SystemService
+  nameWithType: SystemService
+  fullName: VAMP.Services.SystemService
+- uid: VAMP.Services
+  commentId: N:VAMP.Services
+  href: VAMP.html
+  name: VAMP.Services
+  nameWithType: VAMP.Services
+  fullName: VAMP.Services
+  spec.csharp:
+  - uid: VAMP
+    name: VAMP
+    href: VAMP.html
+  - name: .
+  - uid: VAMP.Services
+    name: Services
+    href: VAMP.Services.html
+  spec.vb:
+  - uid: VAMP
+    name: VAMP
+    href: VAMP.html
+  - name: .
+  - uid: VAMP.Services
+    name: Services
+    href: VAMP.Services.html

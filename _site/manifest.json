@@ -1,0 +1,786 @@
+{
+  "source_base_path": "G:/MyStuff/MyGit/V Rising/VAMP",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "CHANGELOG.md",
+      "output": {
+        ".html": {
+          "relative_path": "CHANGELOG.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "README.md",
+      "output": {
+        ".html": {
+          "relative_path": "README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Core.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Core.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Core",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Data.Prefabs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Data.Prefabs.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Data.Prefabs",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Data.TerritoryAlignment.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Data.TerritoryAlignment.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Data.TerritoryAlignment",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Data.WorldRegions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Data.WorldRegions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Data.WorldRegions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Data.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Data.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Data",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Extensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Extensions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Models.Player.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Models.Player.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Models.Player",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Models.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Models",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.MyPluginInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.MyPluginInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.MyPluginInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Patches.ChatMessagePatch.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Patches.ChatMessagePatch.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Patches.ChatMessagePatch",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Patches.InitializationPatch.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Patches.InitializationPatch.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Patches.InitializationPatch",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Patches.OnUserConnectedPatch.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Patches.OnUserConnectedPatch.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Patches.OnUserConnectedPatch",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Patches.OnUserDisconnectedPatch.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Patches.OnUserDisconnectedPatch.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Patches.OnUserDisconnectedPatch",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Patches.UnitSpawnerPatch.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Patches.UnitSpawnerPatch.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Patches.UnitSpawnerPatch",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Patches.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Patches.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Patches",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Plugin.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Plugin.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Plugin",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Services.CastleHeartService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Services.CastleHeartService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Services.CastleHeartService",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Services.CastleTerritoryService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Services.CastleTerritoryService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Services.CastleTerritoryService",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Services.EventScheduler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Services.EventScheduler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Services.EventScheduler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Services.PlayerService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Services.PlayerService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Services.PlayerService",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Services.SpawnService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Services.SpawnService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Services.SpawnService",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Services.SystemService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Services.SystemService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Services.SystemService",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Services.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Services",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Structs.AngramBoss.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Structs.AngramBoss.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Structs.AngramBoss",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Structs.BaseTurret.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Structs.BaseTurret.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Structs.BaseTurret",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Structs.Boss.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Structs.Boss.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Structs.Boss",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Structs.DyeableStructure.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Structs.DyeableStructure.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Structs.DyeableStructure",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Structs.Event.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Structs.Event.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Structs.Event",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Structs.EventTrigger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Structs.EventTrigger.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Structs.EventTrigger",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Structs.HardBoss.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Structs.HardBoss.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Structs.HardBoss",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Structs.HealingOrb.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Structs.HealingOrb.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Structs.HealingOrb",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Structs.Horse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Structs.Horse.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Structs.Horse",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Structs.PlayerData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Structs.PlayerData.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Structs.PlayerData",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Structs.Turret.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Structs.Turret.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Structs.Turret",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Structs.UltimateOrb.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Structs.UltimateOrb.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Structs.UltimateOrb",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Structs.Unit.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Structs.Unit.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Structs.Unit",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Structs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Structs.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Structs",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Utilities.BuffUtil.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Utilities.BuffUtil.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Utilities.BuffUtil",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Utilities.ChatUtil.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Utilities.ChatUtil.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Utilities.ChatUtil",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Utilities.DevUtil.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Utilities.DevUtil.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Utilities.DevUtil",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Utilities.EntityUtil.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Utilities.EntityUtil.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Utilities.EntityUtil",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Utilities.ItemUtil.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Utilities.ItemUtil.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Utilities.ItemUtil",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Utilities.SettingsUtil.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Utilities.SettingsUtil.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Utilities.SettingsUtil",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Utilities.UnitUtil.SpawnedUnit.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Utilities.UnitUtil.SpawnedUnit.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Utilities.UnitUtil.SpawnedUnit",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Utilities.UnitUtil.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Utilities.UnitUtil.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Utilities.UnitUtil",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.Utilities.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.Utilities.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP.Utilities",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/VAMP.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/VAMP.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "VAMP",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/banner.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/banner.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/logo_256.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/logo_256.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

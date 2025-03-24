@@ -1,0 +1,166 @@
+### YamlMime:ManagedReference
+items:
+- uid: VAMP.Data.TerritoryAlignment
+  commentId: T:VAMP.Data.TerritoryAlignment
+  id: TerritoryAlignment
+  parent: VAMP.Data
+  children:
+  - VAMP.Data.TerritoryAlignment.Enemy
+  - VAMP.Data.TerritoryAlignment.Friendly
+  - VAMP.Data.TerritoryAlignment.Neutral
+  - VAMP.Data.TerritoryAlignment.None
+  langs:
+  - csharp
+  - vb
+  name: TerritoryAlignment
+  nameWithType: TerritoryAlignment
+  fullName: VAMP.Data.TerritoryAlignment
+  type: Enum
+  source:
+    remote:
+      path: Data/Territory.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: TerritoryAlignment
+    path: Data/Territory.cs
+    startLine: 2
+  assemblies:
+  - VAMP
+  namespace: VAMP.Data
+  syntax:
+    content: public enum TerritoryAlignment
+    content.vb: Public Enum TerritoryAlignment
+- uid: VAMP.Data.TerritoryAlignment.Friendly
+  commentId: F:VAMP.Data.TerritoryAlignment.Friendly
+  id: Friendly
+  parent: VAMP.Data.TerritoryAlignment
+  langs:
+  - csharp
+  - vb
+  name: Friendly
+  nameWithType: TerritoryAlignment.Friendly
+  fullName: VAMP.Data.TerritoryAlignment.Friendly
+  type: Field
+  source:
+    remote:
+      path: Data/Territory.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: Friendly
+    path: Data/Territory.cs
+    startLine: 4
+  assemblies:
+  - VAMP
+  namespace: VAMP.Data
+  syntax:
+    content: Friendly = 0
+    return:
+      type: VAMP.Data.TerritoryAlignment
+- uid: VAMP.Data.TerritoryAlignment.Enemy
+  commentId: F:VAMP.Data.TerritoryAlignment.Enemy
+  id: Enemy
+  parent: VAMP.Data.TerritoryAlignment
+  langs:
+  - csharp
+  - vb
+  name: Enemy
+  nameWithType: TerritoryAlignment.Enemy
+  fullName: VAMP.Data.TerritoryAlignment.Enemy
+  type: Field
+  source:
+    remote:
+      path: Data/Territory.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: Enemy
+    path: Data/Territory.cs
+    startLine: 5
+  assemblies:
+  - VAMP
+  namespace: VAMP.Data
+  syntax:
+    content: Enemy = 1
+    return:
+      type: VAMP.Data.TerritoryAlignment
+- uid: VAMP.Data.TerritoryAlignment.Neutral
+  commentId: F:VAMP.Data.TerritoryAlignment.Neutral
+  id: Neutral
+  parent: VAMP.Data.TerritoryAlignment
+  langs:
+  - csharp
+  - vb
+  name: Neutral
+  nameWithType: TerritoryAlignment.Neutral
+  fullName: VAMP.Data.TerritoryAlignment.Neutral
+  type: Field
+  source:
+    remote:
+      path: Data/Territory.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: Neutral
+    path: Data/Territory.cs
+    startLine: 6
+  assemblies:
+  - VAMP
+  namespace: VAMP.Data
+  syntax:
+    content: Neutral = 2
+    return:
+      type: VAMP.Data.TerritoryAlignment
+- uid: VAMP.Data.TerritoryAlignment.None
+  commentId: F:VAMP.Data.TerritoryAlignment.None
+  id: None
+  parent: VAMP.Data.TerritoryAlignment
+  langs:
+  - csharp
+  - vb
+  name: None
+  nameWithType: TerritoryAlignment.None
+  fullName: VAMP.Data.TerritoryAlignment.None
+  type: Field
+  source:
+    remote:
+      path: Data/Territory.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: None
+    path: Data/Territory.cs
+    startLine: 7
+  assemblies:
+  - VAMP
+  namespace: VAMP.Data
+  syntax:
+    content: None = 3
+    return:
+      type: VAMP.Data.TerritoryAlignment
+references:
+- uid: VAMP.Data
+  commentId: N:VAMP.Data
+  href: VAMP.html
+  name: VAMP.Data
+  nameWithType: VAMP.Data
+  fullName: VAMP.Data
+  spec.csharp:
+  - uid: VAMP
+    name: VAMP
+    href: VAMP.html
+  - name: .
+  - uid: VAMP.Data
+    name: Data
+    href: VAMP.Data.html
+  spec.vb:
+  - uid: VAMP
+    name: VAMP
+    href: VAMP.html
+  - name: .
+  - uid: VAMP.Data
+    name: Data
+    href: VAMP.Data.html
+- uid: VAMP.Data.TerritoryAlignment
+  commentId: T:VAMP.Data.TerritoryAlignment
+  parent: VAMP.Data
+  href: VAMP.Data.TerritoryAlignment.html
+  name: TerritoryAlignment
+  nameWithType: TerritoryAlignment
+  fullName: VAMP.Data.TerritoryAlignment

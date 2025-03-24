@@ -1,0 +1,51 @@
+### YamlMime:ManagedReference
+items:
+- uid: VAMP.Patches
+  commentId: N:VAMP.Patches
+  id: VAMP.Patches
+  children:
+  - VAMP.Patches.ChatMessagePatch
+  - VAMP.Patches.InitializationPatch
+  - VAMP.Patches.OnUserConnectedPatch
+  - VAMP.Patches.OnUserDisconnectedPatch
+  - VAMP.Patches.UnitSpawnerPatch
+  langs:
+  - csharp
+  - vb
+  name: VAMP.Patches
+  nameWithType: VAMP.Patches
+  fullName: VAMP.Patches
+  type: Namespace
+  assemblies:
+  - VAMP
+references:
+- uid: VAMP.Patches.ChatMessagePatch
+  commentId: T:VAMP.Patches.ChatMessagePatch
+  href: VAMP.Patches.ChatMessagePatch.html
+  name: ChatMessagePatch
+  nameWithType: ChatMessagePatch
+  fullName: VAMP.Patches.ChatMessagePatch
+- uid: VAMP.Patches.OnUserConnectedPatch
+  commentId: T:VAMP.Patches.OnUserConnectedPatch
+  href: VAMP.Patches.OnUserConnectedPatch.html
+  name: OnUserConnectedPatch
+  nameWithType: OnUserConnectedPatch
+  fullName: VAMP.Patches.OnUserConnectedPatch
+- uid: VAMP.Patches.OnUserDisconnectedPatch
+  commentId: T:VAMP.Patches.OnUserDisconnectedPatch
+  href: VAMP.Patches.OnUserDisconnectedPatch.html
+  name: OnUserDisconnectedPatch
+  nameWithType: OnUserDisconnectedPatch
+  fullName: VAMP.Patches.OnUserDisconnectedPatch
+- uid: VAMP.Patches.InitializationPatch
+  commentId: T:VAMP.Patches.InitializationPatch
+  href: VAMP.Patches.InitializationPatch.html
+  name: InitializationPatch
+  nameWithType: InitializationPatch
+  fullName: VAMP.Patches.InitializationPatch
+- uid: VAMP.Patches.UnitSpawnerPatch
+  commentId: T:VAMP.Patches.UnitSpawnerPatch
+  href: VAMP.Patches.UnitSpawnerPatch.html
+  name: UnitSpawnerPatch
+  nameWithType: UnitSpawnerPatch
+  fullName: VAMP.Patches.UnitSpawnerPatch

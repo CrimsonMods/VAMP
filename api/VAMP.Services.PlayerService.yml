@@ -1,0 +1,781 @@
+### YamlMime:ManagedReference
+items:
+- uid: VAMP.Services.PlayerService
+  commentId: T:VAMP.Services.PlayerService
+  id: PlayerService
+  parent: VAMP.Services
+  children:
+  - VAMP.Services.PlayerService.GetCachedUsersOnline
+  - VAMP.Services.PlayerService.GetUsersOnline
+  - VAMP.Services.PlayerService.TryFindByName(System.String,VAMP.Structs.PlayerData@)
+  - VAMP.Services.PlayerService.TryFindByName(Unity.Collections.FixedString64Bytes,VAMP.Structs.PlayerData@)
+  - VAMP.Services.PlayerService.TryFindByNetworkId(ProjectM.Network.NetworkId,Unity.Entities.Entity@)
+  - VAMP.Services.PlayerService.TryFindBySteam(System.UInt64,VAMP.Structs.PlayerData@)
+  langs:
+  - csharp
+  - vb
+  name: PlayerService
+  nameWithType: PlayerService
+  fullName: VAMP.Services.PlayerService
+  type: Class
+  source:
+    remote:
+      path: Services/PlayerService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: PlayerService
+    path: Services/PlayerService.cs
+    startLine: 10
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public class PlayerService
+    content.vb: Public Class PlayerService
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: VAMP.Services.PlayerService.GetUsersOnline
+  commentId: M:VAMP.Services.PlayerService.GetUsersOnline
+  id: GetUsersOnline
+  parent: VAMP.Services.PlayerService
+  langs:
+  - csharp
+  - vb
+  name: GetUsersOnline()
+  nameWithType: PlayerService.GetUsersOnline()
+  fullName: VAMP.Services.PlayerService.GetUsersOnline()
+  type: Method
+  source:
+    remote:
+      path: Services/PlayerService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: GetUsersOnline
+    path: Services/PlayerService.cs
+    startLine: 50
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public static IEnumerable<Entity> GetUsersOnline()
+    return:
+      type: System.Collections.Generic.IEnumerable{Unity.Entities.Entity}
+    content.vb: Public Shared Function GetUsersOnline() As IEnumerable(Of Entity)
+  overload: VAMP.Services.PlayerService.GetUsersOnline*
+- uid: VAMP.Services.PlayerService.GetCachedUsersOnline
+  commentId: M:VAMP.Services.PlayerService.GetCachedUsersOnline
+  id: GetCachedUsersOnline
+  parent: VAMP.Services.PlayerService
+  langs:
+  - csharp
+  - vb
+  name: GetCachedUsersOnline()
+  nameWithType: PlayerService.GetCachedUsersOnline()
+  fullName: VAMP.Services.PlayerService.GetCachedUsersOnline()
+  type: Method
+  source:
+    remote:
+      path: Services/PlayerService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: GetCachedUsersOnline
+    path: Services/PlayerService.cs
+    startLine: 61
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public static IEnumerable<Entity> GetCachedUsersOnline()
+    return:
+      type: System.Collections.Generic.IEnumerable{Unity.Entities.Entity}
+    content.vb: Public Shared Function GetCachedUsersOnline() As IEnumerable(Of Entity)
+  overload: VAMP.Services.PlayerService.GetCachedUsersOnline*
+- uid: VAMP.Services.PlayerService.TryFindBySteam(System.UInt64,VAMP.Structs.PlayerData@)
+  commentId: M:VAMP.Services.PlayerService.TryFindBySteam(System.UInt64,VAMP.Structs.PlayerData@)
+  id: TryFindBySteam(System.UInt64,VAMP.Structs.PlayerData@)
+  parent: VAMP.Services.PlayerService
+  langs:
+  - csharp
+  - vb
+  name: TryFindBySteam(ulong, out PlayerData)
+  nameWithType: PlayerService.TryFindBySteam(ulong, out PlayerData)
+  fullName: VAMP.Services.PlayerService.TryFindBySteam(ulong, out VAMP.Structs.PlayerData)
+  type: Method
+  source:
+    remote:
+      path: Services/PlayerService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: TryFindBySteam
+    path: Services/PlayerService.cs
+    startLine: 71
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public static bool TryFindBySteam(ulong steamId, out PlayerData playerData)
+    parameters:
+    - id: steamId
+      type: System.UInt64
+    - id: playerData
+      type: VAMP.Structs.PlayerData
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function TryFindBySteam(steamId As ULong, playerData As PlayerData) As Boolean
+  overload: VAMP.Services.PlayerService.TryFindBySteam*
+  nameWithType.vb: PlayerService.TryFindBySteam(ULong, PlayerData)
+  fullName.vb: VAMP.Services.PlayerService.TryFindBySteam(ULong, VAMP.Structs.PlayerData)
+  name.vb: TryFindBySteam(ULong, PlayerData)
+- uid: VAMP.Services.PlayerService.TryFindByName(System.String,VAMP.Structs.PlayerData@)
+  commentId: M:VAMP.Services.PlayerService.TryFindByName(System.String,VAMP.Structs.PlayerData@)
+  id: TryFindByName(System.String,VAMP.Structs.PlayerData@)
+  parent: VAMP.Services.PlayerService
+  langs:
+  - csharp
+  - vb
+  name: TryFindByName(string, out PlayerData)
+  nameWithType: PlayerService.TryFindByName(string, out PlayerData)
+  fullName: VAMP.Services.PlayerService.TryFindByName(string, out VAMP.Structs.PlayerData)
+  type: Method
+  source:
+    remote:
+      path: Services/PlayerService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: TryFindByName
+    path: Services/PlayerService.cs
+    startLine: 76
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public static bool TryFindByName(string name, out PlayerData playerData)
+    parameters:
+    - id: name
+      type: System.String
+    - id: playerData
+      type: VAMP.Structs.PlayerData
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function TryFindByName(name As String, playerData As PlayerData) As Boolean
+  overload: VAMP.Services.PlayerService.TryFindByName*
+  nameWithType.vb: PlayerService.TryFindByName(String, PlayerData)
+  fullName.vb: VAMP.Services.PlayerService.TryFindByName(String, VAMP.Structs.PlayerData)
+  name.vb: TryFindByName(String, PlayerData)
+- uid: VAMP.Services.PlayerService.TryFindByName(Unity.Collections.FixedString64Bytes,VAMP.Structs.PlayerData@)
+  commentId: M:VAMP.Services.PlayerService.TryFindByName(Unity.Collections.FixedString64Bytes,VAMP.Structs.PlayerData@)
+  id: TryFindByName(Unity.Collections.FixedString64Bytes,VAMP.Structs.PlayerData@)
+  parent: VAMP.Services.PlayerService
+  langs:
+  - csharp
+  - vb
+  name: TryFindByName(FixedString64Bytes, out PlayerData)
+  nameWithType: PlayerService.TryFindByName(FixedString64Bytes, out PlayerData)
+  fullName: VAMP.Services.PlayerService.TryFindByName(Unity.Collections.FixedString64Bytes, out VAMP.Structs.PlayerData)
+  type: Method
+  source:
+    remote:
+      path: Services/PlayerService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: TryFindByName
+    path: Services/PlayerService.cs
+    startLine: 81
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public static bool TryFindByName(FixedString64Bytes name, out PlayerData playerData)
+    parameters:
+    - id: name
+      type: Unity.Collections.FixedString64Bytes
+    - id: playerData
+      type: VAMP.Structs.PlayerData
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function TryFindByName(name As FixedString64Bytes, playerData As PlayerData) As Boolean
+  overload: VAMP.Services.PlayerService.TryFindByName*
+  nameWithType.vb: PlayerService.TryFindByName(FixedString64Bytes, PlayerData)
+  fullName.vb: VAMP.Services.PlayerService.TryFindByName(Unity.Collections.FixedString64Bytes, VAMP.Structs.PlayerData)
+  name.vb: TryFindByName(FixedString64Bytes, PlayerData)
+- uid: VAMP.Services.PlayerService.TryFindByNetworkId(ProjectM.Network.NetworkId,Unity.Entities.Entity@)
+  commentId: M:VAMP.Services.PlayerService.TryFindByNetworkId(ProjectM.Network.NetworkId,Unity.Entities.Entity@)
+  id: TryFindByNetworkId(ProjectM.Network.NetworkId,Unity.Entities.Entity@)
+  parent: VAMP.Services.PlayerService
+  langs:
+  - csharp
+  - vb
+  name: TryFindByNetworkId(NetworkId, out Entity)
+  nameWithType: PlayerService.TryFindByNetworkId(NetworkId, out Entity)
+  fullName: VAMP.Services.PlayerService.TryFindByNetworkId(ProjectM.Network.NetworkId, out Unity.Entities.Entity)
+  type: Method
+  source:
+    remote:
+      path: Services/PlayerService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: TryFindByNetworkId
+    path: Services/PlayerService.cs
+    startLine: 86
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public static bool TryFindByNetworkId(NetworkId networkId, out Entity userEntity)
+    parameters:
+    - id: networkId
+      type: ProjectM.Network.NetworkId
+    - id: userEntity
+      type: Unity.Entities.Entity
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function TryFindByNetworkId(networkId As NetworkId, userEntity As Entity) As Boolean
+  overload: VAMP.Services.PlayerService.TryFindByNetworkId*
+  nameWithType.vb: PlayerService.TryFindByNetworkId(NetworkId, Entity)
+  fullName.vb: VAMP.Services.PlayerService.TryFindByNetworkId(ProjectM.Network.NetworkId, Unity.Entities.Entity)
+  name.vb: TryFindByNetworkId(NetworkId, Entity)
+references:
+- uid: VAMP.Services
+  commentId: N:VAMP.Services
+  href: VAMP.html
+  name: VAMP.Services
+  nameWithType: VAMP.Services
+  fullName: VAMP.Services
+  spec.csharp:
+  - uid: VAMP
+    name: VAMP
+    href: VAMP.html
+  - name: .
+  - uid: VAMP.Services
+    name: Services
+    href: VAMP.Services.html
+  spec.vb:
+  - uid: VAMP
+    name: VAMP
+    href: VAMP.html
+  - name: .
+  - uid: VAMP.Services
+    name: Services
+    href: VAMP.Services.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: VAMP.Services.PlayerService.GetUsersOnline*
+  commentId: Overload:VAMP.Services.PlayerService.GetUsersOnline
+  href: VAMP.Services.PlayerService.html#VAMP_Services_PlayerService_GetUsersOnline
+  name: GetUsersOnline
+  nameWithType: PlayerService.GetUsersOnline
+  fullName: VAMP.Services.PlayerService.GetUsersOnline
+- uid: System.Collections.Generic.IEnumerable{Unity.Entities.Entity}
+  commentId: T:System.Collections.Generic.IEnumerable{Unity.Entities.Entity}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<Entity>
+  nameWithType: IEnumerable<Entity>
+  fullName: System.Collections.Generic.IEnumerable<Unity.Entities.Entity>
+  nameWithType.vb: IEnumerable(Of Entity)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of Unity.Entities.Entity)
+  name.vb: IEnumerable(Of Entity)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: Unity.Entities.Entity
+    name: Entity
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Unity.Entities.Entity
+    name: Entity
+    isExternal: true
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: VAMP.Services.PlayerService.GetCachedUsersOnline*
+  commentId: Overload:VAMP.Services.PlayerService.GetCachedUsersOnline
+  href: VAMP.Services.PlayerService.html#VAMP_Services_PlayerService_GetCachedUsersOnline
+  name: GetCachedUsersOnline
+  nameWithType: PlayerService.GetCachedUsersOnline
+  fullName: VAMP.Services.PlayerService.GetCachedUsersOnline
+- uid: VAMP.Services.PlayerService.TryFindBySteam*
+  commentId: Overload:VAMP.Services.PlayerService.TryFindBySteam
+  href: VAMP.Services.PlayerService.html#VAMP_Services_PlayerService_TryFindBySteam_System_UInt64_VAMP_Structs_PlayerData__
+  name: TryFindBySteam
+  nameWithType: PlayerService.TryFindBySteam
+  fullName: VAMP.Services.PlayerService.TryFindBySteam
+- uid: System.UInt64
+  commentId: T:System.UInt64
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uint64
+  name: ulong
+  nameWithType: ulong
+  fullName: ulong
+  nameWithType.vb: ULong
+  fullName.vb: ULong
+  name.vb: ULong
+- uid: VAMP.Structs.PlayerData
+  commentId: T:VAMP.Structs.PlayerData
+  parent: VAMP.Structs
+  href: VAMP.Structs.PlayerData.html
+  name: PlayerData
+  nameWithType: PlayerData
+  fullName: VAMP.Structs.PlayerData
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: VAMP.Structs
+  commentId: N:VAMP.Structs
+  href: VAMP.html
+  name: VAMP.Structs
+  nameWithType: VAMP.Structs
+  fullName: VAMP.Structs
+  spec.csharp:
+  - uid: VAMP
+    name: VAMP
+    href: VAMP.html
+  - name: .
+  - uid: VAMP.Structs
+    name: Structs
+    href: VAMP.Structs.html
+  spec.vb:
+  - uid: VAMP
+    name: VAMP
+    href: VAMP.html
+  - name: .
+  - uid: VAMP.Structs
+    name: Structs
+    href: VAMP.Structs.html
+- uid: VAMP.Services.PlayerService.TryFindByName*
+  commentId: Overload:VAMP.Services.PlayerService.TryFindByName
+  href: VAMP.Services.PlayerService.html#VAMP_Services_PlayerService_TryFindByName_System_String_VAMP_Structs_PlayerData__
+  name: TryFindByName
+  nameWithType: PlayerService.TryFindByName
+  fullName: VAMP.Services.PlayerService.TryFindByName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Unity.Collections.FixedString64Bytes
+  commentId: T:Unity.Collections.FixedString64Bytes
+  parent: Unity.Collections
+  isExternal: true
+  name: FixedString64Bytes
+  nameWithType: FixedString64Bytes
+  fullName: Unity.Collections.FixedString64Bytes
+- uid: Unity.Collections
+  commentId: N:Unity.Collections
+  isExternal: true
+  name: Unity.Collections
+  nameWithType: Unity.Collections
+  fullName: Unity.Collections
+  spec.csharp:
+  - uid: Unity
+    name: Unity
+    isExternal: true
+  - name: .
+  - uid: Unity.Collections
+    name: Collections
+    isExternal: true
+  spec.vb:
+  - uid: Unity
+    name: Unity
+    isExternal: true
+  - name: .
+  - uid: Unity.Collections
+    name: Collections
+    isExternal: true
+- uid: VAMP.Services.PlayerService.TryFindByNetworkId*
+  commentId: Overload:VAMP.Services.PlayerService.TryFindByNetworkId
+  href: VAMP.Services.PlayerService.html#VAMP_Services_PlayerService_TryFindByNetworkId_ProjectM_Network_NetworkId_Unity_Entities_Entity__
+  name: TryFindByNetworkId
+  nameWithType: PlayerService.TryFindByNetworkId
+  fullName: VAMP.Services.PlayerService.TryFindByNetworkId
+- uid: ProjectM.Network.NetworkId
+  commentId: T:ProjectM.Network.NetworkId
+  parent: ProjectM.Network
+  isExternal: true
+  name: NetworkId
+  nameWithType: NetworkId
+  fullName: ProjectM.Network.NetworkId
+- uid: Unity.Entities.Entity
+  commentId: T:Unity.Entities.Entity
+  parent: Unity.Entities
+  isExternal: true
+  name: Entity
+  nameWithType: Entity
+  fullName: Unity.Entities.Entity
+- uid: ProjectM.Network
+  commentId: N:ProjectM.Network
+  isExternal: true
+  name: ProjectM.Network
+  nameWithType: ProjectM.Network
+  fullName: ProjectM.Network
+  spec.csharp:
+  - uid: ProjectM
+    name: ProjectM
+    isExternal: true
+  - name: .
+  - uid: ProjectM.Network
+    name: Network
+    isExternal: true
+  spec.vb:
+  - uid: ProjectM
+    name: ProjectM
+    isExternal: true
+  - name: .
+  - uid: ProjectM.Network
+    name: Network
+    isExternal: true
+- uid: Unity.Entities
+  commentId: N:Unity.Entities
+  isExternal: true
+  name: Unity.Entities
+  nameWithType: Unity.Entities
+  fullName: Unity.Entities
+  spec.csharp:
+  - uid: Unity
+    name: Unity
+    isExternal: true
+  - name: .
+  - uid: Unity.Entities
+    name: Entities
+    isExternal: true
+  spec.vb:
+  - uid: Unity
+    name: Unity
+    isExternal: true
+  - name: .
+  - uid: Unity.Entities
+    name: Entities
+    isExternal: true

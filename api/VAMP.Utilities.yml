@@ -1,0 +1,111 @@
+### YamlMime:ManagedReference
+items:
+- uid: VAMP.Utilities
+  commentId: N:VAMP.Utilities
+  id: VAMP.Utilities
+  children:
+  - VAMP.Utilities.BuffUtil
+  - VAMP.Utilities.ChatUtil
+  - VAMP.Utilities.DevUtil
+  - VAMP.Utilities.EntityUtil
+  - VAMP.Utilities.ItemUtil
+  - VAMP.Utilities.SettingsUtil
+  - VAMP.Utilities.UnitUtil
+  - VAMP.Utilities.UnitUtil.SpawnedUnit
+  langs:
+  - csharp
+  - vb
+  name: VAMP.Utilities
+  nameWithType: VAMP.Utilities
+  fullName: VAMP.Utilities
+  type: Namespace
+  assemblies:
+  - VAMP
+references:
+- uid: VAMP.Utilities.BuffUtil
+  commentId: T:VAMP.Utilities.BuffUtil
+  href: VAMP.Utilities.BuffUtil.html
+  name: BuffUtil
+  nameWithType: BuffUtil
+  fullName: VAMP.Utilities.BuffUtil
+- uid: VAMP.Utilities.ChatUtil
+  commentId: T:VAMP.Utilities.ChatUtil
+  href: VAMP.Utilities.ChatUtil.html
+  name: ChatUtil
+  nameWithType: ChatUtil
+  fullName: VAMP.Utilities.ChatUtil
+- uid: VAMP.Utilities.DevUtil
+  commentId: T:VAMP.Utilities.DevUtil
+  href: VAMP.Utilities.DevUtil.html
+  name: DevUtil
+  nameWithType: DevUtil
+  fullName: VAMP.Utilities.DevUtil
+- uid: VAMP.Utilities.EntityUtil
+  commentId: T:VAMP.Utilities.EntityUtil
+  href: VAMP.Utilities.EntityUtil.html
+  name: EntityUtil
+  nameWithType: EntityUtil
+  fullName: VAMP.Utilities.EntityUtil
+- uid: VAMP.Utilities.ItemUtil
+  commentId: T:VAMP.Utilities.ItemUtil
+  href: VAMP.Utilities.ItemUtil.html
+  name: ItemUtil
+  nameWithType: ItemUtil
+  fullName: VAMP.Utilities.ItemUtil
+- uid: VAMP.Utilities.SettingsUtil
+  commentId: T:VAMP.Utilities.SettingsUtil
+  href: VAMP.Utilities.SettingsUtil.html
+  name: SettingsUtil
+  nameWithType: SettingsUtil
+  fullName: VAMP.Utilities.SettingsUtil
+- uid: VAMP.Utilities.UnitUtil
+  commentId: T:VAMP.Utilities.UnitUtil
+  href: VAMP.Utilities.UnitUtil.html
+  name: UnitUtil
+  nameWithType: UnitUtil
+  fullName: VAMP.Utilities.UnitUtil
+- uid: VAMP.Utilities.UnitUtil.SpawnedUnit
+  commentId: T:VAMP.Utilities.UnitUtil.SpawnedUnit
+  parent: VAMP.Utilities
+  href: VAMP.Utilities.UnitUtil.html
+  name: UnitUtil.SpawnedUnit
+  nameWithType: UnitUtil.SpawnedUnit
+  fullName: VAMP.Utilities.UnitUtil.SpawnedUnit
+  spec.csharp:
+  - uid: VAMP.Utilities.UnitUtil
+    name: UnitUtil
+    href: VAMP.Utilities.UnitUtil.html
+  - name: .
+  - uid: VAMP.Utilities.UnitUtil.SpawnedUnit
+    name: SpawnedUnit
+    href: VAMP.Utilities.UnitUtil.SpawnedUnit.html
+  spec.vb:
+  - uid: VAMP.Utilities.UnitUtil
+    name: UnitUtil
+    href: VAMP.Utilities.UnitUtil.html
+  - name: .
+  - uid: VAMP.Utilities.UnitUtil.SpawnedUnit
+    name: SpawnedUnit
+    href: VAMP.Utilities.UnitUtil.SpawnedUnit.html
+- uid: VAMP.Utilities
+  commentId: N:VAMP.Utilities
+  href: VAMP.html
+  name: VAMP.Utilities
+  nameWithType: VAMP.Utilities
+  fullName: VAMP.Utilities
+  spec.csharp:
+  - uid: VAMP
+    name: VAMP
+    href: VAMP.html
+  - name: .
+  - uid: VAMP.Utilities
+    name: Utilities
+    href: VAMP.Utilities.html
+  spec.vb:
+  - uid: VAMP
+    name: VAMP
+    href: VAMP.html
+  - name: .
+  - uid: VAMP.Utilities
+    name: Utilities
+    href: VAMP.Utilities.html

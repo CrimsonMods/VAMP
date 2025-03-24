@@ -1,0 +1,622 @@
+### YamlMime:ManagedReference
+items:
+- uid: VAMP.Services.CastleTerritoryService
+  commentId: T:VAMP.Services.CastleTerritoryService
+  id: CastleTerritoryService
+  parent: VAMP.Services
+  children:
+  - VAMP.Services.CastleTerritoryService.#ctor
+  - VAMP.Services.CastleTerritoryService.ConvertPosToBlockCoord(Unity.Mathematics.float3)
+  - VAMP.Services.CastleTerritoryService.ConvertPosToGrid(Unity.Mathematics.float3)
+  - VAMP.Services.CastleTerritoryService.GetHeartForTerritory(System.Int32)
+  - VAMP.Services.CastleTerritoryService.GetTerritoryIndex(Unity.Mathematics.float3)
+  - VAMP.Services.CastleTerritoryService.TryGetCastleTerritory(Unity.Entities.Entity,Unity.Entities.Entity@)
+  langs:
+  - csharp
+  - vb
+  name: CastleTerritoryService
+  nameWithType: CastleTerritoryService
+  fullName: VAMP.Services.CastleTerritoryService
+  type: Class
+  source:
+    remote:
+      path: Services/CastleTerritoryService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: CastleTerritoryService
+    path: Services/CastleTerritoryService.cs
+    startLine: 10
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public class CastleTerritoryService
+    content.vb: Public Class CastleTerritoryService
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: VAMP.Services.CastleTerritoryService.#ctor
+  commentId: M:VAMP.Services.CastleTerritoryService.#ctor
+  id: '#ctor'
+  parent: VAMP.Services.CastleTerritoryService
+  langs:
+  - csharp
+  - vb
+  name: CastleTerritoryService()
+  nameWithType: CastleTerritoryService.CastleTerritoryService()
+  fullName: VAMP.Services.CastleTerritoryService.CastleTerritoryService()
+  type: Constructor
+  source:
+    remote:
+      path: Services/CastleTerritoryService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: .ctor
+    path: Services/CastleTerritoryService.cs
+    startLine: 16
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public CastleTerritoryService()
+    content.vb: Public Sub New()
+  overload: VAMP.Services.CastleTerritoryService.#ctor*
+  nameWithType.vb: CastleTerritoryService.New()
+  fullName.vb: VAMP.Services.CastleTerritoryService.New()
+  name.vb: New()
+- uid: VAMP.Services.CastleTerritoryService.TryGetCastleTerritory(Unity.Entities.Entity,Unity.Entities.Entity@)
+  commentId: M:VAMP.Services.CastleTerritoryService.TryGetCastleTerritory(Unity.Entities.Entity,Unity.Entities.Entity@)
+  id: TryGetCastleTerritory(Unity.Entities.Entity,Unity.Entities.Entity@)
+  parent: VAMP.Services.CastleTerritoryService
+  langs:
+  - csharp
+  - vb
+  name: TryGetCastleTerritory(Entity, out Entity)
+  nameWithType: CastleTerritoryService.TryGetCastleTerritory(Entity, out Entity)
+  fullName: VAMP.Services.CastleTerritoryService.TryGetCastleTerritory(Unity.Entities.Entity, out Unity.Entities.Entity)
+  type: Method
+  source:
+    remote:
+      path: Services/CastleTerritoryService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: TryGetCastleTerritory
+    path: Services/CastleTerritoryService.cs
+    startLine: 32
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public bool TryGetCastleTerritory(Entity entity, out Entity territoryEntity)
+    parameters:
+    - id: entity
+      type: Unity.Entities.Entity
+    - id: territoryEntity
+      type: Unity.Entities.Entity
+    return:
+      type: System.Boolean
+    content.vb: Public Function TryGetCastleTerritory(entity As Entity, territoryEntity As Entity) As Boolean
+  overload: VAMP.Services.CastleTerritoryService.TryGetCastleTerritory*
+  nameWithType.vb: CastleTerritoryService.TryGetCastleTerritory(Entity, Entity)
+  fullName.vb: VAMP.Services.CastleTerritoryService.TryGetCastleTerritory(Unity.Entities.Entity, Unity.Entities.Entity)
+  name.vb: TryGetCastleTerritory(Entity, Entity)
+- uid: VAMP.Services.CastleTerritoryService.GetTerritoryIndex(Unity.Mathematics.float3)
+  commentId: M:VAMP.Services.CastleTerritoryService.GetTerritoryIndex(Unity.Mathematics.float3)
+  id: GetTerritoryIndex(Unity.Mathematics.float3)
+  parent: VAMP.Services.CastleTerritoryService
+  langs:
+  - csharp
+  - vb
+  name: GetTerritoryIndex(float3)
+  nameWithType: CastleTerritoryService.GetTerritoryIndex(float3)
+  fullName: VAMP.Services.CastleTerritoryService.GetTerritoryIndex(Unity.Mathematics.float3)
+  type: Method
+  source:
+    remote:
+      path: Services/CastleTerritoryService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: GetTerritoryIndex
+    path: Services/CastleTerritoryService.cs
+    startLine: 49
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public int GetTerritoryIndex(float3 pos)
+    parameters:
+    - id: pos
+      type: Unity.Mathematics.float3
+    return:
+      type: System.Int32
+    content.vb: Public Function GetTerritoryIndex(pos As float3) As Integer
+  overload: VAMP.Services.CastleTerritoryService.GetTerritoryIndex*
+- uid: VAMP.Services.CastleTerritoryService.GetHeartForTerritory(System.Int32)
+  commentId: M:VAMP.Services.CastleTerritoryService.GetHeartForTerritory(System.Int32)
+  id: GetHeartForTerritory(System.Int32)
+  parent: VAMP.Services.CastleTerritoryService
+  langs:
+  - csharp
+  - vb
+  name: GetHeartForTerritory(int)
+  nameWithType: CastleTerritoryService.GetHeartForTerritory(int)
+  fullName: VAMP.Services.CastleTerritoryService.GetHeartForTerritory(int)
+  type: Method
+  source:
+    remote:
+      path: Services/CastleTerritoryService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: GetHeartForTerritory
+    path: Services/CastleTerritoryService.cs
+    startLine: 57
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public Entity GetHeartForTerritory(int territoryIndex)
+    parameters:
+    - id: territoryIndex
+      type: System.Int32
+    return:
+      type: Unity.Entities.Entity
+    content.vb: Public Function GetHeartForTerritory(territoryIndex As Integer) As Entity
+  overload: VAMP.Services.CastleTerritoryService.GetHeartForTerritory*
+  nameWithType.vb: CastleTerritoryService.GetHeartForTerritory(Integer)
+  fullName.vb: VAMP.Services.CastleTerritoryService.GetHeartForTerritory(Integer)
+  name.vb: GetHeartForTerritory(Integer)
+- uid: VAMP.Services.CastleTerritoryService.ConvertPosToGrid(Unity.Mathematics.float3)
+  commentId: M:VAMP.Services.CastleTerritoryService.ConvertPosToGrid(Unity.Mathematics.float3)
+  id: ConvertPosToGrid(Unity.Mathematics.float3)
+  parent: VAMP.Services.CastleTerritoryService
+  langs:
+  - csharp
+  - vb
+  name: ConvertPosToGrid(float3)
+  nameWithType: CastleTerritoryService.ConvertPosToGrid(float3)
+  fullName: VAMP.Services.CastleTerritoryService.ConvertPosToGrid(Unity.Mathematics.float3)
+  type: Method
+  source:
+    remote:
+      path: Services/CastleTerritoryService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: ConvertPosToGrid
+    path: Services/CastleTerritoryService.cs
+    startLine: 76
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public static float3 ConvertPosToGrid(float3 pos)
+    parameters:
+    - id: pos
+      type: Unity.Mathematics.float3
+    return:
+      type: Unity.Mathematics.float3
+    content.vb: Public Shared Function ConvertPosToGrid(pos As float3) As float3
+  overload: VAMP.Services.CastleTerritoryService.ConvertPosToGrid*
+- uid: VAMP.Services.CastleTerritoryService.ConvertPosToBlockCoord(Unity.Mathematics.float3)
+  commentId: M:VAMP.Services.CastleTerritoryService.ConvertPosToBlockCoord(Unity.Mathematics.float3)
+  id: ConvertPosToBlockCoord(Unity.Mathematics.float3)
+  parent: VAMP.Services.CastleTerritoryService
+  langs:
+  - csharp
+  - vb
+  name: ConvertPosToBlockCoord(float3)
+  nameWithType: CastleTerritoryService.ConvertPosToBlockCoord(float3)
+  fullName: VAMP.Services.CastleTerritoryService.ConvertPosToBlockCoord(Unity.Mathematics.float3)
+  type: Method
+  source:
+    remote:
+      path: Services/CastleTerritoryService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: ConvertPosToBlockCoord
+    path: Services/CastleTerritoryService.cs
+    startLine: 81
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public static int2 ConvertPosToBlockCoord(float3 pos)
+    parameters:
+    - id: pos
+      type: Unity.Mathematics.float3
+    return:
+      type: Unity.Mathematics.int2
+    content.vb: Public Shared Function ConvertPosToBlockCoord(pos As float3) As int2
+  overload: VAMP.Services.CastleTerritoryService.ConvertPosToBlockCoord*
+references:
+- uid: VAMP.Services
+  commentId: N:VAMP.Services
+  href: VAMP.html
+  name: VAMP.Services
+  nameWithType: VAMP.Services
+  fullName: VAMP.Services
+  spec.csharp:
+  - uid: VAMP
+    name: VAMP
+    href: VAMP.html
+  - name: .
+  - uid: VAMP.Services
+    name: Services
+    href: VAMP.Services.html
+  spec.vb:
+  - uid: VAMP
+    name: VAMP
+    href: VAMP.html
+  - name: .
+  - uid: VAMP.Services
+    name: Services
+    href: VAMP.Services.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: VAMP.Services.CastleTerritoryService.#ctor*
+  commentId: Overload:VAMP.Services.CastleTerritoryService.#ctor
+  href: VAMP.Services.CastleTerritoryService.html#VAMP_Services_CastleTerritoryService__ctor
+  name: CastleTerritoryService
+  nameWithType: CastleTerritoryService.CastleTerritoryService
+  fullName: VAMP.Services.CastleTerritoryService.CastleTerritoryService
+  nameWithType.vb: CastleTerritoryService.New
+  fullName.vb: VAMP.Services.CastleTerritoryService.New
+  name.vb: New
+- uid: VAMP.Services.CastleTerritoryService.TryGetCastleTerritory*
+  commentId: Overload:VAMP.Services.CastleTerritoryService.TryGetCastleTerritory
+  href: VAMP.Services.CastleTerritoryService.html#VAMP_Services_CastleTerritoryService_TryGetCastleTerritory_Unity_Entities_Entity_Unity_Entities_Entity__
+  name: TryGetCastleTerritory
+  nameWithType: CastleTerritoryService.TryGetCastleTerritory
+  fullName: VAMP.Services.CastleTerritoryService.TryGetCastleTerritory
+- uid: Unity.Entities.Entity
+  commentId: T:Unity.Entities.Entity
+  parent: Unity.Entities
+  isExternal: true
+  name: Entity
+  nameWithType: Entity
+  fullName: Unity.Entities.Entity
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Unity.Entities
+  commentId: N:Unity.Entities
+  isExternal: true
+  name: Unity.Entities
+  nameWithType: Unity.Entities
+  fullName: Unity.Entities
+  spec.csharp:
+  - uid: Unity
+    name: Unity
+    isExternal: true
+  - name: .
+  - uid: Unity.Entities
+    name: Entities
+    isExternal: true
+  spec.vb:
+  - uid: Unity
+    name: Unity
+    isExternal: true
+  - name: .
+  - uid: Unity.Entities
+    name: Entities
+    isExternal: true
+- uid: VAMP.Services.CastleTerritoryService.GetTerritoryIndex*
+  commentId: Overload:VAMP.Services.CastleTerritoryService.GetTerritoryIndex
+  href: VAMP.Services.CastleTerritoryService.html#VAMP_Services_CastleTerritoryService_GetTerritoryIndex_Unity_Mathematics_float3_
+  name: GetTerritoryIndex
+  nameWithType: CastleTerritoryService.GetTerritoryIndex
+  fullName: VAMP.Services.CastleTerritoryService.GetTerritoryIndex
+- uid: Unity.Mathematics.float3
+  commentId: T:Unity.Mathematics.float3
+  parent: Unity.Mathematics
+  isExternal: true
+  name: float3
+  nameWithType: float3
+  fullName: Unity.Mathematics.float3
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Unity.Mathematics
+  commentId: N:Unity.Mathematics
+  isExternal: true
+  name: Unity.Mathematics
+  nameWithType: Unity.Mathematics
+  fullName: Unity.Mathematics
+  spec.csharp:
+  - uid: Unity
+    name: Unity
+    isExternal: true
+  - name: .
+  - uid: Unity.Mathematics
+    name: Mathematics
+    isExternal: true
+  spec.vb:
+  - uid: Unity
+    name: Unity
+    isExternal: true
+  - name: .
+  - uid: Unity.Mathematics
+    name: Mathematics
+    isExternal: true
+- uid: VAMP.Services.CastleTerritoryService.GetHeartForTerritory*
+  commentId: Overload:VAMP.Services.CastleTerritoryService.GetHeartForTerritory
+  href: VAMP.Services.CastleTerritoryService.html#VAMP_Services_CastleTerritoryService_GetHeartForTerritory_System_Int32_
+  name: GetHeartForTerritory
+  nameWithType: CastleTerritoryService.GetHeartForTerritory
+  fullName: VAMP.Services.CastleTerritoryService.GetHeartForTerritory
+- uid: VAMP.Services.CastleTerritoryService.ConvertPosToGrid*
+  commentId: Overload:VAMP.Services.CastleTerritoryService.ConvertPosToGrid
+  href: VAMP.Services.CastleTerritoryService.html#VAMP_Services_CastleTerritoryService_ConvertPosToGrid_Unity_Mathematics_float3_
+  name: ConvertPosToGrid
+  nameWithType: CastleTerritoryService.ConvertPosToGrid
+  fullName: VAMP.Services.CastleTerritoryService.ConvertPosToGrid
+- uid: VAMP.Services.CastleTerritoryService.ConvertPosToBlockCoord*
+  commentId: Overload:VAMP.Services.CastleTerritoryService.ConvertPosToBlockCoord
+  href: VAMP.Services.CastleTerritoryService.html#VAMP_Services_CastleTerritoryService_ConvertPosToBlockCoord_Unity_Mathematics_float3_
+  name: ConvertPosToBlockCoord
+  nameWithType: CastleTerritoryService.ConvertPosToBlockCoord
+  fullName: VAMP.Services.CastleTerritoryService.ConvertPosToBlockCoord
+- uid: Unity.Mathematics.int2
+  commentId: T:Unity.Mathematics.int2
+  parent: Unity.Mathematics
+  isExternal: true
+  name: int2
+  nameWithType: int2
+  fullName: Unity.Mathematics.int2

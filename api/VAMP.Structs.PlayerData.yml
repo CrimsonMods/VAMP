@@ -1,0 +1,585 @@
+### YamlMime:ManagedReference
+items:
+- uid: VAMP.Structs.PlayerData
+  commentId: T:VAMP.Structs.PlayerData
+  id: PlayerData
+  parent: VAMP.Structs
+  children:
+  - VAMP.Structs.PlayerData.#ctor(Unity.Collections.FixedString64Bytes,System.UInt64,System.Boolean,Unity.Entities.Entity,Unity.Entities.Entity)
+  - VAMP.Structs.PlayerData.CharEntity
+  - VAMP.Structs.PlayerData.CharacterName
+  - VAMP.Structs.PlayerData.IsOnline
+  - VAMP.Structs.PlayerData.SteamID
+  - VAMP.Structs.PlayerData.UserEntity
+  langs:
+  - csharp
+  - vb
+  name: PlayerData
+  nameWithType: PlayerData
+  fullName: VAMP.Structs.PlayerData
+  type: Struct
+  source:
+    remote:
+      path: Structs/PlayerData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: PlayerData
+    path: Structs/PlayerData.cs
+    startLine: 4
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: public struct PlayerData
+    content.vb: Public Structure PlayerData
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: VAMP.Structs.PlayerData.CharacterName
+  commentId: P:VAMP.Structs.PlayerData.CharacterName
+  id: CharacterName
+  parent: VAMP.Structs.PlayerData
+  langs:
+  - csharp
+  - vb
+  name: CharacterName
+  nameWithType: PlayerData.CharacterName
+  fullName: VAMP.Structs.PlayerData.CharacterName
+  type: Property
+  source:
+    remote:
+      path: Structs/PlayerData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: CharacterName
+    path: Structs/PlayerData.cs
+    startLine: 6
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: public FixedString64Bytes CharacterName { readonly get; set; }
+    parameters: []
+    return:
+      type: Unity.Collections.FixedString64Bytes
+    content.vb: Public Property CharacterName As FixedString64Bytes
+  overload: VAMP.Structs.PlayerData.CharacterName*
+- uid: VAMP.Structs.PlayerData.SteamID
+  commentId: P:VAMP.Structs.PlayerData.SteamID
+  id: SteamID
+  parent: VAMP.Structs.PlayerData
+  langs:
+  - csharp
+  - vb
+  name: SteamID
+  nameWithType: PlayerData.SteamID
+  fullName: VAMP.Structs.PlayerData.SteamID
+  type: Property
+  source:
+    remote:
+      path: Structs/PlayerData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: SteamID
+    path: Structs/PlayerData.cs
+    startLine: 7
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: public ulong SteamID { readonly get; set; }
+    parameters: []
+    return:
+      type: System.UInt64
+    content.vb: Public Property SteamID As ULong
+  overload: VAMP.Structs.PlayerData.SteamID*
+- uid: VAMP.Structs.PlayerData.IsOnline
+  commentId: P:VAMP.Structs.PlayerData.IsOnline
+  id: IsOnline
+  parent: VAMP.Structs.PlayerData
+  langs:
+  - csharp
+  - vb
+  name: IsOnline
+  nameWithType: PlayerData.IsOnline
+  fullName: VAMP.Structs.PlayerData.IsOnline
+  type: Property
+  source:
+    remote:
+      path: Structs/PlayerData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: IsOnline
+    path: Structs/PlayerData.cs
+    startLine: 8
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: public bool IsOnline { readonly get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsOnline As Boolean
+  overload: VAMP.Structs.PlayerData.IsOnline*
+- uid: VAMP.Structs.PlayerData.UserEntity
+  commentId: P:VAMP.Structs.PlayerData.UserEntity
+  id: UserEntity
+  parent: VAMP.Structs.PlayerData
+  langs:
+  - csharp
+  - vb
+  name: UserEntity
+  nameWithType: PlayerData.UserEntity
+  fullName: VAMP.Structs.PlayerData.UserEntity
+  type: Property
+  source:
+    remote:
+      path: Structs/PlayerData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: UserEntity
+    path: Structs/PlayerData.cs
+    startLine: 9
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: public Entity UserEntity { readonly get; set; }
+    parameters: []
+    return:
+      type: Unity.Entities.Entity
+    content.vb: Public Property UserEntity As Entity
+  overload: VAMP.Structs.PlayerData.UserEntity*
+- uid: VAMP.Structs.PlayerData.CharEntity
+  commentId: P:VAMP.Structs.PlayerData.CharEntity
+  id: CharEntity
+  parent: VAMP.Structs.PlayerData
+  langs:
+  - csharp
+  - vb
+  name: CharEntity
+  nameWithType: PlayerData.CharEntity
+  fullName: VAMP.Structs.PlayerData.CharEntity
+  type: Property
+  source:
+    remote:
+      path: Structs/PlayerData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: CharEntity
+    path: Structs/PlayerData.cs
+    startLine: 10
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: public Entity CharEntity { readonly get; set; }
+    parameters: []
+    return:
+      type: Unity.Entities.Entity
+    content.vb: Public Property CharEntity As Entity
+  overload: VAMP.Structs.PlayerData.CharEntity*
+- uid: VAMP.Structs.PlayerData.#ctor(Unity.Collections.FixedString64Bytes,System.UInt64,System.Boolean,Unity.Entities.Entity,Unity.Entities.Entity)
+  commentId: M:VAMP.Structs.PlayerData.#ctor(Unity.Collections.FixedString64Bytes,System.UInt64,System.Boolean,Unity.Entities.Entity,Unity.Entities.Entity)
+  id: '#ctor(Unity.Collections.FixedString64Bytes,System.UInt64,System.Boolean,Unity.Entities.Entity,Unity.Entities.Entity)'
+  parent: VAMP.Structs.PlayerData
+  langs:
+  - csharp
+  - vb
+  name: PlayerData(FixedString64Bytes, ulong, bool, Entity, Entity)
+  nameWithType: PlayerData.PlayerData(FixedString64Bytes, ulong, bool, Entity, Entity)
+  fullName: VAMP.Structs.PlayerData.PlayerData(Unity.Collections.FixedString64Bytes, ulong, bool, Unity.Entities.Entity, Unity.Entities.Entity)
+  type: Constructor
+  source:
+    remote:
+      path: Structs/PlayerData.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: .ctor
+    path: Structs/PlayerData.cs
+    startLine: 12
+  assemblies:
+  - VAMP
+  namespace: VAMP.Structs
+  syntax:
+    content: public PlayerData(FixedString64Bytes characterName, ulong steamID, bool isOnline, Entity userEntity, Entity charEntity)
+    parameters:
+    - id: characterName
+      type: Unity.Collections.FixedString64Bytes
+    - id: steamID
+      type: System.UInt64
+    - id: isOnline
+      type: System.Boolean
+    - id: userEntity
+      type: Unity.Entities.Entity
+    - id: charEntity
+      type: Unity.Entities.Entity
+    content.vb: Public Sub New(characterName As FixedString64Bytes, steamID As ULong, isOnline As Boolean, userEntity As Entity, charEntity As Entity)
+  overload: VAMP.Structs.PlayerData.#ctor*
+  nameWithType.vb: PlayerData.New(FixedString64Bytes, ULong, Boolean, Entity, Entity)
+  fullName.vb: VAMP.Structs.PlayerData.New(Unity.Collections.FixedString64Bytes, ULong, Boolean, Unity.Entities.Entity, Unity.Entities.Entity)
+  name.vb: New(FixedString64Bytes, ULong, Boolean, Entity, Entity)
+references:
+- uid: VAMP.Structs
+  commentId: N:VAMP.Structs
+  href: VAMP.html
+  name: VAMP.Structs
+  nameWithType: VAMP.Structs
+  fullName: VAMP.Structs
+  spec.csharp:
+  - uid: VAMP
+    name: VAMP
+    href: VAMP.html
+  - name: .
+  - uid: VAMP.Structs
+    name: Structs
+    href: VAMP.Structs.html
+  spec.vb:
+  - uid: VAMP
+    name: VAMP
+    href: VAMP.html
+  - name: .
+  - uid: VAMP.Structs
+    name: Structs
+    href: VAMP.Structs.html
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: VAMP.Structs.PlayerData.CharacterName*
+  commentId: Overload:VAMP.Structs.PlayerData.CharacterName
+  href: VAMP.Structs.PlayerData.html#VAMP_Structs_PlayerData_CharacterName
+  name: CharacterName
+  nameWithType: PlayerData.CharacterName
+  fullName: VAMP.Structs.PlayerData.CharacterName
+- uid: Unity.Collections.FixedString64Bytes
+  commentId: T:Unity.Collections.FixedString64Bytes
+  parent: Unity.Collections
+  isExternal: true
+  name: FixedString64Bytes
+  nameWithType: FixedString64Bytes
+  fullName: Unity.Collections.FixedString64Bytes
+- uid: Unity.Collections
+  commentId: N:Unity.Collections
+  isExternal: true
+  name: Unity.Collections
+  nameWithType: Unity.Collections
+  fullName: Unity.Collections
+  spec.csharp:
+  - uid: Unity
+    name: Unity
+    isExternal: true
+  - name: .
+  - uid: Unity.Collections
+    name: Collections
+    isExternal: true
+  spec.vb:
+  - uid: Unity
+    name: Unity
+    isExternal: true
+  - name: .
+  - uid: Unity.Collections
+    name: Collections
+    isExternal: true
+- uid: VAMP.Structs.PlayerData.SteamID*
+  commentId: Overload:VAMP.Structs.PlayerData.SteamID
+  href: VAMP.Structs.PlayerData.html#VAMP_Structs_PlayerData_SteamID
+  name: SteamID
+  nameWithType: PlayerData.SteamID
+  fullName: VAMP.Structs.PlayerData.SteamID
+- uid: System.UInt64
+  commentId: T:System.UInt64
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uint64
+  name: ulong
+  nameWithType: ulong
+  fullName: ulong
+  nameWithType.vb: ULong
+  fullName.vb: ULong
+  name.vb: ULong
+- uid: VAMP.Structs.PlayerData.IsOnline*
+  commentId: Overload:VAMP.Structs.PlayerData.IsOnline
+  href: VAMP.Structs.PlayerData.html#VAMP_Structs_PlayerData_IsOnline
+  name: IsOnline
+  nameWithType: PlayerData.IsOnline
+  fullName: VAMP.Structs.PlayerData.IsOnline
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: VAMP.Structs.PlayerData.UserEntity*
+  commentId: Overload:VAMP.Structs.PlayerData.UserEntity
+  href: VAMP.Structs.PlayerData.html#VAMP_Structs_PlayerData_UserEntity
+  name: UserEntity
+  nameWithType: PlayerData.UserEntity
+  fullName: VAMP.Structs.PlayerData.UserEntity
+- uid: Unity.Entities.Entity
+  commentId: T:Unity.Entities.Entity
+  parent: Unity.Entities
+  isExternal: true
+  name: Entity
+  nameWithType: Entity
+  fullName: Unity.Entities.Entity
+- uid: Unity.Entities
+  commentId: N:Unity.Entities
+  isExternal: true
+  name: Unity.Entities
+  nameWithType: Unity.Entities
+  fullName: Unity.Entities
+  spec.csharp:
+  - uid: Unity
+    name: Unity
+    isExternal: true
+  - name: .
+  - uid: Unity.Entities
+    name: Entities
+    isExternal: true
+  spec.vb:
+  - uid: Unity
+    name: Unity
+    isExternal: true
+  - name: .
+  - uid: Unity.Entities
+    name: Entities
+    isExternal: true
+- uid: VAMP.Structs.PlayerData.CharEntity*
+  commentId: Overload:VAMP.Structs.PlayerData.CharEntity
+  href: VAMP.Structs.PlayerData.html#VAMP_Structs_PlayerData_CharEntity
+  name: CharEntity
+  nameWithType: PlayerData.CharEntity
+  fullName: VAMP.Structs.PlayerData.CharEntity
+- uid: VAMP.Structs.PlayerData.#ctor*
+  commentId: Overload:VAMP.Structs.PlayerData.#ctor
+  href: VAMP.Structs.PlayerData.html#VAMP_Structs_PlayerData__ctor_Unity_Collections_FixedString64Bytes_System_UInt64_System_Boolean_Unity_Entities_Entity_Unity_Entities_Entity_
+  name: PlayerData
+  nameWithType: PlayerData.PlayerData
+  fullName: VAMP.Structs.PlayerData.PlayerData
+  nameWithType.vb: PlayerData.New
+  fullName.vb: VAMP.Structs.PlayerData.New
+  name.vb: New

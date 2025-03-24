@@ -1,0 +1,134 @@
+### YamlMime:ManagedReference
+items:
+- uid: VAMP.Structs
+  commentId: N:VAMP.Structs
+  id: VAMP.Structs
+  children:
+  - VAMP.Structs.AngramBoss
+  - VAMP.Structs.BaseTurret
+  - VAMP.Structs.Boss
+  - VAMP.Structs.DyeableStructure
+  - VAMP.Structs.Event
+  - VAMP.Structs.EventTrigger
+  - VAMP.Structs.HardBoss
+  - VAMP.Structs.HealingOrb
+  - VAMP.Structs.Horse
+  - VAMP.Structs.PlayerData
+  - VAMP.Structs.Turret
+  - VAMP.Structs.UltimateOrb
+  - VAMP.Structs.Unit
+  langs:
+  - csharp
+  - vb
+  name: VAMP.Structs
+  nameWithType: VAMP.Structs
+  fullName: VAMP.Structs
+  type: Namespace
+  assemblies:
+  - VAMP
+references:
+- uid: VAMP.Structs.Event
+  commentId: T:VAMP.Structs.Event
+  parent: VAMP.Structs
+  href: VAMP.Structs.Event.html
+  name: Event
+  nameWithType: Event
+  fullName: VAMP.Structs.Event
+- uid: VAMP.Structs.EventTrigger
+  commentId: T:VAMP.Structs.EventTrigger
+  parent: VAMP.Structs
+  href: VAMP.Structs.EventTrigger.html
+  name: EventTrigger
+  nameWithType: EventTrigger
+  fullName: VAMP.Structs.EventTrigger
+- uid: VAMP.Structs.PlayerData
+  commentId: T:VAMP.Structs.PlayerData
+  parent: VAMP.Structs
+  href: VAMP.Structs.PlayerData.html
+  name: PlayerData
+  nameWithType: PlayerData
+  fullName: VAMP.Structs.PlayerData
+- uid: VAMP.Structs.Unit
+  commentId: T:VAMP.Structs.Unit
+  parent: VAMP.Structs
+  href: VAMP.Structs.Unit.html
+  name: Unit
+  nameWithType: Unit
+  fullName: VAMP.Structs.Unit
+- uid: VAMP.Structs.HardBoss
+  commentId: T:VAMP.Structs.HardBoss
+  href: VAMP.Structs.HardBoss.html
+  name: HardBoss
+  nameWithType: HardBoss
+  fullName: VAMP.Structs.HardBoss
+- uid: VAMP.Structs.Boss
+  commentId: T:VAMP.Structs.Boss
+  parent: VAMP.Structs
+  href: VAMP.Structs.Boss.html
+  name: Boss
+  nameWithType: Boss
+  fullName: VAMP.Structs.Boss
+- uid: VAMP.Structs.AngramBoss
+  commentId: T:VAMP.Structs.AngramBoss
+  href: VAMP.Structs.AngramBoss.html
+  name: AngramBoss
+  nameWithType: AngramBoss
+  fullName: VAMP.Structs.AngramBoss
+- uid: VAMP.Structs.Turret
+  commentId: T:VAMP.Structs.Turret
+  href: VAMP.Structs.Turret.html
+  name: Turret
+  nameWithType: Turret
+  fullName: VAMP.Structs.Turret
+- uid: VAMP.Structs.BaseTurret
+  commentId: T:VAMP.Structs.BaseTurret
+  href: VAMP.Structs.BaseTurret.html
+  name: BaseTurret
+  nameWithType: BaseTurret
+  fullName: VAMP.Structs.BaseTurret
+- uid: VAMP.Structs.DyeableStructure
+  commentId: T:VAMP.Structs.DyeableStructure
+  href: VAMP.Structs.DyeableStructure.html
+  name: DyeableStructure
+  nameWithType: DyeableStructure
+  fullName: VAMP.Structs.DyeableStructure
+- uid: VAMP.Structs.HealingOrb
+  commentId: T:VAMP.Structs.HealingOrb
+  href: VAMP.Structs.HealingOrb.html
+  name: HealingOrb
+  nameWithType: HealingOrb
+  fullName: VAMP.Structs.HealingOrb
+- uid: VAMP.Structs.UltimateOrb
+  commentId: T:VAMP.Structs.UltimateOrb
+  href: VAMP.Structs.UltimateOrb.html
+  name: UltimateOrb
+  nameWithType: UltimateOrb
+  fullName: VAMP.Structs.UltimateOrb
+- uid: VAMP.Structs.Horse
+  commentId: T:VAMP.Structs.Horse
+  href: VAMP.Structs.Horse.html
+  name: Horse
+  nameWithType: Horse
+  fullName: VAMP.Structs.Horse
+- uid: VAMP.Structs
+  commentId: N:VAMP.Structs
+  href: VAMP.html
+  name: VAMP.Structs
+  nameWithType: VAMP.Structs
+  fullName: VAMP.Structs
+  spec.csharp:
+  - uid: VAMP
+    name: VAMP
+    href: VAMP.html
+  - name: .
+  - uid: VAMP.Structs
+    name: Structs
+    href: VAMP.Structs.html
+  spec.vb:
+  - uid: VAMP
+    name: VAMP
+    href: VAMP.html
+  - name: .
+  - uid: VAMP.Structs
+    name: Structs
+    href: VAMP.Structs.html

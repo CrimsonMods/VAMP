@@ -1,0 +1,151 @@
+### YamlMime:TableOfContent
+items:
+- uid: VAMP
+  name: VAMP
+  type: Namespace
+  items:
+  - uid: VAMP.Core
+    name: Core
+    type: Class
+  - uid: VAMP.Extensions
+    name: Extensions
+    type: Class
+  - uid: VAMP.MyPluginInfo
+    name: MyPluginInfo
+    type: Class
+  - uid: VAMP.Plugin
+    name: Plugin
+    type: Class
+- uid: VAMP.Data
+  name: VAMP.Data
+  type: Namespace
+  items:
+  - uid: VAMP.Data.Prefabs
+    name: Prefabs
+    type: Class
+  - uid: VAMP.Data.TerritoryAlignment
+    name: TerritoryAlignment
+    type: Enum
+  - uid: VAMP.Data.WorldRegions
+    name: WorldRegions
+    type: Class
+- uid: VAMP.Models
+  name: VAMP.Models
+  type: Namespace
+  items:
+  - uid: VAMP.Models.Player
+    name: Player
+    type: Class
+- uid: VAMP.Patches
+  name: VAMP.Patches
+  type: Namespace
+  items:
+  - uid: VAMP.Patches.ChatMessagePatch
+    name: ChatMessagePatch
+    type: Class
+  - uid: VAMP.Patches.InitializationPatch
+    name: InitializationPatch
+    type: Class
+  - uid: VAMP.Patches.OnUserConnectedPatch
+    name: OnUserConnectedPatch
+    type: Class
+  - uid: VAMP.Patches.OnUserDisconnectedPatch
+    name: OnUserDisconnectedPatch
+    type: Class
+  - uid: VAMP.Patches.UnitSpawnerPatch
+    name: UnitSpawnerPatch
+    type: Class
+- uid: VAMP.Services
+  name: VAMP.Services
+  type: Namespace
+  items:
+  - uid: VAMP.Services.CastleHeartService
+    name: CastleHeartService
+    type: Class
+  - uid: VAMP.Services.CastleTerritoryService
+    name: CastleTerritoryService
+    type: Class
+  - uid: VAMP.Services.EventScheduler
+    name: EventScheduler
+    type: Class
+  - uid: VAMP.Services.PlayerService
+    name: PlayerService
+    type: Class
+  - uid: VAMP.Services.SpawnService
+    name: SpawnService
+    type: Class
+  - uid: VAMP.Services.SystemService
+    name: SystemService
+    type: Class
+- uid: VAMP.Structs
+  name: VAMP.Structs
+  type: Namespace
+  items:
+  - uid: VAMP.Structs.AngramBoss
+    name: AngramBoss
+    type: Class
+  - uid: VAMP.Structs.BaseTurret
+    name: BaseTurret
+    type: Class
+  - uid: VAMP.Structs.Boss
+    name: Boss
+    type: Class
+  - uid: VAMP.Structs.DyeableStructure
+    name: DyeableStructure
+    type: Class
+  - uid: VAMP.Structs.Event
+    name: Event
+    type: Class
+  - uid: VAMP.Structs.EventTrigger
+    name: EventTrigger
+    type: Enum
+  - uid: VAMP.Structs.HardBoss
+    name: HardBoss
+    type: Class
+  - uid: VAMP.Structs.HealingOrb
+    name: HealingOrb
+    type: Class
+  - uid: VAMP.Structs.Horse
+    name: Horse
+    type: Class
+  - uid: VAMP.Structs.PlayerData
+    name: PlayerData
+    type: Struct
+  - uid: VAMP.Structs.Turret
+    name: Turret
+    type: Class
+  - uid: VAMP.Structs.UltimateOrb
+    name: UltimateOrb
+    type: Class
+  - uid: VAMP.Structs.Unit
+    name: Unit
+    type: Class
+- uid: VAMP.Utilities
+  name: VAMP.Utilities
+  type: Namespace
+  items:
+  - uid: VAMP.Utilities.BuffUtil
+    name: BuffUtil
+    type: Class
+  - uid: VAMP.Utilities.ChatUtil
+    name: ChatUtil
+    type: Class
+  - uid: VAMP.Utilities.DevUtil
+    name: DevUtil
+    type: Class
+  - uid: VAMP.Utilities.EntityUtil
+    name: EntityUtil
+    type: Class
+  - uid: VAMP.Utilities.ItemUtil
+    name: ItemUtil
+    type: Class
+  - uid: VAMP.Utilities.SettingsUtil
+    name: SettingsUtil
+    type: Class
+  - uid: VAMP.Utilities.UnitUtil
+    name: UnitUtil
+    type: Class
+  - uid: VAMP.Utilities.UnitUtil.SpawnedUnit
+    name: UnitUtil.SpawnedUnit
+    type: Class
+memberLayout: SamePage

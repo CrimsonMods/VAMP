@@ -1,0 +1,1699 @@
+### YamlMime:ManagedReference
+items:
+- uid: VAMP.Services.SystemService
+  commentId: T:VAMP.Services.SystemService
+  id: SystemService
+  parent: VAMP.Services
+  children:
+  - VAMP.Services.SystemService.#ctor(Unity.Entities.World)
+  - VAMP.Services.SystemService.AbilitySpawnSystem
+  - VAMP.Services.SystemService.ActivateVBloodAbilitySystem
+  - VAMP.Services.SystemService.AttachParentIdSystem
+  - VAMP.Services.SystemService.BehaviourTreeBindingSystem_Spawn
+  - VAMP.Services.SystemService.ClaimAchievementSystem
+  - VAMP.Services.SystemService.CombatMusicSystem_Server
+  - VAMP.Services.SystemService.DebugEventsSystem
+  - VAMP.Services.SystemService.EndSimulationEntityCommandBufferSystem
+  - VAMP.Services.SystemService.EntityCommandBufferSystem
+  - VAMP.Services.SystemService.EquipItemSystem
+  - VAMP.Services.SystemService.GameDataSystem
+  - VAMP.Services.SystemService.ModificationSystem
+  - VAMP.Services.SystemService.ModifyUnitStatBuffSystem_Destroy
+  - VAMP.Services.SystemService.ModifyUnitStatBuffSystem_Spawn
+  - VAMP.Services.SystemService.NameableInteractableSystem
+  - VAMP.Services.SystemService.NetworkIdSystem
+  - VAMP.Services.SystemService.PrefabCollectionSystem
+  - VAMP.Services.SystemService.ReplaceAbilityOnSlotSystem
+  - VAMP.Services.SystemService.ScriptSpawnServer
+  - VAMP.Services.SystemService.ServerBootstrapSystem
+  - VAMP.Services.SystemService.ServerGameSettingsSystem
+  - VAMP.Services.SystemService.ServerScriptMapper
+  - VAMP.Services.SystemService.SetTeamOnSpawnSystem
+  - VAMP.Services.SystemService.SpawnAbilityGroupSlotSystem
+  - VAMP.Services.SystemService.SpawnTeamSystem
+  - VAMP.Services.SystemService.StatChangeSystem
+  - VAMP.Services.SystemService.UnEquipItemSystem
+  - VAMP.Services.SystemService.Update_ReplaceAbilityOnSlotSystem
+  langs:
+  - csharp
+  - vb
+  name: SystemService
+  nameWithType: SystemService
+  fullName: VAMP.Services.SystemService
+  type: Class
+  source:
+    remote:
+      path: Services/SystemService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: SystemService
+    path: Services/SystemService.cs
+    startLine: 11
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public class SystemService
+    content.vb: Public Class SystemService
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: VAMP.Services.SystemService.#ctor(Unity.Entities.World)
+  commentId: M:VAMP.Services.SystemService.#ctor(Unity.Entities.World)
+  id: '#ctor(Unity.Entities.World)'
+  parent: VAMP.Services.SystemService
+  langs:
+  - csharp
+  - vb
+  name: SystemService(World)
+  nameWithType: SystemService.SystemService(World)
+  fullName: VAMP.Services.SystemService.SystemService(Unity.Entities.World)
+  type: Constructor
+  source:
+    remote:
+      path: Services/SystemService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: .ctor
+    path: Services/SystemService.cs
+    startLine: 11
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public SystemService(World world)
+    parameters:
+    - id: world
+      type: Unity.Entities.World
+    content.vb: Public Sub New(world As World)
+  overload: VAMP.Services.SystemService.#ctor*
+  nameWithType.vb: SystemService.New(World)
+  fullName.vb: VAMP.Services.SystemService.New(Unity.Entities.World)
+  name.vb: New(World)
+- uid: VAMP.Services.SystemService.DebugEventsSystem
+  commentId: P:VAMP.Services.SystemService.DebugEventsSystem
+  id: DebugEventsSystem
+  parent: VAMP.Services.SystemService
+  langs:
+  - csharp
+  - vb
+  name: DebugEventsSystem
+  nameWithType: SystemService.DebugEventsSystem
+  fullName: VAMP.Services.SystemService.DebugEventsSystem
+  type: Property
+  source:
+    remote:
+      path: Services/SystemService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: DebugEventsSystem
+    path: Services/SystemService.cs
+    startLine: 16
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public DebugEventsSystem DebugEventsSystem { get; }
+    parameters: []
+    return:
+      type: ProjectM.DebugEventsSystem
+    content.vb: Public ReadOnly Property DebugEventsSystem As DebugEventsSystem
+  overload: VAMP.Services.SystemService.DebugEventsSystem*
+- uid: VAMP.Services.SystemService.PrefabCollectionSystem
+  commentId: P:VAMP.Services.SystemService.PrefabCollectionSystem
+  id: PrefabCollectionSystem
+  parent: VAMP.Services.SystemService
+  langs:
+  - csharp
+  - vb
+  name: PrefabCollectionSystem
+  nameWithType: SystemService.PrefabCollectionSystem
+  fullName: VAMP.Services.SystemService.PrefabCollectionSystem
+  type: Property
+  source:
+    remote:
+      path: Services/SystemService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: PrefabCollectionSystem
+    path: Services/SystemService.cs
+    startLine: 19
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public PrefabCollectionSystem PrefabCollectionSystem { get; }
+    parameters: []
+    return:
+      type: ProjectM.PrefabCollectionSystem
+    content.vb: Public ReadOnly Property PrefabCollectionSystem As PrefabCollectionSystem
+  overload: VAMP.Services.SystemService.PrefabCollectionSystem*
+- uid: VAMP.Services.SystemService.ServerGameSettingsSystem
+  commentId: P:VAMP.Services.SystemService.ServerGameSettingsSystem
+  id: ServerGameSettingsSystem
+  parent: VAMP.Services.SystemService
+  langs:
+  - csharp
+  - vb
+  name: ServerGameSettingsSystem
+  nameWithType: SystemService.ServerGameSettingsSystem
+  fullName: VAMP.Services.SystemService.ServerGameSettingsSystem
+  type: Property
+  source:
+    remote:
+      path: Services/SystemService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: ServerGameSettingsSystem
+    path: Services/SystemService.cs
+    startLine: 22
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public ServerGameSettingsSystem ServerGameSettingsSystem { get; }
+    parameters: []
+    return:
+      type: ProjectM.ServerGameSettingsSystem
+    content.vb: Public ReadOnly Property ServerGameSettingsSystem As ServerGameSettingsSystem
+  overload: VAMP.Services.SystemService.ServerGameSettingsSystem*
+- uid: VAMP.Services.SystemService.ServerScriptMapper
+  commentId: P:VAMP.Services.SystemService.ServerScriptMapper
+  id: ServerScriptMapper
+  parent: VAMP.Services.SystemService
+  langs:
+  - csharp
+  - vb
+  name: ServerScriptMapper
+  nameWithType: SystemService.ServerScriptMapper
+  fullName: VAMP.Services.SystemService.ServerScriptMapper
+  type: Property
+  source:
+    remote:
+      path: Services/SystemService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: ServerScriptMapper
+    path: Services/SystemService.cs
+    startLine: 25
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public ServerScriptMapper ServerScriptMapper { get; }
+    parameters: []
+    return:
+      type: ProjectM.Scripting.ServerScriptMapper
+    content.vb: Public ReadOnly Property ServerScriptMapper As ServerScriptMapper
+  overload: VAMP.Services.SystemService.ServerScriptMapper*
+- uid: VAMP.Services.SystemService.ModifyUnitStatBuffSystem_Spawn
+  commentId: P:VAMP.Services.SystemService.ModifyUnitStatBuffSystem_Spawn
+  id: ModifyUnitStatBuffSystem_Spawn
+  parent: VAMP.Services.SystemService
+  langs:
+  - csharp
+  - vb
+  name: ModifyUnitStatBuffSystem_Spawn
+  nameWithType: SystemService.ModifyUnitStatBuffSystem_Spawn
+  fullName: VAMP.Services.SystemService.ModifyUnitStatBuffSystem_Spawn
+  type: Property
+  source:
+    remote:
+      path: Services/SystemService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: ModifyUnitStatBuffSystem_Spawn
+    path: Services/SystemService.cs
+    startLine: 28
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public ModifyUnitStatBuffSystem_Spawn ModifyUnitStatBuffSystem_Spawn { get; }
+    parameters: []
+    return:
+      type: ProjectM.ModifyUnitStatBuffSystem_Spawn
+    content.vb: Public ReadOnly Property ModifyUnitStatBuffSystem_Spawn As ModifyUnitStatBuffSystem_Spawn
+  overload: VAMP.Services.SystemService.ModifyUnitStatBuffSystem_Spawn*
+- uid: VAMP.Services.SystemService.ModifyUnitStatBuffSystem_Destroy
+  commentId: P:VAMP.Services.SystemService.ModifyUnitStatBuffSystem_Destroy
+  id: ModifyUnitStatBuffSystem_Destroy
+  parent: VAMP.Services.SystemService
+  langs:
+  - csharp
+  - vb
+  name: ModifyUnitStatBuffSystem_Destroy
+  nameWithType: SystemService.ModifyUnitStatBuffSystem_Destroy
+  fullName: VAMP.Services.SystemService.ModifyUnitStatBuffSystem_Destroy
+  type: Property
+  source:
+    remote:
+      path: Services/SystemService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: ModifyUnitStatBuffSystem_Destroy
+    path: Services/SystemService.cs
+    startLine: 31
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public ModifyUnitStatBuffSystem_Destroy ModifyUnitStatBuffSystem_Destroy { get; }
+    parameters: []
+    return:
+      type: ProjectM.ModifyUnitStatBuffSystem_Destroy
+    content.vb: Public ReadOnly Property ModifyUnitStatBuffSystem_Destroy As ModifyUnitStatBuffSystem_Destroy
+  overload: VAMP.Services.SystemService.ModifyUnitStatBuffSystem_Destroy*
+- uid: VAMP.Services.SystemService.EntityCommandBufferSystem
+  commentId: P:VAMP.Services.SystemService.EntityCommandBufferSystem
+  id: EntityCommandBufferSystem
+  parent: VAMP.Services.SystemService
+  langs:
+  - csharp
+  - vb
+  name: EntityCommandBufferSystem
+  nameWithType: SystemService.EntityCommandBufferSystem
+  fullName: VAMP.Services.SystemService.EntityCommandBufferSystem
+  type: Property
+  source:
+    remote:
+      path: Services/SystemService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: EntityCommandBufferSystem
+    path: Services/SystemService.cs
+    startLine: 34
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public EntityCommandBufferSystem EntityCommandBufferSystem { get; }
+    parameters: []
+    return:
+      type: Unity.Entities.EntityCommandBufferSystem
+    content.vb: Public ReadOnly Property EntityCommandBufferSystem As EntityCommandBufferSystem
+  overload: VAMP.Services.SystemService.EntityCommandBufferSystem*
+- uid: VAMP.Services.SystemService.ClaimAchievementSystem
+  commentId: P:VAMP.Services.SystemService.ClaimAchievementSystem
+  id: ClaimAchievementSystem
+  parent: VAMP.Services.SystemService
+  langs:
+  - csharp
+  - vb
+  name: ClaimAchievementSystem
+  nameWithType: SystemService.ClaimAchievementSystem
+  fullName: VAMP.Services.SystemService.ClaimAchievementSystem
+  type: Property
+  source:
+    remote:
+      path: Services/SystemService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: ClaimAchievementSystem
+    path: Services/SystemService.cs
+    startLine: 37
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public ClaimAchievementSystem ClaimAchievementSystem { get; }
+    parameters: []
+    return:
+      type: ProjectM.ClaimAchievementSystem
+    content.vb: Public ReadOnly Property ClaimAchievementSystem As ClaimAchievementSystem
+  overload: VAMP.Services.SystemService.ClaimAchievementSystem*
+- uid: VAMP.Services.SystemService.GameDataSystem
+  commentId: P:VAMP.Services.SystemService.GameDataSystem
+  id: GameDataSystem
+  parent: VAMP.Services.SystemService
+  langs:
+  - csharp
+  - vb
+  name: GameDataSystem
+  nameWithType: SystemService.GameDataSystem
+  fullName: VAMP.Services.SystemService.GameDataSystem
+  type: Property
+  source:
+    remote:
+      path: Services/SystemService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: GameDataSystem
+    path: Services/SystemService.cs
+    startLine: 40
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public GameDataSystem GameDataSystem { get; }
+    parameters: []
+    return:
+      type: ProjectM.GameDataSystem
+    content.vb: Public ReadOnly Property GameDataSystem As GameDataSystem
+  overload: VAMP.Services.SystemService.GameDataSystem*
+- uid: VAMP.Services.SystemService.ScriptSpawnServer
+  commentId: P:VAMP.Services.SystemService.ScriptSpawnServer
+  id: ScriptSpawnServer
+  parent: VAMP.Services.SystemService
+  langs:
+  - csharp
+  - vb
+  name: ScriptSpawnServer
+  nameWithType: SystemService.ScriptSpawnServer
+  fullName: VAMP.Services.SystemService.ScriptSpawnServer
+  type: Property
+  source:
+    remote:
+      path: Services/SystemService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: ScriptSpawnServer
+    path: Services/SystemService.cs
+    startLine: 43
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public ScriptSpawnServer ScriptSpawnServer { get; }
+    parameters: []
+    return:
+      type: ProjectM.Shared.Systems.ScriptSpawnServer
+    content.vb: Public ReadOnly Property ScriptSpawnServer As ScriptSpawnServer
+  overload: VAMP.Services.SystemService.ScriptSpawnServer*
+- uid: VAMP.Services.SystemService.CombatMusicSystem_Server
+  commentId: P:VAMP.Services.SystemService.CombatMusicSystem_Server
+  id: CombatMusicSystem_Server
+  parent: VAMP.Services.SystemService
+  langs:
+  - csharp
+  - vb
+  name: CombatMusicSystem_Server
+  nameWithType: SystemService.CombatMusicSystem_Server
+  fullName: VAMP.Services.SystemService.CombatMusicSystem_Server
+  type: Property
+  source:
+    remote:
+      path: Services/SystemService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: CombatMusicSystem_Server
+    path: Services/SystemService.cs
+    startLine: 46
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public CombatMusicSystem_Server CombatMusicSystem_Server { get; }
+    parameters: []
+    return:
+      type: ProjectM.Gameplay.Systems.CombatMusicSystem_Server
+    content.vb: Public ReadOnly Property CombatMusicSystem_Server As CombatMusicSystem_Server
+  overload: VAMP.Services.SystemService.CombatMusicSystem_Server*
+- uid: VAMP.Services.SystemService.NameableInteractableSystem
+  commentId: P:VAMP.Services.SystemService.NameableInteractableSystem
+  id: NameableInteractableSystem
+  parent: VAMP.Services.SystemService
+  langs:
+  - csharp
+  - vb
+  name: NameableInteractableSystem
+  nameWithType: SystemService.NameableInteractableSystem
+  fullName: VAMP.Services.SystemService.NameableInteractableSystem
+  type: Property
+  source:
+    remote:
+      path: Services/SystemService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: NameableInteractableSystem
+    path: Services/SystemService.cs
+    startLine: 49
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public NameableInteractableSystem NameableInteractableSystem { get; }
+    parameters: []
+    return:
+      type: ProjectM.NameableInteractableSystem
+    content.vb: Public ReadOnly Property NameableInteractableSystem As NameableInteractableSystem
+  overload: VAMP.Services.SystemService.NameableInteractableSystem*
+- uid: VAMP.Services.SystemService.ActivateVBloodAbilitySystem
+  commentId: P:VAMP.Services.SystemService.ActivateVBloodAbilitySystem
+  id: ActivateVBloodAbilitySystem
+  parent: VAMP.Services.SystemService
+  langs:
+  - csharp
+  - vb
+  name: ActivateVBloodAbilitySystem
+  nameWithType: SystemService.ActivateVBloodAbilitySystem
+  fullName: VAMP.Services.SystemService.ActivateVBloodAbilitySystem
+  type: Property
+  source:
+    remote:
+      path: Services/SystemService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: ActivateVBloodAbilitySystem
+    path: Services/SystemService.cs
+    startLine: 52
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public ActivateVBloodAbilitySystem ActivateVBloodAbilitySystem { get; }
+    parameters: []
+    return:
+      type: ProjectM.Gameplay.Systems.ActivateVBloodAbilitySystem
+    content.vb: Public ReadOnly Property ActivateVBloodAbilitySystem As ActivateVBloodAbilitySystem
+  overload: VAMP.Services.SystemService.ActivateVBloodAbilitySystem*
+- uid: VAMP.Services.SystemService.EndSimulationEntityCommandBufferSystem
+  commentId: P:VAMP.Services.SystemService.EndSimulationEntityCommandBufferSystem
+  id: EndSimulationEntityCommandBufferSystem
+  parent: VAMP.Services.SystemService
+  langs:
+  - csharp
+  - vb
+  name: EndSimulationEntityCommandBufferSystem
+  nameWithType: SystemService.EndSimulationEntityCommandBufferSystem
+  fullName: VAMP.Services.SystemService.EndSimulationEntityCommandBufferSystem
+  type: Property
+  source:
+    remote:
+      path: Services/SystemService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: EndSimulationEntityCommandBufferSystem
+    path: Services/SystemService.cs
+    startLine: 55
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public EndSimulationEntityCommandBufferSystem EndSimulationEntityCommandBufferSystem { get; }
+    parameters: []
+    return:
+      type: Unity.Entities.EndSimulationEntityCommandBufferSystem
+    content.vb: Public ReadOnly Property EndSimulationEntityCommandBufferSystem As EndSimulationEntityCommandBufferSystem
+  overload: VAMP.Services.SystemService.EndSimulationEntityCommandBufferSystem*
+- uid: VAMP.Services.SystemService.ReplaceAbilityOnSlotSystem
+  commentId: P:VAMP.Services.SystemService.ReplaceAbilityOnSlotSystem
+  id: ReplaceAbilityOnSlotSystem
+  parent: VAMP.Services.SystemService
+  langs:
+  - csharp
+  - vb
+  name: ReplaceAbilityOnSlotSystem
+  nameWithType: SystemService.ReplaceAbilityOnSlotSystem
+  fullName: VAMP.Services.SystemService.ReplaceAbilityOnSlotSystem
+  type: Property
+  source:
+    remote:
+      path: Services/SystemService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: ReplaceAbilityOnSlotSystem
+    path: Services/SystemService.cs
+    startLine: 58
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public ReplaceAbilityOnSlotSystem ReplaceAbilityOnSlotSystem { get; }
+    parameters: []
+    return:
+      type: ProjectM.ReplaceAbilityOnSlotSystem
+    content.vb: Public ReadOnly Property ReplaceAbilityOnSlotSystem As ReplaceAbilityOnSlotSystem
+  overload: VAMP.Services.SystemService.ReplaceAbilityOnSlotSystem*
+- uid: VAMP.Services.SystemService.UnEquipItemSystem
+  commentId: P:VAMP.Services.SystemService.UnEquipItemSystem
+  id: UnEquipItemSystem
+  parent: VAMP.Services.SystemService
+  langs:
+  - csharp
+  - vb
+  name: UnEquipItemSystem
+  nameWithType: SystemService.UnEquipItemSystem
+  fullName: VAMP.Services.SystemService.UnEquipItemSystem
+  type: Property
+  source:
+    remote:
+      path: Services/SystemService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: UnEquipItemSystem
+    path: Services/SystemService.cs
+    startLine: 61
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public UnEquipItemSystem UnEquipItemSystem { get; }
+    parameters: []
+    return:
+      type: ProjectM.UnEquipItemSystem
+    content.vb: Public ReadOnly Property UnEquipItemSystem As UnEquipItemSystem
+  overload: VAMP.Services.SystemService.UnEquipItemSystem*
+- uid: VAMP.Services.SystemService.EquipItemSystem
+  commentId: P:VAMP.Services.SystemService.EquipItemSystem
+  id: EquipItemSystem
+  parent: VAMP.Services.SystemService
+  langs:
+  - csharp
+  - vb
+  name: EquipItemSystem
+  nameWithType: SystemService.EquipItemSystem
+  fullName: VAMP.Services.SystemService.EquipItemSystem
+  type: Property
+  source:
+    remote:
+      path: Services/SystemService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: EquipItemSystem
+    path: Services/SystemService.cs
+    startLine: 64
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public EquipItemSystem EquipItemSystem { get; }
+    parameters: []
+    return:
+      type: ProjectM.EquipItemSystem
+    content.vb: Public ReadOnly Property EquipItemSystem As EquipItemSystem
+  overload: VAMP.Services.SystemService.EquipItemSystem*
+- uid: VAMP.Services.SystemService.Update_ReplaceAbilityOnSlotSystem
+  commentId: P:VAMP.Services.SystemService.Update_ReplaceAbilityOnSlotSystem
+  id: Update_ReplaceAbilityOnSlotSystem
+  parent: VAMP.Services.SystemService
+  langs:
+  - csharp
+  - vb
+  name: Update_ReplaceAbilityOnSlotSystem
+  nameWithType: SystemService.Update_ReplaceAbilityOnSlotSystem
+  fullName: VAMP.Services.SystemService.Update_ReplaceAbilityOnSlotSystem
+  type: Property
+  source:
+    remote:
+      path: Services/SystemService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: Update_ReplaceAbilityOnSlotSystem
+    path: Services/SystemService.cs
+    startLine: 67
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public Update_ReplaceAbilityOnSlotSystem Update_ReplaceAbilityOnSlotSystem { get; }
+    parameters: []
+    return:
+      type: ProjectM.Update_ReplaceAbilityOnSlotSystem
+    content.vb: Public ReadOnly Property Update_ReplaceAbilityOnSlotSystem As Update_ReplaceAbilityOnSlotSystem
+  overload: VAMP.Services.SystemService.Update_ReplaceAbilityOnSlotSystem*
+- uid: VAMP.Services.SystemService.StatChangeSystem
+  commentId: P:VAMP.Services.SystemService.StatChangeSystem
+  id: StatChangeSystem
+  parent: VAMP.Services.SystemService
+  langs:
+  - csharp
+  - vb
+  name: StatChangeSystem
+  nameWithType: SystemService.StatChangeSystem
+  fullName: VAMP.Services.SystemService.StatChangeSystem
+  type: Property
+  source:
+    remote:
+      path: Services/SystemService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: StatChangeSystem
+    path: Services/SystemService.cs
+    startLine: 70
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public StatChangeSystem StatChangeSystem { get; }
+    parameters: []
+    return:
+      type: ProjectM.Gameplay.Systems.StatChangeSystem
+    content.vb: Public ReadOnly Property StatChangeSystem As StatChangeSystem
+  overload: VAMP.Services.SystemService.StatChangeSystem*
+- uid: VAMP.Services.SystemService.NetworkIdSystem
+  commentId: P:VAMP.Services.SystemService.NetworkIdSystem
+  id: NetworkIdSystem
+  parent: VAMP.Services.SystemService
+  langs:
+  - csharp
+  - vb
+  name: NetworkIdSystem
+  nameWithType: SystemService.NetworkIdSystem
+  fullName: VAMP.Services.SystemService.NetworkIdSystem
+  type: Property
+  source:
+    remote:
+      path: Services/SystemService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: NetworkIdSystem
+    path: Services/SystemService.cs
+    startLine: 73
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public NetworkIdSystem.Singleton NetworkIdSystem { get; }
+    parameters: []
+    return:
+      type: ProjectM.Network.NetworkIdSystem.Singleton
+    content.vb: Public ReadOnly Property NetworkIdSystem As NetworkIdSystem.Singleton
+  overload: VAMP.Services.SystemService.NetworkIdSystem*
+- uid: VAMP.Services.SystemService.ServerBootstrapSystem
+  commentId: P:VAMP.Services.SystemService.ServerBootstrapSystem
+  id: ServerBootstrapSystem
+  parent: VAMP.Services.SystemService
+  langs:
+  - csharp
+  - vb
+  name: ServerBootstrapSystem
+  nameWithType: SystemService.ServerBootstrapSystem
+  fullName: VAMP.Services.SystemService.ServerBootstrapSystem
+  type: Property
+  source:
+    remote:
+      path: Services/SystemService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: ServerBootstrapSystem
+    path: Services/SystemService.cs
+    startLine: 76
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public ServerBootstrapSystem ServerBootstrapSystem { get; }
+    parameters: []
+    return:
+      type: ProjectM.ServerBootstrapSystem
+    content.vb: Public ReadOnly Property ServerBootstrapSystem As ServerBootstrapSystem
+  overload: VAMP.Services.SystemService.ServerBootstrapSystem*
+- uid: VAMP.Services.SystemService.BehaviourTreeBindingSystem_Spawn
+  commentId: P:VAMP.Services.SystemService.BehaviourTreeBindingSystem_Spawn
+  id: BehaviourTreeBindingSystem_Spawn
+  parent: VAMP.Services.SystemService
+  langs:
+  - csharp
+  - vb
+  name: BehaviourTreeBindingSystem_Spawn
+  nameWithType: SystemService.BehaviourTreeBindingSystem_Spawn
+  fullName: VAMP.Services.SystemService.BehaviourTreeBindingSystem_Spawn
+  type: Property
+  source:
+    remote:
+      path: Services/SystemService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: BehaviourTreeBindingSystem_Spawn
+    path: Services/SystemService.cs
+    startLine: 79
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public BehaviourTreeBindingSystem_Spawn BehaviourTreeBindingSystem_Spawn { get; }
+    parameters: []
+    return:
+      type: ProjectM.BehaviourTreeBindingSystem_Spawn
+    content.vb: Public ReadOnly Property BehaviourTreeBindingSystem_Spawn As BehaviourTreeBindingSystem_Spawn
+  overload: VAMP.Services.SystemService.BehaviourTreeBindingSystem_Spawn*
+- uid: VAMP.Services.SystemService.SpawnAbilityGroupSlotSystem
+  commentId: P:VAMP.Services.SystemService.SpawnAbilityGroupSlotSystem
+  id: SpawnAbilityGroupSlotSystem
+  parent: VAMP.Services.SystemService
+  langs:
+  - csharp
+  - vb
+  name: SpawnAbilityGroupSlotSystem
+  nameWithType: SystemService.SpawnAbilityGroupSlotSystem
+  fullName: VAMP.Services.SystemService.SpawnAbilityGroupSlotSystem
+  type: Property
+  source:
+    remote:
+      path: Services/SystemService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: SpawnAbilityGroupSlotSystem
+    path: Services/SystemService.cs
+    startLine: 82
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public SpawnAbilityGroupSlotsSystem SpawnAbilityGroupSlotSystem { get; }
+    parameters: []
+    return:
+      type: ProjectM.SpawnAbilityGroupSlotsSystem
+    content.vb: Public ReadOnly Property SpawnAbilityGroupSlotSystem As SpawnAbilityGroupSlotsSystem
+  overload: VAMP.Services.SystemService.SpawnAbilityGroupSlotSystem*
+- uid: VAMP.Services.SystemService.AttachParentIdSystem
+  commentId: P:VAMP.Services.SystemService.AttachParentIdSystem
+  id: AttachParentIdSystem
+  parent: VAMP.Services.SystemService
+  langs:
+  - csharp
+  - vb
+  name: AttachParentIdSystem
+  nameWithType: SystemService.AttachParentIdSystem
+  fullName: VAMP.Services.SystemService.AttachParentIdSystem
+  type: Property
+  source:
+    remote:
+      path: Services/SystemService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: AttachParentIdSystem
+    path: Services/SystemService.cs
+    startLine: 85
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public AttachParentIdSystem AttachParentIdSystem { get; }
+    parameters: []
+    return:
+      type: ProjectM.AttachParentIdSystem
+    content.vb: Public ReadOnly Property AttachParentIdSystem As AttachParentIdSystem
+  overload: VAMP.Services.SystemService.AttachParentIdSystem*
+- uid: VAMP.Services.SystemService.AbilitySpawnSystem
+  commentId: P:VAMP.Services.SystemService.AbilitySpawnSystem
+  id: AbilitySpawnSystem
+  parent: VAMP.Services.SystemService
+  langs:
+  - csharp
+  - vb
+  name: AbilitySpawnSystem
+  nameWithType: SystemService.AbilitySpawnSystem
+  fullName: VAMP.Services.SystemService.AbilitySpawnSystem
+  type: Property
+  source:
+    remote:
+      path: Services/SystemService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: AbilitySpawnSystem
+    path: Services/SystemService.cs
+    startLine: 88
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public AbilitySpawnSystem AbilitySpawnSystem { get; }
+    parameters: []
+    return:
+      type: ProjectM.Gameplay.Systems.AbilitySpawnSystem
+    content.vb: Public ReadOnly Property AbilitySpawnSystem As AbilitySpawnSystem
+  overload: VAMP.Services.SystemService.AbilitySpawnSystem*
+- uid: VAMP.Services.SystemService.SpawnTeamSystem
+  commentId: P:VAMP.Services.SystemService.SpawnTeamSystem
+  id: SpawnTeamSystem
+  parent: VAMP.Services.SystemService
+  langs:
+  - csharp
+  - vb
+  name: SpawnTeamSystem
+  nameWithType: SystemService.SpawnTeamSystem
+  fullName: VAMP.Services.SystemService.SpawnTeamSystem
+  type: Property
+  source:
+    remote:
+      path: Services/SystemService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: SpawnTeamSystem
+    path: Services/SystemService.cs
+    startLine: 91
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public SpawnTeamSystem SpawnTeamSystem { get; }
+    parameters: []
+    return:
+      type: ProjectM.SpawnTeamSystem
+    content.vb: Public ReadOnly Property SpawnTeamSystem As SpawnTeamSystem
+  overload: VAMP.Services.SystemService.SpawnTeamSystem*
+- uid: VAMP.Services.SystemService.ModificationSystem
+  commentId: P:VAMP.Services.SystemService.ModificationSystem
+  id: ModificationSystem
+  parent: VAMP.Services.SystemService
+  langs:
+  - csharp
+  - vb
+  name: ModificationSystem
+  nameWithType: SystemService.ModificationSystem
+  fullName: VAMP.Services.SystemService.ModificationSystem
+  type: Property
+  source:
+    remote:
+      path: Services/SystemService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: ModificationSystem
+    path: Services/SystemService.cs
+    startLine: 94
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public ModificationSystem ModificationSystem { get; }
+    parameters: []
+    return:
+      type: ProjectM.ModificationSystem
+    content.vb: Public ReadOnly Property ModificationSystem As ModificationSystem
+  overload: VAMP.Services.SystemService.ModificationSystem*
+- uid: VAMP.Services.SystemService.SetTeamOnSpawnSystem
+  commentId: P:VAMP.Services.SystemService.SetTeamOnSpawnSystem
+  id: SetTeamOnSpawnSystem
+  parent: VAMP.Services.SystemService
+  langs:
+  - csharp
+  - vb
+  name: SetTeamOnSpawnSystem
+  nameWithType: SystemService.SetTeamOnSpawnSystem
+  fullName: VAMP.Services.SystemService.SetTeamOnSpawnSystem
+  type: Property
+  source:
+    remote:
+      path: Services/SystemService.cs
+      branch: master
+      repo: https://github.com/SkyTech6/VAMP.git
+    id: SetTeamOnSpawnSystem
+    path: Services/SystemService.cs
+    startLine: 97
+  assemblies:
+  - VAMP
+  namespace: VAMP.Services
+  syntax:
+    content: public SetTeamOnSpawnSystem SetTeamOnSpawnSystem { get; }
+    parameters: []
+    return:
+      type: ProjectM.SetTeamOnSpawnSystem
+    content.vb: Public ReadOnly Property SetTeamOnSpawnSystem As SetTeamOnSpawnSystem
+  overload: VAMP.Services.SystemService.SetTeamOnSpawnSystem*
+references:
+- uid: VAMP.Services
+  commentId: N:VAMP.Services
+  href: VAMP.html
+  name: VAMP.Services
+  nameWithType: VAMP.Services
+  fullName: VAMP.Services
+  spec.csharp:
+  - uid: VAMP
+    name: VAMP
+    href: VAMP.html
+  - name: .
+  - uid: VAMP.Services
+    name: Services
+    href: VAMP.Services.html
+  spec.vb:
+  - uid: VAMP
+    name: VAMP
+    href: VAMP.html
+  - name: .
+  - uid: VAMP.Services
+    name: Services
+    href: VAMP.Services.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: VAMP.Services.SystemService.#ctor*
+  commentId: Overload:VAMP.Services.SystemService.#ctor
+  href: VAMP.Services.SystemService.html#VAMP_Services_SystemService__ctor_Unity_Entities_World_
+  name: SystemService
+  nameWithType: SystemService.SystemService
+  fullName: VAMP.Services.SystemService.SystemService
+  nameWithType.vb: SystemService.New
+  fullName.vb: VAMP.Services.SystemService.New
+  name.vb: New
+- uid: Unity.Entities.World
+  commentId: T:Unity.Entities.World
+  parent: Unity.Entities
+  isExternal: true
+  name: World
+  nameWithType: World
+  fullName: Unity.Entities.World
+- uid: Unity.Entities
+  commentId: N:Unity.Entities
+  isExternal: true
+  name: Unity.Entities
+  nameWithType: Unity.Entities
+  fullName: Unity.Entities
+  spec.csharp:
+  - uid: Unity
+    name: Unity
+    isExternal: true
+  - name: .
+  - uid: Unity.Entities
+    name: Entities
+    isExternal: true
+  spec.vb:
+  - uid: Unity
+    name: Unity
+    isExternal: true
+  - name: .
+  - uid: Unity.Entities
+    name: Entities
+    isExternal: true
+- uid: VAMP.Services.SystemService.DebugEventsSystem*
+  commentId: Overload:VAMP.Services.SystemService.DebugEventsSystem
+  href: VAMP.Services.SystemService.html#VAMP_Services_SystemService_DebugEventsSystem
+  name: DebugEventsSystem
+  nameWithType: SystemService.DebugEventsSystem
+  fullName: VAMP.Services.SystemService.DebugEventsSystem
+- uid: ProjectM.DebugEventsSystem
+  commentId: T:ProjectM.DebugEventsSystem
+  parent: ProjectM
+  isExternal: true
+  name: DebugEventsSystem
+  nameWithType: DebugEventsSystem
+  fullName: ProjectM.DebugEventsSystem
+- uid: ProjectM
+  commentId: N:ProjectM
+  isExternal: true
+  name: ProjectM
+  nameWithType: ProjectM
+  fullName: ProjectM
+- uid: VAMP.Services.SystemService.PrefabCollectionSystem*
+  commentId: Overload:VAMP.Services.SystemService.PrefabCollectionSystem
+  href: VAMP.Services.SystemService.html#VAMP_Services_SystemService_PrefabCollectionSystem
+  name: PrefabCollectionSystem
+  nameWithType: SystemService.PrefabCollectionSystem
+  fullName: VAMP.Services.SystemService.PrefabCollectionSystem
+- uid: ProjectM.PrefabCollectionSystem
+  commentId: T:ProjectM.PrefabCollectionSystem
+  parent: ProjectM
+  isExternal: true
+  name: PrefabCollectionSystem
+  nameWithType: PrefabCollectionSystem
+  fullName: ProjectM.PrefabCollectionSystem
+- uid: VAMP.Services.SystemService.ServerGameSettingsSystem*
+  commentId: Overload:VAMP.Services.SystemService.ServerGameSettingsSystem
+  href: VAMP.Services.SystemService.html#VAMP_Services_SystemService_ServerGameSettingsSystem
+  name: ServerGameSettingsSystem
+  nameWithType: SystemService.ServerGameSettingsSystem
+  fullName: VAMP.Services.SystemService.ServerGameSettingsSystem
+- uid: ProjectM.ServerGameSettingsSystem
+  commentId: T:ProjectM.ServerGameSettingsSystem
+  parent: ProjectM
+  isExternal: true
+  name: ServerGameSettingsSystem
+  nameWithType: ServerGameSettingsSystem
+  fullName: ProjectM.ServerGameSettingsSystem
+- uid: VAMP.Services.SystemService.ServerScriptMapper*
+  commentId: Overload:VAMP.Services.SystemService.ServerScriptMapper
+  href: VAMP.Services.SystemService.html#VAMP_Services_SystemService_ServerScriptMapper
+  name: ServerScriptMapper
+  nameWithType: SystemService.ServerScriptMapper
+  fullName: VAMP.Services.SystemService.ServerScriptMapper
+- uid: ProjectM.Scripting.ServerScriptMapper
+  commentId: T:ProjectM.Scripting.ServerScriptMapper
+  parent: ProjectM.Scripting
+  isExternal: true
+  name: ServerScriptMapper
+  nameWithType: ServerScriptMapper
+  fullName: ProjectM.Scripting.ServerScriptMapper
+- uid: ProjectM.Scripting
+  commentId: N:ProjectM.Scripting
+  isExternal: true
+  name: ProjectM.Scripting
+  nameWithType: ProjectM.Scripting
+  fullName: ProjectM.Scripting
+  spec.csharp:
+  - uid: ProjectM
+    name: ProjectM
+    isExternal: true
+  - name: .
+  - uid: ProjectM.Scripting
+    name: Scripting
+    isExternal: true
+  spec.vb:
+  - uid: ProjectM
+    name: ProjectM
+    isExternal: true
+  - name: .
+  - uid: ProjectM.Scripting
+    name: Scripting
+    isExternal: true
+- uid: VAMP.Services.SystemService.ModifyUnitStatBuffSystem_Spawn*
+  commentId: Overload:VAMP.Services.SystemService.ModifyUnitStatBuffSystem_Spawn
+  href: VAMP.Services.SystemService.html#VAMP_Services_SystemService_ModifyUnitStatBuffSystem_Spawn
+  name: ModifyUnitStatBuffSystem_Spawn
+  nameWithType: SystemService.ModifyUnitStatBuffSystem_Spawn
+  fullName: VAMP.Services.SystemService.ModifyUnitStatBuffSystem_Spawn
+- uid: ProjectM.ModifyUnitStatBuffSystem_Spawn
+  commentId: T:ProjectM.ModifyUnitStatBuffSystem_Spawn
+  parent: ProjectM
+  isExternal: true
+  name: ModifyUnitStatBuffSystem_Spawn
+  nameWithType: ModifyUnitStatBuffSystem_Spawn
+  fullName: ProjectM.ModifyUnitStatBuffSystem_Spawn
+- uid: VAMP.Services.SystemService.ModifyUnitStatBuffSystem_Destroy*
+  commentId: Overload:VAMP.Services.SystemService.ModifyUnitStatBuffSystem_Destroy
+  href: VAMP.Services.SystemService.html#VAMP_Services_SystemService_ModifyUnitStatBuffSystem_Destroy
+  name: ModifyUnitStatBuffSystem_Destroy
+  nameWithType: SystemService.ModifyUnitStatBuffSystem_Destroy
+  fullName: VAMP.Services.SystemService.ModifyUnitStatBuffSystem_Destroy
+- uid: ProjectM.ModifyUnitStatBuffSystem_Destroy
+  commentId: T:ProjectM.ModifyUnitStatBuffSystem_Destroy
+  parent: ProjectM
+  isExternal: true
+  name: ModifyUnitStatBuffSystem_Destroy
+  nameWithType: ModifyUnitStatBuffSystem_Destroy
+  fullName: ProjectM.ModifyUnitStatBuffSystem_Destroy
+- uid: VAMP.Services.SystemService.EntityCommandBufferSystem*
+  commentId: Overload:VAMP.Services.SystemService.EntityCommandBufferSystem
+  href: VAMP.Services.SystemService.html#VAMP_Services_SystemService_EntityCommandBufferSystem
+  name: EntityCommandBufferSystem
+  nameWithType: SystemService.EntityCommandBufferSystem
+  fullName: VAMP.Services.SystemService.EntityCommandBufferSystem
+- uid: Unity.Entities.EntityCommandBufferSystem
+  commentId: T:Unity.Entities.EntityCommandBufferSystem
+  parent: Unity.Entities
+  isExternal: true
+  name: EntityCommandBufferSystem
+  nameWithType: EntityCommandBufferSystem
+  fullName: Unity.Entities.EntityCommandBufferSystem
+- uid: VAMP.Services.SystemService.ClaimAchievementSystem*
+  commentId: Overload:VAMP.Services.SystemService.ClaimAchievementSystem
+  href: VAMP.Services.SystemService.html#VAMP_Services_SystemService_ClaimAchievementSystem
+  name: ClaimAchievementSystem
+  nameWithType: SystemService.ClaimAchievementSystem
+  fullName: VAMP.Services.SystemService.ClaimAchievementSystem
+- uid: ProjectM.ClaimAchievementSystem
+  commentId: T:ProjectM.ClaimAchievementSystem
+  parent: ProjectM
+  isExternal: true
+  name: ClaimAchievementSystem
+  nameWithType: ClaimAchievementSystem
+  fullName: ProjectM.ClaimAchievementSystem
+- uid: VAMP.Services.SystemService.GameDataSystem*
+  commentId: Overload:VAMP.Services.SystemService.GameDataSystem
+  href: VAMP.Services.SystemService.html#VAMP_Services_SystemService_GameDataSystem
+  name: GameDataSystem
+  nameWithType: SystemService.GameDataSystem
+  fullName: VAMP.Services.SystemService.GameDataSystem
+- uid: ProjectM.GameDataSystem
+  commentId: T:ProjectM.GameDataSystem
+  parent: ProjectM
+  isExternal: true
+  name: GameDataSystem
+  nameWithType: GameDataSystem
+  fullName: ProjectM.GameDataSystem
+- uid: VAMP.Services.SystemService.ScriptSpawnServer*
+  commentId: Overload:VAMP.Services.SystemService.ScriptSpawnServer
+  href: VAMP.Services.SystemService.html#VAMP_Services_SystemService_ScriptSpawnServer
+  name: ScriptSpawnServer
+  nameWithType: SystemService.ScriptSpawnServer
+  fullName: VAMP.Services.SystemService.ScriptSpawnServer
+- uid: ProjectM.Shared.Systems.ScriptSpawnServer
+  commentId: T:ProjectM.Shared.Systems.ScriptSpawnServer
+  parent: ProjectM.Shared.Systems
+  isExternal: true
+  name: ScriptSpawnServer
+  nameWithType: ScriptSpawnServer
+  fullName: ProjectM.Shared.Systems.ScriptSpawnServer
+- uid: ProjectM.Shared.Systems
+  commentId: N:ProjectM.Shared.Systems
+  isExternal: true
+  name: ProjectM.Shared.Systems
+  nameWithType: ProjectM.Shared.Systems
+  fullName: ProjectM.Shared.Systems
+  spec.csharp:
+  - uid: ProjectM
+    name: ProjectM
+    isExternal: true
+  - name: .
+  - uid: ProjectM.Shared
+    name: Shared
+    isExternal: true
+  - name: .
+  - uid: ProjectM.Shared.Systems
+    name: Systems
+    isExternal: true
+  spec.vb:
+  - uid: ProjectM
+    name: ProjectM
+    isExternal: true
+  - name: .
+  - uid: ProjectM.Shared
+    name: Shared
+    isExternal: true
+  - name: .
+  - uid: ProjectM.Shared.Systems
+    name: Systems
+    isExternal: true
+- uid: VAMP.Services.SystemService.CombatMusicSystem_Server*
+  commentId: Overload:VAMP.Services.SystemService.CombatMusicSystem_Server
+  href: VAMP.Services.SystemService.html#VAMP_Services_SystemService_CombatMusicSystem_Server
+  name: CombatMusicSystem_Server
+  nameWithType: SystemService.CombatMusicSystem_Server
+  fullName: VAMP.Services.SystemService.CombatMusicSystem_Server
+- uid: ProjectM.Gameplay.Systems.CombatMusicSystem_Server
+  commentId: T:ProjectM.Gameplay.Systems.CombatMusicSystem_Server
+  parent: ProjectM.Gameplay.Systems
+  isExternal: true
+  name: CombatMusicSystem_Server
+  nameWithType: CombatMusicSystem_Server
+  fullName: ProjectM.Gameplay.Systems.CombatMusicSystem_Server
+- uid: ProjectM.Gameplay.Systems
+  commentId: N:ProjectM.Gameplay.Systems
+  isExternal: true
+  name: ProjectM.Gameplay.Systems
+  nameWithType: ProjectM.Gameplay.Systems
+  fullName: ProjectM.Gameplay.Systems
+  spec.csharp:
+  - uid: ProjectM
+    name: ProjectM
+    isExternal: true
+  - name: .
+  - uid: ProjectM.Gameplay
+    name: Gameplay
+    isExternal: true
+  - name: .
+  - uid: ProjectM.Gameplay.Systems
+    name: Systems
+    isExternal: true
+  spec.vb:
+  - uid: ProjectM
+    name: ProjectM
+    isExternal: true
+  - name: .
+  - uid: ProjectM.Gameplay
+    name: Gameplay
+    isExternal: true
+  - name: .
+  - uid: ProjectM.Gameplay.Systems
+    name: Systems
+    isExternal: true
+- uid: VAMP.Services.SystemService.NameableInteractableSystem*
+  commentId: Overload:VAMP.Services.SystemService.NameableInteractableSystem
+  href: VAMP.Services.SystemService.html#VAMP_Services_SystemService_NameableInteractableSystem
+  name: NameableInteractableSystem
+  nameWithType: SystemService.NameableInteractableSystem
+  fullName: VAMP.Services.SystemService.NameableInteractableSystem
+- uid: ProjectM.NameableInteractableSystem
+  commentId: T:ProjectM.NameableInteractableSystem
+  parent: ProjectM
+  isExternal: true
+  name: NameableInteractableSystem
+  nameWithType: NameableInteractableSystem
+  fullName: ProjectM.NameableInteractableSystem
+- uid: VAMP.Services.SystemService.ActivateVBloodAbilitySystem*
+  commentId: Overload:VAMP.Services.SystemService.ActivateVBloodAbilitySystem
+  href: VAMP.Services.SystemService.html#VAMP_Services_SystemService_ActivateVBloodAbilitySystem
+  name: ActivateVBloodAbilitySystem
+  nameWithType: SystemService.ActivateVBloodAbilitySystem
+  fullName: VAMP.Services.SystemService.ActivateVBloodAbilitySystem
+- uid: ProjectM.Gameplay.Systems.ActivateVBloodAbilitySystem
+  commentId: T:ProjectM.Gameplay.Systems.ActivateVBloodAbilitySystem
+  parent: ProjectM.Gameplay.Systems
+  isExternal: true
+  name: ActivateVBloodAbilitySystem
+  nameWithType: ActivateVBloodAbilitySystem
+  fullName: ProjectM.Gameplay.Systems.ActivateVBloodAbilitySystem
+- uid: VAMP.Services.SystemService.EndSimulationEntityCommandBufferSystem*
+  commentId: Overload:VAMP.Services.SystemService.EndSimulationEntityCommandBufferSystem
+  href: VAMP.Services.SystemService.html#VAMP_Services_SystemService_EndSimulationEntityCommandBufferSystem
+  name: EndSimulationEntityCommandBufferSystem
+  nameWithType: SystemService.EndSimulationEntityCommandBufferSystem
+  fullName: VAMP.Services.SystemService.EndSimulationEntityCommandBufferSystem
+- uid: Unity.Entities.EndSimulationEntityCommandBufferSystem
+  commentId: T:Unity.Entities.EndSimulationEntityCommandBufferSystem
+  parent: Unity.Entities
+  isExternal: true
+  name: EndSimulationEntityCommandBufferSystem
+  nameWithType: EndSimulationEntityCommandBufferSystem
+  fullName: Unity.Entities.EndSimulationEntityCommandBufferSystem
+- uid: VAMP.Services.SystemService.ReplaceAbilityOnSlotSystem*
+  commentId: Overload:VAMP.Services.SystemService.ReplaceAbilityOnSlotSystem
+  href: VAMP.Services.SystemService.html#VAMP_Services_SystemService_ReplaceAbilityOnSlotSystem
+  name: ReplaceAbilityOnSlotSystem
+  nameWithType: SystemService.ReplaceAbilityOnSlotSystem
+  fullName: VAMP.Services.SystemService.ReplaceAbilityOnSlotSystem
+- uid: ProjectM.ReplaceAbilityOnSlotSystem
+  commentId: T:ProjectM.ReplaceAbilityOnSlotSystem
+  parent: ProjectM
+  isExternal: true
+  name: ReplaceAbilityOnSlotSystem
+  nameWithType: ReplaceAbilityOnSlotSystem
+  fullName: ProjectM.ReplaceAbilityOnSlotSystem
+- uid: VAMP.Services.SystemService.UnEquipItemSystem*
+  commentId: Overload:VAMP.Services.SystemService.UnEquipItemSystem
+  href: VAMP.Services.SystemService.html#VAMP_Services_SystemService_UnEquipItemSystem
+  name: UnEquipItemSystem
+  nameWithType: SystemService.UnEquipItemSystem
+  fullName: VAMP.Services.SystemService.UnEquipItemSystem
+- uid: ProjectM.UnEquipItemSystem
+  commentId: T:ProjectM.UnEquipItemSystem
+  parent: ProjectM
+  isExternal: true
+  name: UnEquipItemSystem
+  nameWithType: UnEquipItemSystem
+  fullName: ProjectM.UnEquipItemSystem
+- uid: VAMP.Services.SystemService.EquipItemSystem*
+  commentId: Overload:VAMP.Services.SystemService.EquipItemSystem
+  href: VAMP.Services.SystemService.html#VAMP_Services_SystemService_EquipItemSystem
+  name: EquipItemSystem
+  nameWithType: SystemService.EquipItemSystem
+  fullName: VAMP.Services.SystemService.EquipItemSystem
+- uid: ProjectM.EquipItemSystem
+  commentId: T:ProjectM.EquipItemSystem
+  parent: ProjectM
+  isExternal: true
+  name: EquipItemSystem
+  nameWithType: EquipItemSystem
+  fullName: ProjectM.EquipItemSystem
+- uid: VAMP.Services.SystemService.Update_ReplaceAbilityOnSlotSystem*
+  commentId: Overload:VAMP.Services.SystemService.Update_ReplaceAbilityOnSlotSystem
+  href: VAMP.Services.SystemService.html#VAMP_Services_SystemService_Update_ReplaceAbilityOnSlotSystem
+  name: Update_ReplaceAbilityOnSlotSystem
+  nameWithType: SystemService.Update_ReplaceAbilityOnSlotSystem
+  fullName: VAMP.Services.SystemService.Update_ReplaceAbilityOnSlotSystem
+- uid: ProjectM.Update_ReplaceAbilityOnSlotSystem
+  commentId: T:ProjectM.Update_ReplaceAbilityOnSlotSystem
+  parent: ProjectM
+  isExternal: true
+  name: Update_ReplaceAbilityOnSlotSystem
+  nameWithType: Update_ReplaceAbilityOnSlotSystem
+  fullName: ProjectM.Update_ReplaceAbilityOnSlotSystem
+- uid: VAMP.Services.SystemService.StatChangeSystem*
+  commentId: Overload:VAMP.Services.SystemService.StatChangeSystem
+  href: VAMP.Services.SystemService.html#VAMP_Services_SystemService_StatChangeSystem
+  name: StatChangeSystem
+  nameWithType: SystemService.StatChangeSystem
+  fullName: VAMP.Services.SystemService.StatChangeSystem
+- uid: ProjectM.Gameplay.Systems.StatChangeSystem
+  commentId: T:ProjectM.Gameplay.Systems.StatChangeSystem
+  parent: ProjectM.Gameplay.Systems
+  isExternal: true
+  name: StatChangeSystem
+  nameWithType: StatChangeSystem
+  fullName: ProjectM.Gameplay.Systems.StatChangeSystem
+- uid: VAMP.Services.SystemService.NetworkIdSystem*
+  commentId: Overload:VAMP.Services.SystemService.NetworkIdSystem
+  href: VAMP.Services.SystemService.html#VAMP_Services_SystemService_NetworkIdSystem
+  name: NetworkIdSystem
+  nameWithType: SystemService.NetworkIdSystem
+  fullName: VAMP.Services.SystemService.NetworkIdSystem
+- uid: ProjectM.Network.NetworkIdSystem.Singleton
+  commentId: T:ProjectM.Network.NetworkIdSystem.Singleton
+  parent: ProjectM.Network
+  isExternal: true
+  name: NetworkIdSystem.Singleton
+  nameWithType: NetworkIdSystem.Singleton
+  fullName: ProjectM.Network.NetworkIdSystem.Singleton
+  spec.csharp:
+  - uid: ProjectM.Network.NetworkIdSystem
+    name: NetworkIdSystem
+    isExternal: true
+  - name: .
+  - uid: ProjectM.Network.NetworkIdSystem.Singleton
+    name: Singleton
+    isExternal: true
+  spec.vb:
+  - uid: ProjectM.Network.NetworkIdSystem
+    name: NetworkIdSystem
+    isExternal: true
+  - name: .
+  - uid: ProjectM.Network.NetworkIdSystem.Singleton
+    name: Singleton
+    isExternal: true
+- uid: ProjectM.Network
+  commentId: N:ProjectM.Network
+  isExternal: true
+  name: ProjectM.Network
+  nameWithType: ProjectM.Network
+  fullName: ProjectM.Network
+  spec.csharp:
+  - uid: ProjectM
+    name: ProjectM
+    isExternal: true
+  - name: .
+  - uid: ProjectM.Network
+    name: Network
+    isExternal: true
+  spec.vb:
+  - uid: ProjectM
+    name: ProjectM
+    isExternal: true
+  - name: .
+  - uid: ProjectM.Network
+    name: Network
+    isExternal: true
+- uid: VAMP.Services.SystemService.ServerBootstrapSystem*
+  commentId: Overload:VAMP.Services.SystemService.ServerBootstrapSystem
+  href: VAMP.Services.SystemService.html#VAMP_Services_SystemService_ServerBootstrapSystem
+  name: ServerBootstrapSystem
+  nameWithType: SystemService.ServerBootstrapSystem
+  fullName: VAMP.Services.SystemService.ServerBootstrapSystem
+- uid: ProjectM.ServerBootstrapSystem
+  commentId: T:ProjectM.ServerBootstrapSystem
+  parent: ProjectM
+  isExternal: true
+  name: ServerBootstrapSystem
+  nameWithType: ServerBootstrapSystem
+  fullName: ProjectM.ServerBootstrapSystem
+- uid: VAMP.Services.SystemService.BehaviourTreeBindingSystem_Spawn*
+  commentId: Overload:VAMP.Services.SystemService.BehaviourTreeBindingSystem_Spawn
+  href: VAMP.Services.SystemService.html#VAMP_Services_SystemService_BehaviourTreeBindingSystem_Spawn
+  name: BehaviourTreeBindingSystem_Spawn
+  nameWithType: SystemService.BehaviourTreeBindingSystem_Spawn
+  fullName: VAMP.Services.SystemService.BehaviourTreeBindingSystem_Spawn
+- uid: ProjectM.BehaviourTreeBindingSystem_Spawn
+  commentId: T:ProjectM.BehaviourTreeBindingSystem_Spawn
+  parent: ProjectM
+  isExternal: true
+  name: BehaviourTreeBindingSystem_Spawn
+  nameWithType: BehaviourTreeBindingSystem_Spawn
+  fullName: ProjectM.BehaviourTreeBindingSystem_Spawn
+- uid: VAMP.Services.SystemService.SpawnAbilityGroupSlotSystem*
+  commentId: Overload:VAMP.Services.SystemService.SpawnAbilityGroupSlotSystem
+  href: VAMP.Services.SystemService.html#VAMP_Services_SystemService_SpawnAbilityGroupSlotSystem
+  name: SpawnAbilityGroupSlotSystem
+  nameWithType: SystemService.SpawnAbilityGroupSlotSystem
+  fullName: VAMP.Services.SystemService.SpawnAbilityGroupSlotSystem
+- uid: ProjectM.SpawnAbilityGroupSlotsSystem
+  commentId: T:ProjectM.SpawnAbilityGroupSlotsSystem
+  parent: ProjectM
+  isExternal: true
+  name: SpawnAbilityGroupSlotsSystem
+  nameWithType: SpawnAbilityGroupSlotsSystem
+  fullName: ProjectM.SpawnAbilityGroupSlotsSystem
+- uid: VAMP.Services.SystemService.AttachParentIdSystem*
+  commentId: Overload:VAMP.Services.SystemService.AttachParentIdSystem
+  href: VAMP.Services.SystemService.html#VAMP_Services_SystemService_AttachParentIdSystem
+  name: AttachParentIdSystem
+  nameWithType: SystemService.AttachParentIdSystem
+  fullName: VAMP.Services.SystemService.AttachParentIdSystem
+- uid: ProjectM.AttachParentIdSystem
+  commentId: T:ProjectM.AttachParentIdSystem
+  parent: ProjectM
+  isExternal: true
+  name: AttachParentIdSystem
+  nameWithType: AttachParentIdSystem
+  fullName: ProjectM.AttachParentIdSystem
+- uid: VAMP.Services.SystemService.AbilitySpawnSystem*
+  commentId: Overload:VAMP.Services.SystemService.AbilitySpawnSystem
+  href: VAMP.Services.SystemService.html#VAMP_Services_SystemService_AbilitySpawnSystem
+  name: AbilitySpawnSystem
+  nameWithType: SystemService.AbilitySpawnSystem
+  fullName: VAMP.Services.SystemService.AbilitySpawnSystem
+- uid: ProjectM.Gameplay.Systems.AbilitySpawnSystem
+  commentId: T:ProjectM.Gameplay.Systems.AbilitySpawnSystem
+  parent: ProjectM.Gameplay.Systems
+  isExternal: true
+  name: AbilitySpawnSystem
+  nameWithType: AbilitySpawnSystem
+  fullName: ProjectM.Gameplay.Systems.AbilitySpawnSystem
+- uid: VAMP.Services.SystemService.SpawnTeamSystem*
+  commentId: Overload:VAMP.Services.SystemService.SpawnTeamSystem
+  href: VAMP.Services.SystemService.html#VAMP_Services_SystemService_SpawnTeamSystem
+  name: SpawnTeamSystem
+  nameWithType: SystemService.SpawnTeamSystem
+  fullName: VAMP.Services.SystemService.SpawnTeamSystem
+- uid: ProjectM.SpawnTeamSystem
+  commentId: T:ProjectM.SpawnTeamSystem
+  parent: ProjectM
+  isExternal: true
+  name: SpawnTeamSystem
+  nameWithType: SpawnTeamSystem
+  fullName: ProjectM.SpawnTeamSystem
+- uid: VAMP.Services.SystemService.ModificationSystem*
+  commentId: Overload:VAMP.Services.SystemService.ModificationSystem
+  href: VAMP.Services.SystemService.html#VAMP_Services_SystemService_ModificationSystem
+  name: ModificationSystem
+  nameWithType: SystemService.ModificationSystem
+  fullName: VAMP.Services.SystemService.ModificationSystem
+- uid: ProjectM.ModificationSystem
+  commentId: T:ProjectM.ModificationSystem
+  parent: ProjectM
+  isExternal: true
+  name: ModificationSystem
+  nameWithType: ModificationSystem
+  fullName: ProjectM.ModificationSystem
+- uid: VAMP.Services.SystemService.SetTeamOnSpawnSystem*
+  commentId: Overload:VAMP.Services.SystemService.SetTeamOnSpawnSystem
+  href: VAMP.Services.SystemService.html#VAMP_Services_SystemService_SetTeamOnSpawnSystem
+  name: SetTeamOnSpawnSystem
+  nameWithType: SystemService.SetTeamOnSpawnSystem
+  fullName: VAMP.Services.SystemService.SetTeamOnSpawnSystem
+- uid: ProjectM.SetTeamOnSpawnSystem
+  commentId: T:ProjectM.SetTeamOnSpawnSystem
+  parent: ProjectM
+  isExternal: true
+  name: SetTeamOnSpawnSystem
+  nameWithType: SetTeamOnSpawnSystem
+  fullName: ProjectM.SetTeamOnSpawnSystem
