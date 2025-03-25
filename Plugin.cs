@@ -14,7 +14,11 @@ public class Plugin : BasePlugin
     public static Harmony Harmony => Instance._harmony;
     public static ManualLogSource LogInstance => Instance.Log;
 
-    public static Action OnCoreLoaded;
+    /// <summary>
+    /// Event that is triggered when the Core system has finished loading.
+    /// This action can be subscribed to for executing code after core initialization is complete.
+    /// </summary>
+    public static Action OnCoreLoaded;    
     public static bool SpawnDebug = false;
 
     public override void Load()

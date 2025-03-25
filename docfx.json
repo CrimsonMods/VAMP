@@ -42,6 +42,8 @@
     "globalMetadata": {
       "_appName": "VAMP",
       "_appTitle": "VAMP",
+      "_appLogoPath": "images/logo_50.png",
+      "_appFaviconPath": "images/favicon.ico",
       "_enableSearch": true,
       "pdf": false
     }

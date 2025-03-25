@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class CastleHeartService | VAMP ">
       
-      
+      <meta name="description" content="Service for managing and querying castle heart entities in the game.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -44,7 +44,7 @@
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
           <a class="navbar-brand" href="../index.html">
-            <img id="logo" class="svg" src="../logo.svg" alt="VAMP">
+            <img id="logo" class="svg" src="../images/logo_50.png" alt="VAMP">
             VAMP
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -89,7 +89,7 @@
 
 
   <h1 id="VAMP_Services_CastleHeartService" data-uid="VAMP.Services.CastleHeartService" class="text-break">
-Class CastleHeartService  <a class="header-action link-secondary" title="View source" href="https://github.com/SkyTech6/VAMP/blob/master/Services/CastleHeartService.cs/#L10"><i class="bi bi-code-slash"></i></a>
+Class CastleHeartService  <a class="header-action link-secondary" title="View source" href="https://github.com/SkyTech6/VAMP/blob/master/Services/CastleHeartService.cs/#L13"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Class CastleHeartService  <a class="header-action link-secondary" title="View so
   <dl><dt>Assembly</dt><dd>VAMP.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Service for managing and querying castle heart entities in the game.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -156,10 +157,13 @@ Class CastleHeartService  <a class="header-action link-secondary" title="View so
 
   <h3 id="VAMP_Services_CastleHeartService__ctor" data-uid="VAMP.Services.CastleHeartService.#ctor">
   CastleHeartService()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SkyTech6/VAMP/blob/master/Services/CastleHeartService.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SkyTech6/VAMP/blob/master/Services/CastleHeartService.cs/#L25"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the CastleHeartService class.
+Sets up the entity query for castle hearts with required components.
+VAMP Core will perform this method on startup.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -185,10 +189,11 @@ Class CastleHeartService  <a class="header-action link-secondary" title="View so
 
   <h3 id="VAMP_Services_CastleHeartService_CastleHeartQuery" data-uid="VAMP.Services.CastleHeartService.CastleHeartQuery">
   CastleHeartQuery
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SkyTech6/VAMP/blob/master/Services/CastleHeartService.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SkyTech6/VAMP/blob/master/Services/CastleHeartService.cs/#L18"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Query for filtering castle heart entities.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -220,10 +225,11 @@ Class CastleHeartService  <a class="header-action link-secondary" title="View so
 
   <h3 id="VAMP_Services_CastleHeartService_TryGetByID_ProjectM_Network_NetworkId_Unity_Entities_Entity__" data-uid="VAMP.Services.CastleHeartService.TryGetByID(ProjectM.Network.NetworkId,Unity.Entities.Entity@)">
   TryGetByID(NetworkId, out Entity)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SkyTech6/VAMP/blob/master/Services/CastleHeartService.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SkyTech6/VAMP/blob/master/Services/CastleHeartService.cs/#L42"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Attempts to find a castle heart entity by its network ID.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -233,15 +239,18 @@ Class CastleHeartService  <a class="header-action link-secondary" title="View so
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>castleId</code> <span class="xref">NetworkId</span></dt>
-    <dd></dd>
+    <dd><p>The network ID of the castle to find.</p>
+</dd>
     <dt><code>castle</code> <span class="xref">Entity</span></dt>
-    <dd></dd>
+    <dd><p>When this method returns, contains the castle entity if found; otherwise, Entity.Null.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>True if the castle was found; otherwise, false.</p>
+</dd>
   </dl>
 
 
@@ -258,10 +267,11 @@ Class CastleHeartService  <a class="header-action link-secondary" title="View so
 
   <h3 id="VAMP_Services_CastleHeartService_TryGetByOwnerUser_ProjectM_Network_User_Unity_Entities_Entity__" data-uid="VAMP.Services.CastleHeartService.TryGetByOwnerUser(ProjectM.Network.User,Unity.Entities.Entity@)">
   TryGetByOwnerUser(User, out Entity)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SkyTech6/VAMP/blob/master/Services/CastleHeartService.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SkyTech6/VAMP/blob/master/Services/CastleHeartService.cs/#L66"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Attempts to find a castle heart entity owned by a specific user.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -271,15 +281,18 @@ Class CastleHeartService  <a class="header-action link-secondary" title="View so
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>user</code> <span class="xref">User</span></dt>
-    <dd></dd>
+    <dd><p>The user whose castle heart should be found.</p>
+</dd>
     <dt><code>castle</code> <span class="xref">Entity</span></dt>
-    <dd></dd>
+    <dd><p>When this method returns, contains the castle entity if found; otherwise, Entity.Null.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>True if the castle was found; otherwise, false.</p>
+</dd>
   </dl>
 
 
@@ -296,7 +309,7 @@ Class CastleHeartService  <a class="header-action link-secondary" title="View so
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/SkyTech6/VAMP/blob/master/Services/CastleHeartService.cs/#L10" class="edit-link">Edit this page</a>
+          <a href="https://github.com/SkyTech6/VAMP/blob/master/Services/CastleHeartService.cs/#L13" class="edit-link">Edit this page</a>
         </div>
 
 

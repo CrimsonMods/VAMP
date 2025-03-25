@@ -3,8 +3,14 @@ using ProjectM.Terrain;
 
 namespace VAMP.Data;
 
+/// <summary>
+/// Contains mapping of world region types to their display strings.
+/// </summary>
 public static class WorldRegions
 {
+	/// <summary>
+	/// Dictionary mapping WorldRegionType enum values to their human-readable string representations.
+	/// </summary>
 	public static Dictionary<WorldRegionType, string> WorldRegionToString = new()
 	{
 		{ WorldRegionType.CursedForest, "Cursed Forest" },

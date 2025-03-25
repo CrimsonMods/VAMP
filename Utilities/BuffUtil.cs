@@ -16,6 +16,12 @@ public static class BuffUtil
     static DebugEventsSystem DebugEventsSystem => SystemService.DebugEventsSystem;
 
     #region Functions
+    /// <summary>
+    /// Modifies a buff entity with specified modification types.
+    /// </summary>
+    /// <param name="buffEntity">The buff entity to modify.</param>
+    /// <param name="buffModificationTypes">The types of modifications to apply.</param>
+    /// <param name="overwrite">If true, clears existing modifications before applying new ones.</param>
     public static void ModifyBuff(Entity buffEntity, BuffModificationTypes buffModificationTypes, bool overwrite = false)
     {
         buffEntity.Add<BuffModificationFlagData>();
@@ -28,6 +34,15 @@ public static class BuffUtil
         buffEntity.Write(buffModificationFlagData);
     }
 
+    /// <summary>
+    /// Applies a buff to an entity with optional duration and persistence settings.
+    /// </summary>
+    /// <param name="entity">The entity to apply the buff to.</param>
+    /// <param name="buff">The PrefabGUID of the buff to apply.</param>
+    /// <param name="buffEntity">Output parameter that receives the created buff entity.</param>
+    /// <param name="duration">Duration of the buff in seconds. 0 for infinite duration.</param>
+    /// <param name="attemptToPersistThroughDeath">If true, the buff will attempt to persist through death.</param>
+    /// <returns>True if the buff was successfully applied, false otherwise.</returns>
     public static bool BuffEntity(Entity entity, PrefabGUID buff, out Entity buffEntity, float duration = 0, bool attemptToPersistThroughDeath = false)
     {
         var buffEvent = new ApplyBuffDebugEvent()
@@ -99,6 +114,11 @@ public static class BuffUtil
         return false;
     }
 
+    /// <summary>
+    /// Applies a cosmetic buff to an entity and removes gameplay-related components.
+    /// </summary>
+    /// <param name="entity">The entity to apply the cosmetic to.</param>
+    /// <param name="visual">The PrefabGUID of the cosmetic buff to apply.</param>
     public static void ApplyCosmetic(Entity entity, PrefabGUID visual)
     {
         ApplyBuffDebugEvent applyBuffDebugEvent = new()
@@ -138,6 +158,11 @@ public static class BuffUtil
         }
     }
 
+    /// <summary>
+    /// Removes a specific buff from an entity.
+    /// </summary>
+    /// <param name="entity">The entity to remove the buff from.</param>
+    /// <param name="guid">The PrefabGUID of the buff to remove.</param>
     public static void RemoveBuff(Entity entity, PrefabGUID guid)
     {
         if (BuffUtility.TryGetBuff(Core.EntityManager, entity, guid, out var buff))
@@ -148,6 +173,12 @@ public static class BuffUtil
     #endregion
 
     #region Public Helpers
+    /// <summary>
+    /// Checks if an entity has a specific buff.
+    /// </summary>
+    /// <param name="entity">The entity to check for the buff.</param>
+    /// <param name="buff">The PrefabGUID of the buff to check for.</param>
+    /// <returns>True if the entity has the specified buff, false otherwise.</returns>
     public static bool HasBuff(Entity entity, PrefabGUID buff)
     {
         return BuffUtility.HasBuff(Core.EntityManager, entity, buff);

@@ -8,10 +8,18 @@ using Unity.Transforms;
 
 namespace VAMP.Utilities;
 
+/// <summary>
+/// Utility class for handling item-related operations in the game.
+/// </summary>
 public static class ItemUtil
 {
+    /// <summary>
+    /// Clears the inventory of a specified entity.
+    /// </summary>
+    /// <param name="entity">The entity whose inventory should be cleared.</param>
+    /// <param name="all">If true, clears all inventory items. Default is false.</param>
     public static void ClearEntityInventory(Entity entity, bool all = false)
-    { 
+    {
         var buffer = entity.ReadBuffer<InventoryInstanceElement>();
         foreach (var item in buffer)
         {
@@ -19,6 +27,17 @@ public static class ItemUtil
         }
     }
 
+    /// <summary>
+    /// Adds an item to an entity's inventory with optional equipping and dropping functionality.
+    /// </summary>
+    /// <param name="recipient">The entity receiving the item.</param>
+    /// <param name="guid">The prefab GUID of the item to add.</param>
+    /// <param name="amount">The quantity of items to add.</param>
+    /// <param name="entity">Output parameter that receives the newly created item entity.</param>
+    /// <param name="equip">If true, attempts to equip the item after adding. Default is true.</param>
+    /// <param name="slot">The inventory slot to place the item in. Default is 0.</param>
+    /// <param name="drop">If true, drops excess items that don't fit in inventory. Default is true.</param>
+    /// <returns>True if the item was successfully added to the inventory, false otherwise.</returns>
     public static bool AddItemToInventory(Entity recipient, PrefabGUID guid, int amount, out Entity entity, bool equip = true, int slot = 0, bool drop = true)
     {
         var inventoryResponse = Core.ServerGameManager.TryAddInventoryItem(recipient, guid, amount, new Nullable_Unboxed<int>(slot), false);
@@ -46,6 +65,12 @@ public static class ItemUtil
         }
     }
 
+    /// <summary>
+    /// Creates a dropped item in the game world at a specified position.
+    /// </summary>
+    /// <param name="pos">The position where the item should be dropped.</param>
+    /// <param name="prefabGUID">The prefab GUID of the item to drop.</param>
+    /// <param name="amount">The quantity of items to drop.</param>
     public static void CreateDroppedItem(float3 pos, PrefabGUID prefabGUID, int amount)
     {
         if (Core.SystemService.GameDataSystem.ItemHashLookupMap.TryGetValue(prefabGUID, out var itemData))
@@ -68,7 +93,7 @@ public static class ItemUtil
             }
         }
     }
-
+    
     private static async void Reattempt(Action action)
     {
         await Task.Delay(300);

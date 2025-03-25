@@ -52,6 +52,15 @@ public static class Core
         return World.s_AllWorlds.ToArray().FirstOrDefault(world => world.Name == "Server");
     }
 
+    /// <summary>
+    /// Starts a coroutine using a MonoBehaviour instance.
+    /// </summary>
+    /// <param name="routine">The IEnumerator routine to start as a coroutine.</param>
+    /// <returns>A Coroutine instance that can be used to stop the routine later.</returns>
+    /// <remarks>
+    /// If no MonoBehaviour instance exists, creates a new GameObject with an IgnorePhysicsDebugSystem component.
+    /// The GameObject is marked to not be destroyed when loading new scenes.
+    /// </remarks>
     public static Coroutine StartCoroutine(IEnumerator routine)
     {
         if (monoBehaviour == null)
@@ -64,6 +73,13 @@ public static class Core
         return monoBehaviour.StartCoroutine(routine.WrapToIl2Cpp());
     }
 
+    /// <summary>
+    /// Stops a running coroutine.
+    /// </summary>
+    /// <param name="coroutine">The Coroutine instance to stop.</param>
+    /// <remarks>
+    /// If no MonoBehaviour instance exists, the method returns without doing anything.
+    /// </remarks>
     public static void StopCoroutine(Coroutine coroutine)
     {
         if (monoBehaviour == null)
@@ -72,5 +88,4 @@ public static class Core
         }
 
         monoBehaviour.StopCoroutine(coroutine);
-    }
-}
+    }}

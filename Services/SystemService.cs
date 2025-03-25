@@ -96,6 +96,7 @@ public class SystemService(World world)
 
     SetTeamOnSpawnSystem _setTeamOnSpawnSystem;
     public SetTeamOnSpawnSystem SetTeamOnSpawnSystem => _setTeamOnSpawnSystem ??= GetSystem<SetTeamOnSpawnSystem>();
+    
     T GetSystem<T>() where T : ComponentSystemBase
     {
         return _world.GetExistingSystemManaged<T>() ?? throw new InvalidOperationException($"Failed to get {Il2CppType.Of<T>().FullName} from the Server...");

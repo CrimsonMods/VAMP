@@ -2,6 +2,10 @@
 using Unity.Entities;
 
 namespace VAMP.Structs;
+
+/// <summary>
+/// This will be deprecated in the future in favor of the Player model.  
+/// </summary>
 public struct PlayerData
 {
     public FixedString64Bytes CharacterName { get; set; }

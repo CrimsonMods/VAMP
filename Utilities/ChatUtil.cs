@@ -9,8 +9,17 @@ using VAMP.Services;
 
 namespace VAMP.Utilities;
 
+/// <summary>
+/// Utility class for handling chat-related functionality.
+/// </summary>
 public static class ChatUtil
 {
+    /// <summary>
+    /// Sends a system message to nearby players within a specified radius.
+    /// </summary>
+    /// <param name="user">The user sending the message</param>
+    /// <param name="translation">The position from which to calculate the radius</param>
+    /// <param name="message">The message to send</param>
     public static void SystemSendLocal(User user, float3 translation, string message)
     {
         float maxDistance = 40f;
@@ -33,6 +42,11 @@ public static class ChatUtil
         }
     }
 
+    /// <summary>
+    /// Sends a system message to all members of the user's clan team.
+    /// </summary>
+    /// <param name="user">The user sending the message</param>
+    /// <param name="message">The message to send</param>
     public static void SystemSendTeam(User user, string message)
     {
         List<Entity> players = PlayerService.GetUsersOnline()
@@ -51,6 +65,12 @@ public static class ChatUtil
         }
     }
 
+    /// <summary>
+    /// Wraps text in a color tag with the specified hex color code.
+    /// </summary>
+    /// <param name="text">The text to color</param>
+    /// <param name="hex">The hex color code (with or without # prefix)</param>
+    /// <returns>Text wrapped in a Unity rich text color tag</returns>
     public static string Color(string text, string hex)
     {
         return $"<color=#{hex.Replace(" ", "").Replace("#", "")}>{text}</color>";

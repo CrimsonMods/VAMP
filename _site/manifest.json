@@ -266,7 +266,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "VAMP.Services.CastleHeartService",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/VAMP.Services.CastleHeartService.yml\" sourcestartlinenumber=\"1\">Service for managing and querying castle heart entities in the game.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -280,7 +280,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "VAMP.Services.CastleTerritoryService",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/VAMP.Services.CastleTerritoryService.yml\" sourcestartlinenumber=\"1\">Service for managing castle territory-related (plot) operations and queries.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -750,6 +750,16 @@
       "output": {
         "resource": {
           "relative_path": "images/logo_256.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/logo_50.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/logo_50.png"
         }
       },
       "version": ""

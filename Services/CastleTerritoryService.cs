@@ -8,12 +8,19 @@ using VAMP.Utilities;
 
 namespace VAMP.Services
 {
+    /// <summary>
+    /// Service for managing castle territory-related (plot) operations and queries.
+    /// </summary>
     public class CastleTerritoryService
     {
         const float BLOCK_SIZE = 10;
         Dictionary<int2, int> blockCoordToTerritoryIndex = [];
         Dictionary<int2, Entity> blockCoordToTerritory = [];
 
+        /// <summary>
+        /// Initializes a new instance of the CastleTerritoryService class.
+        /// Loads and maps all castle territories and their blocks.
+        /// </summary>
         public CastleTerritoryService()
         {
             var entities = EntityUtil.GetEntitiesByComponentType<CastleTerritory>(true);
@@ -30,6 +37,12 @@ namespace VAMP.Services
             entities.Dispose();
         }
 
+        /// <summary>
+        /// Attempts to get the castle territory entity for a given entity based on its position.
+        /// </summary>
+        /// <param name="entity">The entity to check.</param>
+        /// <param name="territoryEntity">The output territory entity if found.</param>
+        /// <returns>True if a territory was found for the entity, false otherwise.</returns>
         public bool TryGetCastleTerritory(Entity entity, out Entity territoryEntity)
         {
             if (entity.Has<Translation>())
@@ -47,6 +60,11 @@ namespace VAMP.Services
             return false;
         }
 
+        /// <summary>
+        /// Gets the territory index for a given position.
+        /// </summary>
+        /// <param name="pos">The position to check.</param>
+        /// <returns>The territory index if found, -1 otherwise.</returns>
         public int GetTerritoryIndex(float3 pos)
         {
             var blockCoord = ConvertPosToBlockCoord(pos);
@@ -55,6 +73,11 @@ namespace VAMP.Services
             return -1;
         }
 
+        /// <summary>
+        /// Gets the castle heart entity for a given territory index.
+        /// </summary>
+        /// <param name="territoryIndex">The territory index to search for.</param>
+        /// <returns>The castle heart entity if found, Entity.Null otherwise.</returns>
         public Entity GetHeartForTerritory(int territoryIndex)
         {
             if (territoryIndex == -1)
@@ -74,11 +97,21 @@ namespace VAMP.Services
             return Entity.Null;
         }
 
+        /// <summary>
+        /// Converts a world position to a grid position.
+        /// </summary>
+        /// <param name="pos">The world position to convert.</param>
+        /// <returns>The grid position.</returns>
         public static float3 ConvertPosToGrid(float3 pos)
         {
             return new float3(Mathf.FloorToInt(pos.x * 2) + 6400, pos.y, Mathf.FloorToInt(pos.z * 2) + 6400);
         }
 
+        /// <summary>
+        /// Converts a world position to a block coordinate.
+        /// </summary>
+        /// <param name="pos">The world position to convert.</param>
+        /// <returns>The block coordinate as an int2.</returns>
         public static int2 ConvertPosToBlockCoord(float3 pos)
         {
             var gridPos = ConvertPosToGrid(pos);

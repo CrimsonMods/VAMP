@@ -224,8 +224,19 @@ public static class EntityUtil
         DestroyUtility.Destroy(Core.EntityManager, entity);
     }
 
+    /// <summary>
+    /// Kills or destroys an entity based on game rules and conditions.
+    /// </summary>
+    /// <param name="entity">The entity to kill or destroy</param>
+    /// <remarks>
+    /// This method uses the StatChangeUtility to process the entity's death or destruction.
+    /// The same entity is used for source, target, and instigator parameters.
+    /// </remarks>
+    /// <example>
+    /// someEntity.KillOrDestroy();
+    /// </example>
     public static void KillOrDestroy(Entity entity)
-    { 
+    {
         StatChangeUtility.KillOrDestroyEntity(Core.EntityManager, entity, entity, entity, 0, StatChangeReason.Any, true);
     }
 
@@ -263,6 +274,16 @@ public static class EntityUtil
 
     #endregion
     #region Entity Query
+    /// <summary>
+    /// Gets entities that have a specific component type.
+    /// </summary>
+    /// <typeparam name="T1">The component type to query for</typeparam>
+    /// <param name="includeAll">Include all entity states in the query</param>
+    /// <param name="includeDisabled">Include disabled entities in the query</param>
+    /// <param name="includeSpawn">Include entities with spawn tags in the query</param>
+    /// <param name="includePrefab">Include prefab entities in the query</param>
+    /// <param name="includeDestroyed">Include destroyed entities in the query</param>
+    /// <returns>A NativeArray of entities matching the query criteria</returns>
     public static NativeArray<Entity> GetEntitiesByComponentType<T1>(bool includeAll = false, bool includeDisabled = false, bool includeSpawn = false, bool includePrefab = false, bool includeDestroyed = false)
     {
         EntityQueryOptions options = EntityQueryOptions.Default;
@@ -284,6 +305,17 @@ public static class EntityUtil
         return entities;
     }
 
+    /// <summary>
+    /// Gets entities that have two specific component types.
+    /// </summary>
+    /// <typeparam name="T1">The first component type to query for</typeparam>
+    /// <typeparam name="T2">The second component type to query for</typeparam>
+    /// <param name="includeAll">Include all entity states in the query</param>
+    /// <param name="includeDisabled">Include disabled entities in the query</param>
+    /// <param name="includeSpawn">Include entities with spawn tags in the query</param>
+    /// <param name="includePrefab">Include prefab entities in the query</param>
+    /// <param name="includeDestroyed">Include destroyed entities in the query</param>
+    /// <returns>A NativeArray of entities matching the query criteria</returns>
     public static NativeArray<Entity> GetEntitiesByComponentTypes<T1, T2>(bool includeAll = false, bool includeDisabled = false, bool includeSpawn = false, bool includePrefab = false, bool includeDestroyed = false)
     {
         EntityQueryOptions options = EntityQueryOptions.Default;
@@ -305,6 +337,12 @@ public static class EntityUtil
         return entities;
     }
 
+    /// <summary>
+    /// Gets entities that have a specific component type using custom query options.
+    /// </summary>
+    /// <typeparam name="T1">The component type to query for</typeparam>
+    /// <param name="queryOptions">Custom entity query options to apply</param>
+    /// <returns>A NativeArray of entities matching the query criteria</returns>
     public static NativeArray<Entity> GetEntitiesByComponentTypes<T1>(EntityQueryOptions queryOptions = default)
     {
         EntityQueryDesc queryDesc = new EntityQueryDesc
@@ -319,6 +357,12 @@ public static class EntityUtil
         return entities;
     }
 
+    /// <summary>
+    /// Gets entities within a specified area and of a specific tile type.
+    /// </summary>
+    /// <param name="area">The bounds to search within</param>
+    /// <param name="tileType">The type of tile to search for</param>
+    /// <returns>A NativeArray of entities matching the spatial and tile type criteria</returns>
     public unsafe static NativeArray<Entity> GetEntitiesInArea(BoundsMinMax area, TileType tileType)
     {
         var systemState = *Core.TileModelSpatialLookupSystem.Read<SystemInstance>().state;
@@ -328,16 +372,32 @@ public static class EntityUtil
         return spatialLookup.Results;
     }
 
+    /// <summary>
+    /// Gets an entity from its prefab GUID.
+    /// </summary>
+    /// <param name="guid">The prefab GUID to look up</param>
+    /// <returns>The entity associated with the GUID</returns>
     public static Entity EntityFromGUID(PrefabGUID guid)
     {
         return Core.ServerScriptMapper._PrefabCollectionSystem._PrefabGuidToEntityMap[guid];
     }
 
+    /// <summary>
+    /// Attempts to get an entity from its prefab GUID.
+    /// </summary>
+    /// <param name="guid">The prefab GUID to look up</param>
+    /// <param name="prefabEntity">The output entity if found</param>
+    /// <returns>True if the entity was found, false otherwise</returns>
     public static bool TryGetEntityFromGUID(PrefabGUID guid, out Entity prefabEntity)
     {
         return Core.ServerScriptMapper._PrefabCollectionSystem._PrefabGuidToEntityMap.TryGetValue(guid, out prefabEntity);
     }
 
+    /// <summary>
+    /// Gets the prefab GUID of an entity.
+    /// </summary>
+    /// <param name="entity">The entity to get the GUID from</param>
+    /// <returns>The prefab GUID of the entity, or PrefabGUID.Empty if not found</returns>
     public static PrefabGUID GetGUID(this Entity entity)
     {
         if (entity.Exists() && entity.Has<PrefabGUID>())
@@ -349,12 +409,16 @@ public static class EntityUtil
     }
     #endregion
     #region Entity Extras
+    /// <summary>
+    /// Sorts an array of entities by their distance from a given position.
+    /// </summary>
+    /// <param name="entities">The array of entities to sort</param>
+    /// <param name="position">The reference position to measure distances from</param>
+    /// <returns>The sorted array of entities</returns>
     public static NativeArray<Entity> SortEntitiesByDistance(NativeArray<Entity> entities, float3 position)
     {
-        // Create a temporary array to hold entities and their distances
         (Entity entity, float distance)[] tempArray = new (Entity, float)[entities.Length];
 
-        // Populate the temporary array
         for (int i = 0; i < entities.Length; i++)
         {
             float distance = float.MaxValue;
@@ -367,10 +431,8 @@ public static class EntityUtil
             tempArray[i] = (entities[i], distance);
         }
 
-        // Sort the temporary array based on distance
-        System.Array.Sort(tempArray, (a, b) => a.distance.CompareTo(b.distance));
+        Array.Sort(tempArray, (a, b) => a.distance.CompareTo(b.distance));
 
-        // Extract the sorted entities back into the NativeArray
         for (int i = 0; i < entities.Length; i++)
         {
             entities[i] = tempArray[i].entity;
@@ -379,6 +441,14 @@ public static class EntityUtil
         return entities;
     }
 
+    /// <summary>
+    /// Checks if an entity is within a castle territory and determines the alignment relationship.
+    /// </summary>
+    /// <param name="entity">The entity to check</param>
+    /// <param name="territory">The output territory entity if found</param>
+    /// <param name="territoryAlignment">The alignment relationship (Friendly, Enemy, or Neutral)</param>
+    /// <param name="requireRoom">If true, also checks if the entity is within an enclosed room</param>
+    /// <returns>True if the entity is in a territory, false otherwise</returns>
     public static bool IsInBase(Entity entity, out Entity territory, out TerritoryAlignment territoryAlignment, bool requireRoom = false)
     {
         territoryAlignment = TerritoryAlignment.None;
@@ -418,6 +488,12 @@ public static class EntityUtil
         return false;
     }
 
+    /// <summary>
+    /// Attempts to find the floor entity directly below a given entity.
+    /// </summary>
+    /// <param name="entity">The entity to check below</param>
+    /// <param name="floorEntity">The output floor entity if found</param>
+    /// <returns>True if a floor entity was found, false otherwise</returns>
     public static bool TryGetFloorEntityBelowEntity(Entity entity, out Entity floorEntity)
     {
         floorEntity = default;
@@ -443,6 +519,12 @@ public static class EntityUtil
         return false;
     }
 
+    /// <summary>
+    /// Gets the hovered tile model entity of a specific type for a user.
+    /// </summary>
+    /// <typeparam name="T">The component type to filter for</typeparam>
+    /// <param name="User">The user entity performing the hover</param>
+    /// <returns>The hovered entity if it matches the type, or Entity.Null if none found</returns>
     public static Entity GetHoveredTileModel<T>(Entity User)
     {
         var input = User.Read<EntityInput>();

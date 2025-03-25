@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class CastleTerritoryService | VAMP ">
       
-      
+      <meta name="description" content="Service for managing castle territory-related (plot) operations and queries.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -44,7 +44,7 @@
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
           <a class="navbar-brand" href="../index.html">
-            <img id="logo" class="svg" src="../logo.svg" alt="VAMP">
+            <img id="logo" class="svg" src="../images/logo_50.png" alt="VAMP">
             VAMP
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -89,7 +89,7 @@
 
 
   <h1 id="VAMP_Services_CastleTerritoryService" data-uid="VAMP.Services.CastleTerritoryService" class="text-break">
-Class CastleTerritoryService  <a class="header-action link-secondary" title="View source" href="https://github.com/SkyTech6/VAMP/blob/master/Services/CastleTerritoryService.cs/#L11"><i class="bi bi-code-slash"></i></a>
+Class CastleTerritoryService  <a class="header-action link-secondary" title="View source" href="https://github.com/SkyTech6/VAMP/blob/master/Services/CastleTerritoryService.cs/#L14"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Class CastleTerritoryService  <a class="header-action link-secondary" title="Vie
   <dl><dt>Assembly</dt><dd>VAMP.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Service for managing castle territory-related (plot) operations and queries.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -156,10 +157,12 @@ Class CastleTerritoryService  <a class="header-action link-secondary" title="Vie
 
   <h3 id="VAMP_Services_CastleTerritoryService__ctor" data-uid="VAMP.Services.CastleTerritoryService.#ctor">
   CastleTerritoryService()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SkyTech6/VAMP/blob/master/Services/CastleTerritoryService.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SkyTech6/VAMP/blob/master/Services/CastleTerritoryService.cs/#L24"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the CastleTerritoryService class.
+Loads and maps all castle territories and their blocks.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -186,10 +189,11 @@ Class CastleTerritoryService  <a class="header-action link-secondary" title="Vie
 
   <h3 id="VAMP_Services_CastleTerritoryService_ConvertPosToBlockCoord_Unity_Mathematics_float3_" data-uid="VAMP.Services.CastleTerritoryService.ConvertPosToBlockCoord(Unity.Mathematics.float3)">
   ConvertPosToBlockCoord(float3)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SkyTech6/VAMP/blob/master/Services/CastleTerritoryService.cs/#L82"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SkyTech6/VAMP/blob/master/Services/CastleTerritoryService.cs/#L115"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Converts a world position to a block coordinate.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -199,13 +203,15 @@ Class CastleTerritoryService  <a class="header-action link-secondary" title="Vie
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>pos</code> <span class="xref">float3</span></dt>
-    <dd></dd>
+    <dd><p>The world position to convert.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><span class="xref">int2</span></dt>
-    <dd></dd>
+    <dd><p>The block coordinate as an int2.</p>
+</dd>
   </dl>
 
 
@@ -222,10 +228,11 @@ Class CastleTerritoryService  <a class="header-action link-secondary" title="Vie
 
   <h3 id="VAMP_Services_CastleTerritoryService_ConvertPosToGrid_Unity_Mathematics_float3_" data-uid="VAMP.Services.CastleTerritoryService.ConvertPosToGrid(Unity.Mathematics.float3)">
   ConvertPosToGrid(float3)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SkyTech6/VAMP/blob/master/Services/CastleTerritoryService.cs/#L77"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SkyTech6/VAMP/blob/master/Services/CastleTerritoryService.cs/#L105"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Converts a world position to a grid position.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -235,13 +242,15 @@ Class CastleTerritoryService  <a class="header-action link-secondary" title="Vie
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>pos</code> <span class="xref">float3</span></dt>
-    <dd></dd>
+    <dd><p>The world position to convert.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><span class="xref">float3</span></dt>
-    <dd></dd>
+    <dd><p>The grid position.</p>
+</dd>
   </dl>
 
 
@@ -258,10 +267,11 @@ Class CastleTerritoryService  <a class="header-action link-secondary" title="Vie
 
   <h3 id="VAMP_Services_CastleTerritoryService_GetHeartForTerritory_System_Int32_" data-uid="VAMP.Services.CastleTerritoryService.GetHeartForTerritory(System.Int32)">
   GetHeartForTerritory(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SkyTech6/VAMP/blob/master/Services/CastleTerritoryService.cs/#L58"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SkyTech6/VAMP/blob/master/Services/CastleTerritoryService.cs/#L81"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the castle heart entity for a given territory index.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -271,13 +281,15 @@ Class CastleTerritoryService  <a class="header-action link-secondary" title="Vie
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>territoryIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
+    <dd><p>The territory index to search for.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><span class="xref">Entity</span></dt>
-    <dd></dd>
+    <dd><p>The castle heart entity if found, Entity.Null otherwise.</p>
+</dd>
   </dl>
 
 
@@ -294,10 +306,11 @@ Class CastleTerritoryService  <a class="header-action link-secondary" title="Vie
 
   <h3 id="VAMP_Services_CastleTerritoryService_GetTerritoryIndex_Unity_Mathematics_float3_" data-uid="VAMP.Services.CastleTerritoryService.GetTerritoryIndex(Unity.Mathematics.float3)">
   GetTerritoryIndex(float3)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SkyTech6/VAMP/blob/master/Services/CastleTerritoryService.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SkyTech6/VAMP/blob/master/Services/CastleTerritoryService.cs/#L68"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the territory index for a given position.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -307,13 +320,15 @@ Class CastleTerritoryService  <a class="header-action link-secondary" title="Vie
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>pos</code> <span class="xref">float3</span></dt>
-    <dd></dd>
+    <dd><p>The position to check.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
+    <dd><p>The territory index if found, -1 otherwise.</p>
+</dd>
   </dl>
 
 
@@ -330,10 +345,11 @@ Class CastleTerritoryService  <a class="header-action link-secondary" title="Vie
 
   <h3 id="VAMP_Services_CastleTerritoryService_TryGetCastleTerritory_Unity_Entities_Entity_Unity_Entities_Entity__" data-uid="VAMP.Services.CastleTerritoryService.TryGetCastleTerritory(Unity.Entities.Entity,Unity.Entities.Entity@)">
   TryGetCastleTerritory(Entity, out Entity)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/SkyTech6/VAMP/blob/master/Services/CastleTerritoryService.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/SkyTech6/VAMP/blob/master/Services/CastleTerritoryService.cs/#L46"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Attempts to get the castle territory entity for a given entity based on its position.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -343,15 +359,18 @@ Class CastleTerritoryService  <a class="header-action link-secondary" title="Vie
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>entity</code> <span class="xref">Entity</span></dt>
-    <dd></dd>
+    <dd><p>The entity to check.</p>
+</dd>
     <dt><code>territoryEntity</code> <span class="xref">Entity</span></dt>
-    <dd></dd>
+    <dd><p>The output territory entity if found.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>True if a territory was found for the entity, false otherwise.</p>
+</dd>
   </dl>
 
 
@@ -368,7 +387,7 @@ Class CastleTerritoryService  <a class="header-action link-secondary" title="Vie
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/SkyTech6/VAMP/blob/master/Services/CastleTerritoryService.cs/#L11" class="edit-link">Edit this page</a>
+          <a href="https://github.com/SkyTech6/VAMP/blob/master/Services/CastleTerritoryService.cs/#L14" class="edit-link">Edit this page</a>
         </div>
 
 

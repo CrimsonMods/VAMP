@@ -23,10 +23,12 @@ items:
       repo: https://github.com/SkyTech6/VAMP.git
     id: CastleHeartService
     path: Services/CastleHeartService.cs
-    startLine: 9
+    startLine: 12
   assemblies:
   - VAMP
   namespace: VAMP.Services
+  summary: Service for managing and querying castle heart entities in the game.
+  example: []
   syntax:
     content: public class CastleHeartService
     content.vb: Public Class CastleHeartService
@@ -58,10 +60,12 @@ items:
       repo: https://github.com/SkyTech6/VAMP.git
     id: CastleHeartQuery
     path: Services/CastleHeartService.cs
-    startLine: 11
+    startLine: 17
   assemblies:
   - VAMP
   namespace: VAMP.Services
+  summary: Query for filtering castle heart entities.
+  example: []
   syntax:
     content: public static EntityQuery CastleHeartQuery
     return:
@@ -85,10 +89,17 @@ items:
       repo: https://github.com/SkyTech6/VAMP.git
     id: .ctor
     path: Services/CastleHeartService.cs
-    startLine: 13
+    startLine: 24
   assemblies:
   - VAMP
   namespace: VAMP.Services
+  summary: >-
+    Initializes a new instance of the CastleHeartService class.
+
+    Sets up the entity query for castle hearts with required components.
+
+    VAMP Core will perform this method on startup.
+  example: []
   syntax:
     content: public CastleHeartService()
     content.vb: Public Sub New()
@@ -114,19 +125,24 @@ items:
       repo: https://github.com/SkyTech6/VAMP.git
     id: TryGetByID
     path: Services/CastleHeartService.cs
-    startLine: 24
+    startLine: 41
   assemblies:
   - VAMP
   namespace: VAMP.Services
+  summary: Attempts to find a castle heart entity by its network ID.
+  example: []
   syntax:
     content: public static bool TryGetByID(NetworkId castleId, out Entity castle)
     parameters:
     - id: castleId
       type: ProjectM.Network.NetworkId
+      description: The network ID of the castle to find.
     - id: castle
       type: Unity.Entities.Entity
+      description: When this method returns, contains the castle entity if found; otherwise, Entity.Null.
     return:
       type: System.Boolean
+      description: True if the castle was found; otherwise, false.
     content.vb: Public Shared Function TryGetByID(castleId As NetworkId, castle As Entity) As Boolean
   overload: VAMP.Services.CastleHeartService.TryGetByID*
   nameWithType.vb: CastleHeartService.TryGetByID(NetworkId, Entity)
@@ -150,19 +166,24 @@ items:
       repo: https://github.com/SkyTech6/VAMP.git
     id: TryGetByOwnerUser
     path: Services/CastleHeartService.cs
-    startLine: 42
+    startLine: 65
   assemblies:
   - VAMP
   namespace: VAMP.Services
+  summary: Attempts to find a castle heart entity owned by a specific user.
+  example: []
   syntax:
     content: public static bool TryGetByOwnerUser(User user, out Entity castle)
     parameters:
     - id: user
       type: ProjectM.Network.User
+      description: The user whose castle heart should be found.
     - id: castle
       type: Unity.Entities.Entity
+      description: When this method returns, contains the castle entity if found; otherwise, Entity.Null.
     return:
       type: System.Boolean
+      description: True if the castle was found; otherwise, false.
     content.vb: Public Shared Function TryGetByOwnerUser(user As User, castle As Entity) As Boolean
   overload: VAMP.Services.CastleHeartService.TryGetByOwnerUser*
   nameWithType.vb: CastleHeartService.TryGetByOwnerUser(User, Entity)

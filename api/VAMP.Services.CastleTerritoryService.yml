@@ -25,10 +25,12 @@ items:
       repo: https://github.com/SkyTech6/VAMP.git
     id: CastleTerritoryService
     path: Services/CastleTerritoryService.cs
-    startLine: 10
+    startLine: 13
   assemblies:
   - VAMP
   namespace: VAMP.Services
+  summary: Service for managing castle territory-related (plot) operations and queries.
+  example: []
   syntax:
     content: public class CastleTerritoryService
     content.vb: Public Class CastleTerritoryService
@@ -60,10 +62,15 @@ items:
       repo: https://github.com/SkyTech6/VAMP.git
     id: .ctor
     path: Services/CastleTerritoryService.cs
-    startLine: 16
+    startLine: 23
   assemblies:
   - VAMP
   namespace: VAMP.Services
+  summary: >-
+    Initializes a new instance of the CastleTerritoryService class.
+
+    Loads and maps all castle territories and their blocks.
+  example: []
   syntax:
     content: public CastleTerritoryService()
     content.vb: Public Sub New()
@@ -89,19 +96,24 @@ items:
       repo: https://github.com/SkyTech6/VAMP.git
     id: TryGetCastleTerritory
     path: Services/CastleTerritoryService.cs
-    startLine: 32
+    startLine: 45
   assemblies:
   - VAMP
   namespace: VAMP.Services
+  summary: Attempts to get the castle territory entity for a given entity based on its position.
+  example: []
   syntax:
     content: public bool TryGetCastleTerritory(Entity entity, out Entity territoryEntity)
     parameters:
     - id: entity
       type: Unity.Entities.Entity
+      description: The entity to check.
     - id: territoryEntity
       type: Unity.Entities.Entity
+      description: The output territory entity if found.
     return:
       type: System.Boolean
+      description: True if a territory was found for the entity, false otherwise.
     content.vb: Public Function TryGetCastleTerritory(entity As Entity, territoryEntity As Entity) As Boolean
   overload: VAMP.Services.CastleTerritoryService.TryGetCastleTerritory*
   nameWithType.vb: CastleTerritoryService.TryGetCastleTerritory(Entity, Entity)
@@ -125,17 +137,21 @@ items:
       repo: https://github.com/SkyTech6/VAMP.git
     id: GetTerritoryIndex
     path: Services/CastleTerritoryService.cs
-    startLine: 49
+    startLine: 67
   assemblies:
   - VAMP
   namespace: VAMP.Services
+  summary: Gets the territory index for a given position.
+  example: []
   syntax:
     content: public int GetTerritoryIndex(float3 pos)
     parameters:
     - id: pos
       type: Unity.Mathematics.float3
+      description: The position to check.
     return:
       type: System.Int32
+      description: The territory index if found, -1 otherwise.
     content.vb: Public Function GetTerritoryIndex(pos As float3) As Integer
   overload: VAMP.Services.CastleTerritoryService.GetTerritoryIndex*
 - uid: VAMP.Services.CastleTerritoryService.GetHeartForTerritory(System.Int32)
@@ -156,17 +172,21 @@ items:
       repo: https://github.com/SkyTech6/VAMP.git
     id: GetHeartForTerritory
     path: Services/CastleTerritoryService.cs
-    startLine: 57
+    startLine: 80
   assemblies:
   - VAMP
   namespace: VAMP.Services
+  summary: Gets the castle heart entity for a given territory index.
+  example: []
   syntax:
     content: public Entity GetHeartForTerritory(int territoryIndex)
     parameters:
     - id: territoryIndex
       type: System.Int32
+      description: The territory index to search for.
     return:
       type: Unity.Entities.Entity
+      description: The castle heart entity if found, Entity.Null otherwise.
     content.vb: Public Function GetHeartForTerritory(territoryIndex As Integer) As Entity
   overload: VAMP.Services.CastleTerritoryService.GetHeartForTerritory*
   nameWithType.vb: CastleTerritoryService.GetHeartForTerritory(Integer)
@@ -190,17 +210,21 @@ items:
       repo: https://github.com/SkyTech6/VAMP.git
     id: ConvertPosToGrid
     path: Services/CastleTerritoryService.cs
-    startLine: 76
+    startLine: 104
   assemblies:
   - VAMP
   namespace: VAMP.Services
+  summary: Converts a world position to a grid position.
+  example: []
   syntax:
     content: public static float3 ConvertPosToGrid(float3 pos)
     parameters:
     - id: pos
       type: Unity.Mathematics.float3
+      description: The world position to convert.
     return:
       type: Unity.Mathematics.float3
+      description: The grid position.
     content.vb: Public Shared Function ConvertPosToGrid(pos As float3) As float3
   overload: VAMP.Services.CastleTerritoryService.ConvertPosToGrid*
 - uid: VAMP.Services.CastleTerritoryService.ConvertPosToBlockCoord(Unity.Mathematics.float3)
@@ -221,17 +245,21 @@ items:
       repo: https://github.com/SkyTech6/VAMP.git
     id: ConvertPosToBlockCoord
     path: Services/CastleTerritoryService.cs
-    startLine: 81
+    startLine: 114
   assemblies:
   - VAMP
   namespace: VAMP.Services
+  summary: Converts a world position to a block coordinate.
+  example: []
   syntax:
     content: public static int2 ConvertPosToBlockCoord(float3 pos)
     parameters:
     - id: pos
       type: Unity.Mathematics.float3
+      description: The world position to convert.
     return:
       type: Unity.Mathematics.int2
+      description: The block coordinate as an int2.
     content.vb: Public Shared Function ConvertPosToBlockCoord(pos As float3) As int2
   overload: VAMP.Services.CastleTerritoryService.ConvertPosToBlockCoord*
 references:
