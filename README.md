@@ -45,11 +45,11 @@ Or add it directly to your project filee:
 
 [API Documentation](https://vrising.wiki/)
 
-[Modding Discord & Support](discord.gg)
+[Modding Discord & Support]([discord.gg](https://discord.gg/xzd5U5cNyD))
 
 ## Contributing
 
-We welcome contributions from the community! If you'd like to contribute to VAMP, please join the [discord server](https://discord.gg/vrising) and join the conversation in the VAMP channel.
+We welcome contributions from the community! If you'd like to contribute to VAMP, please join the [discord server](https://discord.gg/xzd5U5cNyD) and join the conversation in the VAMP channel.
 
 ## Support
 
