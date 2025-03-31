@@ -6,7 +6,7 @@ namespace = "skytech6"
 name = "VAMP"
 versionNumber = "0.1.0"
 description = "Versatile API for Modding ProjectM"
-websiteUrl = "https://github.com/CrimsonMods/FANG/"
+websiteUrl = "https://vrising.wiki/"
 containsNsfwContent = false
 
 [package.dependencies]
