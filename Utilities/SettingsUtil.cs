@@ -6,38 +6,52 @@ using System.Linq;
 
 namespace VAMP.Utilities;
 
+/// <summary>
+/// Utility class for handling configuration settings.
+/// </summary>
 public static class SettingsUtil
 {
-    public static ConfigEntry<T> InitConfigEntry<T>(string section, string key, T defaultValue, string description)
+    /// <summary>
+    /// Initializes a configuration entry with the specified parameters.
+    /// </summary>
+    /// <typeparam name="T">The type of the configuration value.</typeparam>
+    /// <param name="section">The section name in the configuration file.</param>
+    /// <param name="key">The key name for the configuration entry.</param>
+    /// <param name="defaultValue">The default value if no configuration exists.</param>
+    /// <param name="description">The description of the configuration entry.</param>
+    /// <param name="settingsName">The name of the settings file. Defaults to the plugin GUID.</param>
+    /// <returns>A ConfigEntry instance containing the configuration value.</returns>
+    public static ConfigEntry<T> InitConfigEntry<T>(string section, string key, T defaultValue, string description, string settingsName = MyPluginInfo.PLUGIN_GUID)
     {
-        // Bind the configuration entry and get its value
         var entry = Plugin.Instance.Config.Bind(section, key, defaultValue, description);
 
-        // Check if the key exists in the configuration file and retrieve its current value
-        var newFile = Path.Combine(Paths.ConfigPath, $"{MyPluginInfo.PLUGIN_GUID}.cfg");
+        var newFile = Path.Combine(Paths.ConfigPath, $"{settingsName}.cfg");
 
         if (File.Exists(newFile))
         {
             var config = new ConfigFile(newFile, true);
             if (config.TryGetEntry(section, key, out ConfigEntry<T> existingEntry))
             {
-                // If the entry exists, update the value to the existing value
                 entry.Value = existingEntry.Value;
             }
         }
         return entry;
     }
 
-    public static void ReorderConfigSections(List<string> sections)
+    /// <summary>
+    /// Reorders sections in the configuration file according to the specified order.
+    /// </summary>
+    /// <param name="sections">List of section names in the desired order.</param>
+    /// <param name="settingsName">The name of the settings file. Defaults to the plugin GUID.</param>
+    public static void ReorderConfigSections(List<string> sections, string settingsName = MyPluginInfo.PLUGIN_GUID)
     {
-        var configPath = Path.Combine(Paths.ConfigPath, $"{MyPluginInfo.PLUGIN_GUID}.cfg");
+        var configPath = Path.Combine(Paths.ConfigPath, $"{settingsName}.cfg");
         if (!File.Exists(configPath)) return;
 
         var lines = File.ReadAllLines(configPath).ToList();
         var sectionsContent = new Dictionary<string, List<string>>();
         string currentSection = "";
 
-        // Parse existing file
         foreach (var line in lines)
         {
             if (line.StartsWith("["))
@@ -51,7 +65,6 @@ public static class SettingsUtil
             }
         }
 
-        // Rewrite file in ordered sections
         using var writer = new StreamWriter(configPath, false);
         foreach (var section in sections)
         {
@@ -61,7 +74,7 @@ public static class SettingsUtil
                 {
                     writer.WriteLine(line);
                 }
-                writer.WriteLine(); // Add spacing between sections
+                writer.WriteLine();
             }
         }
     }
