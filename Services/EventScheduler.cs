@@ -78,9 +78,12 @@ public static class EventScheduler
                 {
                     if (e.eventTrigger == EventTrigger.Preset)
                     {
-                        if (e.dateTimes.Any(x => x.DayOfWeek == date.DayOfWeek))
+                        if (e.dateTimes.Any(x => x.DayOfWeek == date.DayOfWeek) || e.dateTimes.First().DayOfWeek == null)
                         {
-                            DateTime day = e.dateTimes.First(x => x.DayOfWeek == date.DayOfWeek);
+                            ScheduleEntry day = e.dateTimes.FirstOrDefault(x => x.DayOfWeek == date.DayOfWeek);
+
+                            if(day == null)
+                                day = e.dateTimes.First();
 
                             if (day.Hour == date.Hour && day.Minute == date.Minute)
                             {
@@ -89,17 +92,6 @@ public static class EventScheduler
                                 loopBreak = true;
                                 break;
                             }
-                        }
-                    }
-
-                    if (e.eventTrigger == EventTrigger.Daily)
-                    {
-                        if (date.Hour == 0 && date.Minute == 0)
-                        {
-                            StartVote(e);
-                            ServerChatUtils.SendSystemMessageToAllClients(Core.EntityManager, $"A new event vote has started for {e.name}! Vote for it using !vote");
-                            loopBreak = true;
-                            break;
                         }
                     }
                 }
