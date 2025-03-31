@@ -44,8 +44,11 @@ Or add it directly to your project filee:
 
 ## Resources
 [GitHub Repository](https://github.com/CrimsonMods/VAMP/)
+
 [NuGet Package](https://www.nuget.org/packages/VRising.VAMP)
+
 [API Documentation](https://vrising.wiki/)
+
 [Modding Discord & Support](discord.gg)
 
 ## Contributing
@@ -63,6 +66,7 @@ Want to support my modding development?
 [Boring Movies](https://store.steampowered.com/app/1792500/Boring_Movies/) **FREE TO PLAY**
 
 Donations Accepted
+
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/skytech6)
 
 **This mod was partially a paid creation. If you are looking to hire someone to make a mod for any Unity game reach out to me on Discord! (skytech6)**
