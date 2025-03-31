@@ -5,7 +5,7 @@ schemaVersion = "0.0.1"
 namespace = "skytech6"
 name = "VAMP"
 versionNumber = "0.1.0"
-description = "Versatile API for Modding ProjectM"
+description = "V Rising API Modding Platform"
 websiteUrl = "https://vrising.wiki/"
 containsNsfwContent = false
 

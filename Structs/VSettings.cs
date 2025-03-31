@@ -1,11 +1,9 @@
-using System.IO;
-using BepInEx;
 using BepInEx.Configuration;
 using VAMP.Utilities;
 
 namespace VAMP.Structs;
 
-public readonly struct Settings
+public readonly struct VSettings
 {
     public static ConfigEntry<int> Interval { get; private set; }
     public static ConfigEntry<int> AcceptPeriod {get; private set; }

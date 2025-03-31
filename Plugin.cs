@@ -14,7 +14,7 @@ public class Plugin : BasePlugin
     public static Plugin Instance { get; private set; }
     public static Harmony Harmony => Instance._harmony;
     public static ManualLogSource LogInstance => Instance.Log;
-    public static Settings Settings { get; private set;}
+    public static VSettings Settings { get; private set;}
 
     /// <summary>
     /// Event that is triggered when the Core system has finished loading.
@@ -27,7 +27,7 @@ public class Plugin : BasePlugin
     {
         Instance = this;
         Settings = new();
-        Settings.InitConfig();
+        VSettings.InitConfig();
 
         Log.LogInfo($"Plugin {MyPluginInfo.PLUGIN_GUID} version {MyPluginInfo.PLUGIN_VERSION} is loaded!");
 

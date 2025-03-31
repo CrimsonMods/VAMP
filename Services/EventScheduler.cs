@@ -1,8 +1,8 @@
+using ProjectM;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using ProjectM;
 using UnityEngine;
 using VAMP.Structs;
 using Event = VAMP.Structs.Event;
@@ -64,7 +64,7 @@ public static class EventScheduler
         {
             yield return new WaitForSeconds(60);
 
-            if (Current.Count >= Settings.Concurrent.Value) continue;
+            if (Current.Count >= VSettings.Concurrent.Value) continue;
             if (_voting) continue;
 
             DateTime date = DateTime.UtcNow;
@@ -108,7 +108,7 @@ public static class EventScheduler
             if (loopBreak) continue;
 
             TimeSpan timeSinceLastTrigger = date - _lastIntervalTrigger;
-            if ((_lastIntervalTrigger == DateTime.MinValue && date.Minute == 0) || timeSinceLastTrigger.TotalMinutes >= Settings.Interval.Value)
+            if ((_lastIntervalTrigger == DateTime.MinValue && date.Minute == 0) || timeSinceLastTrigger.TotalMinutes >= VSettings.Interval.Value)
             {
                 if (Intervals != null && Intervals.Count > 0 && RandomInterval(out Event e))
                 {
@@ -196,7 +196,7 @@ public static class EventScheduler
     {
         int votingMins = 0;
         _voting = true;
-        while (votingMins <= Settings.AcceptPeriod.Value)
+        while (votingMins <= VSettings.AcceptPeriod.Value)
         {
             yield return new WaitForSeconds(60);
 
