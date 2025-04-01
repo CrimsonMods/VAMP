@@ -1,5 +1,6 @@
 ﻿using BepInEx;
 using BepInEx.Configuration;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -12,29 +13,37 @@ namespace VAMP.Utilities;
 public static class SettingsUtil
 {
     /// <summary>
-    /// Initializes a configuration entry with the specified parameters.
+    /// Creates a ConfigFile instance for the specified settings name.
     /// </summary>
-    /// <typeparam name="T">The type of the configuration value.</typeparam>
-    /// <param name="section">The section name in the configuration file.</param>
-    /// <param name="key">The key name for this configuration entry.</param>
-    /// <param name="defaultValue">The default value if the configuration entry doesn't exist.</param>
-    /// <param name="description">The description of this configuration entry.</param>
-    /// <param name="settingsName">The name of the settings file to create/modify.</param>
-    /// <returns>A <see cref="ConfigEntry{T}"/> instance if successful; otherwise, null.</returns>
-    public static ConfigEntry<T> InitConfigEntry<T>(string section, string key, T defaultValue, string description, string settingsName)
+    /// <param name="settingsName">The name of the settings file.</param>
+    /// <returns>A ConfigFile instance.</returns>
+    public static ConfigFile CreateConfigFile(string settingsName)
     {
         if (string.IsNullOrEmpty(settingsName))
         {
-            Plugin.LogInstance.LogError("Settings name cannot be empty when creating a direct config entry");
+            Plugin.LogInstance.LogError("Settings name cannot be empty when creating a config file");
             return null;
         }
 
         var configPath = Path.Combine(Paths.ConfigPath, $"{settingsName}.cfg");
-        var config = new ConfigFile(configPath, true);
+        return new ConfigFile(configPath, true);
+    }
 
+    /// <summary>
+    /// Initializes a configuration entry with the specified parameters using an existing ConfigFile.
+    /// </summary>
+    /// <typeparam name="T">The type of the configuration value.</typeparam>
+    /// <param name="config">The ConfigFile to use.</param>
+    /// <param name="section">The section name in the configuration file.</param>
+    /// <param name="key">The key name for the configuration entry.</param>
+    /// <param name="defaultValue">The default value if no configuration exists.</param>
+    /// <param name="description">The description of the configuration entry.</param>
+    /// <returns>A ConfigEntry instance containing the configuration value.</returns>
+    public static ConfigEntry<T> InitConfigEntry<T>(ConfigFile config, string section, string key, T defaultValue, string description)
+    {
         return config.Bind(section, key, defaultValue, description);
     }
-    
+
     /// <summary>
     /// Reorders sections in the configuration file according to the specified order.
     /// </summary>
