@@ -15,8 +15,13 @@ public static class SpawnService
         var f3pos = new float3(position.x, position.y, position.z);
         var usus = Core.Server.GetExistingSystemManaged<UnitSpawnerUpdateSystem>();
         var durationKey = NextKey();
+
+        Plugin.LogInstance.LogInfo($"Spawning unit {unit} at {f3pos} with key {durationKey}");
+
         usus.SpawnUnit(empty_entity, unit, f3pos, 1, 1, 1, durationKey);
         UnitSpawnerPatch.PostActions.Add(durationKey, (duration, postActions));
+
+        Plugin.LogInstance.LogInfo($"Added PostAction with key {durationKey}, total pending: {UnitSpawnerPatch.PostActions.Count}");
     }
 
     internal static long NextKey()

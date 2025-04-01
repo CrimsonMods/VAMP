@@ -20,16 +20,27 @@ public static class UnitSpawnerPatch
     {
         try
         {
+            Plugin.LogInstance.LogInfo($"UnitSpawnerPatch running with {PostActions.Count} pending actions");
+
             var _entities = __instance._Query.ToEntityArray(Allocator.Temp);
+            Plugin.LogInstance.LogInfo($"Found {_entities.Length} entities to process");
 
             foreach (var entity in _entities)
             {
-                if (!entity.Has<LifeTime>()) return;
+                if (!entity.Has<LifeTime>())
+                {
+                    Plugin.LogInstance.LogInfo($"Entity {entity.Index} skipped - no LifeTime component");
+                    continue;
+                }
 
                 var lifetimeComp = entity.Read<LifeTime>();
                 var durationKey = (long)Mathf.Round(lifetimeComp.Duration);
+
+                Plugin.LogInstance.LogInfo($"Checking entity {entity.Index} with duration {lifetimeComp.Duration} (key: {durationKey})");
+
                 if (PostActions.TryGetValue(durationKey, out var unitData))
                 {
+                    Plugin.LogInstance.LogInfo($"Found matching PostAction for key {durationKey}");
                     var (actualDuration, actions) = unitData;
                     PostActions.Remove(durationKey);
 
@@ -43,13 +54,19 @@ public static class UnitSpawnerPatch
 
                     entity.Write(newLifeTime);
                     entity.Add<CanFly>();
+
+                    Plugin.LogInstance.LogInfo($"Executing PostAction for entity {entity.Index}");
                     actions(entity);
+                }
+                else
+                {
+                    Plugin.LogInstance.LogInfo($"No matching PostAction found for key {durationKey}");
                 }
             }
         }
         catch (Exception e)
         {
-            Plugin.LogInstance.LogError(e);
+            Plugin.LogInstance.LogError($"Error in UnitSpawnerPatch: {e}");
         }
     }
 }
