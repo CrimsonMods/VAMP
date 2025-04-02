@@ -85,7 +85,7 @@ public static class ItemUtil
                 }
                 catch (System.Exception e)
                 {
-                    Plugin.LogInstance.LogInfo($"Could not create dropped item: {pos} {prefabGUID.LookupName()} {amount}");
+                    Plugin.LogInstance.LogWarning($"Could not create dropped item: {pos} {prefabGUID.LookupName()} {amount}");
                     var action = () => CreateDroppedItem(pos, prefabGUID, amount);
                     Reattempt(action);
                     return;

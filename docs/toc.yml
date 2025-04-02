@@ -2,3 +2,5 @@
   href: event-scheduler.md
 - name: Player Service
   href: player-service.md
+- name: Spawn Service
+  href: spawn-service.md

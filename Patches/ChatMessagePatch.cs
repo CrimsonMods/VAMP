@@ -4,6 +4,8 @@ using ProjectM;
 using Unity.Entities;
 using Unity.Collections;
 using VAMP.Services;
+using VAMP.Utilities;
+using System.Linq;
 
 namespace VAMP.Patches;
 
@@ -42,6 +44,27 @@ public static class ChatMessagePatch
 
                 if (messageText == "!!spawnDebug")
                     Plugin.SpawnDebug = !Plugin.SpawnDebug;
+
+                if(messageText == "!!chatDebug")
+                {
+                    DevUtil.ChatDebugMode = !DevUtil.ChatDebugMode;
+                    ServerChatUtils.SendSystemMessageToClient(Core.EntityManager, userData, $"Chat Debug Mode: {DevUtil.ChatDebugMode}");
+
+                    if(DevUtil.ChatDebugMode == false)
+                    {
+                        DevUtil.ChatDebugKeys = null;
+                    }
+                }
+
+                if(messageText.StartsWith("!!chatDebugKey"))
+                {
+                    var parts = messageText.Split(' ');
+                    if (parts.Length > 1)
+                    {
+                        DevUtil.ChatDebugKeys = parts.Skip(1).ToArray();
+                        ServerChatUtils.SendSystemMessageToClient(Core.EntityManager, userData, $"Chat Debug Keys: {string.Join(", ", DevUtil.ChatDebugKeys)}");
+                    }
+                }
             }
         }
 

@@ -1,14 +1,42 @@
 ﻿using ProjectM;
 using System;
 using System.IO;
+using System.Linq;
+using Unity.Collections;
 using Unity.Entities;
 
 namespace VAMP.Utilities;
 
 public static class DevUtil
 {
+    public static bool ChatDebugMode = false;
+    public static string[] ChatDebugKeys;
+
     /// <summary>
-    /// Dumps all component information of an entity to a specified file for debugging purposes.
+    /// Sends a debug message to all clients through the chat system if debug mode is enabled.
+    /// </summary>
+    /// <param name="message">The message to be sent to all clients</param>
+    /// <param name="key">The key to use to request specific debug messages</param>
+    /// <remarks>
+    /// This method will only send messages if ChatDebugMode is set to true by using !!chatDebug command.
+    /// If the message is null or empty, no message will be sent.
+    /// Highly recommended to use a key specific to your mod or sections of your mod.
+    /// </remarks>
+    /// <example>
+    /// DevUtil.ChatDebug($"Player position updated: x={x}, y={y}");
+    /// DevUtil.ChatDebug($"Player position updated: x={x}, y={y}", "positionInfo");
+    /// </example>
+    public static void ChatDebug(string message, string key = null)
+    { 
+        if(!ChatDebugMode) return;
+        if (string.IsNullOrEmpty(message)) return;
+        if(!string.IsNullOrEmpty(key) && !ChatDebugKeys.Contains(key)) return;
+
+        ServerChatUtils.SendSystemMessageToAllClients(Core.Server.EntityManager, message);
+    }
+
+    /// <summary>
+    /// /// Dumps all component information of an entity to a specified file for debugging purposes.
     /// </summary>
     /// <param name="entity">The entity to dump information from</param>
     /// <param name="filePath">The file path where the dump will be written</param>

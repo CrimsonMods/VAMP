@@ -27,7 +27,6 @@ public static class UnitUtil
     }
 
     public static Dictionary<int, SpawnedUnit> HashToUnit = new Dictionary<int, SpawnedUnit>();
-    public static Dictionary<string, List<Timer>> timersByCategory = new Dictionary<string, List<Timer>>();
     public static Dictionary<Unit, Entity> UnitToEntity = new Dictionary<Unit, Entity>();
 
     public static bool TryGetSpawnedUnitFromEntity(Entity unitEntity, out SpawnedUnit unit)
