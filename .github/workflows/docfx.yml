@@ -27,6 +27,16 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 8.x
+        
+    - name: Update index.md with README content
+      run: |
+        # Extract the frontmatter from index.md
+        frontmatter=$(sed -n '1,/^---$/p' index.md)
+        # Copy README content
+        readme_content=$(cat README.md)
+        # Combine frontmatter with README content
+        echo "$frontmatter" > index.md
+        echo "$readme_content" >> index.md
 
     - run: dotnet tool update -g docfx
     - run: docfx ./docfx.json
