@@ -29,11 +29,15 @@ public static class UnitSpawnerPatch
                     continue;
                 }
 
+                DevUtil.ChatDebug($"Entity {entity.Index} has LifeTime", "spawn");
+
                 var lifetimeComp = entity.Read<LifeTime>();
                 var durationKey = (long)Mathf.Round(lifetimeComp.Duration);
+                DevUtil.ChatDebug($"Entity {entity.Index} has durationKey {durationKey}", "spawn");
 
                 if (PostActions.TryGetValue(durationKey, out var unitData))
                 {
+                    DevUtil.ChatDebug($"Entity {entity.Index} has unitData", "spawn");
                     var (actualDuration, actions) = unitData;
                     PostActions.Remove(durationKey);
 

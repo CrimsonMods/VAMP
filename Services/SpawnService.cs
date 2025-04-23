@@ -4,6 +4,7 @@ using System;
 using Unity.Entities;
 using Unity.Mathematics;
 using VAMP.Patches;
+using VAMP.Utilities;
 
 namespace VAMP.Services;
 
@@ -25,6 +26,8 @@ public static class SpawnService
         var f3pos = new float3(position.x, position.y, position.z);
         var usus = Core.Server.GetExistingSystemManaged<UnitSpawnerUpdateSystem>();
         var durationKey = NextKey();
+
+        DevUtil.ChatDebug($"SpawnService called for {unit._Value} with key {durationKey}", "spawn");
 
         usus.SpawnUnit(empty_entity, unit, f3pos, 1, 1, 1, durationKey);
         UnitSpawnerPatch.PostActions.Add(durationKey, (duration, postActions));
