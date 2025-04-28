@@ -1,3 +1,14 @@
+# NOTICE - PREVIEW BUILD
+This is a preview build of VAMP for 1.1. Use this mod at your own risk on live servers until it has been marked as stable (the update that removes this notice). 
+If you want to help testing out VAMP (and/or other CrimsonMods) you're more than welcome to do so, but you accept the risk of bugs. 
+
+DO NOT USE BEPINEX ON THUNDERSTORE. [GET IT FROM HERE INSTEAD](https://github.com/decaprime/VRising-Modding/releases).
+
+You can report any encountered bugs or feedback to the [Modding Discord](https://discord.gg/xzd5U5cNyD)
+
+Known Issues:
+- Spawn System currently doesn't work as they removed the "OLD" buffs. A fix is in the works. 
+
 ![vamp-banner](https://i.imgur.com/R5xL2Eg.png)
 
 # V Rising API Modding Platform
@@ -18,7 +29,6 @@ The original intention for this mod was to stop copy-pasting a large amount of c
 
 *The API is very much still a work in progress and will likely change a bit over time as I continue to use it and add more features.*
 
-
 ## Getting Started
 
 If you're simply a player:
@@ -37,13 +47,13 @@ Or add it directly to your project filee:
 ```
 
 ## Resources
-[GitHub Repository](https://github.com/CrimsonMods/VAMP/)
-
-[NuGet Package](https://www.nuget.org/packages/VRising.VAMP)
-
 [API Documentation](https://vrising.wiki/)
 
 [Modding Discord & Support](https://discord.gg/xzd5U5cNyD)
+
+[GitHub Repository](https://github.com/CrimsonMods/VAMP/)
+
+[NuGet Package](https://www.nuget.org/packages/VRising.VAMP)
 
 ## Contributing
 
@@ -58,6 +68,8 @@ Want to support my modding development?
 [Train Your Minibot](https://store.steampowered.com/app/713740/Train_Your_Minibot/) 
 
 [Boring Movies](https://store.steampowered.com/app/1792500/Boring_Movies/) **FREE TO PLAY**
+
+[git gud](https://store.steampowered.com/app/1490570/git_gud/) **WISHLIST COMING SOON**
 
 Donations Accepted
 
