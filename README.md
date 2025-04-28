@@ -11,15 +11,13 @@ Features
 - Prefab System: Utilize the extensive collection of game prefabs for NPCs, abilities, and items
 - Castle Management: Interface with castle hearts and territories
 - Unit Customization: Create and modify units like horses, NPCs, and monsters
-- EventScheduler: A global manager for running event mods
+- [EventScheduler](https://vrising.wiki/docs/event-scheduler.html): A global manager for running event mods
 - And more...
 
 The original intention for this mod was to stop copy-pasting a large amount of code between projects, especially files like ECSExtensions and Core. Then it expanded from there to include systems that were used in a majority of my CrimsonMods. Now it has been standardized and documented for use by other modders to make modding V Rising easier and more accessible. 
 
 *The API is very much still a work in progress and will likely change a bit over time as I continue to use it and add more features.*
 
-### Known Issues
-The Unit Spawner has some issues... will hopefully be fixed very soon. 
 
 ## Getting Started
 
@@ -45,7 +43,7 @@ Or add it directly to your project filee:
 
 [API Documentation](https://vrising.wiki/)
 
-[Modding Discord & Support]([discord.gg](https://discord.gg/xzd5U5cNyD))
+[Modding Discord & Support](https://discord.gg/xzd5U5cNyD)
 
 ## Contributing
 
