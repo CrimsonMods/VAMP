@@ -2,7 +2,6 @@
 using System;
 using System.IO;
 using System.Linq;
-using Unity.Collections;
 using Unity.Entities;
 
 namespace VAMP.Utilities;
@@ -32,7 +31,7 @@ public static class DevUtil
         if (string.IsNullOrEmpty(message)) return;
         if(!string.IsNullOrEmpty(key) && !ChatDebugKeys.Contains(key)) return;
 
-        ServerChatUtils.SendSystemMessageToAllClients(Core.Server.EntityManager, message);
+        ChatUtil.SystemSendAll(message);
     }
 
     /// <summary>

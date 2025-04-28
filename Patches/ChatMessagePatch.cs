@@ -26,16 +26,16 @@ public static class ChatMessagePatch
 
                 var messageText = chatEventData.MessageText.ToString();
 
-                if(messageText == "!vote")
+                if (messageText == "!vote")
                 {
-                    if(EventScheduler.IsVoting())
+                    if (EventScheduler.IsVoting())
                     {
                         EventScheduler.AddVote(userData.CharacterName.Value);
                         continue;
                     }
                     else
                     {
-                        ServerChatUtils.SendSystemMessageToClient(Core.EntityManager, userData, $"There is currently no event vote in progress.");
+                        ChatUtil.SystemSendUser(userData, $"There is currently no event vote in progress.");
                     }
                 }
 
@@ -45,24 +45,24 @@ public static class ChatMessagePatch
                 if (messageText == "!!spawnDebug")
                     Plugin.SpawnDebug = !Plugin.SpawnDebug;
 
-                if(messageText == "!!chatDebug")
+                if (messageText == "!!chatDebug")
                 {
                     DevUtil.ChatDebugMode = !DevUtil.ChatDebugMode;
-                    ServerChatUtils.SendSystemMessageToClient(Core.EntityManager, userData, $"Chat Debug Mode: {DevUtil.ChatDebugMode}");
+                    ChatUtil.SystemSendUser(userData, $"Chat Debug Mode: {DevUtil.ChatDebugMode}");
 
-                    if(DevUtil.ChatDebugMode == false)
+                    if (DevUtil.ChatDebugMode == false)
                     {
                         DevUtil.ChatDebugKeys = null;
                     }
                 }
 
-                if(messageText.StartsWith("!!chatDebugKey"))
+                if (messageText.StartsWith("!!chatDebugKey"))
                 {
                     var parts = messageText.Split(' ');
                     if (parts.Length > 1)
                     {
                         DevUtil.ChatDebugKeys = parts.Skip(1).ToArray();
-                        ServerChatUtils.SendSystemMessageToClient(Core.EntityManager, userData, $"Chat Debug Keys: {string.Join(", ", DevUtil.ChatDebugKeys)}");
+                        ChatUtil.SystemSendUser(userData, $"Chat Debug Keys: {string.Join(", ", DevUtil.ChatDebugKeys)}");
                     }
                 }
             }

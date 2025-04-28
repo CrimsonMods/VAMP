@@ -16,6 +16,7 @@ public class CastleHeartService
     /// Query for filtering castle heart entities.
     /// </summary>
     public static EntityQuery CastleHeartQuery;
+    private static EntityQueryDesc queryDesc;
 
     /// <summary>
     /// Initializes a new instance of the CastleHeartService class.
@@ -24,13 +25,14 @@ public class CastleHeartService
     /// </summary>
     public CastleHeartService()
     {
-        CastleHeartQuery = Core.EntityManager.CreateEntityQuery(new EntityQueryDesc()
+        queryDesc = new EntityQueryDesc()
         {
             All = new ComponentType[] {
                 ComponentType.ReadOnly<CastleHeart>(),
                 ComponentType.ReadOnly<Team>(),
             },
-        });
+        };
+        CastleHeartQuery = Core.EntityManager.CreateEntityQuery(new[] { queryDesc });
     }
 
     /// <summary>
@@ -66,18 +68,18 @@ public class CastleHeartService
     public static bool TryGetByOwnerUser(User user, out Entity castle)
     {
         var castleEntities = CastleHeartQuery.ToEntityArray(Allocator.Temp);
-        
-        foreach(var castleEntity in castleEntities)
+
+        foreach (var castleEntity in castleEntities)
         {
-            if(!castleEntity.Exists()) continue;
-            if(castleEntity.Has<UserOwner>())
+            if (!castleEntity.Exists()) continue;
+            if (castleEntity.Has<UserOwner>())
             {
                 var userOwner = castleEntity.Read<UserOwner>();
-                if(!userOwner.Owner._Entity.Exists()) continue;
-                
+                if (!userOwner.Owner._Entity.Exists()) continue;
+
                 var tUser = userOwner.Owner._Entity.Read<User>();
 
-                if(tUser.Equals(user))
+                if (tUser.Equals(user))
                 {
                     castle = castleEntity;
                     castleEntities.Dispose();

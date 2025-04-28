@@ -56,50 +56,51 @@ public static class UnitUtil
                 aggro.MaxDistanceFromPreCombatPosition = unit.MaxDistanceFromPreCombatPosition;
                 e.Write(aggro);
             }
-            if (BuffUtil.BuffEntity(e, Prefabs.Buff_BloodQuality_T01_OLD, out Entity buffEntity, 0, true))
-            {
-                if (unit.Level != -1 && e.Has<UnitLevel>())
-                {
-                    buffEntity.Add<ModifyUnitLevelBuff>();
-                    buffEntity.Write(new ModifyUnitLevelBuff
-                    {
-                        UnitLevel = unit.Level,
-                        Priority = 100
-                    });
-                }
+            // TODO: Find a new buff for this
+            // if (BuffUtil.BuffEntity(e, Prefabs.Buff_BloodQuality_T01_OLD, out Entity buffEntity, 0, true))
+            // {
+            //     if (unit.Level != -1 && e.Has<UnitLevel>())
+            //     {
+            //         buffEntity.Add<ModifyUnitLevelBuff>();
+            //         buffEntity.Write(new ModifyUnitLevelBuff
+            //         {
+            //             UnitLevel = unit.Level,
+            //             Priority = 100
+            //         });
+            //     }
 
-                if (unit.AggroRadius != -1)
-                {
-                    ModifyAggroRadius(unit, buffEntity); //this increases the boss range, but keeps players in combat :(
-                }
-                AddBuffModifications(unit, buffEntity);
-                if (unit.KnockbackResistance)
-                {
-                    GiveKnockbackResistance(unit, e, buffEntity);
-                }
-                if (!unit.DrawsAggro)
-                {
-                    DisableAggro(buffEntity);
-                }
-                unit.Modify(e, buffEntity);
+            //     if (unit.AggroRadius != -1)
+            //     {
+            //         ModifyAggroRadius(unit, buffEntity); //this increases the boss range, but keeps players in combat :(
+            //     }
+            //     AddBuffModifications(unit, buffEntity);
+            //     if (unit.KnockbackResistance)
+            //     {
+            //         GiveKnockbackResistance(unit, e, buffEntity);
+            //     }
+            //     if (!unit.DrawsAggro)
+            //     {
+            //         DisableAggro(buffEntity);
+            //     }
+            //     unit.Modify(e, buffEntity);
 
-                if (e.Has<BloodConsumeSource>() && !e.Has<VBloodUnit>())
-                {
-                    var bloodConsumeSource = e.Read<BloodConsumeSource>();
-                    bloodConsumeSource.CanBeConsumed = false;
-                    e.Write(bloodConsumeSource);
-                }
+            //     if (e.Has<BloodConsumeSource>() && !e.Has<VBloodUnit>())
+            //     {
+            //         var bloodConsumeSource = e.Read<BloodConsumeSource>();
+            //         bloodConsumeSource.CanBeConsumed = false;
+            //         e.Write(bloodConsumeSource);
+            //     }
 
-                if (unit.SoftSpawn && unit.SpawnDelay > 0)
-                {
-                    BuffUtil.BuffEntity(e, Prefabs.Buff_General_VampireMount_Dead, out var softSpawnBuff, unit.SpawnDelay);
-                    BuffUtil.ModifyBuff(softSpawnBuff, BuffModificationTypes.Immaterial | BuffModificationTypes.Invulnerable | BuffModificationTypes.TargetSpellImpaired | BuffModificationTypes.MovementImpair | BuffModificationTypes.RelocateImpair | BuffModificationTypes.DisableDynamicCollision | BuffModificationTypes.AbilityCastImpair | BuffModificationTypes.BehaviourImpair);
-                }
-            }
-            else
-            {
-                unit.Modify(e);
-            }
+            //     if (unit.SoftSpawn && unit.SpawnDelay > 0)
+            //     {
+            //         BuffUtil.BuffEntity(e, Prefabs.Buff_General_VampireMount_Dead, out var softSpawnBuff, unit.SpawnDelay);
+            //         BuffUtil.ModifyBuff(softSpawnBuff, BuffModificationTypes.Immaterial | BuffModificationTypes.Invulnerable | BuffModificationTypes.TargetSpellImpaired | BuffModificationTypes.MovementImpair | BuffModificationTypes.RelocateImpair | BuffModificationTypes.DisableDynamicCollision | BuffModificationTypes.AbilityCastImpair | BuffModificationTypes.BehaviourImpair);
+            //     }
+            // }
+            // else
+            // {
+            //     unit.Modify(e);
+            // }
 
             UnitToEntity[unit] = e;
 

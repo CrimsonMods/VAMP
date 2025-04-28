@@ -212,10 +212,12 @@ public class UltimateOrb : Unit
         var lifetime = e.Read<LifeTime>();
         lifetime.EndAction = LifeTimeEndAction.None;
         lifetime.Duration = -1;
-        if (BuffUtil.BuffEntity(e, Prefabs.Buff_BloodQuality_T01_OLD, out var buffEntity, 0))
-        {
-            BuffUtil.ModifyBuff(buffEntity, BuffModificationTypes.AbilityCastImpair | BuffModificationTypes.MovementImpair);
-        }
+        
+        // TODO: Find a new buff to use for this.
+        // if (BuffUtil.BuffEntity(e, Prefabs.Buff_BloodQuality_T01_OLD, out var buffEntity, 0))
+        // {
+        //     BuffUtil.ModifyBuff(buffEntity, BuffModificationTypes.AbilityCastImpair | BuffModificationTypes.MovementImpair);
+        // }
     }
 }
 

@@ -299,7 +299,7 @@ public static class EntityUtil
             Options = options
         };
 
-        var query = Core.EntityManager.CreateEntityQuery(queryDesc);
+        var query = Core.EntityManager.CreateEntityQuery(new[] { queryDesc });
 
         var entities = query.ToEntityArray(Allocator.Temp);
         return entities;
@@ -331,7 +331,7 @@ public static class EntityUtil
             Options = options
         };
 
-        var query = Core.EntityManager.CreateEntityQuery(queryDesc);
+        var query = Core.EntityManager.CreateEntityQuery(new[] { queryDesc });
 
         var entities = query.ToEntityArray(Allocator.Temp);
         return entities;
@@ -351,7 +351,7 @@ public static class EntityUtil
             Options = queryOptions
         };
 
-        var query = Core.Server.EntityManager.CreateEntityQuery(queryDesc);
+        var query = Core.EntityManager.CreateEntityQuery(new[] { queryDesc });
         var entities = query.ToEntityArray(Allocator.Temp);
         query.Dispose();
         return entities;
@@ -369,7 +369,7 @@ public static class EntityUtil
         var tileModelSpatialLookupSystemData = TileModelSpatialLookupSystemData.Create(ref systemState);
         var spatialLookup = tileModelSpatialLookupSystemData.GetSpatialLookupAndComplete(ref systemState);
         spatialLookup.GetEntities(ref area, tileType);
-        return spatialLookup.Results;
+        return spatialLookup.Results.ToArray(Allocator.Temp);
     }
 
     /// <summary>
@@ -379,7 +379,7 @@ public static class EntityUtil
     /// <returns>The entity associated with the GUID</returns>
     public static Entity EntityFromGUID(PrefabGUID guid)
     {
-        return Core.ServerScriptMapper._PrefabCollectionSystem._PrefabGuidToEntityMap[guid];
+        return Core.ServerScriptMapper._PrefabCollectionSystem._PrefabLookupMap[guid];
     }
 
     /// <summary>

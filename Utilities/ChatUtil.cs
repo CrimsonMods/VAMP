@@ -2,6 +2,7 @@
 using ProjectM.Network;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.Collections;
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
@@ -14,6 +15,28 @@ namespace VAMP.Utilities;
 /// </summary>
 public static class ChatUtil
 {
+    /// <summary>
+    /// Sends a system message to a specific user.
+    /// </summary>
+    /// <param name="user">The user to send the message to</param>
+    /// <param name="message">The message to send</param>
+    public static void SystemSendUser(User user, string message)
+    {
+        FixedString512Bytes fixedMessage = message;
+        ServerChatUtils.SendSystemMessageToClient(Core.EntityManager, user, ref fixedMessage);
+    }
+
+    /// <summary>
+    /// Sends a system message to all online users.
+    /// </summary>
+    /// <param name="message">The message to send</param>
+    /// <param name="translation">The position from which the message originates</param>
+    public static void SystemSendAll(string message)
+    {
+        FixedString512Bytes fixedMessage = message;
+        ServerChatUtils.SendSystemMessageToAllClients(Core.EntityManager, ref fixedMessage);
+    }
+    
     /// <summary>
     /// Sends a system message to nearby players within a specified radius.
     /// </summary>
@@ -36,7 +59,7 @@ public static class ChatUtil
                 var distance = math.distance(playerPos, currentPoint);
                 if (distance <= maxDistance)
                 {
-                    ServerChatUtils.SendSystemMessageToClient(Core.EntityManager, player.Read<User>(), message);
+                    SystemSendUser(player.Read<User>(), message);
                 }
             }
         }
@@ -61,7 +84,7 @@ public static class ChatUtil
         {
             if (player.Read<User>().Equals(user)) continue;
 
-            ServerChatUtils.SendSystemMessageToClient(Core.EntityManager, player.Read<User>(), message);
+            SystemSendUser(player.Read<User>(), message);
         }
     }
 

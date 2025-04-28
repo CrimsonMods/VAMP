@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.Collections;
 using Unity.Entities;
+using VAMP.Models;
 using VAMP.Structs;
 using VAMP.Utilities;
 
@@ -54,7 +55,9 @@ public class PlayerService
     /// <returns>An enumerable collection of online user entities.</returns>
     public static IEnumerable<Entity> GetUsersOnline()
     {
-        NativeArray<Entity> _userEntities = Core.EntityManager.CreateEntityQuery(ComponentType.ReadOnly<User>()).ToEntityArray(Allocator.Temp);
+        var componentTypes = new ComponentType[] { ComponentType.ReadOnly<User>() };
+        NativeArray<Entity> _userEntities = Core.EntityManager.CreateEntityQuery(componentTypes).ToEntityArray(Allocator.Temp);
+
         foreach (var entity in _userEntities)
         {
             if (Core.EntityManager.Exists(entity) && entity.Read<User>().IsConnected)
@@ -124,5 +127,20 @@ public class PlayerService
         }
         userEntity = Entity.Null;
         return false;
+    }
+
+    /// <summary>
+    /// Creates a new Player instance from the provided PlayerData.
+    /// </summary>
+    /// <param name="data">The PlayerData containing the player information.</param>
+    /// <returns>A new Player instance initialized with the character entity from the PlayerData.</returns>
+    public static Player PlayerFromData(PlayerData data)
+    {
+        Player player;
+        player = new Player
+        {
+            Character = data.CharEntity
+        };
+        return player;
     }
 }

@@ -20,8 +20,8 @@ public static class Extensions
     public static string LookupName(this PrefabGUID prefabGuid)
     {
         var prefabCollectionSystem = Core.Server.GetExistingSystemManaged<PrefabCollectionSystem>();
-        return (prefabCollectionSystem.PrefabGuidToNameDictionary.ContainsKey(prefabGuid)
-            ? prefabCollectionSystem.PrefabGuidToNameDictionary[prefabGuid] + " " + prefabGuid : "GUID Not Found").ToString();
+        return (prefabCollectionSystem._PrefabLookupMap.ContainsKey(prefabGuid)
+            ? prefabCollectionSystem._PrefabLookupMap.GetName(prefabGuid) + " " + prefabGuid : "GUID Not Found").ToString();
     }
 }
 //#pragma warning restore CS8500

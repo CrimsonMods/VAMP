@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using VAMP.Structs;
+using VAMP.Utilities;
 using Event = VAMP.Structs.Event;
 
 namespace VAMP.Services;
@@ -33,7 +34,7 @@ public static class EventScheduler
     /// List of all possible events that can be triggered.
     /// </summary>
     public static List<Event> Possible;
-    
+
     /// <summary>
     /// List of events that can occur at intervals.
     /// </summary>
@@ -64,38 +65,39 @@ public static class EventScheduler
         {
             yield return new WaitForSeconds(60);
 
-            if (Current.Count >= VSettings.Concurrent.Value) continue;
+            if (Current !=null && Current.Count >= VSettings.Concurrent.Value) continue;
             if (_voting) continue;
 
             DateTime date = DateTime.UtcNow;
 
             bool loopBreak = false;
-            foreach (Event e in Possible)
-            {
-                if (Current.Any(x => x.id == e.id)) continue;
-                if (loopBreak) break;
-                if (e.dateTimes != null)
+            if (Possible != null && Possible.Count > 0)
+                foreach (Event e in Possible)
                 {
-                    if (e.eventTrigger == EventTrigger.Preset)
+                    if (Current.Any(x => x.id == e.id)) continue;
+                    if (loopBreak) break;
+                    if (e.dateTimes != null)
                     {
-                        if (e.dateTimes.Any(x => x.DayOfWeek == date.DayOfWeek) || e.dateTimes.First().DayOfWeek == null)
+                        if (e.eventTrigger == EventTrigger.Preset)
                         {
-                            ScheduleEntry day = e.dateTimes.FirstOrDefault(x => x.DayOfWeek == date.DayOfWeek);
-
-                            if(day == null)
-                                day = e.dateTimes.First();
-
-                            if (day.Hour == date.Hour && day.Minute == date.Minute)
+                            if (e.dateTimes.Any(x => x.DayOfWeek == date.DayOfWeek) || e.dateTimes.First().DayOfWeek == null)
                             {
-                                StartVote(e);
-                                ServerChatUtils.SendSystemMessageToAllClients(Core.EntityManager, $"A new event vote has started for {e.name}! Vote for it using !vote");
-                                loopBreak = true;
-                                break;
+                                ScheduleEntry day = e.dateTimes.FirstOrDefault(x => x.DayOfWeek == date.DayOfWeek);
+
+                                if (day == null)
+                                    day = e.dateTimes.First();
+
+                                if (day.Hour == date.Hour && day.Minute == date.Minute)
+                                {
+                                    StartVote(e);
+                                    ChatUtil.SystemSendAll($"A new event vote has started for {e.name}! Vote for it using !vote");
+                                    loopBreak = true;
+                                    break;
+                                }
                             }
                         }
                     }
                 }
-            }
 
             if (loopBreak) continue;
 
@@ -105,7 +107,7 @@ public static class EventScheduler
                 if (Intervals != null && Intervals.Count > 0 && RandomInterval(out Event e))
                 {
                     StartVote(e);
-                    ServerChatUtils.SendSystemMessageToAllClients(Core.EntityManager, $"A new event vote has started for {e.name}! Vote for it using !vote");
+                    ChatUtil.SystemSendAll($"A new event vote has started for {e.name}! Vote for it using !vote");
                     _lastIntervalTrigger = date;
                 }
             }
@@ -204,7 +206,7 @@ public static class EventScheduler
 
         if (!HasPassed(e))
         {
-            ServerChatUtils.SendSystemMessageToAllClients(Core.EntityManager, $"The vote for {e.name} has failed.");
+            ChatUtil.SystemSendAll($"The vote for {e.name} has failed.");
         }
     }
 
