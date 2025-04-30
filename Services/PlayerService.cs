@@ -136,11 +136,31 @@ public class PlayerService
     /// <returns>A new Player instance initialized with the character entity from the PlayerData.</returns>
     public static Player PlayerFromData(PlayerData data)
     {
+        return PlayerFromChar(data.CharEntity);
+    }
+
+    /// <summary>
+    /// Creates a new Player instance from the provided character entity.
+    /// </summary>
+    /// <param name="entity">The character entity to create the player from.</param>
+    /// <returns>A new Player instance initialized with the specified character entity.</returns>
+    public static Player PlayerFromChar(Entity entity)
+    {
         Player player;
         player = new Player
         {
-            Character = data.CharEntity
+            Character = entity
         };
         return player;
+    }
+
+    /// <summary>
+    /// Creates a new Player instance from the provided User.
+    /// </summary>
+    /// <param name="user">The User to create the player from.</param>
+    /// <returns>A new Player instance initialized with the user's local character entity.</returns>
+    public static Player PlayerFromUser(User user)
+    {
+        return PlayerFromChar(user.LocalCharacter._Entity);
     }
 }

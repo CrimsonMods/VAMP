@@ -50,6 +50,7 @@ public class Player
 	public int Level => GetLevel();
 	public int Height => GetHeight();
 	public bool IsAdmin => GetIsAdmin();
+	public bool IsAdminCapable => GetIsAdminCapable();
 	public bool IsOnline => GetIsOnline();
 	public bool IsAlive => GetIsAlive();
 	public Entity Inventory => GetInventory();
@@ -150,6 +151,12 @@ public class Player
 	private bool GetIsAdmin()
 	{
 		return User.Read<User>().IsAdmin;
+	}
+
+	private bool GetIsAdminCapable()
+	{
+		var AdminAuthSystem = Core.Server.GetExistingSystemManaged<AdminAuthSystem>();
+		return AdminAuthSystem._LocalAdminList.Contains(SteamID);
 	}
 
 	private bool GetIsOnline()

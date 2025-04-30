@@ -4,3 +4,5 @@
   href: player-service.md
 - name: Spawn Service
   href: spawn-service.md
+- name: Chat Util
+  href: chat-util.md

@@ -1,8 +1,11 @@
 ﻿using HarmonyLib;
 using ProjectM;
 using ProjectM.Network;
+using Stunlock.Core;
 using Stunlock.Network;
 using System;
+using Unity.Collections;
+using VAMP.Data;
 
 namespace VAMP.Patches;
 
@@ -54,4 +57,30 @@ public static class OnUserDisconnectedPatch
         }
         catch { };
     }
+}
+
+[HarmonyPatch(typeof(Destroy_TravelBuffSystem), nameof(Destroy_TravelBuffSystem.OnUpdate))]
+public class Destroy_TravelBuffSystem_Patch
+{
+	private static void Postfix(Destroy_TravelBuffSystem __instance)
+	{
+		if (Core.PlayerService == null) Core.Initialize();
+		var entities = __instance.__query_615927226_0.ToEntityArray(Allocator.Temp);
+		foreach (var entity in entities)
+		{
+			PrefabGUID GUID = __instance.EntityManager.GetComponentData<PrefabGUID>(entity);
+
+			if (GUID.Equals(Prefabs.AB_Interact_TombCoffinSpawn_Travel))
+			{
+				var owner = __instance.EntityManager.GetComponentData<EntityOwner>(entity).Owner;
+				if (!__instance.EntityManager.HasComponent<PlayerCharacter>(owner)) return;
+
+				var userEntity = __instance.EntityManager.GetComponentData<PlayerCharacter>(owner).UserEntity;
+				var userData = __instance.EntityManager.GetComponentData<User>(userEntity);
+				
+				var playerName = userData.CharacterName.ToString();
+                Services.PlayerService.UpdatePlayerCache(userEntity, playerName, playerName);
+			}
+		}
+	}
 }

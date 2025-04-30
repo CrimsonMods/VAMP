@@ -22,6 +22,7 @@ public static class WorldRegions
 		{ WorldRegionType.Gloomrot_South, "Gloomrot South" },
 		{ WorldRegionType.RuinsOfMortium, "Ruins of Mortium" },
 		{ WorldRegionType.StartCave, "Start Cave" },
+		{ WorldRegionType.Strongblade, "Oakveil Woodlands"},
 		{ WorldRegionType.Other, "Unknown Location" },
 		{ WorldRegionType.None, "Unknown Location" },
 	};

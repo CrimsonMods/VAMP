@@ -36,6 +36,42 @@ public static class ChatUtil
         FixedString512Bytes fixedMessage = message;
         ServerChatUtils.SendSystemMessageToAllClients(Core.EntityManager, ref fixedMessage);
     }
+
+    /// <summary>
+    /// Sends a system message to all online users except the specified user.
+    /// </summary>
+    /// <param name="user">The user to exclude from the message</param>
+    /// <param name="message">The message to send</param>
+    public static void SystemSendAllExcept(User user, string message)
+    {
+        List<Entity> players = PlayerService.GetUsersOnline()
+            .Where(x => !x.Read<User>().Equals(user))
+            .ToList();
+
+        foreach (var player in players)
+        {
+            if (player.Read<User>().Equals(user)) continue;
+
+            SystemSendUser(player.Read<User>(), message);
+        }
+    }
+
+    /// <summary>
+    /// Sends a system message to all online users except the specified users.
+    /// </summary>
+    /// <param name="users">Array of users to exclude from the message</param>
+    /// <param name="message">The message to send</param>
+    public static void SystemSendAllExcept(User[] users, string message)
+    {
+        List<Entity> players = PlayerService.GetUsersOnline()
+            .Where(x => !users.Contains(x.Read<User>()))
+            .ToList();
+
+        foreach (var player in players)
+        {
+            SystemSendUser(player.Read<User>(), message);
+        }
+    }
     
     /// <summary>
     /// Sends a system message to nearby players within a specified radius.

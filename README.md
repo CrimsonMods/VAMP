@@ -23,6 +23,7 @@ Features
 - Castle Management: Interface with castle hearts and territories
 - Unit Customization: Create and modify units like horses, NPCs, and monsters
 - [EventScheduler](https://vrising.wiki/docs/event-scheduler.html): A global manager for running event mods
+- [ChatUtil](https://vrising.wiki/docs/chat-util.html): An extension of the System Chat System
 - And more...
 
 The original intention for this mod was to stop copy-pasting a large amount of code between projects, especially files like ECSExtensions and Core. Then it expanded from there to include systems that were used in a majority of my CrimsonMods. Now it has been standardized and documented for use by other modders to make modding V Rising easier and more accessible. 
