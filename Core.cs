@@ -45,6 +45,7 @@ public static class Core
         hasInitialized = true;
 
         Plugin.OnCoreLoaded?.Invoke();
+        Events.OnCoreLoaded?.Invoke();
 
         StartCoroutine(EventScheduler.ScheduleLoop());
     }

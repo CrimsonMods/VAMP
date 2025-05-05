@@ -6,6 +6,7 @@ using Unity.Collections;
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
+using VAMP.Models;
 using VAMP.Services;
 
 namespace VAMP.Utilities;
@@ -121,6 +122,20 @@ public static class ChatUtil
             if (player.Read<User>().Equals(user)) continue;
 
             SystemSendUser(player.Read<User>(), message);
+        }
+    }
+
+    /// <summary>
+    /// Sends a system message to all online administrators.
+    /// </summary>
+    /// <param name="message">The message to send to administrators</param>
+    public static void SystemSendAdmins(string message)
+    {
+        List<Player> players = PlayerService.GetCachedUsersOnlineAsPlayer().Where(x => x.IsAdminCapable).ToList();
+
+        foreach (var player in players)
+        {
+            SystemSendUser(player.User.Read<User>(), message);
         }
     }
 

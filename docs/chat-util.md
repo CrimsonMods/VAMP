@@ -1,4 +1,3 @@
-
 # Chat Utility Documentation
 
 The ChatUtil is a utility class in VAMP that provides methods for sending system messages to players in various ways. It offers functionality for targeted messaging, team communication, and local area broadcasts.
@@ -10,6 +9,7 @@ The ChatUtil is a utility class in VAMP that provides methods for sending system
 - Send messages to all players except specified ones
 - Local area messaging within a radius
 - Team-based communication for clan members
+- Admin-only messaging
 - Text color formatting support
 
 ## Usage
@@ -44,6 +44,12 @@ ChatUtil.SystemSendLocal(sender, position, "Anyone want to trade?");
 // Send a message to all clan members
 User clanMember = /* get user */;
 ChatUtil.SystemSendTeam(clanMember, "Clan meeting at the castle!");
+```
+
+### Admin Communication
+```csharp
+// Send a message to all online administrators
+ChatUtil.SystemSendAdmins("Admin alert: Suspicious activity detected");
 ```
 
 ### Text Formatting

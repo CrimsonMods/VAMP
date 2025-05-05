@@ -20,41 +20,45 @@ The service maintains three separate caches:
 ### Finding Players
 ```csharp
 // Find a player by their character name
-if (PlayerService.TryFindByName("Dracula", out var playerData))
+if (PlayerService.TryFindByName("Dracula", out var player))
 {
     // Access player information
-    var characterEntity = playerData.CharacterEntity;
-    var steamId = playerData.SteamID;
-    var isOnline = playerData.IsOnline;
+    var characterEntity = player.Character;
     
     // Do something with the player
-    Console.WriteLine($"Found player {playerData.CharacterName} with Steam ID {steamId}");
+    Console.WriteLine($"Found player with character entity {characterEntity}");
 }
 
 // Find a player by their Steam ID
 ulong steamId = 76561198012345678;
 if (PlayerService.TryFindBySteam(steamId, out var player))
 {
-    // Send a message to the player
-    ChatUtil.SendSystemMessage(player.UserEntity, "Hello vampire!");
+    // Work with the player entity
+    if (player.Character.Exists())
+    {
+        // Perform actions with the player
+    }
 }
 ```
 
 ### Working with Online Players
 ```csharp
 // Get all online players
+foreach (var player in PlayerService.GetCachedUsersOnlineAsPlayer())
+{
+    if (player.Character.Exists())
+    {
+        // Perform an action for each online player
+        // For example, give them a buff, item, etc.
+    }
+}
+
+// Get online users as entities
 foreach (var userEntity in PlayerService.GetCachedUsersOnline())
 {
     var userData = userEntity.Read<User>();
     Console.WriteLine($"Player {userData.CharacterName} is online");
-    
-    // Perform an action for each online player
-    // For example, give them a buff, item, etc.
 }
-
-// Count online players
-int onlineCount = PlayerService.GetCachedUsersOnline().Count();
-Console.WriteLine($"There are {onlineCount} players online");
 ```
 
 ### Updating Player Information
@@ -76,6 +80,7 @@ PlayerService.UpdatePlayerCache(userEntity, oldName, oldName, forceOffline: true
 - The cache is automatically maintained, but manual updates may be necessary in specific scenarios
 - For performance reasons, use the cached methods when possible instead of querying the entity system directly
 - The service maintains data for both online and offline players
+- Legacy PlayerData methods are marked as obsolete and will be removed in future versions
 
 ## Integration with Other Systems
 The PlayerService works seamlessly with other VAMP systems:

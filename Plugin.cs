@@ -20,6 +20,7 @@ public class Plugin : BasePlugin
     /// Event that is triggered when the Core system has finished loading.
     /// This action can be subscribed to for executing code after core initialization is complete.
     /// </summary>
+    [Obsolete("Use VAMP.Events.OnCoreLoaded instead. Will be removed in a future version.")]
     public static Action OnCoreLoaded;    
     public static bool SpawnDebug = false;
 
