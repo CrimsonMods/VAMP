@@ -9,6 +9,7 @@ using BepInEx.Unity.IL2CPP.Utils.Collections;
 using ProjectM.Scripting;
 using ProjectM.Tiles;
 using VAMP.Utilities;
+using VAMP.Structs;
 
 namespace VAMP;
 
@@ -31,6 +32,8 @@ public static class Core
     
     static MonoBehaviour monoBehaviour;
 
+    internal static Database Database { get; private set; }
+
     public static void Initialize()
     {
         if (hasInitialized) return;
@@ -43,6 +46,8 @@ public static class Core
         TileModelSpatialLookupSystem = EntityUtil.GetEntitiesByComponentTypes<TileModelSpatialLookupSystem.Singleton>(EntityQueryOptions.IncludeSystems)[0];
 
         hasInitialized = true;
+
+        Database = new Database();
 
         Plugin.OnCoreLoaded?.Invoke();
         Events.OnCoreLoaded?.Invoke();

@@ -1,8 +1,20 @@
 - name: Event Scheduler
   href: event-scheduler.md
-- name: Player Service
-  href: player-service.md
-- name: Spawn Service
-  href: spawn-service.md
-- name: Chat Util
-  href: chat-util.md
+- name: Services
+  items:
+  - name: Player Service
+    href: player-service.md
+  - name: Spawn Service
+    href: spawn-service.md
+- name: Utilities
+  items:
+  - name: Chat Util
+    href: chat-util.md
+  - name: Json Util
+    href: json-util.md
+- name: Data
+  items:
+  - name: VBloods
+    href: vbloods-data.md
+  - name: World Regions
+    href: worldregion-data.md

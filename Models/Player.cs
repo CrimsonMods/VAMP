@@ -250,12 +250,12 @@ public class Player
 		return User.Read<CurrentWorldRegion>().CurrentRegion;
 	}
 
-	public string GetWorldZoneString()
+	public string GetWorldZoneString(bool shortName = false)
 	{
 		var region = User.Read<CurrentWorldRegion>().CurrentRegion;
 		if (WorldRegions.WorldRegionToString.TryGetValue(region, out var zoneName))
 		{
-			return zoneName;
+			return shortName ? zoneName.Short : zoneName.Long;
 		}
 		return "";
 	}

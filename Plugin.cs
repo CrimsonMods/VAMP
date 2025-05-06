@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using BepInEx;
 using BepInEx.Logging;
 using BepInEx.Unity.IL2CPP;
@@ -15,6 +16,8 @@ public class Plugin : BasePlugin
     public static Harmony Harmony => Instance._harmony;
     public static ManualLogSource LogInstance => Instance.Log;
     public static VSettings Settings { get; private set;}
+
+    internal static string ConfigFiles => Path.Combine(Paths.ConfigPath, "VAMP");
 
     /// <summary>
     /// Event that is triggered when the Core system has finished loading.

@@ -1,4 +1,14 @@
 `latest`
+- Added utility functions to Data.WorldRegions
+- Updated Data.VBloods for 1.1 Bosses
+- Formatted WorldRegions and VBloods for both Full and Short names
+- Added user customizable JSONs for both WorldRegions and VBloods
+- Added JsonUtil
+- Added optional bool to get short region name with Player.GetWorldZoneString(bool = false)
+- Added Documentation for all new functionality
+- Updated the Table of Contents for Docs for ease of use
+
+`0.2.3`
 - Updated for 1.1 Hotfix 3
 - Added ChatUtil.SystemSendAdmins
 - PlayerService now uses Player model
