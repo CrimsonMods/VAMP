@@ -1,0 +1,17 @@
+name: Update Dependencies
+
+on:
+  schedule:
+    - cron: '0 17 * * *' 
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    uses: CrimsonMods/actions/.github/workflows/dependency-update.yml@master
+    with:
+      project-path: ./VAMP.csproj
+      target-branch: master

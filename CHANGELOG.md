@@ -1,4 +1,7 @@
-`latest`
+`0.3.1`
+- Update for Hotfix 5
+
+`0.3.0`
 - Added utility functions to Data.WorldRegions
 - Updated Data.VBloods for 1.1 Bosses
 - Formatted WorldRegions and VBloods for both Full and Short names
