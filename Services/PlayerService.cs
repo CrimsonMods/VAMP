@@ -30,14 +30,16 @@ public class PlayerService
         {
             var userData = entity.Read<User>();
             var playerData = new PlayerData(userData.CharacterName, userData.PlatformId, userData.IsConnected, entity, userData.LocalCharacter._Entity);
+            Player player = PlayerFromUser(userData);
 
             old_namePlayerCache.TryAdd(userData.CharacterName.ToString(), playerData);
             old_steamPlayerCache.TryAdd(userData.PlatformId, playerData);
+
+            namePlayerCache.TryAdd(player.Name, player);
+            steamPlayerCache.TryAdd(player.SteamID, player);
         }
 
-        var onlinePlayers = old_namePlayerCache.Values.Where(p => p.IsOnline).Select(p => $"\t{p.CharacterName}");
-
-        Plugin.LogInstance.LogWarning($"Player Cache Created with {old_namePlayerCache.Count} entries total.");
+        Plugin.LogInstance.LogWarning($"Player Cache Created with {namePlayerCache.Count} entries total.");
     }
 
     internal static void UpdatePlayerCache(Entity userEntity, string oldName, string newName, bool forceOffline = false)

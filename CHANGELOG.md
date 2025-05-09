@@ -1,3 +1,6 @@
+`latest`
+- PlayerService critical bug fix
+
 `0.3.1`
 - Update for Hotfix 5
 
