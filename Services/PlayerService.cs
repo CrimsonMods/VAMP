@@ -22,6 +22,9 @@ public class PlayerService
 
     internal PlayerService()
     {
+        old_namePlayerCache.Clear();
+        old_steamPlayerCache.Clear();
+
         namePlayerCache.Clear();
         steamPlayerCache.Clear();
 
@@ -30,7 +33,8 @@ public class PlayerService
         {
             var userData = entity.Read<User>();
             var playerData = new PlayerData(userData.CharacterName, userData.PlatformId, userData.IsConnected, entity, userData.LocalCharacter._Entity);
-            Player player = PlayerFromUser(userData);
+            Player player = new Player();
+            player.User = entity;
 
             old_namePlayerCache.TryAdd(userData.CharacterName.ToString(), playerData);
             old_steamPlayerCache.TryAdd(userData.PlatformId, playerData);
