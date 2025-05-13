@@ -1,4 +1,8 @@
 `latest`
+- Update for Hotfix 6
+- Added ClanService.GetByNetworkId(networkId)
+
+`0.3.3`
 - PlayerService critical bug fix
 
 `0.3.1`

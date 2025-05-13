@@ -14,7 +14,7 @@ public class ClanService
 
     public ClanService()
     {
-        var componentTypes = new ComponentType[] { ComponentType.ReadOnly<ClanMemberStatus>() };
+        var componentTypes = new ComponentType[] { ComponentType.ReadOnly<ClanTeam>() };
         ClansQuery = Core.EntityManager.CreateEntityQuery(componentTypes);
     }
 
@@ -23,9 +23,9 @@ public class ClanService
         NativeArray<Entity> clanEntities = ClansQuery.ToEntityArray(Allocator.Temp);
         try
         {
-            foreach(Entity entity in clanEntities)
+            foreach (Entity entity in clanEntities)
             {
-                if(entity.Exists())
+                if (entity.Exists())
                 {
                     yield return entity;
                 }
@@ -47,6 +47,12 @@ public class ClanService
     public static Entity GetByGUID(Il2CppSystem.Guid guid)
     {
         Entity clanEntity = GetAll().FirstOrDefault(entity => entity.Read<ClanTeam>().ClanGuid == guid);
+        return clanEntity != Entity.Null ? clanEntity : Entity.Null;
+    }
+
+    public static Entity GetByNetworkId(NetworkId networkId)
+    {
+        Entity clanEntity = GetAll().Where(x => x.Has<NetworkId>()).FirstOrDefault(entity => entity.Read<NetworkId>() == networkId);
         return clanEntity != Entity.Null ? clanEntity : Entity.Null;
     }
 }
