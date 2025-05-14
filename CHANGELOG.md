@@ -1,4 +1,9 @@
 `latest`
+- Updated for Hotfix 7
+- Expanded ClanService with Membership Functions
+- Added Documentation for ClanService
+
+`0.3.4`
 - Update for Hotfix 6
 - Added ClanService.GetByNetworkId(networkId)
 

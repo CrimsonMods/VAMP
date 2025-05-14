@@ -4,6 +4,8 @@
   items:
   - name: Player Service
     href: player-service.md
+  - name: Clan Service
+    href: clan-service.md
   - name: Spawn Service
     href: spawn-service.md
 - name: Utilities
