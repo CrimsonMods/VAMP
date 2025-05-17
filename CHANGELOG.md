@@ -4,7 +4,7 @@
 - Expanded ClanService with Membership Functions
 - Added Documentation for ClanService
 - Added Lucile to VBloods
-- Changed Stavros's Default Name to correct value
+- Fixed Stavros's Default Name to correct value
 - Added TimeOnly & TimeOnlyHourMinute JSON Converters (JSONUtil)
 - Added DayOfWeek JSON Converter (JSONUtil)
 - Added ChatUtil.SystemSendUsers(User[], string)
