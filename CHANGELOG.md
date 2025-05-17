@@ -7,6 +7,8 @@
 - Changed Stavros's Default Name to correct value
 - Added TimeOnly & TimeOnlyHourMinute JSON Converters (JSONUtil)
 - Added DayOfWeek JSON Converter (JSONUtil)
+- Added ChatUtil.SystemSendUsers(User[], string)
+- Added Multiple Documentation Pages
 
 `0.3.4`
 - Update for Hotfix 6

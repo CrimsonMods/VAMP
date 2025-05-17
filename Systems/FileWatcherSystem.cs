@@ -25,6 +25,10 @@ namespace VAMP.Systems
 
         private static IEnumerator FileWatcherCoroutine()
         {
+            yield return new WaitForSeconds(15);
+
+            ScanForAttributedFiles();
+            
             while (true)
             {
                 yield return new WaitForSeconds(CHECK_INTERVAL);
@@ -33,9 +37,7 @@ namespace VAMP.Systems
         }
 
         public static void ScanForAttributedFiles()
-        {
-            Plugin.LogInstance.LogInfo("Scanning for [FileReload] attributed files");
-            
+        { 
             // Get all loaded assemblies
             var assemblies = AppDomain.CurrentDomain.GetAssemblies();
             
@@ -152,12 +154,10 @@ namespace VAMP.Systems
                     {
                         if (!string.IsNullOrEmpty(memberName))
                         {
-                            // First preference: Use "Reload" + field/property name
                             callbackMethodName = "Reload" + memberName;
                         }
                         else
                         {
-                            // Fallback: Use "Reload" + filename without extension
                             callbackMethodName = "Reload" + Path.GetFileNameWithoutExtension(filePath);
                         }
                     }
@@ -194,7 +194,7 @@ namespace VAMP.Systems
                 try
                 {
                     FileInfo newInfo = new FileInfo(filePath);
-                    newInfo.Refresh(); // Ensure we get the latest info
+                    newInfo.Refresh();
                     
                     if (newInfo.LastWriteTime != oldInfo.LastWriteTime)
                     {

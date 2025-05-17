@@ -1,5 +1,9 @@
-- name: Event Scheduler
-  href: event-scheduler.md
+- name: Systems
+  items:
+  - name: Event Scheduler
+    href: event-scheduler.md
+  - name: FileReload
+    href: file-reload.md
 - name: Services
   items:
   - name: Player Service
@@ -8,6 +12,10 @@
     href: clan-service.md
   - name: Spawn Service
     href: spawn-service.md
+  - name: Castle Heart Service
+    href: castle-service.md
+  - name: Castle Territory Service
+    href: territory-service.md
 - name: Utilities
   items:
   - name: Chat Util

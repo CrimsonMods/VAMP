@@ -14,8 +14,8 @@ namespace VAMP.Services;
 public class CastleTerritoryService
 {
     const float BLOCK_SIZE = 10;
-    Dictionary<int2, int> blockCoordToTerritoryIndex = [];
-    Dictionary<int2, Entity> blockCoordToTerritory = [];
+    static Dictionary<int2, int> blockCoordToTerritoryIndex = [];
+    static Dictionary<int2, Entity> blockCoordToTerritory = [];
 
     /// <summary>
     /// Initializes a new instance of the CastleTerritoryService class.
@@ -43,7 +43,7 @@ public class CastleTerritoryService
     /// <param name="entity">The entity to check.</param>
     /// <param name="territoryEntity">The output territory entity if found.</param>
     /// <returns>True if a territory was found for the entity, false otherwise.</returns>
-    public bool TryGetCastleTerritory(Entity entity, out Entity territoryEntity)
+    public static bool TryGetCastleTerritory(Entity entity, out Entity territoryEntity)
     {
         if (entity.Has<Translation>())
         {
@@ -65,7 +65,7 @@ public class CastleTerritoryService
     /// </summary>
     /// <param name="pos">The position to check.</param>
     /// <returns>The territory index if found, -1 otherwise.</returns>
-    public int GetTerritoryIndex(float3 pos)
+    public static int GetTerritoryIndex(float3 pos)
     {
         var blockCoord = ConvertPosToBlockCoord(pos);
         if (blockCoordToTerritoryIndex.TryGetValue(blockCoord, out var index))
@@ -78,7 +78,7 @@ public class CastleTerritoryService
     /// </summary>
     /// <param name="territoryIndex">The territory index to search for.</param>
     /// <returns>The castle heart entity if found, Entity.Null otherwise.</returns>
-    public Entity GetHeartForTerritory(int territoryIndex)
+    public static Entity GetHeartForTerritory(int territoryIndex)
     {
         if (territoryIndex == -1)
             return Entity.Null;

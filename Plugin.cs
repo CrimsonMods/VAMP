@@ -45,7 +45,6 @@ public class Plugin : BasePlugin
     private void Loaded()
     {
         FileWatcherSystem.Initialize();
-        FileWatcherSystem.ScanForAttributedFiles();
     }
 
     public override bool Unload()
