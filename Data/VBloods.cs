@@ -71,9 +71,10 @@ public static class VBloods
         {Prefabs.CHAR_Militia_Fabian_VBlood, ("Sir Erwin the Gallant Cavalier", "Erwin")},
         {Prefabs.CHAR_Undead_ArenaChampion_VBlood, ("Gaius The Cursed Champion", "Gaius")},
         {Prefabs.CHAR_Blackfang_Livith_VBlood, ("Jakira the Shadow Huntress", "Jakira")},
-        {Prefabs.CHAR_Blackfang_CarverBoss_VBlood, ("Lucile the Venom Alchemist", "Lucile")},
+        {Prefabs.CHAR_Blackfang_CarverBoss_VBlood, ("Stavros the Carver", "Stavros")},
         {Prefabs.CHAR_Blackfang_Valyr_VBlood, ("Dantos the Forgebinder", "Dantos")},
         {Prefabs.CHAR_Blackfang_Morgana_VBlood, ("Megara the Serpent Queen", "Megara")},
+        {Prefabs.CHAR_Blackfang_Lucie_VBlood, ("Lucile the Venom Alchemist", "Lucile")},
     };
 
     /// <summary>
