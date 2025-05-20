@@ -452,7 +452,7 @@ public static class EntityUtil
     public static bool IsInBase(Entity entity, out Entity territory, out TerritoryAlignment territoryAlignment, bool requireRoom = false)
     {
         territoryAlignment = TerritoryAlignment.None;
-        if (Core.CastleTerritoryService.TryGetCastleTerritory(entity, out territory))
+        if (CastleTerritoryService.TryGetCastleTerritory(entity, out territory))
         {
             var heart = territory.Read<CastleTerritory>().CastleHeart;
             if (heart.Exists())

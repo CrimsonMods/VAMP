@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Stunlock.Core;
@@ -11,14 +12,52 @@ namespace VAMP.Utilities;
 public static class JsonUtil
 {
     /// <summary>
-    /// Default JSON serializer options with pretty printing and field inclusion enabled.
+    /// Default JSON serializer options configured for:
+    /// - Indented formatting for readability
+    /// - Field-level serialization support
+    /// - Trailing comma tolerance
+    /// - Automatic comment skipping during parsing
     /// </summary>
     public static readonly JsonSerializerOptions PrettyJsonOptions = new()
     {
         WriteIndented = true,
         IncludeFields = true,
-        AllowTrailingCommas = true
+        AllowTrailingCommas = true,
+        ReadCommentHandling = JsonCommentHandling.Skip
     };
+
+    /// <summary>
+    /// Serializes an object to JSON with comment headers.
+    /// </summary>
+    /// <typeparam name="T">The type of object to serialize.</typeparam>
+    /// <param name="value">The object to serialize.</param>
+    /// <param name="commentHeader">The comment text to add at the top of the file.</param>
+    /// <param name="options">Optional JsonSerializerOptions to use.</param>
+    /// <returns>A string containing the comment header followed by the JSON.</returns>
+    public static string SerializeWithComments<T>(T value, string commentHeader, JsonSerializerOptions options = null)
+    {
+        var jsonContent = JsonSerializer.Serialize(value, options ?? PrettyJsonOptions);
+        return FormatJsonWithComments(jsonContent, commentHeader);
+    }
+
+    /// <summary>
+    /// Adds comment header to an existing JSON string.
+    /// </summary>
+    /// <param name="json">The JSON string.</param>
+    /// <param name="commentHeader">The comment text to add at the top of the file.</param>
+    /// <returns>A string with the comment header followed by the JSON.</returns>
+    public static string FormatJsonWithComments(string json, string commentHeader)
+    {
+        if (string.IsNullOrEmpty(commentHeader))
+            return json;
+        
+        // Format the comment header with // prefix for each line
+        var commentLines = commentHeader.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+        var formattedComments = string.Join(Environment.NewLine, commentLines.Select(line => "// " + line));
+        
+        // Combine the comments with the JSON
+        return formattedComments + Environment.NewLine + Environment.NewLine + json;
+    }
 
     /// <summary>
     /// Custom JSON converter for handling tuples containing long and short name strings.

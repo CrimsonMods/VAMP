@@ -1,5 +1,5 @@
 `latest`
-- Updated for Hotfix 8
+- Updated for Stable
 - Added FileReload System
 - Expanded ClanService with Membership Functions
 - Added Documentation for ClanService
@@ -9,6 +9,7 @@
 - Added DayOfWeek JSON Converter (JSONUtil)
 - Added ChatUtil.SystemSendUsers(User[], string)
 - Added Multiple Documentation Pages
+- Added JSON Comment Header Builder (JSONUtil)
 
 `0.3.4`
 - Update for Hotfix 6
