@@ -1,14 +1,3 @@
-# NOTICE - PREVIEW BUILD
-This is a preview build of VAMP for 1.1. Use this mod at your own risk on live servers until it has been marked as stable (the update that removes this notice). 
-If you want to help testing out VAMP (and/or other CrimsonMods) you're more than welcome to do so, but you accept the risk of bugs. 
-
-DO NOT USE BEPINEX ON THUNDERSTORE. [GET IT FROM HERE INSTEAD](https://github.com/CrimsonMods/BepInEx/releases).
-
-You can report any encountered bugs or feedback to the [Modding Discord](https://discord.gg/xzd5U5cNyD)
-
-Known Issues:
-- Spawn System currently doesn't work as they removed the "OLD" buffs. A fix is in the works. 
-
 ![vamp-banner](https://i.imgur.com/R5xL2Eg.png)
 
 # V Rising API Modding Platform
