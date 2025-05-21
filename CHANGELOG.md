@@ -1,7 +1,15 @@
 `latest`
-- Updated for Hotfix 7
+- Updated for Stable
+- Added FileReload System
 - Expanded ClanService with Membership Functions
 - Added Documentation for ClanService
+- Added Lucile to VBloods
+- Fixed Stavros's Default Name to correct value
+- Added TimeOnly & TimeOnlyHourMinute JSON Converters (JSONUtil)
+- Added DayOfWeek JSON Converter (JSONUtil)
+- Added ChatUtil.SystemSendUsers(User[], string)
+- Added Multiple Documentation Pages
+- Added JSON Comment Header Builder (JSONUtil)
 
 `0.3.4`
 - Update for Hotfix 6

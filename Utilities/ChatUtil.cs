@@ -28,6 +28,19 @@ public static class ChatUtil
     }
 
     /// <summary>
+    /// Sends a system message to multiple specified users.
+    /// </summary>
+    /// <param name="users">Array of users to send the message to</param>
+    /// <param name="message">The message to send</param>
+    public static void SystemSendUsers(User[] users, string message)
+    {
+        foreach (var user in users)
+        {
+            SystemSendUser(user, message);
+        }
+    }
+
+    /// <summary>
     /// Sends a system message to all online users.
     /// </summary>
     /// <param name="message">The message to send</param>

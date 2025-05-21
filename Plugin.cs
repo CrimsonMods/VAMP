@@ -5,6 +5,7 @@ using BepInEx.Logging;
 using BepInEx.Unity.IL2CPP;
 using HarmonyLib;
 using VAMP.Structs;
+using VAMP.Systems;
 
 namespace VAMP;
 
@@ -37,6 +38,13 @@ public class Plugin : BasePlugin
 
         _harmony = new Harmony(MyPluginInfo.PLUGIN_GUID);
         _harmony.PatchAll(System.Reflection.Assembly.GetExecutingAssembly());
+
+        Events.OnCoreLoaded += Loaded;
+    }
+
+    private void Loaded()
+    {
+        FileWatcherSystem.Initialize();
     }
 
     public override bool Unload()
