@@ -1,4 +1,9 @@
 `latest`
+- Added [ModTalk System](https://vrising.wiki/docs/mod-talk.html)
+- Added ChatUtil.MESSAGE_LIMIT readonly int
+- JSONUtil.PrettyPrintOptions now supports '
+
+`1.0.0`
 - Updated for Stable
 - Added FileReload System
 - Expanded ClanService with Membership Functions

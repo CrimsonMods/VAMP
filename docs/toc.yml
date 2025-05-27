@@ -4,6 +4,8 @@
     href: event-scheduler.md
   - name: FileReload
     href: file-reload.md
+  - name: ModTalk
+    href: mod-talk.md
 - name: Services
   items:
   - name: Player Service

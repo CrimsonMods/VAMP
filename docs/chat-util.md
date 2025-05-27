@@ -16,6 +16,13 @@ The ChatUtil is a utility class in VAMP that provides methods for sending system
 
 ### Sending Messages to Players
 ```csharp
+// check if string will fit within a single message
+string message = /* long message 8*/;
+if(message.Length > ChatUtil.MESSAGE_LIMIT)
+{
+    // split message into multiple parts
+}
+
 // Send a message to a specific player
 User player = /* get user */;
 ChatUtil.SystemSendUser(player, "Welcome to the server!");

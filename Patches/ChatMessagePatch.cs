@@ -42,6 +42,16 @@ public static class ChatMessagePatch
                 if (chatEventData.MessageType == ChatMessageType.System) continue;
                 if (!userData.IsAdmin) continue;
 
+                if(messageText.StartsWith("!!hex"))
+                {
+                    var parts = messageText.Split(' ');
+                    if (parts.Length > 1)
+                    {
+                        var hexString = parts[1];
+                        ChatUtil.SystemSendUser(userData, $"The dog jumped <color=#{hexString}>over the moon</color>");
+                    }
+                }
+
                 if (messageText == "!!spawnDebug")
                     Plugin.SpawnDebug = !Plugin.SpawnDebug;
 

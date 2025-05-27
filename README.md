@@ -13,6 +13,7 @@ Features
 - [Unit Customization](https://vrising.wiki/docs/spawn-service.html): Create and modify units like horses, NPCs, and monsters
 - [EventScheduler](https://vrising.wiki/docs/event-scheduler.html): A global manager for running event mods
 - [FileReload](https://vrising.wiki/docs/file-reload.html): A system for automatically reloading files without server restart
+- [ModTalk](https://vrising.wiki/docs/mod-talk.html): A simple low-friction system for inter-mod communication
 - [ChatUtil](https://vrising.wiki/docs/chat-util.html): An extension of the System Chat System
 - And more...
 

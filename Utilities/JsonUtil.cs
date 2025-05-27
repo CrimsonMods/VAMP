@@ -23,7 +23,8 @@ public static class JsonUtil
         WriteIndented = true,
         IncludeFields = true,
         AllowTrailingCommas = true,
-        ReadCommentHandling = JsonCommentHandling.Skip
+        ReadCommentHandling = JsonCommentHandling.Skip,
+        Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
     };
 
     /// <summary>

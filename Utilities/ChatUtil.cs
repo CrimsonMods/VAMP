@@ -17,6 +17,14 @@ namespace VAMP.Utilities;
 public static class ChatUtil
 {
     /// <summary>
+    /// The maximum character limit for a single chat message.
+    /// </summary>
+    /// <remarks>
+    /// Calculated as 508 (total buffer size) - 26 (header size) - 2 (prefix size) - 20 (reserved space).
+    /// </remarks>
+    public static readonly int MESSAGE_LIMIT = 508 - 26 - 2 - 20;
+
+    /// <summary>
     /// Sends a system message to a specific user.
     /// </summary>
     /// <param name="user">The user to send the message to</param>
