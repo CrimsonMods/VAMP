@@ -1,4 +1,7 @@
 `latest`
+- Hotfix for CleanItemName (CrimsonLog has a crash from it)
+
+`1.1.0`
 - Added [ModTalk System](https://vrising.wiki/docs/mod-talk.html)
 - Added ChatUtil.MESSAGE_LIMIT readonly int
 - JSONUtil.PrettyPrintOptions now supports '

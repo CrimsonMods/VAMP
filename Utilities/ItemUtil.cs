@@ -98,20 +98,44 @@ public static class ItemUtil
 
     public static string CleanItemName(string input)
     {
-        // Check for Nether Shards first
-        var netherShardName = GetNetherShardName(input);
-        if (netherShardName != null) return netherShardName;
+        if (string.IsNullOrEmpty(input))
+            return input ?? string.Empty;
 
-        // Check for Gems
-        var gemName = GetGemName(input);
-        if (gemName != null) return gemName;
+        try
+        {
+            // Check for Nether Shards first
+            var netherShardName = GetNetherShardName(input);
+            if (netherShardName != null) return netherShardName;
 
-        // Check for known prefixes
-        var transformation = PrefabTransformations.FirstOrDefault(x => input.Contains(x.Key));
-        if (transformation.Key != null) return transformation.Value(input);
+            // Check for Gems
+            var gemName = GetGemName(input);
+            if (gemName != null) return gemName;
 
-        // Default fallback
-        return input.Split('_').Skip(1).Aggregate((a, b) => $"{a} {b}");
+            // Check for known prefixes
+            var transformation = PrefabTransformations.FirstOrDefault(x => input.Contains(x.Key));
+            if (transformation.Key != null)
+            {
+                try
+                {
+                    return transformation.Value(input);
+                }
+                catch (System.Exception ex)
+                {
+                    Plugin.LogInstance.LogWarning($"Failed to transform item name '{input}' using transformation '{transformation.Key}': {ex.Message}");
+                    // Fallback to simple replacement
+                    return input.Replace(transformation.Key, "").Replace("_", " ").Trim();
+                }
+            }
+
+            // Default fallback
+            var parts = input.Split('_').Skip(1).Where(part => !string.IsNullOrEmpty(part));
+            return parts.Any() ? parts.Aggregate((a, b) => $"{a} {b}") : input;
+        }
+        catch (System.Exception ex)
+        {
+            Plugin.LogInstance.LogWarning($"Failed to clean item name (give this log line to skytech6 on discord / CrimsonModding discord)\n '{input}':\n {ex.Message}");
+            return input;
+        }
     }
 
     private static readonly Dictionary<string, System.Func<string, string>> PrefabTransformations = new()
@@ -171,14 +195,22 @@ public static class ItemUtil
         _ => null
     };
 
-    private static string GetGemName(string input) => input switch
+    private static string GetGemName(string input)
     {
-        var s when s.Contains("_T01") => "Crude " + s.Split('_')[3],
-        var s when s.Contains("_T02") => "Regular " + s.Split('_')[3],
-        var s when s.Contains("_T03") => "Flawless " + s.Split('_')[3],
-        var s when s.Contains("_T04") => "Perfect " + s.Split('_')[3],
-        _ => null
-    };
+        var parts = input.Split('_');
+        if (parts.Length <= 3) return null;
+
+        var gemType = parts[3];
+
+        return input switch
+        {
+            var s when s.Contains("_T01") => "Crude " + gemType,
+            var s when s.Contains("_T02") => "Regular " + gemType,
+            var s when s.Contains("_T03") => "Flawless " + gemType,
+            var s when s.Contains("_T04") => "Perfect " + gemType,
+            _ => null
+        };
+    }
 
     private static async void Reattempt(Action action)
     {
