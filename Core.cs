@@ -27,6 +27,7 @@ public static class Core
     public static CastleHeartService CastleHeartService { get; private set; }
     public static CastleTerritoryService CastleTerritoryService { get; private set; }
     public static ClanService ClanService { get; private set; }
+    public static ModService ModService { get; private set; }
 
     public static bool hasInitialized = false;
     
@@ -42,6 +43,7 @@ public static class Core
         CastleHeartService = new CastleHeartService();
         CastleTerritoryService = new CastleTerritoryService();
         ClanService = new ClanService();
+        ModService = new ModService();
 
         TileModelSpatialLookupSystem = EntityUtil.GetEntitiesByComponentTypes<TileModelSpatialLookupSystem.Singleton>(EntityQueryOptions.IncludeSystems)[0];
 
