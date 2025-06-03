@@ -2,6 +2,7 @@
 - Added [ModService](https://vrising.wiki/docs/mod-service.html)
 - Added the "Update Available" Notification for Admins
 - Updated [ChatUtil](https://vrising.wiki/docs/chat-util.html) to automatically split messages over byte limit
+- Updated FileWatcher to shorten log output
 
 `1.1.1`
 - Hotfix for CleanItemName (CrimsonLog has a crash from it)
