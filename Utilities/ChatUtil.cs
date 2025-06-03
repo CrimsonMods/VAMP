@@ -31,8 +31,12 @@ public static class ChatUtil
     /// <param name="message">The message to send</param>
     public static void SystemSendUser(User user, string message)
     {
-        FixedString512Bytes fixedMessage = message;
-        ServerChatUtils.SendSystemMessageToClient(Core.EntityManager, user, ref fixedMessage);
+        var messages = SplitMessage(message, MESSAGE_LIMIT);
+        foreach (var msg in messages)
+        {
+            FixedString512Bytes fixedMessage = msg;
+            ServerChatUtils.SendSystemMessageToClient(Core.EntityManager, user, ref fixedMessage);
+        }
     }
 
     /// <summary>
@@ -42,9 +46,14 @@ public static class ChatUtil
     /// <param name="message">The message to send</param>
     public static void SystemSendUsers(User[] users, string message)
     {
+        var messages = SplitMessage(message, MESSAGE_LIMIT);
         foreach (var user in users)
         {
-            SystemSendUser(user, message);
+            foreach (var msg in messages)
+            {
+                FixedString512Bytes fixedMessage = msg;
+                ServerChatUtils.SendSystemMessageToClient(Core.EntityManager, user, ref fixedMessage);
+            }
         }
     }
 
@@ -52,11 +61,14 @@ public static class ChatUtil
     /// Sends a system message to all online users.
     /// </summary>
     /// <param name="message">The message to send</param>
-    /// <param name="translation">The position from which the message originates</param>
     public static void SystemSendAll(string message)
     {
-        FixedString512Bytes fixedMessage = message;
-        ServerChatUtils.SendSystemMessageToAllClients(Core.EntityManager, ref fixedMessage);
+        var messages = SplitMessage(message, MESSAGE_LIMIT);
+        foreach (var msg in messages)
+        {
+            FixedString512Bytes fixedMessage = msg;
+            ServerChatUtils.SendSystemMessageToAllClients(Core.EntityManager, ref fixedMessage);
+        }
     }
 
     /// <summary>
@@ -66,6 +78,7 @@ public static class ChatUtil
     /// <param name="message">The message to send</param>
     public static void SystemSendAllExcept(User user, string message)
     {
+        var messages = SplitMessage(message, MESSAGE_LIMIT);
         List<Entity> players = PlayerService.GetUsersOnline()
             .Where(x => !x.Read<User>().Equals(user))
             .ToList();
@@ -74,7 +87,11 @@ public static class ChatUtil
         {
             if (player.Read<User>().Equals(user)) continue;
 
-            SystemSendUser(player.Read<User>(), message);
+            foreach (var msg in messages)
+            {
+                FixedString512Bytes fixedMessage = msg;
+                ServerChatUtils.SendSystemMessageToClient(Core.EntityManager, player.Read<User>(), ref fixedMessage);
+            }
         }
     }
 
@@ -85,13 +102,18 @@ public static class ChatUtil
     /// <param name="message">The message to send</param>
     public static void SystemSendAllExcept(User[] users, string message)
     {
+        var messages = SplitMessage(message, MESSAGE_LIMIT);
         List<Entity> players = PlayerService.GetUsersOnline()
             .Where(x => !users.Contains(x.Read<User>()))
             .ToList();
 
         foreach (var player in players)
         {
-            SystemSendUser(player.Read<User>(), message);
+            foreach (var msg in messages)
+            {
+                FixedString512Bytes fixedMessage = msg;
+                ServerChatUtils.SendSystemMessageToClient(Core.EntityManager, player.Read<User>(), ref fixedMessage);
+            }
         }
     }
     
@@ -103,6 +125,7 @@ public static class ChatUtil
     /// <param name="message">The message to send</param>
     public static void SystemSendLocal(User user, float3 translation, string message)
     {
+        var messages = SplitMessage(message, MESSAGE_LIMIT);
         float maxDistance = 40f;
         float2 currentPoint = new float2(translation.x, translation.z);
 
@@ -117,7 +140,11 @@ public static class ChatUtil
                 var distance = math.distance(playerPos, currentPoint);
                 if (distance <= maxDistance)
                 {
-                    SystemSendUser(player.Read<User>(), message);
+                    foreach (var msg in messages)
+                    {
+                        FixedString512Bytes fixedMessage = msg;
+                        ServerChatUtils.SendSystemMessageToClient(Core.EntityManager, player.Read<User>(), ref fixedMessage);
+                    }
                 }
             }
         }
@@ -130,6 +157,7 @@ public static class ChatUtil
     /// <param name="message">The message to send</param>
     public static void SystemSendTeam(User user, string message)
     {
+        var messages = SplitMessage(message, MESSAGE_LIMIT);
         List<Entity> players = PlayerService.GetUsersOnline()
             .Where(x => x.Read<User>().ClanEntity._Entity.Has<ClanTeam>())
             .ToList();
@@ -142,7 +170,11 @@ public static class ChatUtil
         {
             if (player.Read<User>().Equals(user)) continue;
 
-            SystemSendUser(player.Read<User>(), message);
+            foreach (var msg in messages)
+            {
+                FixedString512Bytes fixedMessage = msg;
+                ServerChatUtils.SendSystemMessageToClient(Core.EntityManager, player.Read<User>(), ref fixedMessage);
+            }
         }
     }
 
@@ -152,12 +184,117 @@ public static class ChatUtil
     /// <param name="message">The message to send to administrators</param>
     public static void SystemSendAdmins(string message)
     {
+        var messages = SplitMessage(message, MESSAGE_LIMIT);
         List<Player> players = PlayerService.GetCachedUsersOnlineAsPlayer().Where(x => x.IsAdminCapable).ToList();
 
         foreach (var player in players)
         {
-            SystemSendUser(player.User.Read<User>(), message);
+            foreach (var msg in messages)
+            {
+                FixedString512Bytes fixedMessage = msg;
+                ServerChatUtils.SendSystemMessageToClient(Core.EntityManager, player.User.Read<User>(), ref fixedMessage);
+            }
         }
+    }
+
+    #region Helper Functions
+    private static List<string> SplitMessage(string message, int maxLength)
+    {
+        var result = new List<string>();
+        
+        if (string.IsNullOrEmpty(message))
+            return result;
+
+        // If message is within limit, return as-is
+        if (message.Length <= maxLength)
+        {
+            result.Add(message);
+            return result;
+        }
+
+        var lines = message.Split('\n');
+        var currentMessage = "";
+        
+        foreach (var line in lines)
+        {
+            // If adding this line would exceed the limit
+            if (currentMessage.Length + line.Length + 1 > maxLength)
+            {
+                // If we have content in currentMessage, add it to results
+                if (!string.IsNullOrEmpty(currentMessage))
+                {
+                    result.Add(currentMessage.TrimEnd());
+                    currentMessage = "";
+                }
+                
+                // If a single line is too long, split it on spaces
+                if (line.Length > maxLength)
+                {
+                    var splitLine = SplitLongLine(line, maxLength);
+                    result.AddRange(splitLine);
+                }
+                else
+                {
+                    currentMessage = line + "\n";
+                }
+            }
+            else
+            {
+                currentMessage += line + "\n";
+            }
+        }
+        
+        // Add any remaining content
+        if (!string.IsNullOrEmpty(currentMessage))
+        {
+            result.Add(currentMessage.TrimEnd());
+        }
+        
+        return result;
+    }
+    
+    private static List<string> SplitLongLine(string line, int maxLength)
+    {
+        var result = new List<string>();
+        var words = line.Split(' ');
+        var currentLine = "";
+        
+        foreach (var word in words)
+        {
+            // If adding this word would exceed the limit
+            if (currentLine.Length + word.Length + 1 > maxLength)
+            {
+                // Add current line if it has content
+                if (!string.IsNullOrEmpty(currentLine))
+                {
+                    result.Add(currentLine.TrimEnd());
+                    currentLine = "";
+                }
+                
+                // If a single word is too long, we have to break it (edge case)
+                if (word.Length > maxLength)
+                {
+                    result.Add(word.Substring(0, maxLength - 3) + "...");
+                    // Could continue splitting the word, but for practical purposes this should be rare
+                }
+                else
+                {
+                    currentLine = word + " ";
+                }
+            }
+            else
+            {
+                currentLine += word + " ";
+            }
+        }
+        
+        // Add any remaining content
+        if (!string.IsNullOrEmpty(currentLine))
+        {
+            result.Add(currentLine.TrimEnd());
+        }
+        
+        return result;
     }
 
     /// <summary>
@@ -170,4 +307,5 @@ public static class ChatUtil
     {
         return $"<color=#{hex.Replace(" ", "").Replace("#", "")}>{text}</color>";
     }
+    #endregion
 }
