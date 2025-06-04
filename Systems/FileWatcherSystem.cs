@@ -13,13 +13,10 @@ namespace VAMP.Systems
     {
         private static readonly Dictionary<string, FileInfo> _trackedFiles = new Dictionary<string, FileInfo>();
         private static readonly Dictionary<string, (Type ownerType, string callbackMethod)> _fileCallbacks = new Dictionary<string, (Type, string)>();
-        private const float CHECK_INTERVAL = 60f; // 1 minute in seconds
+        private const float CHECK_INTERVAL = 60f;
 
         public static void Initialize()
         {
-            Plugin.LogInstance.LogInfo("Initializing FileWatcherSystem");
-            
-            // Start the file checking coroutine using the Core system
             Core.StartCoroutine(FileWatcherCoroutine());
         }
 
@@ -28,7 +25,7 @@ namespace VAMP.Systems
             yield return new WaitForSeconds(15);
 
             ScanForAttributedFiles();
-            
+
             while (true)
             {
                 yield return new WaitForSeconds(CHECK_INTERVAL);
@@ -37,16 +34,17 @@ namespace VAMP.Systems
         }
 
         public static void ScanForAttributedFiles()
-        { 
+        {
             // Get all loaded assemblies
             var assemblies = AppDomain.CurrentDomain.GetAssemblies();
-            
+
             // Filter to only include mod assemblies and avoid game/system assemblies
-            var modAssemblies = assemblies.Where(assembly => {
+            var modAssemblies = assemblies.Where(assembly =>
+            {
                 string name = assembly.GetName().Name;
-                
+
                 // Skip all Unity, system, and IL2CPP related assemblies
-                if (name.StartsWith("System.") || 
+                if (name.StartsWith("System.") ||
                     name.StartsWith("UnityEngine") ||
                     name.StartsWith("Unity.") ||
                     name.StartsWith("mscorlib") ||
@@ -61,22 +59,24 @@ namespace VAMP.Systems
                 {
                     return false;
                 }
-                
+
                 // Include BepInEx and potential mod assemblies
-                if (name.StartsWith("BepInEx") || 
+                if (name.StartsWith("BepInEx") ||
                     name == "VAMP" ||
                     name.Contains("Plugin") ||
                     name.Contains("Mod"))
                 {
                     return true;
                 }
-                
+
                 // For any other assembly, check if it references BepInEx (a good indicator it's a mod)
-                try {
+                try
+                {
                     return assembly.GetReferencedAssemblies()
                         .Any(reference => reference.Name.StartsWith("BepInEx"));
                 }
-                catch {
+                catch
+                {
                     return false;
                 }
             });
@@ -86,17 +86,17 @@ namespace VAMP.Systems
                 try
                 {
                     Plugin.LogInstance.LogDebug($"Scanning assembly: {assembly.GetName().Name}");
-                    
+
                     foreach (Type type in assembly.GetTypes())
                     {
                         // Skip types that are not likely to contain config paths
-                        if (type.Namespace != null && 
-                            (type.Namespace.StartsWith("System") || 
+                        if (type.Namespace != null &&
+                            (type.Namespace.StartsWith("System") ||
                              type.Namespace.StartsWith("Unity")))
                         {
                             continue;
                         }
-                        
+
                         // Check fields
                         foreach (FieldInfo field in type.GetFields(BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic))
                         {
@@ -147,7 +147,7 @@ namespace VAMP.Systems
             {
                 FileInfo fileInfo = new FileInfo(filePath);
                 _trackedFiles[filePath] = fileInfo;
-                
+
                 if (ownerType != null)
                 {
                     if (string.IsNullOrEmpty(callbackMethodName))
@@ -161,9 +161,9 @@ namespace VAMP.Systems
                             callbackMethodName = "Reload" + Path.GetFileNameWithoutExtension(filePath);
                         }
                     }
-                    
+
                     _fileCallbacks[filePath] = (ownerType, callbackMethodName);
-                    Plugin.LogInstance.LogInfo($"Registered file for tracking: {filePath} with callback {ownerType.Name}.{callbackMethodName}");
+                    Plugin.LogInstance.LogInfo($"Registered file for tracking: {GetShortPath(filePath)} with callback {ownerType.Name}.{callbackMethodName}");
                 }
                 else
                 {
@@ -179,28 +179,28 @@ namespace VAMP.Systems
         public static void CheckForChanges()
         {
             Plugin.LogInstance.LogDebug("Checking for file changes...");
-            
+
             foreach (var entry in _trackedFiles.ToList())
             {
                 string filePath = entry.Key;
                 FileInfo oldInfo = entry.Value;
-                
+
                 if (!File.Exists(filePath))
                 {
                     Plugin.LogInstance.LogWarning($"Tracked file no longer exists: {filePath}");
                     continue;
                 }
-                
+
                 try
                 {
                     FileInfo newInfo = new FileInfo(filePath);
                     newInfo.Refresh();
-                    
+
                     if (newInfo.LastWriteTime != oldInfo.LastWriteTime)
                     {
                         _trackedFiles[filePath] = newInfo;
                         Plugin.LogInstance.LogInfo($"Detected change in file: {filePath}");
-                        
+
                         if (_fileCallbacks.TryGetValue(filePath, out var callback))
                         {
                             InvokeReloadCallback(callback.ownerType, callback.callbackMethod);
@@ -232,6 +232,22 @@ namespace VAMP.Systems
             catch (Exception ex)
             {
                 Plugin.LogInstance.LogError($"Error invoking reload callback {ownerType.Name}.{methodName}: {ex.Message}");
+            }
+        }
+
+        private static string GetShortPath(string fullPath)
+        {
+            try
+            {
+                string fileName = Path.GetFileName(fullPath);
+                string directoryPath = Path.GetDirectoryName(fullPath);
+                string parentDirectory = Path.GetFileName(directoryPath);
+
+                return string.IsNullOrEmpty(parentDirectory) ? fileName : Path.Combine(parentDirectory, fileName);
+            }
+            catch
+            {
+                return Path.GetFileName(fullPath);
             }
         }
     }

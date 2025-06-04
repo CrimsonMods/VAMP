@@ -66,6 +66,30 @@ public class PlayerService
     }
 
     /// <summary>
+    /// Gets all cached users from the player cache.
+    /// </summary>
+    /// <returns>An enumerable collection of all cached user entities.</returns>
+    public static IEnumerable<Entity> GetAllCachedUsers()
+    {
+        foreach (var pd in namePlayerCache.Values.ToArray())
+        {
+            yield return pd.User;
+        }
+    }
+
+    /// <summary>
+    /// Gets all cached users from the player cache.
+    /// </summary>
+    /// <returns>An enumerable collection of all cached users as Player objects.</returns>
+    public static IEnumerable<Player> GetAllCachedUsersAsPlayer()
+    {
+        foreach (var pd in namePlayerCache.Values.ToArray())
+        {
+            yield return pd;
+        }
+    }
+
+    /// <summary>
     /// Gets all online users from the game's entity system.
     /// </summary>
     /// <returns>An enumerable collection of online user entities.</returns>

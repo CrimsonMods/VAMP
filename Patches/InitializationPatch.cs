@@ -1,5 +1,7 @@
 using HarmonyLib;
 using ProjectM;
+using ProjectM.Network;
+using Unity.Entities;
 
 namespace VAMP.Patches;
 
@@ -12,4 +14,14 @@ public static class InitializationPatch
         Core.Initialize();
         Plugin.Harmony.Unpatch(typeof(SpawnTeamSystem_OnPersistenceLoad).GetMethod("OnUpdate"), typeof(InitializationPatch).GetMethod("OneShot_AfterLoad_InitializationPatch"));
     }
+}
+
+[HarmonyBefore("gg.deca.VampireCommandFramework")]
+[HarmonyPatch(typeof(ServerBootstrapSystem), nameof(ServerBootstrapSystem.SendRevealedMapData))]
+public static class RevealedMapDataPatch
+{
+	public static void Prefix(ServerBootstrapSystem __instance, Entity userEntity, User user)
+	{
+		if (!Core.hasInitialized) Core.Initialize();
+	}
 }

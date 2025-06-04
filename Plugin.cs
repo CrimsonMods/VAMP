@@ -4,7 +4,7 @@ using BepInEx;
 using BepInEx.Logging;
 using BepInEx.Unity.IL2CPP;
 using HarmonyLib;
-using VAMP.Structs;
+using VAMP.Structs.Settings;
 using VAMP.Systems;
 
 namespace VAMP;
@@ -16,7 +16,8 @@ public class Plugin : BasePlugin
     public static Plugin Instance { get; private set; }
     public static Harmony Harmony => Instance._harmony;
     public static ManualLogSource LogInstance => Instance.Log;
-    public static VSettings Settings { get; private set;}
+    internal static VSettings Settings { get; private set;}
+    internal static VAMPSettings VAMPSettings { get; private set; }
 
     internal static string ConfigFiles => Path.Combine(Paths.ConfigPath, "VAMP");
 
@@ -33,8 +34,8 @@ public class Plugin : BasePlugin
         Instance = this;
         Settings = new();
         VSettings.InitConfig();
-
-        Log.LogInfo($"Plugin {MyPluginInfo.PLUGIN_GUID} version {MyPluginInfo.PLUGIN_VERSION} is loaded!");
+        VAMPSettings = new();
+        VAMPSettings.InitConfig();
 
         _harmony = new Harmony(MyPluginInfo.PLUGIN_GUID);
         _harmony.PatchAll(System.Reflection.Assembly.GetExecutingAssembly());
@@ -45,6 +46,7 @@ public class Plugin : BasePlugin
     private void Loaded()
     {
         FileWatcherSystem.Initialize();
+        Log.LogInfo($"Plugin {MyPluginInfo.PLUGIN_GUID} version {MyPluginInfo.PLUGIN_VERSION} is loaded!");
     }
 
     public override bool Unload()

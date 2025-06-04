@@ -2,9 +2,13 @@
   items:
   - name: Event Scheduler
     href: event-scheduler.md
-  - name: FileReload
+  - name: File Reload
     href: file-reload.md
-  - name: ModTalk
+  - name: Mod System
+    href: mod-system.md
+  - name: Wipe Data
+    href: wipe-data.md
+  - name: Mod Talk
     href: mod-talk.md
 - name: Services
   items:

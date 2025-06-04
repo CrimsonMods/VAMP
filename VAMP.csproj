@@ -9,6 +9,7 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
     <RootNamespace>VAMP</RootNamespace>
+    <Authors>skytech6</Authors>
   </PropertyGroup>
 
   <PropertyGroup>

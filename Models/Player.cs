@@ -10,6 +10,7 @@ using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
 using VAMP.Data;
+using VAMP.Systems;
 using VAMP.Utilities;
 
 namespace VAMP.Models;
@@ -21,10 +22,10 @@ public class Player
 
 	public Entity User
 	{
-		get 
-		{ 
+		get
+		{
 			return _user;
-		} 
+		}
 		set { SetUser(value); }
 	}
 
@@ -48,6 +49,20 @@ public class Player
 	public string Name => GetName();
 	public string FullName => GetFullName();
 	public int Level => GetLevel();
+	public int RecordLevel
+	{
+		get
+		{
+			int i = RecordLevelSystem.GetRecord(SteamID);
+			if (i == 0 && Level != 0)
+			{
+				RecordLevelSystem.SetRecord(SteamID);
+				return Level;
+			}
+			
+			return i;
+		}
+	}
 	public int Height => GetHeight();
 	public bool IsAdmin => GetIsAdmin();
 	public bool IsAdminCapable => GetIsAdminCapable();
@@ -202,7 +217,7 @@ public class Player
 	{
 		return Character.ReadBuffer<InventoryInstanceElement>()[0].ExternalInventoryEntity._Entity;
 	}
-	
+
 	private Equipment GetEquipment()
 	{
 		return Character.Read<Equipment>();
@@ -244,7 +259,7 @@ public class Player
 		}
 		return results;
 	}
-	
+
 	public WorldRegionType GetWorldZone()
 	{
 		return User.Read<CurrentWorldRegion>().CurrentRegion;
