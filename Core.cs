@@ -10,6 +10,7 @@ using ProjectM.Scripting;
 using ProjectM.Tiles;
 using VAMP.Utilities;
 using VAMP.Structs;
+using VAMP.Systems;
 
 namespace VAMP;
 
@@ -18,7 +19,7 @@ public static class Core
     public static World Server { get; } = GetServerWorld() ?? throw new Exception("There is no Server world (yet)...");
 
     public static EntityManager EntityManager => Server.EntityManager;
-    public static SystemService SystemService {get; } = new(Server);
+    public static SystemService SystemService { get; } = new(Server);
     public static ServerScriptMapper ServerScriptMapper => SystemService.ServerScriptMapper;
     public static ServerGameManager ServerGameManager => ServerScriptMapper.GetServerGameManager();
     public static Entity TileModelSpatialLookupSystem { get; private set; }
@@ -27,10 +28,11 @@ public static class Core
     public static CastleHeartService CastleHeartService { get; private set; }
     public static CastleTerritoryService CastleTerritoryService { get; private set; }
     public static ClanService ClanService { get; private set; }
-    public static ModService ModService { get; private set; }
+    public static ModSystem ModSystem { get; private set; }
+    internal static RecordLevelSystem RecordLevelSystem { get; private set; }
 
     public static bool hasInitialized = false;
-    
+
     static MonoBehaviour monoBehaviour;
 
     internal static Database Database { get; private set; }
@@ -43,13 +45,17 @@ public static class Core
         CastleHeartService = new CastleHeartService();
         CastleTerritoryService = new CastleTerritoryService();
         ClanService = new ClanService();
-        ModService = new ModService();
+        ModSystem = new ModSystem();
 
         TileModelSpatialLookupSystem = EntityUtil.GetEntitiesByComponentTypes<TileModelSpatialLookupSystem.Singleton>(EntityQueryOptions.IncludeSystems)[0];
 
         hasInitialized = true;
 
+        ServerWipe.WipeDataDetection();
+
         Database = new Database();
+
+        RecordLevelSystem = new RecordLevelSystem();
 
         Plugin.OnCoreLoaded?.Invoke();
         Events.OnCoreLoaded?.Invoke();
@@ -98,4 +104,5 @@ public static class Core
         }
 
         monoBehaviour.StopCoroutine(coroutine);
-    }}
+    }
+}

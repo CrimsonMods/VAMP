@@ -1,8 +1,12 @@
 `latest`
-- Added [ModService](https://vrising.wiki/docs/mod-service.html)
+- Added [ModSystem](https://vrising.wiki/docs/mod-system.html)
 - Added the "Update Available" Notification for Admins
+- Added [Server Wipe Detection & Auto Clearing](https://vrising.wiki/docs/wipe-data.html)
+- Added FilePaths list (Currently only _WipeData)
 - Updated [ChatUtil](https://vrising.wiki/docs/chat-util.html) to automatically split messages over byte limit
 - Updated FileWatcher to shorten log output
+- Added PlayerService.GetAllCachedUsers() and PlayerService.GetAllCachedUsersAsPlayers()
+- Added Player.RecordLevel
 
 `1.1.1`
 - Hotfix for CleanItemName (CrimsonLog has a crash from it)

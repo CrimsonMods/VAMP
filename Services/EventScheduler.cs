@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using VAMP.Structs;
+using VAMP.Structs.Settings;
 using VAMP.Utilities;
 using Event = VAMP.Structs.Event;
 

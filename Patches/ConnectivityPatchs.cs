@@ -38,7 +38,7 @@ public static class OnUserConnectedPatch
 
                 if (!informedAdminOfUpdates.Contains(userData.PlatformId) && PlayerService.TryFindBySteam(userData.PlatformId, out Player player))
                 {
-                    var mods = ModService.GetLoadedModsInfo();
+                    var mods = ModSystem.GetLoadedModsInfo();
                     List<ModInfo> modList = new List<ModInfo>();
                     foreach (var mod in mods)
                     {

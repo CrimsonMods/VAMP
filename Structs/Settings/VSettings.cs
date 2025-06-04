@@ -1,7 +1,7 @@
 using BepInEx.Configuration;
 using VAMP.Utilities;
 
-namespace VAMP.Structs;
+namespace VAMP.Structs.Settings;
 
 public readonly struct VSettings
 {

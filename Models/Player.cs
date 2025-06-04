@@ -10,6 +10,7 @@ using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
 using VAMP.Data;
+using VAMP.Systems;
 using VAMP.Utilities;
 
 namespace VAMP.Models;
@@ -48,6 +49,7 @@ public class Player
 	public string Name => GetName();
 	public string FullName => GetFullName();
 	public int Level => GetLevel();
+	public int RecordLevel => RecordLevelSystem.GetRecord(SteamID);
 	public int Height => GetHeight();
 	public bool IsAdmin => GetIsAdmin();
 	public bool IsAdminCapable => GetIsAdminCapable();

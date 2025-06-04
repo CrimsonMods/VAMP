@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace VAMP.Services;
 
-public class ModService
+public class ModSystem
 {
     private static Dictionary<string, PluginInfo> _cachedMods;
     private static List<ModInfo> _detailedModInfo;
@@ -19,9 +19,9 @@ public class ModService
     private static readonly HttpClient httpClient = new HttpClient();
 
     /// <summary>
-    /// Initializes the ModService and caches mod information.
+    /// Initializes the ModSystem and caches mod information.
     /// </summary>
-    public ModService()
+    public ModSystem()
     {
         if (_isInitialized) return;
 
