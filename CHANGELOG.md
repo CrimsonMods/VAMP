@@ -1,4 +1,7 @@
 `latest`
+- Added [ModProfiler](https://vrising.wiki/docs/mod-profiler.html)
+
+`1.2.0`
 - Added [ModSystem](https://vrising.wiki/docs/mod-system.html)
 - Added the "Update Available" Notification for Admins
 - Added [Server Wipe Detection & Auto Clearing](https://vrising.wiki/docs/wipe-data.html)
@@ -14,7 +17,7 @@
 `1.1.0`
 - Added [ModTalk System](https://vrising.wiki/docs/mod-talk.html)
 - Added ChatUtil.MESSAGE_LIMIT readonly int
-- JSONUtil.PrettyPrintOptions now supports '
+- JSONUtil.PrettyPrintOptions now supports
 
 `1.0.0`
 - Updated for Stable

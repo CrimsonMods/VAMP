@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Threading;
 using HarmonyLib;
 
 namespace VAMP.Systems;
@@ -14,6 +15,9 @@ public static class ModProfiler
     private static readonly Dictionary<Assembly, Dictionary<MethodBase, MethodStats>> assemblyMethodStats = new();
     private static readonly Dictionary<Assembly, CoverageStats> assemblyCoverageStats = new();
     private static readonly Harmony harmony = new Harmony("VAMP.MethodProfiler");
+    
+    // Store the main thread ID for comparison
+    private static int mainThreadId = Thread.CurrentThread.ManagedThreadId;
 
     private class MethodStats
     {
@@ -21,16 +25,39 @@ public static class ModProfiler
         public int Count { get; set; }
         public long MinTicks { get; set; } = long.MaxValue;
         public long MaxTicks { get; set; } = long.MinValue;
+        
+        // Thread-specific stats
+        public int MainThreadCalls { get; set; }
+        public int BackgroundThreadCalls { get; set; }
+        public long MainThreadTicks { get; set; }
+        public long BackgroundThreadTicks { get; set; }
+        public HashSet<int> UniqueThreadIds { get; set; } = new HashSet<int>();
 
-        public void AddTiming(long ticks)
+        public void AddTiming(long ticks, bool isMainThread, int threadId)
         {
             TotalTicks += ticks;
             Count++;
             if (ticks < MinTicks) MinTicks = ticks;
             if (ticks > MaxTicks) MaxTicks = ticks;
+            
+            // Track thread-specific stats
+            UniqueThreadIds.Add(threadId);
+            if (isMainThread)
+            {
+                MainThreadCalls++;
+                MainThreadTicks += ticks;
+            }
+            else
+            {
+                BackgroundThreadCalls++;
+                BackgroundThreadTicks += ticks;
+            }
         }
 
         public double AverageTicks => Count > 0 ? TotalTicks / (double)Count : 0;
+        public double MainThreadAverageTicks => MainThreadCalls > 0 ? MainThreadTicks / (double)MainThreadCalls : 0;
+        public double BackgroundThreadAverageTicks => BackgroundThreadCalls > 0 ? BackgroundThreadTicks / (double)BackgroundThreadCalls : 0;
+        public double MainThreadPercentage => Count > 0 ? (MainThreadCalls / (double)Count) * 100 : 0;
     }
 
     private class CoverageStats
@@ -57,7 +84,6 @@ public static class ModProfiler
             assemblyCoverageStats[assembly] = new CoverageStats();
         }
 
-        Plugin.LogInstance.LogInfo($"Starting to profile assembly: {assembly.GetName().Name}");
         int totalMethods = 0;
         int patchedMethods = 0;
         int skippedMethods = 0;
@@ -106,8 +132,6 @@ public static class ModProfiler
         coverageStats.TotalMethods = totalMethods;
         coverageStats.PatchedMethods = patchedMethods;
         coverageStats.SkippedMethods = skippedMethods;
-
-        Plugin.LogInstance.LogInfo($"Assembly {assembly.GetName().Name}: Total={totalMethods}, Patched={patchedMethods}, Skipped={skippedMethods}");
     }
 
     private static bool ShouldProfileType(Type type)
@@ -219,17 +243,32 @@ public static class ModProfiler
 
     public class MethodWrapper
     {
-        [HarmonyPrefix]
-        public static void Prefix(out Stopwatch __state)
+        // Create a state class to hold all our data
+        public class ProfilingState
         {
-            __state = Stopwatch.StartNew();
+            public Stopwatch Stopwatch { get; set; }
+            public bool IsMainThread { get; set; }
+            public int ThreadId { get; set; }
+        }
+
+        [HarmonyPrefix]
+        public static void Prefix(out ProfilingState __state)
+        {
+            __state = new ProfilingState
+            {
+                Stopwatch = Stopwatch.StartNew(),
+                IsMainThread = IsMainThread(),
+                ThreadId = Thread.CurrentThread.ManagedThreadId
+            };
         }
 
         [HarmonyPostfix]
-        public static void Postfix(MethodBase __originalMethod, Stopwatch __state)
+        public static void Postfix(MethodBase __originalMethod, ProfilingState __state)
         {
-            __state.Stop();
-            var ticks = __state.ElapsedTicks;
+            __state.Stopwatch.Stop();
+            var ticks = __state.Stopwatch.ElapsedTicks;
+            var isMainThread = __state.IsMainThread;
+            var threadId = __state.ThreadId;
 
             // Find which assembly this method belongs to
             var assembly = __originalMethod.DeclaringType?.Assembly;
@@ -240,7 +279,7 @@ public static class ModProfiler
                 if (assemblyMethodStats.TryGetValue(assembly, out var methodStats) &&
                     methodStats.TryGetValue(__originalMethod, out var stats))
                 {
-                    stats.AddTiming(ticks);
+                    stats.AddTiming(ticks, isMainThread, threadId);
                 }
             }
         }
@@ -248,57 +287,10 @@ public static class ModProfiler
 
     public static void DumpStats()
     {
-        // Ensure directory exists
-        if (!System.IO.Directory.Exists(Directory))
-        {
-            System.IO.Directory.CreateDirectory(Directory);
-        }
-
         foreach (var assemblyKvp in assemblyMethodStats)
         {
             var assembly = assemblyKvp.Key;
-            var methodStats = assemblyKvp.Value;
-
-            // Get assembly name without extension
-            var assemblyName = Path.GetFileNameWithoutExtension(assembly.Location);
-            if (string.IsNullOrEmpty(assemblyName))
-            {
-                assemblyName = assembly.GetName().Name ?? "Unknown";
-            }
-
-            var fileName = Path.Combine(Directory, $"{assemblyName}_Performance.txt");
-
-            using var writer = new StreamWriter(fileName);
-            writer.WriteLine($"Performance Report for Assembly: {assemblyName}");
-            writer.WriteLine($"Generated: {DateTime.Now:yyyy-MM-dd HH:mm:ss}");
-            writer.WriteLine(new string('=', 80));
-            writer.WriteLine();
-
-            // Write Coverage Report
-            WriteCoverageReport(writer, assembly, methodStats);
-            writer.WriteLine();
-
-            // Sort by average execution time (descending)
-            var sortedMethods = methodStats
-                .Where(kvp => kvp.Value.Count > 0)
-                .OrderByDescending(kvp => kvp.Value.AverageTicks);
-
-            foreach (var methodKvp in sortedMethods)
-            {
-                var method = methodKvp.Key;
-                var stats = methodKvp.Value;
-
-                writer.WriteLine($"Method: {method.DeclaringType?.FullName}.{method.Name}");
-                writer.WriteLine($"  Calls: {stats.Count:N0}");
-                writer.WriteLine($"  Average: {stats.AverageTicks:F2} ticks ({TicksToMilliseconds((long)stats.AverageTicks):F4} ms)");
-                writer.WriteLine($"  Minimum: {stats.MinTicks:N0} ticks ({TicksToMilliseconds(stats.MinTicks):F4} ms)");
-                writer.WriteLine($"  Maximum: {stats.MaxTicks:N0} ticks ({TicksToMilliseconds(stats.MaxTicks):F4} ms)");
-                writer.WriteLine($"  Total:   {stats.TotalTicks:N0} ticks ({TicksToMilliseconds(stats.TotalTicks):F2} ms)");
-                writer.WriteLine();
-            }
-
-            writer.WriteLine(new string('=', 80));
-            writer.WriteLine($"Total Methods Profiled: {methodStats.Count(kvp => kvp.Value.Count > 0):N0}");
+            DumpStatsForAssembly(assembly);
         }
     }
 
@@ -362,12 +354,21 @@ public static class ModProfiler
         using var writer = new StreamWriter(fileName);
         writer.WriteLine($"Performance Report for Assembly: {assemblyName}");
         writer.WriteLine($"Generated: {DateTime.Now:yyyy-MM-dd HH:mm:ss}");
+        writer.WriteLine($"Main Thread ID: {mainThreadId}");
         writer.WriteLine(new string('=', 80));
         writer.WriteLine();
 
         // Write Coverage Report
         WriteCoverageReport(writer, assembly, methodStats);
         writer.WriteLine();
+
+        // Only write thread summary if there are methods with interesting thread usage
+        var hasMultiThreadedMethods = methodStats.Values.Any(s => s.BackgroundThreadCalls > 0 || s.UniqueThreadIds.Count > 1);
+        if (hasMultiThreadedMethods)
+        {
+            WriteThreadSummary(writer, methodStats);
+            writer.WriteLine();
+        }
 
         var sortedMethods = methodStats
             .Where(kvp => kvp.Value.Count > 0)
@@ -380,14 +381,100 @@ public static class ModProfiler
 
             writer.WriteLine($"Method: {method.DeclaringType?.FullName}.{method.Name}");
             writer.WriteLine($"  Calls: {stats.Count:N0}");
-            writer.WriteLine($"  Average: {stats.AverageTicks:F2} ticks ({TicksToMilliseconds((long)stats.AverageTicks):F4} ms)");
+            
+            // Only show thread details if the method runs on background threads or multiple threads
+            bool showThreadDetails = stats.BackgroundThreadCalls > 0 || stats.UniqueThreadIds.Count > 1;
+            
+            if (showThreadDetails)
+            {
+                writer.WriteLine($"  Main Thread: {stats.MainThreadCalls:N0} ({stats.MainThreadPercentage:F1}%)");
+                writer.WriteLine($"  Background:  {stats.BackgroundThreadCalls:N0} ({100 - stats.MainThreadPercentage:F1}%)");
+                
+                if (stats.UniqueThreadIds.Count > 1)
+                {
+                    writer.WriteLine($"  Unique Threads: {stats.UniqueThreadIds.Count}");
+                }
+            }
+            
+            // Show appropriate timing information
+            if (showThreadDetails)
+            {
+                writer.WriteLine($"  Overall Average: {stats.AverageTicks:F2} ticks ({TicksToMilliseconds((long)stats.AverageTicks):F4} ms)");
+                
+                if (stats.MainThreadCalls > 0)
+                    writer.WriteLine($"  Main Thread Avg: {stats.MainThreadAverageTicks:F2} ticks ({TicksToMilliseconds((long)stats.MainThreadAverageTicks):F4} ms)");
+                
+                if (stats.BackgroundThreadCalls > 0)
+                    writer.WriteLine($"  Background Avg:  {stats.BackgroundThreadAverageTicks:F2} ticks ({TicksToMilliseconds((long)stats.BackgroundThreadAverageTicks):F4} ms)");
+            }
+            else
+            {
+                // Simplified format for main-thread-only methods
+                writer.WriteLine($"  Average: {stats.AverageTicks:F2} ticks ({TicksToMilliseconds((long)stats.AverageTicks):F4} ms)");
+            }
+            
             writer.WriteLine($"  Minimum: {stats.MinTicks:N0} ticks ({TicksToMilliseconds(stats.MinTicks):F4} ms)");
             writer.WriteLine($"  Maximum: {stats.MaxTicks:N0} ticks ({TicksToMilliseconds(stats.MaxTicks):F4} ms)");
-            writer.WriteLine($"  Total:   {stats.TotalTicks:N0} ticks ({TicksToMilliseconds(stats.TotalTicks):F2} ms)");
+            writer.WriteLine($"  Total:   {TicksToMilliseconds(stats.TotalTicks):F2} ms");
             writer.WriteLine();
         }
 
         writer.WriteLine(new string('=', 80));
         writer.WriteLine($"Total Methods Profiled: {methodStats.Count(kvp => kvp.Value.Count > 0):N0}");
+    }
+
+    private static void WriteThreadSummary(StreamWriter writer, Dictionary<MethodBase, MethodStats> methodStats)
+    {
+        writer.WriteLine("THREAD USAGE SUMMARY");
+        writer.WriteLine(new string('-', 40));
+
+        var totalCalls = methodStats.Sum(kvp => kvp.Value.Count);
+        var mainThreadCalls = methodStats.Sum(kvp => kvp.Value.MainThreadCalls);
+        var backgroundThreadCalls = methodStats.Sum(kvp => kvp.Value.BackgroundThreadCalls);
+        var allUniqueThreads = new HashSet<int>();
+        
+        foreach (var stats in methodStats.Values)
+        {
+            foreach (var threadId in stats.UniqueThreadIds)
+            {
+                allUniqueThreads.Add(threadId);
+            }
+        }
+
+        writer.WriteLine($"Total Method Calls:      {totalCalls:N0}");
+        writer.WriteLine($"Main Thread Calls:       {mainThreadCalls:N0} ({(mainThreadCalls / (double)totalCalls * 100):F1}%)");
+        writer.WriteLine($"Background Thread Calls: {backgroundThreadCalls:N0} ({(backgroundThreadCalls / (double)totalCalls * 100):F1}%)");
+        writer.WriteLine($"Unique Threads Used:     {allUniqueThreads.Count}");
+        writer.WriteLine($"Thread IDs: [{string.Join(", ", allUniqueThreads.OrderBy(x => x))}]");
+
+        // Methods that run on multiple threads
+        var multiThreadedMethods = methodStats
+            .Where(kvp => kvp.Value.UniqueThreadIds.Count > 1)
+            .OrderByDescending(kvp => kvp.Value.UniqueThreadIds.Count);
+
+        if (multiThreadedMethods.Any())
+        {
+            writer.WriteLine();
+            writer.WriteLine("Methods Called on Multiple Threads:");
+            foreach (var method in multiThreadedMethods)
+            {
+                writer.WriteLine($"  {method.Key.DeclaringType?.Name}.{method.Key.Name} - {method.Value.UniqueThreadIds.Count} threads");
+            }
+        }
+
+        writer.WriteLine(new string('-', 40));
+    }
+
+    // Helper method to determine if we're on the main thread
+    private static bool IsMainThread()
+    {
+        return Thread.CurrentThread.ManagedThreadId == mainThreadId;
+    }
+
+    // Alternative method using Unity's SynchronizationContext (if available)
+    private static bool IsMainThreadBySyncContext()
+    {
+        var context = SynchronizationContext.Current;
+        return context != null && context.GetType().Name.Contains("Unity");
     }
 }
