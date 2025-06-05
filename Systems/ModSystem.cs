@@ -4,10 +4,12 @@ using System.Linq;
 using System.Reflection;
 using BepInEx;
 using VAMP.Structs;
+using VAMP.Systems;
 using BepInEx.Unity.IL2CPP;
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
+using VAMP.Structs.Settings;
 
 namespace VAMP.Services;
 
@@ -134,6 +136,7 @@ public class ModSystem
         {
             var modInfo = new ModInfo
             {
+                Assembly = plugin.Instance?.GetType().Assembly,
                 Name = plugin.Metadata.Name,
                 GUID = plugin.Metadata.GUID,
                 Version = plugin.Metadata.Version.ToString(),
