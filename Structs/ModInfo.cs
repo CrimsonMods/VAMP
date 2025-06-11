@@ -1,9 +1,11 @@
 using System.Collections.Generic;
+using System.Reflection;
 
 namespace VAMP.Structs;
 
 public class ModInfo
 {
+    public Assembly Assembly;
     public string Name { get; set; } = string.Empty;
     public string GUID { get; set; } = string.Empty;
     public string Version { get; set; } = string.Empty;

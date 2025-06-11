@@ -54,6 +54,23 @@ internal class RecordLevelSystem
             return;
         }
 
-        RecordLevels = System.Text.Json.JsonSerializer.Deserialize<Dictionary<ulong, int>>(File.ReadAllText(RecordLevelPath));
+        string fileContent = File.ReadAllText(RecordLevelPath);
+        
+        // Check if file is empty or contains only whitespace
+        if (string.IsNullOrWhiteSpace(fileContent))
+        {
+            RecordLevels = new Dictionary<ulong, int>();
+            return;
+        }
+
+        try
+        {
+            RecordLevels = System.Text.Json.JsonSerializer.Deserialize<Dictionary<ulong, int>>(fileContent);
+        }
+        catch (System.Text.Json.JsonException)
+        {
+            // If JSON is invalid, initialize with empty dictionary
+            RecordLevels = new Dictionary<ulong, int>();
+        }
     }
 }

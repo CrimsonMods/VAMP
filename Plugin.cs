@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Collections;
 using System.IO;
 using BepInEx;
 using BepInEx.Logging;
 using BepInEx.Unity.IL2CPP;
 using HarmonyLib;
+using UnityEngine;
+using VAMP.Services;
 using VAMP.Structs.Settings;
 using VAMP.Systems;
 
@@ -46,7 +49,27 @@ public class Plugin : BasePlugin
     private void Loaded()
     {
         FileWatcherSystem.Initialize();
+
+        if (VAMPSettings.ModProfiler.Value) Core.StartCoroutine(DelayStart());
+        
         Log.LogInfo($"Plugin {MyPluginInfo.PLUGIN_GUID} version {MyPluginInfo.PLUGIN_VERSION} is loaded!");
+    }
+
+    IEnumerator DelayStart()
+    {
+        yield return new WaitForSeconds(30f);
+        foreach (var plugin in ModSystem.GetLoadedModsInfo())
+        {
+            if(plugin.Name == "VAMP") continue;
+            ModProfiler.ProfileAssembly(plugin.Assembly);
+        }
+
+        yield return new WaitForSeconds(30f);
+        while (true)
+        {
+            yield return new WaitForSeconds(30f);
+            ModProfiler.DumpStats();
+        }
     }
 
     public override bool Unload()
