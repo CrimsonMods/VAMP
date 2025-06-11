@@ -17,6 +17,7 @@ Features
 - [ModTalk](https://vrising.wiki/docs/mod-talk.html): A simple low-friction system for inter-mod communication
 - [ModSystem](https://vrising.wiki/docs/mod-system.html): Automatic notification of mod updates on Thunderstore
 - [ChatUtil](https://vrising.wiki/docs/chat-util.html): An extension of the System Chat System
+- [ModProfiler](https://vrising.wiki/docs/mod-profiler.html): A system for profiling mod performance (use it if your server is lagging and don't know why!)
 - And more...
 
 The original intention for this mod was to stop copy-pasting a large amount of code between projects, especially files like ECSExtensions and Core. Then it expanded from there to include systems that were used in a majority of my CrimsonMods. Now it has been standardized and documented for use by other modders to make modding V Rising easier and more accessible. 

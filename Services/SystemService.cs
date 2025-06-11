@@ -1,11 +1,14 @@
 using System;
 using Il2CppInterop.Runtime;
 using ProjectM;
+using ProjectM.CastleBuilding;
 using ProjectM.Gameplay.Systems;
 using ProjectM.Network;
 using ProjectM.Scripting;
 using ProjectM.Shared.Systems;
+using ProjectM.Tiles;
 using Unity.Entities;
+using VAMP.Utilities;
 
 namespace VAMP.Services;
 
@@ -25,12 +28,8 @@ public class SystemService(World world)
     ServerScriptMapper _serverScriptMapper;
     public ServerScriptMapper ServerScriptMapper => _serverScriptMapper ??= GetSystem<ServerScriptMapper>();
 
-    // TODO: Refind how to access these two systems
-    ModifyUnitStatBuffSystem_Spawn _modifyUnitStatBuffSystem_Spawn;
-    //public ModifyUnitStatBuffSystem_Spawn ModifyUnitStatBuffSystem_Spawn => _modifyUnitStatBuffSystem_Spawn ??= GetSystem<ModifyUnitStatBuffSystem_Spawn>();
-
-    ModifyUnitStatBuffSystem_Destroy _modifyUnitStatBuffSystem_Destroy;
-    //public ModifyUnitStatBuffSystem_Destroy ModifyUnitStatBuffSystem_Destroy => _modifyUnitStatBuffSystem_Destroy ??= GetSystem<ModifyUnitStatBuffSystem_Destroy>();
+    SpellSchoolMappingSystem _spellSchoolMappingSystem;
+    public SpellSchoolMappingSystem SpellSchoolMappingSystem => _spellSchoolMappingSystem ??= GetSystem<SpellSchoolMappingSystem>();
 
     EntityCommandBufferSystem _entityCommandBufferSystem;
     public EntityCommandBufferSystem EntityCommandBufferSystem => _entityCommandBufferSystem ??= GetSystem<EntityCommandBufferSystem>();
@@ -71,8 +70,8 @@ public class SystemService(World world)
     StatChangeSystem _statChangeSystem;
     public StatChangeSystem StatChangeSystem => _statChangeSystem ??= GetSystem<StatChangeSystem>();
 
-    NetworkIdSystem.Singleton _networkIdSystem_Singleton;
-    public NetworkIdSystem.Singleton NetworkIdSystem => _networkIdSystem_Singleton = ServerScriptMapper.GetSingleton<NetworkIdSystem.Singleton>();
+    GenerateCastleSystem _generateCastleSystem;
+    public GenerateCastleSystem GenerateCastleSystem => _generateCastleSystem ??= GetOrCreateSystem<GenerateCastleSystem>();
 
     ServerBootstrapSystem _serverBootstrapSystem;
     public ServerBootstrapSystem ServerBootstrapSystem => _serverBootstrapSystem ??= GetSystem<ServerBootstrapSystem>();
@@ -97,9 +96,117 @@ public class SystemService(World world)
 
     SetTeamOnSpawnSystem _setTeamOnSpawnSystem;
     public SetTeamOnSpawnSystem SetTeamOnSpawnSystem => _setTeamOnSpawnSystem ??= GetSystem<SetTeamOnSpawnSystem>();
+
+    SpellModSyncSystem_Server _spellModSyncSystem_Server;
+    public SpellModSyncSystem_Server SpellModSyncSystem_Server => _spellModSyncSystem_Server ??= GetSystem<SpellModSyncSystem_Server>();
+
+    JewelSpawnSystem _jewelSpawnSystem;
+    public JewelSpawnSystem JewelSpawnSystem => _jewelSpawnSystem ??= GetSystem<JewelSpawnSystem>();
+
+    TraderPurchaseSystem _traderPurchaseSystem;
+    public TraderPurchaseSystem TraderPurchaseSystem => _traderPurchaseSystem ??= GetSystem<TraderPurchaseSystem>();
+
+    UpdateBuffsBuffer_Destroy _updateBuffsBuffer_Destroy;
+    public UpdateBuffsBuffer_Destroy UpdateBuffsBuffer_Destroy => _updateBuffsBuffer_Destroy ??= GetSystem<UpdateBuffsBuffer_Destroy>();
+
+    BuffSystem_Spawn_Server _buffSystem_Spawn_Server;
+    public BuffSystem_Spawn_Server BuffSystem_Spawn_Server => _buffSystem_Spawn_Server ??= GetSystem<BuffSystem_Spawn_Server>();
+
+    InstantiateMapIconsSystem_Spawn _instantiateMapIconsSystem_Spawn;
+    public InstantiateMapIconsSystem_Spawn InstantiateMapIconsSystem_Spawn => _instantiateMapIconsSystem_Spawn ??= GetSystem<InstantiateMapIconsSystem_Spawn>();
+
+    MapZoneCollectionSystem _mapZoneCollectionSystem;
+    public MapZoneCollectionSystem MapZoneCollectionSystem => _mapZoneCollectionSystem ??= GetSystem<MapZoneCollectionSystem>();
+
+    UserActivityGridSystem _userActivityGridSystem;
+    public UserActivityGridSystem UserActivityGridSystem => _userActivityGridSystem ??= GetSystem<UserActivityGridSystem>();
+
+    ServantPowerSystem _servantPowerSystem;
+    public ServantPowerSystem ServantPowerSystem => _servantPowerSystem ??= GetSystem<ServantPowerSystem>();
+
+    RemoveCharmSourceFromVBloods_Hotfix_0_6 _removeCharmSourceVBloodSystem;
+    public RemoveCharmSourceFromVBloods_Hotfix_0_6 RemoveCharmSourceVBloodSystem => _removeCharmSourceVBloodSystem ??= GetSystem<RemoveCharmSourceFromVBloods_Hotfix_0_6>();
+
+    NetworkIdSystem.Singleton _networkIdSystem_Singleton;
+    public NetworkIdSystem.Singleton NetworkIdSystem
+    {
+        get
+        {
+            if (_networkIdSystem_Singleton.Equals(default(NetworkIdSystem.Singleton)))
+            {
+                _networkIdSystem_Singleton = GetSingleton<NetworkIdSystem.Singleton>();
+            }
+
+            return _networkIdSystem_Singleton;
+        }
+    }
+
+    CurrentCastsSystem.Singleton _currentCastsSystem_Singleton;
+    public CurrentCastsSystem.Singleton CurrentCastsSystem
+    {
+        get
+        {
+            if (_currentCastsSystem_Singleton.Equals(default(CurrentCastsSystem.Singleton)))
+            {
+                _currentCastsSystem_Singleton = GetSingleton<CurrentCastsSystem.Singleton>();
+            }
+
+            return _currentCastsSystem_Singleton;
+        }
+    }
+
+    Entity _tileModelSpatialLookupSystem;
+    public Entity TileModelSpatialLookupSystem
+    {
+        get
+        {
+            if (!_tileModelSpatialLookupSystem.Exists())
+            {
+                _tileModelSpatialLookupSystem = GetSingletonEntity<TileModelSpatialLookupSystem.Singleton>();
+            }
+
+            return _tileModelSpatialLookupSystem;
+        }
+    }
+
+    Entity _dayNightCycleSystem;
+    public Entity DayNightCycleSystem
+    {
+        get
+        {
+            if (!_dayNightCycleSystem.Exists())
+            {
+                _dayNightCycleSystem = GetSingletonEntityFromAccessor<DayNightCycle>();
+            }
+
+            return _dayNightCycleSystem;
+        }
+    }
     
     T GetSystem<T>() where T : ComponentSystemBase
     {
-        return _world.GetExistingSystemManaged<T>() ?? throw new InvalidOperationException($"Failed to get {Il2CppType.Of<T>().FullName} from the Server...");
+        return _world.GetExistingSystemManaged<T>() ?? throw new InvalidOperationException($"[{_world.Name}] - failed to get ({Il2CppType.Of<T>().FullName})");
+    }
+
+    T GetOrCreateSystem<T>() where T : ComponentSystemBase
+    {
+        return _world.GetOrCreateSystemManaged<T>() ?? throw new InvalidOperationException($"[{_world.Name}] - failed to get ({Il2CppType.Of<T>().FullName})");
+    }
+
+    T GetSingleton<T>()
+    {
+        return ServerScriptMapper.GetSingleton<T>();
+    }
+
+    Entity GetSingletonEntity<T>()
+    {
+        return ServerScriptMapper.GetSingletonEntity<T>();
+    }
+
+    Entity GetSingletonEntityFromAccessor<T>()
+    {
+        return SingletonAccessor<T>.TryGetSingletonEntityWasteful(Core.EntityManager, out Entity singletonEntity)
+            ? singletonEntity
+            : throw new InvalidOperationException($"[{_world.Name}] - failed to get singleton entity ({Il2CppType.Of<T>().FullName})");
     }
 }

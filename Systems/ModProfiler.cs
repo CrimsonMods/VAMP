@@ -15,6 +15,7 @@ public static class ModProfiler
     private static readonly Dictionary<Assembly, Dictionary<MethodBase, MethodStats>> assemblyMethodStats = new();
     private static readonly Dictionary<Assembly, CoverageStats> assemblyCoverageStats = new();
     private static readonly Harmony harmony = new Harmony("VAMP.MethodProfiler");
+    private static readonly Dictionary<Assembly, List<(MethodBase Method, string Error)>> assemblyFailedMethods = new();
     
     // Store the main thread ID for comparison
     private static int mainThreadId = Thread.CurrentThread.ManagedThreadId;
@@ -84,6 +85,11 @@ public static class ModProfiler
             assemblyCoverageStats[assembly] = new CoverageStats();
         }
 
+        if (!assemblyFailedMethods.ContainsKey(assembly))
+        {
+            assemblyFailedMethods[assembly] = new List<(MethodBase, string)>();
+        }
+
         int totalMethods = 0;
         int patchedMethods = 0;
         int skippedMethods = 0;
@@ -121,7 +127,7 @@ public static class ModProfiler
                 }
                 catch (Exception e)
                 {
-                    Plugin.LogInstance.LogWarning($"Failed to profile method {method.DeclaringType?.FullName}.{method.Name}: {e.Message}");
+                    assemblyFailedMethods[assembly].Add((method, e.Message));
                     skippedMethods++;
                 }
             }
@@ -419,6 +425,9 @@ public static class ModProfiler
             writer.WriteLine();
         }
 
+        WriteFailedMethods(writer, assembly);
+        writer.WriteLine();
+
         writer.WriteLine(new string('=', 80));
         writer.WriteLine($"Total Methods Profiled: {methodStats.Count(kvp => kvp.Value.Count > 0):N0}");
     }
@@ -460,6 +469,26 @@ public static class ModProfiler
             {
                 writer.WriteLine($"  {method.Key.DeclaringType?.Name}.{method.Key.Name} - {method.Value.UniqueThreadIds.Count} threads");
             }
+        }
+
+        writer.WriteLine(new string('-', 40));
+    }
+
+    private static void WriteFailedMethods(StreamWriter writer, Assembly assembly)
+    {
+        if (!assemblyFailedMethods.TryGetValue(assembly, out var failedMethods) || !failedMethods.Any())
+            return;
+
+        writer.WriteLine("FAILED TO PROFILE");
+        writer.WriteLine(new string('-', 40));
+        writer.WriteLine($"Methods that could not be profiled: {failedMethods.Count:N0}");
+        writer.WriteLine();
+
+        foreach (var (method, error) in failedMethods)
+        {
+            writer.WriteLine($"Method: {method.DeclaringType?.FullName}.{method.Name}");
+            writer.WriteLine($"  Error: {error}");
+            writer.WriteLine();
         }
 
         writer.WriteLine(new string('-', 40));

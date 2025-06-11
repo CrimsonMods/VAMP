@@ -1,5 +1,7 @@
 `latest`
 - Added [ModProfiler](https://vrising.wiki/docs/mod-profiler.html)
+- Critical Bugfix for Item Drop Creation
+- Critical Bugfix for Record Level System
 
 `1.2.0`
 - Added [ModSystem](https://vrising.wiki/docs/mod-system.html)

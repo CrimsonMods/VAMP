@@ -82,7 +82,7 @@ public static class ItemUtil
                 try
                 {
                     var amountToDrop = System.Math.Min(amount, itemData.MaxAmount);
-                    Core.ServerScriptMapper._ServerGameManager.CreateDroppedItemEntity(pos, prefabGUID, amountToDrop);
+                    InventoryUtilitiesServer.CreateDroppedItemEntity(Core.EntityManager, Core.SystemService.EntityCommandBufferSystem.CreateCommandBuffer(), Core.SystemService.GameDataSystem.ItemHashLookupMap, pos, prefabGUID, amountToDrop);
                     amount -= amountToDrop;
                 }
                 catch (System.Exception e)
