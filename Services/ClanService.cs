@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using ProjectM;
@@ -53,11 +54,22 @@ public class ClanService
     /// </summary>
     /// <param name="clanName">The name of the clan to find.</param>
     /// <returns>The clan entity if found; otherwise, null.</returns>
+    [Obsolete("Use GetAllWithName instead as Clan names are not unique.")]
     public static Entity GetByName(string clanName)
     {
         var clans = GetAll().Where(x => x.ReadBuffer<SyncToUserBuffer>().Length > 0).ToList();
         Entity clanEntity = clans.FirstOrDefault(entity => entity.Read<ClanTeam>().Name.Value.ToLower() == clanName.ToLower());
         return clanEntity;
+    }
+
+    /// <summary>
+    /// Gets all clan entities with the specified name.
+    /// </summary>
+    /// <param name="clanName">The name of the clans to find.</param>
+    /// <returns>An enumerable collection of clan entities with the specified name.</returns>
+    public static IEnumerable<Entity> GetAllWithName(string clanName)
+    {
+        return GetAll().Where(x => x.Read<ClanTeam>().Name.Value.ToLower() == clanName.ToLower());
     }
 
     /// <summary>
