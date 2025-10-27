@@ -1,4 +1,7 @@
 `latest`
+- Updated Dependencies 
+
+`1.3.1`
 - Added [ModProfiler](https://vrising.wiki/docs/mod-profiler.html)
 - Critical Bugfix for Item Drop Creation
 - Critical Bugfix for Record Level System
