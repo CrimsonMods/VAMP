@@ -1,4 +1,7 @@
 `latest`
+- Fixed bug with mod update notifications
+
+`1.3.2`
 - Updated Dependencies 
 
 `1.3.1`
