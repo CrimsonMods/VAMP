@@ -73,6 +73,10 @@ Want to support my modding development?
     <a href="https://store.steampowered.com/app/3819510/DexSweeper/">
         <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3819510/6d92a431630be001667a7da561938d84714264c2/header.jpg?t=1757724028" alt="DexSweeper" width="250"/>
     </a>
+    </a>
+    <a href="https://store.steampowered.com/app/4078670/Vice_Versa/">
+        <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4078670/4c2bc7448fab37d5cb3829eca56992e9d4c2c5c6/header.jpg?t=1774046157" alt="Vice Versa" width="250"/>
+    </a>
 </p>
 
 Donations Accepted
