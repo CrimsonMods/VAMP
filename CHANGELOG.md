@@ -1,8 +1,12 @@
 `latest`
+- Removed all deprecated systems and methods
+- Updated dependencies
+
+`1.3.3`
 - Fixed bug with mod update notifications
 
 `1.3.2`
-- Updated Dependencies 
+- Updated dependencies 
 
 `1.3.1`
 - Added [ModProfiler](https://vrising.wiki/docs/mod-profiler.html)

@@ -28,10 +28,10 @@
 	</Target>
 
   <ItemGroup>
-    <PackageReference Include="BepInEx.Unity.IL2CPP" Version="6.0.0-be.733" IncludeAssets="compile" PrivateAssets="all" />
-    <PackageReference Include="BepInEx.Core" Version="6.0.0-be.733" IncludeAssets="compile" PrivateAssets="all" />
+    <PackageReference Include="BepInEx.Unity.IL2CPP" Version="6.0.0-be.755" IncludeAssets="compile" PrivateAssets="all" />
+    <PackageReference Include="BepInEx.Core" Version="6.0.0-be.755" IncludeAssets="compile" PrivateAssets="all" />
     <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
-    <PackageReference Include="VRising.UnhollowedX.Client" Version="1.0.10" />
+    <PackageReference Include="VRising.UnhollowedX.Client" Version="1.0.14" />
   </ItemGroup>
 
   <ItemGroup>

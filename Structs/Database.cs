@@ -59,7 +59,7 @@ internal class Database
             string json = File.ReadAllText(RegionsFile);
             Data.WorldRegions.WorldRegionToString = JsonSerializer.Deserialize<Dictionary<WorldRegionType, (string Long, string Short)>>(json, prettyJsonOptions);
         }
-        catch (Exception e)
+        catch (Exception)
         {
             Plugin.LogInstance.LogError("Failed loading Region Names. Please validate Names_Regions.json");
         }
@@ -76,7 +76,7 @@ internal class Database
                 pair => pair.Value
             );
         }
-        catch (Exception e)
+        catch (Exception)
         {
             Plugin.LogInstance.LogError("Failed loading VBlood Names. Please validate Names_VBloods.json");
         }

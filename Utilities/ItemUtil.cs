@@ -85,7 +85,7 @@ public static class ItemUtil
                     InventoryUtilitiesServer.CreateDroppedItemEntity(Core.EntityManager, Core.SystemService.EntityCommandBufferSystem.CreateCommandBuffer(), Core.SystemService.GameDataSystem.ItemHashLookupMap, pos, prefabGUID, amountToDrop);
                     amount -= amountToDrop;
                 }
-                catch (System.Exception e)
+                catch (System.Exception)
                 {
                     Plugin.LogInstance.LogWarning($"Could not create dropped item: {pos} {prefabGUID.LookupName()} {amount}");
                     var action = () => CreateDroppedItem(pos, prefabGUID, amount);

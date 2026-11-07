@@ -1,43 +1,29 @@
 ﻿using ProjectM.Network;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.Collections;
 using Unity.Entities;
 using VAMP.Models;
-using VAMP.Structs;
 using VAMP.Utilities;
 
 namespace VAMP.Services;
 
 public class PlayerService
 {
-    private static readonly Dictionary<string, PlayerData> old_namePlayerCache = new();
-    private static readonly Dictionary<ulong, PlayerData> old_steamPlayerCache = new();
-    private static readonly Dictionary<NetworkId, PlayerData> old_idPlayerCache = new();
-
     private static readonly Dictionary<string, Player> namePlayerCache = new();
     private static readonly Dictionary<ulong, Player> steamPlayerCache = new();
     private static readonly Dictionary<NetworkId, Player> idPlayerCache = new();
 
     internal PlayerService()
     {
-        old_namePlayerCache.Clear();
-        old_steamPlayerCache.Clear();
-
         namePlayerCache.Clear();
         steamPlayerCache.Clear();
 
         var userEntities = EntityUtil.GetEntitiesByComponentType<User>(includeDisabled: true);
         foreach (var entity in userEntities)
         {
-            var userData = entity.Read<User>();
-            var playerData = new PlayerData(userData.CharacterName, userData.PlatformId, userData.IsConnected, entity, userData.LocalCharacter._Entity);
             Player player = new Player();
             player.User = entity;
-
-            old_namePlayerCache.TryAdd(userData.CharacterName.ToString(), playerData);
-            old_steamPlayerCache.TryAdd(userData.PlatformId, playerData);
 
             namePlayerCache.TryAdd(player.Name, player);
             steamPlayerCache.TryAdd(player.SteamID, player);
@@ -46,19 +32,12 @@ public class PlayerService
         Plugin.LogInstance.LogWarning($"Player Cache Created with {namePlayerCache.Count} entries total.");
     }
 
-    internal static void UpdatePlayerCache(Entity userEntity, string oldName, string newName, bool forceOffline = false)
+    internal static void UpdatePlayerCache(Entity userEntity, string oldName, string newName)
     {
         var userData = userEntity.Read<User>();
-        old_namePlayerCache.Remove(oldName);
         namePlayerCache.Remove(oldName);
 
-        if (forceOffline) userData.IsConnected = false;
-        var playerData = new PlayerData(newName, userData.PlatformId, userData.IsConnected, userEntity, userData.LocalCharacter._Entity);
         var player = PlayerFromUser(userData);
-
-        old_namePlayerCache[newName] = playerData;
-        old_steamPlayerCache[userData.PlatformId] = playerData;
-        old_idPlayerCache[userEntity.Read<NetworkId>()] = playerData;
 
         namePlayerCache[newName] = player;
         steamPlayerCache[userData.PlatformId] = player;
@@ -136,35 +115,11 @@ public class PlayerService
     /// Attempts to find a player by their Steam ID.
     /// </summary>
     /// <param name="steamId">The Steam ID to search for.</param>
-    /// <param name="playerData">When this method returns, contains the player data associated with the specified Steam ID, if found; otherwise, the default value.</param>
-    /// <returns>true if a player with the specified Steam ID was found; otherwise, false.</returns>
-    [Obsolete("This method is deprecated and will be removed in a future version. Use TryFindBySteam(ulong, out Player) instead.")]
-    public static bool TryFindBySteam(ulong steamId, out PlayerData playerData)
-    {
-        return old_steamPlayerCache.TryGetValue(steamId, out playerData);
-    }
-
-    /// <summary>
-    /// Attempts to find a player by their Steam ID.
-    /// </summary>
-    /// <param name="steamId">The Steam ID to search for.</param>
     /// <param name="player">When this method returns, contains the player associated with the specified Steam ID, if found; otherwise, null.</param>
     /// <returns>true if a player with the specified Steam ID was found; otherwise, false.</returns>
     public static bool TryFindBySteam(ulong steamId, out Player player)
     {
         return steamPlayerCache.TryGetValue(steamId, out player);
-    }
-
-    /// <summary>
-    /// Attempts to find a player by their character name.
-    /// </summary>
-    /// <param name="name">The character name to search for.</param>
-    /// <param name="playerData">When this method returns, contains the player data associated with the specified name, if found; otherwise, the default value.</param>
-    /// <returns>true if a player with the specified name was found; otherwise, false.</returns>
-    [Obsolete("This method is deprecated and will be removed in a future version. Use TryFindByName(string, out Player) instead.")]
-    public static bool TryFindByName(string name, out PlayerData playerData)
-    {
-        return old_namePlayerCache.TryGetValue(name, out playerData);
     }
 
     /// <summary>
@@ -182,41 +137,11 @@ public class PlayerService
     /// Attempts to find a player by their character name using a FixedString64Bytes.
     /// </summary>
     /// <param name="name">The character name as FixedString64Bytes to search for.</param>
-    /// <param name="playerData">When this method returns, contains the player data associated with the specified name, if found; otherwise, the default value.</param>
-    /// <returns>true if a player with the specified name was found; otherwise, false.</returns>
-    [Obsolete("This method is deprecated and will be removed in a future version. Use TryFindByName(string, out Player) instead.")]
-    public static bool TryFindByName(FixedString64Bytes name, out PlayerData playerData)
-    {
-        return old_namePlayerCache.TryGetValue(name.ToString(), out playerData);
-    }
-
-    /// <summary>
-    /// Attempts to find a player by their character name using a FixedString64Bytes.
-    /// </summary>
-    /// <param name="name">The character name as FixedString64Bytes to search for.</param>
     /// <param name="player">When this method returns, contains the player associated with the specified name, if found; otherwise, null.</param>
     /// <returns>true if a player with the specified name was found; otherwise, false.</returns>
     public static bool TryFindByName(FixedString64Bytes name, out Player player)
     {
         return namePlayerCache.TryGetValue(name.ToString(), out player);
-    }
-
-    /// <summary>
-    /// Attempts to find a user entity by their network ID.
-    /// </summary>
-    /// <param name="networkId">The network ID to search for.</param>
-    /// <param name="userEntity">When this method returns, contains the user entity associated with the specified network ID, if found; otherwise, Entity.Null.</param>
-    /// <returns>true if a user entity with the specified network ID was found; otherwise, false.</returns>
-    [Obsolete("This method is deprecated and will be removed in a future version. Use TryFindByNetworkId(networkId, out Player) instead.")]
-    public static bool TryFindByNetworkId(NetworkId networkId, out Entity userEntity)
-    {
-        if (old_idPlayerCache.TryGetValue(networkId, out var playerData))
-        {
-            userEntity = playerData.UserEntity;
-            return true;
-        }
-        userEntity = Entity.Null;
-        return false;
     }
 
     /// <summary>
@@ -227,24 +152,7 @@ public class PlayerService
     /// <returns>true if a player with the specified network ID was found; otherwise, false.</returns>
     public static bool TryFindByNetworkId(NetworkId networkId, out Player player)
     {
-        if (idPlayerCache.TryGetValue(networkId, out var playerData))
-        {
-            player = playerData;
-            return true;
-        }
-
-        player = null;
-        return false;
-    }
-
-    /// <summary>
-    /// Creates a new Player instance from the provided PlayerData.
-    /// </summary>
-    /// <param name="data">The PlayerData containing the player information.</param>
-    /// <returns>A new Player instance initialized with the character entity from the PlayerData.</returns>
-    public static Player PlayerFromData(PlayerData data)
-    {
-        return PlayerFromChar(data.CharEntity);
+        return idPlayerCache.TryGetValue(networkId, out player);
     }
 
     /// <summary>

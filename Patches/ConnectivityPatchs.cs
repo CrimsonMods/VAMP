@@ -82,7 +82,7 @@ public static class OnUserDisconnectedPatch
             if (!isNewVampire)
             {
                 var playerName = userData.CharacterName.ToString();
-                Services.PlayerService.UpdatePlayerCache(serverClient.UserEntity, playerName, playerName, true);
+                Services.PlayerService.UpdatePlayerCache(serverClient.UserEntity, playerName, playerName);
             }
         }
         catch { };

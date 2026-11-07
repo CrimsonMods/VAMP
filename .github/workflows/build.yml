@@ -8,6 +8,7 @@ jobs:
   build:
     permissions:
       contents: write
+      id-token: write
     runs-on: ubuntu-latest
 
     steps:
@@ -57,9 +58,18 @@ jobs:
           name: nuget-packages
           path: ./nuget
       
+      - name: NuGet login
+        if: ${{ !env.ACT }}
+        id: nuget-login
+        uses: NuGet/login@v1
+        with:
+          user: ${{ secrets.NUGET_USER }}
+
       - name: Push to Nuget
         if: ${{ !env.ACT }}
-        run: dotnet nuget push ./nuget/*.nupkg -k ${{ secrets.NUGET_KEY }} -s https://api.nuget.org/v3/index.json
+        run: dotnet nuget push ./nuget/*.nupkg -k "$NUGET_API_KEY" -s https://api.nuget.org/v3/index.json
+        env:
+          NUGET_API_KEY: ${{ steps.nuget-login.outputs.NUGET_API_KEY }}
         
       - name: GH Release
         uses: softprops/action-gh-release@v1

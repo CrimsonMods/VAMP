@@ -61,26 +61,12 @@ foreach (var userEntity in PlayerService.GetCachedUsersOnline())
 }
 ```
 
-### Updating Player Information
-The service automatically updates when players join or leave, but you can also manually update the cache:
-```csharp
-// Update a player's name in the cache
-Entity userEntity = /* get user entity */;
-string oldName = "OldVampireName";
-string newName = "NewVampireName";
-PlayerService.UpdatePlayerCache(userEntity, oldName, newName);
-
-// Mark a player as offline in the cache
-PlayerService.UpdatePlayerCache(userEntity, oldName, oldName, forceOffline: true);
-```
-
 ## Important Notes
 - The service initializes automatically when the server starts, caching all existing player data
 - Player lookups are case-sensitive
-- The cache is automatically maintained, but manual updates may be necessary in specific scenarios
+- The cache is updated automatically when players connect or disconnect
 - For performance reasons, use the cached methods when possible instead of querying the entity system directly
 - The service maintains data for both online and offline players
-- Legacy PlayerData methods are marked as obsolete and will be removed in future versions
 
 ## Integration with Other Systems
 The PlayerService works seamlessly with other VAMP systems:

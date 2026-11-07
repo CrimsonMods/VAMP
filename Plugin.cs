@@ -23,13 +23,7 @@ public class Plugin : BasePlugin
     internal static VAMPSettings VAMPSettings { get; private set; }
 
     internal static string ConfigFiles => Path.Combine(Paths.ConfigPath, "VAMP");
-
-    /// <summary>
-    /// Event that is triggered when the Core system has finished loading.
-    /// This action can be subscribed to for executing code after core initialization is complete.
-    /// </summary>
-    [Obsolete("Use VAMP.Events.OnCoreLoaded instead. Will be removed in a future version.")]
-    public static Action OnCoreLoaded;    
+   
     public static bool SpawnDebug = false;
 
     public override void Load()
