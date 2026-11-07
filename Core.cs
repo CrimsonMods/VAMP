@@ -57,7 +57,6 @@ public static class Core
 
         RecordLevelSystem = new RecordLevelSystem();
 
-        Plugin.OnCoreLoaded?.Invoke();
         Events.OnCoreLoaded?.Invoke();
 
         StartCoroutine(EventScheduler.ScheduleLoop());
